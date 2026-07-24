@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-07-24T00:00:00.000Z",
+  "pools": [
+    {
+      "id": "exemple",
+      "name": "Exemple (données de démonstration)",
+      "url": "",
+      "status": "ok",
+      "days": {
+        "monday": [{ "start": "12:00", "end": "13:45", "label": "Public" }],
+        "tuesday": [{ "start": "12:00", "end": "13:45", "label": "Public" }],
+        "wednesday": [{ "start": "10:00", "end": "18:00", "label": "Public" }],
+        "thursday": [{ "start": "12:00", "end": "13:45", "label": "Public" }],
+        "friday": [{ "start": "12:00", "end": "13:45", "label": "Public" }],
+        "saturday": [{ "start": "10:00", "end": "18:00", "label": null }],
+        "sunday": []
+      },
+      "closures": [
+        "Ceci est un fichier de démonstration. Complète scripts/pools.ts puis lance `npm run scrape` pour générer les vraies données."
+      ],
+      "notes": null
+    }
+  ]
+}

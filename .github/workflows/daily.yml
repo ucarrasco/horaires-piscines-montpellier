@@ -1,0 +1,63 @@
+name: Mise à jour horaires + déploiement
+
+on:
+  schedule:
+    - cron: "0 4 * * *" # tous les jours à 04:00 UTC (~06:00 Montpellier)
+  workflow_dispatch: {} # déclenchement manuel
+  push:
+    branches: [main]
+
+# Un seul déploiement à la fois
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: write # pour committer le JSON régénéré
+  pages: write # pour déployer sur GitHub Pages
+  id-token: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Régénère les horaires (sauf sur un simple push, pour économiser l'API).
+      - name: Scrape des horaires
+        if: github.event_name != 'push'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run scrape
+
+      - name: Commit des horaires si modifiés
+        if: github.event_name != 'push'
+        run: |
+          if [ -n "$(git status --porcelain public/data/horaires.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add public/data/horaires.json
+            git commit -m "chore: maj horaires piscines [skip ci]"
+            git push
+          else
+            echo "Aucun changement d'horaires."
+          fi
+
+      - run: npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deploy
+        uses: actions/deploy-pages@v4

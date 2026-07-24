@@ -1,0 +1,151 @@
+:root {
+  --bg: #f7f9fb;
+  --card: #ffffff;
+  --ink: #16202a;
+  --muted: #6b7885;
+  --line: #e3e8ee;
+  --accent: #0a7ea4;
+  --closed: #b23b3b;
+  --warn-bg: #fff6e6;
+  --warn-line: #f0c874;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.error {
+  color: var(--closed);
+}
+
+.closures {
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-line);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.closures ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.closure-pool {
+  font-weight: 600;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 760px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  font-size: 0.9rem;
+}
+
+thead th {
+  background: #f0f4f8;
+  position: sticky;
+  top: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.pool-col {
+  min-width: 180px;
+  font-weight: 600;
+}
+
+.pool-col a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.pool-col a:hover {
+  text-decoration: underline;
+}
+
+.slots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.closed {
+  color: var(--closed);
+  opacity: 0.7;
+}
+
+.badge-error {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.68rem;
+  color: var(--closed);
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  padding: 0 0.3rem;
+  vertical-align: middle;
+}
+
+footer {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
