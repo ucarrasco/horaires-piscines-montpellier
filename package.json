@@ -1,9 +1,9 @@
 {
-  "name": "horaires-piscine-vibe",
+  "name": "montpellier-pool-schedules",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Horaires unifiés des piscines de Montpellier",
+  "description": "Unified opening hours for the public swimming pools of Montpellier",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

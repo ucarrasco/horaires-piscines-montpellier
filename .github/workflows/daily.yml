@@ -1,20 +1,20 @@
-name: Mise à jour horaires + déploiement
+name: Refresh schedules + deploy
 
 on:
   schedule:
-    - cron: "0 4 * * *" # tous les jours à 04:00 UTC (~06:00 Montpellier)
-  workflow_dispatch: {} # déclenchement manuel
+    - cron: "0 4 * * *" # every day at 04:00 UTC (~06:00 in Montpellier)
+  workflow_dispatch: {} # manual trigger
   push:
     branches: [main]
 
-# Un seul déploiement à la fois
+# One deployment at a time
 concurrency:
   group: pages
   cancel-in-progress: true
 
 permissions:
-  contents: write # pour committer le JSON régénéré
-  pages: write # pour déployer sur GitHub Pages
+  contents: write # to commit the regenerated JSON
+  pages: write # to deploy to GitHub Pages
   id-token: write
 
 jobs:
@@ -33,24 +33,24 @@ jobs:
 
       - run: npm ci
 
-      # Régénère les horaires (sauf sur un simple push, pour économiser l'API).
-      - name: Scrape des horaires
+      # Regenerate the schedules (skipped on a plain push, to save API calls).
+      - name: Scrape schedules
         if: github.event_name != 'push'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: npm run scrape
 
-      - name: Commit des horaires si modifiés
+      - name: Commit schedules if changed
         if: github.event_name != 'push'
         run: |
-          if [ -n "$(git status --porcelain public/data/horaires.json)" ]; then
+          if [ -n "$(git status --porcelain public/data/schedules.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add public/data/horaires.json
-            git commit -m "chore: maj horaires piscines [skip ci]"
+            git add public/data/schedules.json
+            git commit -m "chore: update pool schedules [skip ci]"
             git push
           else
-            echo "Aucun changement d'horaires."
+            echo "No schedule changes."
           fi
 
       - run: npm run build

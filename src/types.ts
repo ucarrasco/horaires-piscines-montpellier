@@ -1,5 +1,7 @@
-// Modèle de données partagé entre le job de scraping et le frontend.
-// C'est le format du fichier public/data/horaires.json.
+// Data model shared between the scraping job and the frontend.
+// This is the shape of public/data/schedules.json.
+//
+// Note: user-facing labels stay in French, since the site itself is in French.
 
 export const DAY_KEYS = [
   "monday",
@@ -23,71 +25,67 @@ export const DAY_LABELS: Record<DayKey, string> = {
   sunday: "Dimanche",
 };
 
-export const PERIOD_KEYS = [
-  "scolaire",
-  "petites_vacances",
-  "vacances_ete",
-] as const;
+export const PERIOD_KEYS = ["term", "short_holidays", "summer_holidays"] as const;
 
 export type PeriodKey = (typeof PERIOD_KEYS)[number];
 
 export const PERIOD_LABELS: Record<PeriodKey, string> = {
-  scolaire: "Période scolaire",
-  petites_vacances: "Petites vacances",
-  vacances_ete: "Vacances d'été",
+  term: "Période scolaire",
+  short_holidays: "Petites vacances",
+  summer_holidays: "Vacances d'été",
 };
 
-/** Un créneau d'ouverture, ex: 12:00–13:45 "Nage libre". */
+/** An opening slot, e.g. 12:00–13:45 "Nage libre". */
 export interface Slot {
   start: string; // "HH:MM"
   end: string; // "HH:MM"
-  label: string | null; // ex: "Public", "Couloirs", "Aquagym"... ou null
+  label: string | null; // e.g. "Public", "Couloirs", "Aquagym"... or null
 }
 
-/** Une grille hebdomadaire (créneaux par jour de la semaine). */
+/** A weekly schedule (slots per day of the week). */
 export type WeeklySchedule = Record<DayKey, Slot[]>;
 
-/** Fermeture exceptionnelle ou événement daté (travaux, jour férié...). */
+/** A dated closure or event (maintenance, public holiday...). */
 export interface DatedEvent {
   start: string; // "YYYY-MM-DD"
-  end: string | null; // "YYYY-MM-DD" inclus, ou null si un seul jour
+  end: string | null; // "YYYY-MM-DD" inclusive, or null for a single day
   description: string;
-  /** true si la piscine est fermée sur cette période. */
+  /** true when the pool is closed over that period. */
   closed: boolean;
-  /** Horaires exceptionnels qui remplacent la grille hebdomadaire, ou null. */
+  /** Exceptional opening hours replacing the weekly schedule, or null. */
   slots: Slot[] | null;
 }
 
 /**
- * Dates de vacances explicitement annoncées sur la page d'une piscine
- * (encart "infos du moment"). Priment sur le calendrier officiel zone C.
+ * Holiday dates explicitly announced on a pool's own page ("infos du moment"
+ * box). These take precedence over the official zone C calendar.
  */
 export interface PeriodOverride {
   period: PeriodKey;
   start: string; // "YYYY-MM-DD"
-  end: string; // "YYYY-MM-DD" inclus
+  end: string; // "YYYY-MM-DD" inclusive
 }
 
-/** Ce que le scraper (LLM) extrait d'une page. */
+/** What the scraper (LLM) extracts from a page. */
 export interface PoolSchedule {
-  /** Une grille hebdomadaire par type de période. */
+  /** One weekly schedule per period type. */
   periods: Record<PeriodKey, WeeklySchedule>;
   events: DatedEvent[];
   periodOverrides: PeriodOverride[];
-  /** Autre info utile (tarifs, remarques), ou null. */
+  /** Any other useful information (pricing, remarks), or null. */
   notes: string | null;
 }
 
-/** Un jour concret de la fenêtre, avec ses horaires réels calculés. */
+/** A concrete day of the window, with its resolved opening hours. */
 export interface ResolvedDay {
   date: string; // "YYYY-MM-DD"
   day: DayKey;
   period: PeriodKey;
-  slots: Slot[]; // grille de la période, vide si fermé
-  closed: boolean; // fermé par un événement daté
-  /** true si les créneaux viennent d'un événement et non de la grille. */
+  slots: Slot[]; // the period's schedule, empty when closed
+  closed: boolean; // closed by a dated event
+  /** true when the slots come from an event rather than the weekly schedule. */
   exceptional: boolean;
-  events: string[]; // descriptions des événements ce jour
+  events: string[]; // descriptions of that day's events
 }
 
 export interface PoolResult extends PoolSchedule {
@@ -95,26 +93,26 @@ export interface PoolResult extends PoolSchedule {
   name: string;
   url: string;
   status: "ok" | "error";
-  /** Message d'erreur si status === "error". */
+  /** Error message when status === "error". */
   error?: string;
-  /** Horaires réels jour par jour sur la fenêtre (calculé, non extrait). */
+  /** Actual day-by-day hours over the window (computed, not extracted). */
   resolved: ResolvedDay[];
 }
 
-/** Une plage de période qui touche la fenêtre (calendrier officiel zone C). */
+/** A period span overlapping the window (official zone C calendar). */
 export interface PeriodSpan {
   period: PeriodKey;
-  label: string | null; // ex "Vacances de la Toussaint", null pour la période scolaire
-  start: string; // "YYYY-MM-DD" (clampé à la fenêtre)
-  end: string; // "YYYY-MM-DD" inclus (clampé à la fenêtre)
+  label: string | null; // e.g. "Vacances de la Toussaint", null during term time
+  start: string; // "YYYY-MM-DD" (clamped to the window)
+  end: string; // "YYYY-MM-DD" inclusive (clamped to the window)
 }
 
-export interface HorairesData {
-  /** Date ISO de génération du fichier. */
+export interface SchedulesData {
+  /** ISO timestamp of when the file was generated. */
   generatedAt: string;
-  /** Fenêtre ±7 jours autour de la date de génération. */
+  /** ±7 day window around the generation date. */
   window: { start: string; end: string; dates: string[] };
-  /** Périodes scolaires (zone C) présentes dans la fenêtre. */
+  /** School periods (zone C) present in the window. */
   periodsInWindow: PeriodSpan[];
   pools: PoolResult[];
 }

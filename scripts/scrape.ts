@@ -9,34 +9,35 @@ import { POOLS, type PoolConfig } from "./pools.ts";
 import {
   DAY_KEYS,
   PERIOD_KEYS,
-  type HorairesData,
   type PeriodKey,
   type PeriodSpan,
   type PoolResult,
   type PoolSchedule,
   type ResolvedDay,
+  type SchedulesData,
   type WeeklySchedule,
 } from "../src/types.ts";
 import { fetchSchoolCalendar, type SchoolCalendar } from "./calendar.ts";
 import { addDays, dateRange, dayKeyOf, todayInParis } from "./dates.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUTPUT_PATH = join(__dirname, "..", "public", "data", "horaires.json");
+const OUTPUT_PATH = join(__dirname, "..", "public", "data", "schedules.json");
 
 const MODEL = "claude-opus-4-8";
 const MAX_HTML_CHARS = 40_000;
-const WINDOW_RADIUS = 7; // jours de part et d'autre de la date du jour
+const WINDOW_RADIUS = 7; // days on either side of today
 
-// --- Schéma d'extraction (via forced tool use) ----------------------------
+// --- Extraction schema (via forced tool use) ------------------------------
 
 const SLOT_SCHEMA = {
   type: "object",
   properties: {
-    start: { type: "string", description: 'Heure de début "HH:MM"' },
-    end: { type: "string", description: 'Heure de fin "HH:MM"' },
+    start: { type: "string", description: 'Start time "HH:MM"' },
+    end: { type: "string", description: 'End time "HH:MM"' },
     label: {
       type: ["string", "null"],
-      description: 'Type de créneau (ex: "Public", "Couloirs") ou null',
+      description:
+        'Slot type as written on the page (e.g. "Public", "Couloirs"), or null',
     },
   },
   required: ["start", "end", "label"],
@@ -53,15 +54,15 @@ const WEEKLY_SCHEMA = {
 } as const;
 
 const EXTRACTION_TOOL = {
-  name: "record_horaires",
-  description: "Enregistre les horaires extraits d'une piscine.",
+  name: "record_schedules",
+  description: "Records the opening hours extracted for a swimming pool.",
   input_schema: {
     type: "object" as const,
     properties: {
       periods: {
         type: "object",
         description:
-          "Une grille hebdomadaire d'ouverture au public par type de période. Si une période n'est pas précisée sur la page, réutilise la grille scolaire.",
+          "One weekly public-opening schedule per period type. If a period is not specified on the page, reuse the term-time schedule.",
         properties: Object.fromEntries(
           PERIOD_KEYS.map((k) => [k, WEEKLY_SCHEMA]),
         ),
@@ -71,24 +72,25 @@ const EXTRACTION_TOOL = {
       events: {
         type: "array",
         description:
-          "Fermetures exceptionnelles, travaux, jours fériés ou événements datés. Vide si aucun.",
+          "Exceptional closures, maintenance, public holidays or dated events. Empty if none.",
         items: {
           type: "object",
           properties: {
-            start: { type: "string", description: 'Date de début "YYYY-MM-DD"' },
+            start: { type: "string", description: 'Start date "YYYY-MM-DD"' },
             end: {
               type: ["string", "null"],
-              description: 'Date de fin "YYYY-MM-DD" incluse, ou null si un seul jour',
+              description:
+                'End date "YYYY-MM-DD" inclusive, or null for a single day',
             },
             description: { type: "string" },
             closed: {
               type: "boolean",
-              description: "true si la piscine est fermée sur cette période",
+              description: "true if the pool is closed over that period",
             },
             slots: {
               type: ["array", "null"],
               description:
-                "Horaires exceptionnels annoncés pour cette date (remplacent la grille hebdomadaire). null si la page n'en donne pas ou si closed=true.",
+                "Exceptional hours announced for that date (they replace the weekly schedule). null when the page gives none or when closed=true.",
               items: SLOT_SCHEMA,
             },
           },
@@ -99,13 +101,13 @@ const EXTRACTION_TOOL = {
       periodOverrides: {
         type: "array",
         description:
-          "Dates de vacances explicitement annoncées sur CETTE page (encart infos du moment). Vide si la page ne donne pas de dates.",
+          "Holiday dates explicitly announced on THIS page (current-info box). Empty if the page gives no dates.",
         items: {
           type: "object",
           properties: {
             period: { type: "string", enum: [...PERIOD_KEYS] },
             start: { type: "string", description: '"YYYY-MM-DD"' },
-            end: { type: "string", description: '"YYYY-MM-DD" incluse' },
+            end: { type: "string", description: '"YYYY-MM-DD" inclusive' },
           },
           required: ["period", "start", "end"],
           additionalProperties: false,
@@ -113,7 +115,7 @@ const EXTRACTION_TOOL = {
       },
       notes: {
         type: ["string", "null"],
-        description: "Autre info utile, sinon null",
+        description: "Any other useful information, otherwise null",
       },
     },
     required: ["periods", "events", "periodOverrides", "notes"],
@@ -121,7 +123,7 @@ const EXTRACTION_TOOL = {
   },
 };
 
-// --- Nettoyage HTML -------------------------------------------------------
+// --- HTML cleanup ---------------------------------------------------------
 
 function htmlToText(html: string): string {
   return html
@@ -141,22 +143,26 @@ function htmlToText(html: string): string {
     .slice(0, MAX_HTML_CHARS);
 }
 
-// --- Extraction d'une piscine ---------------------------------------------
+// --- Extracting a single pool ---------------------------------------------
 
-const SYSTEM_PROMPT = `Tu extrais les horaires d'ouverture au public d'une piscine à partir du texte d'une page web, puis tu appelles l'outil record_horaires.
-Consignes :
-- Ne renseigne que les créneaux d'ouverture AU PUBLIC (nage libre / grand public). Ignore les cours, clubs et scolaires sauf s'ils sont le seul accès mentionné (dans ce cas, indique-le dans le label).
-- Renseigne trois grilles hebdomadaires : "scolaire" (période scolaire), "petites_vacances" (Toussaint, Noël, hiver, printemps) et "vacances_ete" (été). Si la page ne distingue pas les périodes, réutilise la même grille pour les trois.
-- Si un jour n'a aucun créneau (fermé), renvoie un tableau vide pour ce jour.
-- Mets dans "events" toute fermeture exceptionnelle, travaux, jour férié ou horaire spécial daté, avec closed=true si la piscine est fermée.
-- Si un événement annonce des horaires exceptionnels (ex "le 15 août : ouverture 9h00-13h15 et 15h00-19h15"), renseigne aussi son "slots" avec ces créneaux : ils remplaceront la grille hebdomadaire ce jour-là. Ne te contente pas de les décrire dans "description".
-- Utilise le format "HH:MM" sur deux chiffres pour les heures (ex "09:00", pas "9:00").
-- Si l'encart "informations du moment" donne des DATES précises de vacances (ex "vacances du 20 au 30 octobre"), reporte-les dans "periodOverrides" : elles priment sur le calendrier officiel.
-- Convertis toutes les dates au format "YYYY-MM-DD" en utilisant l'année courante fournie.
-- N'invente jamais d'horaires ni de dates : en cas d'absence ou d'ambiguïté, laisse vide et ajoute une note.`;
+// The pages are in French, hence the French examples quoted below.
+const SYSTEM_PROMPT = `You extract a swimming pool's public opening hours from the text of a web page, then you call the record_schedules tool.
+Instructions:
+- Only record slots open TO THE PUBLIC ("nage libre" / "grand public"). Ignore lessons, clubs and school groups unless they are the only access mentioned (in that case, say so in the label).
+- Fill in three weekly schedules: "term" (période scolaire), "short_holidays" (Toussaint, Noël, hiver, printemps) and "summer_holidays" (été). If the page does not distinguish periods, reuse the same schedule for all three.
+- If a day has no slot (closed), return an empty array for that day.
+- Put every exceptional closure, maintenance period, public holiday or dated special opening in "events", with closed=true when the pool is closed.
+- When an event announces exceptional hours (e.g. "le 15 août : ouverture 9h00-13h15 et 15h00-19h15"), also fill its "slots" with those slots: they will replace the weekly schedule for that day. Do not just describe them in "description".
+- Use the two-digit "HH:MM" format for times (e.g. "09:00", not "9:00").
+- If the current-info box gives precise holiday DATES (e.g. "vacances du 20 au 30 octobre"), report them in "periodOverrides": they take precedence over the official calendar.
+- Convert every date to the "YYYY-MM-DD" format, using the current year provided.
+- Never invent hours or dates: when something is missing or ambiguous, leave it empty and add a note.
+- Labels and descriptions are shown as-is on a French website: keep them in French, as written on the page.`;
 
 function emptyWeekly(): WeeklySchedule {
-  return Object.fromEntries(DAY_KEYS.map((k) => [k, []])) as unknown as WeeklySchedule;
+  return Object.fromEntries(
+    DAY_KEYS.map((k) => [k, []]),
+  ) as unknown as WeeklySchedule;
 }
 
 function emptySchedule(): PoolSchedule {
@@ -181,14 +187,14 @@ async function extractPool(
     return {
       ...base,
       status: "error",
-      error: "URL non renseignée dans scripts/pools.ts",
+      error: "Missing url in scripts/pools.ts",
       ...emptySchedule(),
     };
   }
 
   try {
     const res = await fetch(pool.url, {
-      headers: { "User-Agent": "horaires-piscine-bot/1.0" },
+      headers: { "User-Agent": "pool-schedules-bot/1.0" },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const text = htmlToText(await res.text());
@@ -202,14 +208,14 @@ async function extractPool(
       messages: [
         {
           role: "user",
-          content: `Piscine : ${pool.name}\nDate du jour : ${today}\n\nContenu de la page :\n${text}`,
+          content: `Pool: ${pool.name}\nToday's date: ${today}\n\nPage content:\n${text}`,
         },
       ],
     });
 
     const toolUse = message.content.find((b) => b.type === "tool_use");
     if (!toolUse || toolUse.type !== "tool_use") {
-      throw new Error("Aucun appel d'outil dans la réponse");
+      throw new Error("No tool call in the response");
     }
     const parsed = toolUse.input as PoolSchedule;
 
@@ -224,7 +230,7 @@ async function extractPool(
   }
 }
 
-// --- Résolution des horaires réels sur la fenêtre -------------------------
+// --- Resolving actual hours over the window -------------------------------
 
 function resolveDays(
   sched: PoolSchedule,
@@ -244,7 +250,9 @@ function resolveDays(
       (e) => e.start <= date && date <= (e.end ?? e.start),
     );
     const closed = dayEvents.some((e) => e.closed);
-    const special = dayEvents.find((e) => !e.closed && e.slots && e.slots.length > 0);
+    const special = dayEvents.find(
+      (e) => !e.closed && e.slots && e.slots.length > 0,
+    );
     const exceptional = !closed && special !== undefined;
     const slots = closed
       ? []
@@ -264,7 +272,7 @@ function resolveDays(
   });
 }
 
-/** Plages de période officielle (zone C) qui couvrent la fenêtre. */
+/** Official period spans (zone C) covering the window. */
 function computePeriodsInWindow(
   dates: string[],
   calendar: SchoolCalendar,
@@ -285,18 +293,18 @@ function computePeriodsInWindow(
 // --- Main -----------------------------------------------------------------
 
 async function main() {
-  // Charge .env s'il existe (dev local). En CI la clé vient d'un secret.
+  // Load .env when present (local dev). On CI the key comes from a secret.
   const envPath = join(__dirname, "..", ".env");
   if (existsSync(envPath)) process.loadEnvFile(envPath);
 
   if (!process.env.ANTHROPIC_API_KEY) {
     console.error(
-      "❌ ANTHROPIC_API_KEY manquante. Fais: export ANTHROPIC_API_KEY=sk-ant-...",
+      "❌ Missing ANTHROPIC_API_KEY. Run: export ANTHROPIC_API_KEY=sk-ant-...",
     );
     process.exit(1);
   }
 
-  const client = new Anthropic(); // lit ANTHROPIC_API_KEY
+  const client = new Anthropic(); // reads ANTHROPIC_API_KEY
 
   const today = todayInParis();
   const windowStart = addDays(today, -WINDOW_RADIUS);
@@ -304,11 +312,11 @@ async function main() {
   const dates = dateRange(windowStart, windowEnd);
   const calendar = await fetchSchoolCalendar(windowStart, windowEnd);
 
-  // Mode dry-run : `npm run scrape -- <url> [<url> ...]`
-  // -> teste ces URLs, imprime le JSON résolu, N'ÉCRIT PAS le fichier.
+  // Dry-run mode: `npm run scrape -- <url> [<url> ...]`
+  // -> tests those URLs, prints the resolved JSON, DOES NOT WRITE the file.
   const urlArgs = process.argv.slice(2).filter((a) => a.startsWith("http"));
   if (urlArgs.length > 0) {
-    console.log(`🔎 Dry-run sur ${urlArgs.length} URL(s) (aucun fichier écrit)\n`);
+    console.log(`🔎 Dry run on ${urlArgs.length} URL(s) (no file written)\n`);
     for (const url of urlArgs) {
       const extracted = await extractPool(
         client,
@@ -324,16 +332,19 @@ async function main() {
     return;
   }
 
-  console.log(`Extraction de ${POOLS.length} piscine(s)...`);
+  console.log(`Extracting ${POOLS.length} pool(s)...`);
   const pools: PoolResult[] = [];
   for (const pool of POOLS) {
     process.stdout.write(`  - ${pool.name}... `);
     const extracted = await extractPool(client, pool, today);
-    console.log(extracted.status === "ok" ? "ok" : `erreur (${extracted.error})`);
-    pools.push({ ...extracted, resolved: resolveDays(extracted, dates, calendar) });
+    console.log(extracted.status === "ok" ? "ok" : `error (${extracted.error})`);
+    pools.push({
+      ...extracted,
+      resolved: resolveDays(extracted, dates, calendar),
+    });
   }
 
-  const data: HorairesData = {
+  const data: SchedulesData = {
     generatedAt: new Date().toISOString(),
     window: { start: windowStart, end: windowEnd, dates },
     periodsInWindow: computePeriodsInWindow(dates, calendar),
@@ -344,7 +355,7 @@ async function main() {
   await writeFile(OUTPUT_PATH, JSON.stringify(data, null, 2) + "\n", "utf8");
 
   const okCount = pools.filter((p) => p.status === "ok").length;
-  console.log(`\nÉcrit ${OUTPUT_PATH} (${okCount}/${pools.length} ok)`);
+  console.log(`\nWrote ${OUTPUT_PATH} (${okCount}/${pools.length} ok)`);
 }
 
 main().catch((err) => {

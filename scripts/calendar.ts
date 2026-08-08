@@ -1,22 +1,22 @@
 import { type PeriodKey } from "../src/types.ts";
 import { parisDateOf } from "./dates.ts";
 
-// Calendrier scolaire officiel (zone C, dont Montpellier), via l'open data
-// education.gouv.fr. Sert à savoir, pour une date donnée, si on est en période
-// scolaire, en petites vacances ou en vacances d'été.
+// Official school calendar (zone C, which covers Montpellier), from the
+// education.gouv.fr open data. Used to tell, for a given date, whether we are
+// in term time, in short holidays or in the summer holidays.
 
 const DATASET =
   "https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-calendrier-scolaire/records";
 
 interface Vacation {
-  start: string; // "YYYY-MM-DD" inclus
-  end: string; // "YYYY-MM-DD" EXCLUS (jour de la rentrée)
-  period: PeriodKey; // petites_vacances | vacances_ete
-  label: string; // ex "Vacances de la Toussaint"
+  start: string; // "YYYY-MM-DD" inclusive
+  end: string; // "YYYY-MM-DD" EXCLUSIVE (first day back at school)
+  period: PeriodKey; // short_holidays | summer_holidays
+  label: string; // e.g. "Vacances de la Toussaint"
 }
 
 export interface SchoolCalendar {
-  /** Période officielle d'une date "YYYY-MM-DD". */
+  /** Official period of a "YYYY-MM-DD" date. */
   periodFor(iso: string): { period: PeriodKey; label: string | null };
 }
 
@@ -29,9 +29,9 @@ function isSummer(description: string): boolean {
 }
 
 /**
- * Récupère les vacances zone C recouvrant [windowStart, windowEnd].
- * En cas d'échec réseau, renvoie un calendrier qui considère tout en période
- * scolaire (dégradation non bloquante) et le signale via `onWarn`.
+ * Fetches the zone C holidays overlapping [windowStart, windowEnd].
+ * On network failure, returns a calendar that treats everything as term time
+ * (non-blocking degradation) and reports it through `onWarn`.
  */
 export async function fetchSchoolCalendar(
   windowStart: string,
@@ -44,7 +44,7 @@ export async function fetchSchoolCalendar(
   let vacations: Vacation[] = [];
   try {
     const res = await fetch(url, {
-      headers: { "User-Agent": "horaires-piscine-bot/1.0" },
+      headers: { "User-Agent": "pool-schedules-bot/1.0" },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = (await res.json()) as {
@@ -61,14 +61,14 @@ export async function fetchSchoolCalendar(
       .map((r) => ({
         start: parisDateOf(r.start_date),
         end: parisDateOf(r.end_date),
-        period: isSummer(r.description) ? "vacances_ete" : "petites_vacances",
+        period: isSummer(r.description) ? "summer_holidays" : "short_holidays",
         label: r.description,
       }));
   } catch (err) {
     onWarn(
-      `Calendrier scolaire indisponible (${
+      `School calendar unavailable (${
         err instanceof Error ? err.message : String(err)
-      }) : tout est traité comme période scolaire.`,
+      }): everything is treated as term time.`,
     );
   }
 
@@ -77,7 +77,7 @@ export async function fetchSchoolCalendar(
       const v = vacations.find((x) => x.start <= iso && iso < x.end);
       return v
         ? { period: v.period, label: v.label }
-        : { period: "scolaire", label: null };
+        : { period: "term", label: null };
     },
   };
 }

@@ -84,17 +84,17 @@ header h1 {
   white-space: nowrap;
 }
 
-.period-scolaire {
+.period-term {
   background: #e7edf3;
   color: #45586a;
 }
 
-.period-petites_vacances {
+.period-short_holidays {
   background: #fdefd6;
   color: #8a5a12;
 }
 
-.period-vacances_ete {
+.period-summer_holidays {
   background: #dcf1e3;
   color: #1e6b3c;
 }

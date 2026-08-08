@@ -1,79 +1,81 @@
-# Horaires des piscines de Montpellier
+# Montpellier swimming pool schedules
 
-Site simple qui affiche, dans un tableau unifié, les horaires des piscines de
-Montpellier. Un job quotidien (GitHub Actions) va lire chaque page de piscine,
-extrait les horaires et les fermetures exceptionnelles avec Claude, et stocke le
-résultat dans un fichier JSON statique lu par le frontend.
+A simple site showing the opening hours of every public swimming pool in
+Montpellier, in a single unified view. A daily job (GitHub Actions) reads each
+pool's page, extracts the opening hours and exceptional closures with Claude, and
+stores the result in a static JSON file read by the frontend.
+
+The site itself is in French; the codebase is in English.
 
 ```
-Cron quotidien (GitHub Actions)
-  └─ scripts/scrape.ts : fetch HTML → Claude (extraction JSON) → public/data/horaires.json
+Daily cron (GitHub Actions)
+  └─ scripts/scrape.ts : fetch HTML → Claude (JSON extraction) → public/data/schedules.json
 Frontend (Vite + React)
-  └─ lit public/data/horaires.json → tableau
-Hébergement : GitHub Pages
+  └─ reads public/data/schedules.json → agenda + per-pool tables
+Hosting: GitHub Pages
 ```
 
-Pas de base de données : les données tiennent dans un seul fichier JSON versionné.
+No database: the data fits in a single versioned JSON file.
 
-## Prérequis
+## Requirements
 
 - Node 20+
-- Une clé API Anthropic (`ANTHROPIC_API_KEY`)
+- An Anthropic API key (`ANTHROPIC_API_KEY`)
 
-## Démarrage local
+## Running locally
 
 ```bash
 npm install
 
-# Lancer le site (utilise public/data/horaires.json existant)
+# Serve the site (uses the existing public/data/schedules.json)
 npm run dev
 
-# Régénérer les horaires (nécessite la clé API)
+# Regenerate the schedules (requires the API key)
 export ANTHROPIC_API_KEY=sk-ant-...
 npm run scrape
+
+# Dry run on one or more URLs: prints the resolved JSON, writes nothing
+npm run scrape -- https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot
 ```
 
-## À faire avant la première vraie génération
+The list of pools lives in [`scripts/pools.ts`](scripts/pools.ts) — add an entry
+with its `id`, display `name` and the URL of its page.
 
-1. **Complète la liste des piscines** dans [`scripts/pools.ts`](scripts/pools.ts) :
-   renseigne l'`url` de la page horaires de chaque piscine (et ajuste les noms).
-2. Lance `npm run scrape` en local pour vérifier le résultat.
-3. Ouvre `npm run dev` pour visualiser le tableau.
+## Deployment (GitHub Pages)
 
-## Déploiement (GitHub Pages)
+1. Push the repo to GitHub.
+2. Under **Settings → Secrets and variables → Actions**, add the
+   `ANTHROPIC_API_KEY` secret.
+3. Under **Settings → Pages**, pick **Source: GitHub Actions**.
+4. The [`.github/workflows/daily.yml`](.github/workflows/daily.yml) workflow:
+   - runs every day at 04:00 UTC (and manually via *Run workflow*),
+   - regenerates `public/data/schedules.json` and commits it when it changed,
+   - builds the site and deploys it to Pages.
 
-1. Pousse le repo sur GitHub.
-2. Dans **Settings → Secrets and variables → Actions**, ajoute le secret
-   `ANTHROPIC_API_KEY`.
-3. Dans **Settings → Pages**, choisis **Source : GitHub Actions**.
-4. Le workflow [`.github/workflows/daily.yml`](.github/workflows/daily.yml) :
-   - tourne chaque jour à 04:00 UTC (et manuellement via *Run workflow*),
-   - régénère `public/data/horaires.json` et le committe s'il a changé,
-   - build le site et le déploie sur Pages.
+## JSON shape
 
-## Structure du JSON
+See [`src/types.ts`](src/types.ts) for the exact types.
 
-Voir [`src/types.ts`](src/types.ts) pour le type exact.
+For each pool, the LLM extracts **three weekly schedules** (`term`,
+`short_holidays`, `summer_holidays`), the **dated closures and events**
+(`events`) and any **holiday dates announced on the page itself**
+(`periodOverrides`).
 
-Le LLM extrait, pour chaque piscine, **trois grilles hebdomadaires** (`scolaire`,
-`petites_vacances`, `vacances_ete`), les **fermetures/événements datés** (`events`)
-et d'éventuelles **dates de vacances annoncées sur la page** (`periodOverrides`).
+The scraper then deterministically computes a **±7 day window** around the
+generation date:
 
-Le scraper calcule ensuite, de façon déterministe, une **fenêtre de ±7 jours**
-autour de la date de génération :
-
-- `periodsInWindow` : les périodes scolaires (zone C) qui tombent dans la fenêtre,
-  d'après le [calendrier officiel](https://data.education.gouv.fr) (les
-  `periodOverrides` d'une piscine priment sur ce calendrier pour cette piscine) ;
-- `pools[].resolved` : les **horaires réels jour par jour**, en croisant pour
-  chaque date sa période et ses éventuelles fermetures.
+- `periodsInWindow`: the school periods (zone C) falling inside the window,
+  according to the [official calendar](https://data.education.gouv.fr) (a pool's
+  own `periodOverrides` take precedence over that calendar, for that pool only);
+- `pools[].resolved`: the **actual day-by-day hours**, crossing each date with
+  its period and any closures or exceptional hours.
 
 ```json
 {
   "generatedAt": "2026-08-08T04:00:00.000Z",
   "window": { "start": "2026-08-01", "end": "2026-08-15", "dates": ["..."] },
   "periodsInWindow": [
-    { "period": "vacances_ete", "label": "Vacances d'Été", "start": "2026-08-01", "end": "2026-08-15" }
+    { "period": "summer_holidays", "label": "Vacances d'Été", "start": "2026-08-01", "end": "2026-08-15" }
   ],
   "pools": [
     {
@@ -81,7 +83,7 @@ autour de la date de génération :
       "name": "Piscine Neptune",
       "url": "https://...",
       "status": "ok",
-      "periods": { "scolaire": { "monday": [], "...": [] }, "petites_vacances": {}, "vacances_ete": {} },
+      "periods": { "term": { "monday": [], "...": [] }, "short_holidays": {}, "summer_holidays": {} },
       "events": [
         { "start": "2026-08-15", "end": null, "description": "Assomption : horaires spéciaux",
           "closed": false, "slots": [{ "start": "09:00", "end": "13:15", "label": "Public" }] }
@@ -89,7 +91,7 @@ autour de la date de génération :
       "periodOverrides": [],
       "notes": null,
       "resolved": [
-        { "date": "2026-08-08", "day": "saturday", "period": "vacances_ete",
+        { "date": "2026-08-08", "day": "saturday", "period": "summer_holidays",
           "slots": [{ "start": "14:00", "end": "20:00", "label": "Public" }],
           "closed": false, "exceptional": false, "events": [] }
       ]
@@ -98,8 +100,11 @@ autour de la date de génération :
 }
 ```
 
-## Coût
+Note that `label`, `description` and `notes` hold text copied from the source
+pages, so they are in French — they are displayed as-is on the site.
 
-L'extraction utilise le modèle `claude-opus-4-8`, une requête par piscine et par
-jour. Pour ~5 piscines, le coût quotidien est de l'ordre de quelques centimes.
-Tu peux passer à `claude-sonnet-5` dans `scripts/scrape.ts` pour réduire le coût.
+## Cost
+
+Extraction uses the `claude-opus-4-8` model, one request per pool per day. For
+~15 pools the daily cost is on the order of a few cents. Switch to
+`claude-sonnet-5` in [`scripts/scrape.ts`](scripts/scrape.ts) to reduce it.

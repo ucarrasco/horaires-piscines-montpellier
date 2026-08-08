@@ -1,11 +1,11 @@
 import { DAY_KEYS, type DayKey } from "../src/types.ts";
 
-// Tout est manipulé en dates "YYYY-MM-DD" interprétées dans le fuseau de Paris,
-// pour rester stable quel que soit le fuseau du runner (CI = UTC).
+// Everything is handled as "YYYY-MM-DD" dates interpreted in the Paris time
+// zone, so results stay stable whatever the runner's zone is (CI runs in UTC).
 
 const PARIS = "Europe/Paris";
 
-/** Date du jour "YYYY-MM-DD" à Paris. */
+/** Today's date as "YYYY-MM-DD" in Paris. */
 export function todayInParis(): string {
   return new Intl.DateTimeFormat("en-CA", {
     timeZone: PARIS,
@@ -15,20 +15,20 @@ export function todayInParis(): string {
   }).format(new Date());
 }
 
-/** Décale une date "YYYY-MM-DD" de n jours (n peut être négatif). */
+/** Shifts a "YYYY-MM-DD" date by n days (n may be negative). */
 export function addDays(iso: string, n: number): string {
   const d = new Date(`${iso}T12:00:00Z`);
   d.setUTCDate(d.getUTCDate() + n);
   return d.toISOString().slice(0, 10);
 }
 
-/** Jour de la semaine d'une date "YYYY-MM-DD". */
+/** Day of the week of a "YYYY-MM-DD" date. */
 export function dayKeyOf(iso: string): DayKey {
-  const js = new Date(`${iso}T12:00:00Z`).getUTCDay(); // 0 = dimanche
+  const js = new Date(`${iso}T12:00:00Z`).getUTCDay(); // 0 = Sunday
   return DAY_KEYS[(js + 6) % 7];
 }
 
-/** Liste inclusive des dates de `start` à `end`. */
+/** Inclusive list of dates from `start` to `end`. */
 export function dateRange(start: string, end: string): string[] {
   const out: string[] = [];
   for (let d = start; d <= end; d = addDays(d, 1)) out.push(d);
@@ -36,8 +36,8 @@ export function dateRange(start: string, end: string): string[] {
 }
 
 /**
- * Convertit un instant ISO (renvoyé par l'API gouv, ex "2025-10-18T22:00:00+00:00")
- * en date calendaire "YYYY-MM-DD" telle que vue à Paris.
+ * Converts an ISO instant (as returned by the government API, e.g.
+ * "2025-10-18T22:00:00+00:00") to the calendar date "YYYY-MM-DD" as seen in Paris.
  */
 export function parisDateOf(instant: string): string {
   return new Intl.DateTimeFormat("en-CA", {

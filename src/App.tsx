@@ -2,23 +2,23 @@ import { useEffect, useMemo, useState, type DragEvent } from "react";
 import {
   DAY_LABELS,
   PERIOD_LABELS,
-  type HorairesData,
+  type SchedulesData,
   type PeriodSpan,
   type PoolResult,
   type ResolvedDay,
 } from "./types.ts";
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/horaires.json`;
+const DATA_URL = `${import.meta.env.BASE_URL}data/schedules.json`;
 
 export default function App() {
-  const [data, setData] = useState<HorairesData | null>(null);
+  const [data, setData] = useState<SchedulesData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(DATA_URL)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json() as Promise<HorairesData>;
+        return r.json() as Promise<SchedulesData>;
       })
       .then(setData)
       .catch((e) => setError(e instanceof Error ? e.message : String(e)));
@@ -58,7 +58,7 @@ export default function App() {
 }
 
 const HOUR_HEIGHT = 52; // px
-const BODY_PADDING = 30; // px de respiration au-dessus/en-dessous de la grille
+const BODY_PADDING = 30; // px of breathing room above/below the grid
 const DEFAULT_RANGE = [8, 22];
 
 function toMinutes(hhmm: string): number {
@@ -132,17 +132,19 @@ function loadPoolOrder(): string[] {
       return parsed;
     }
   } catch {
-    // localStorage indisponible ou JSON corrompu : on repart de l'ordre par défaut
+    // localStorage unavailable or corrupted JSON: fall back to the default order
   }
   return DEFAULT_POOL_ORDER;
 }
 
 /**
- * Ordre d'affichage des piscines, persisté dans localStorage.
- * L'ordre stocké est réconcilié avec les piscines réellement présentes dans les
- * données : les inconnues sont ignorées, les nouvelles ajoutées à la fin.
+ * Display order of the pools, persisted in localStorage.
+ * The stored order is reconciled with the pools actually present in the data:
+ * unknown ids are dropped, new pools are appended at the end.
  */
-function usePoolOrder(poolIds: string[]): [string[], (from: number, to: number) => void] {
+function usePoolOrder(
+  poolIds: string[],
+): [string[], (from: number, to: number) => void] {
   const [order, setOrder] = useState(loadPoolOrder);
   const key = poolIds.join(",");
 
@@ -155,7 +157,7 @@ function usePoolOrder(poolIds: string[]): [string[], (from: number, to: number) 
     try {
       localStorage.setItem(POOL_ORDER_KEY, JSON.stringify(ordered));
     } catch {
-      // stockage indisponible (mode privé, quota) : l'ordre reste en mémoire
+      // storage unavailable (private mode, quota): the order stays in memory only
     }
   }, [ordered]);
 
@@ -170,8 +172,8 @@ function usePoolOrder(poolIds: string[]): [string[], (from: number, to: number) 
 }
 
 /**
- * Réordonnancement des colonnes par drag & drop natif.
- * `dropIndex` est une position d'insertion (0..n), pas un index de colonne.
+ * Column reordering through native drag & drop.
+ * `dropIndex` is an insertion position (0..n), not a column index.
  */
 function useColumnDrag(
   poolIds: string[],
@@ -215,7 +217,7 @@ function useColumnDrag(
   };
 }
 
-function TodayAgenda({ data }: { data: HorairesData }) {
+function TodayAgenda({ data }: { data: SchedulesData }) {
   const nowMinutes = useNowMinutes();
   const today = data.window.dates.includes(todayInParis())
     ? todayInParis()
