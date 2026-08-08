@@ -62,6 +62,115 @@ header h1 {
   font-weight: 600;
 }
 
+.periods {
+  background: #eef5fb;
+  border: 1px solid #cfe0ef;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.periods ul,
+.closures ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.period-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.period-scolaire {
+  background: #e7edf3;
+  color: #45586a;
+}
+
+.period-petites_vacances {
+  background: #fdefd6;
+  color: #8a5a12;
+}
+
+.period-vacances_ete {
+  background: #dcf1e3;
+  color: #1e6b3c;
+}
+
+.pool-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.pool-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.pool-card h2 a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.days {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.day {
+  display: grid;
+  grid-template-columns: 9rem 1fr auto;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.day:last-child {
+  border-bottom: none;
+}
+
+.day.today {
+  background: #f2f8fb;
+  border-radius: 6px;
+  padding-inline: 0.4rem;
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--muted);
+}
+
+.day-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
+}
+
+.slot .label {
+  display: inline;
+  margin-left: 0.25rem;
+}
+
+.day-event {
+  color: #8a5a12;
+  font-size: 0.78rem;
+}
+
+.notes {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .table-wrap {
   overflow-x: auto;
   background: var(--card);

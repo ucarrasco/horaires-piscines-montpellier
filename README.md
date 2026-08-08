@@ -53,23 +53,43 @@ npm run scrape
 
 ## Structure du JSON
 
-Voir [`src/types.ts`](src/types.ts) pour le type exact. Extrait :
+Voir [`src/types.ts`](src/types.ts) pour le type exact.
+
+Le LLM extrait, pour chaque piscine, **trois grilles hebdomadaires** (`scolaire`,
+`petites_vacances`, `vacances_ete`), les **fermetures/événements datés** (`events`)
+et d'éventuelles **dates de vacances annoncées sur la page** (`periodOverrides`).
+
+Le scraper calcule ensuite, de façon déterministe, une **fenêtre de ±7 jours**
+autour de la date de génération :
+
+- `periodsInWindow` : les périodes scolaires (zone C) qui tombent dans la fenêtre,
+  d'après le [calendrier officiel](https://data.education.gouv.fr) (les
+  `periodOverrides` d'une piscine priment sur ce calendrier pour cette piscine) ;
+- `pools[].resolved` : les **horaires réels jour par jour**, en croisant pour
+  chaque date sa période et ses éventuelles fermetures.
 
 ```json
 {
-  "generatedAt": "2026-07-24T04:00:00.000Z",
+  "generatedAt": "2026-08-08T04:00:00.000Z",
+  "window": { "start": "2026-08-01", "end": "2026-08-15", "dates": ["..."] },
+  "periodsInWindow": [
+    { "period": "vacances_ete", "label": "Vacances d'Été", "start": "2026-08-01", "end": "2026-08-15" }
+  ],
   "pools": [
     {
-      "id": "olympique-antigone",
-      "name": "Piscine Olympique d'Antigone",
+      "id": "neptune",
+      "name": "Piscine Neptune",
       "url": "https://...",
       "status": "ok",
-      "days": {
-        "monday": [{ "start": "12:00", "end": "13:45", "label": "Public" }],
-        "...": []
-      },
-      "closures": ["Fermeture exceptionnelle le 15/08"],
-      "notes": null
+      "periods": { "scolaire": { "monday": [], "...": [] }, "petites_vacances": {}, "vacances_ete": {} },
+      "events": [{ "start": "2026-08-15", "end": null, "description": "Assomption", "closed": true }],
+      "periodOverrides": [],
+      "notes": null,
+      "resolved": [
+        { "date": "2026-08-08", "day": "saturday", "period": "vacances_ete",
+          "slots": [{ "start": "14:00", "end": "20:00", "label": "Public" }],
+          "closed": false, "events": [] }
+      ]
     }
   ]
 }

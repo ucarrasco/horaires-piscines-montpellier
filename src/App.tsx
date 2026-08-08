@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import {
-  DAY_KEYS,
   DAY_LABELS,
+  PERIOD_LABELS,
   type HorairesData,
+  type PeriodSpan,
   type PoolResult,
-  type Slot,
+  type ResolvedDay,
 } from "./types.ts";
 
 const DATA_URL = `${import.meta.env.BASE_URL}data/horaires.json`;
@@ -27,7 +28,9 @@ export default function App() {
     <div className="page">
       <header>
         <h1>🏊 Piscines de Montpellier</h1>
-        <p className="subtitle">Horaires unifiés, mis à jour chaque jour.</p>
+        <p className="subtitle">
+          Horaires réels des 2 prochaines semaines, mis à jour chaque jour.
+        </p>
       </header>
 
       {error && <p className="error">Impossible de charger les horaires : {error}</p>}
@@ -35,27 +38,14 @@ export default function App() {
 
       {data && (
         <>
+          <PeriodsBanner periods={data.periodsInWindow} />
           <ClosuresBanner pools={data.pools} />
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th className="pool-col">Piscine</th>
-                  {DAY_KEYS.map((d) => (
-                    <th key={d}>{DAY_LABELS[d]}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {data.pools.map((pool) => (
-                  <PoolRow key={pool.id} pool={pool} />
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {data.pools.map((pool) => (
+            <PoolCard key={pool.id} pool={pool} today={data.generatedAt} />
+          ))}
           <footer>
-            Dernière mise à jour :{" "}
-            {new Date(data.generatedAt).toLocaleString("fr-FR")}
+            Fenêtre du {fmtDate(data.window.start)} au {fmtDate(data.window.end)} —
+            dernière mise à jour : {new Date(data.generatedAt).toLocaleString("fr-FR")}
           </footer>
         </>
       )}
@@ -63,29 +53,53 @@ export default function App() {
   );
 }
 
-function ClosuresBanner({ pools }: { pools: PoolResult[] }) {
-  const withClosures = pools.filter((p) => p.closures.length > 0);
-  if (withClosures.length === 0) return null;
+function PeriodsBanner({ periods }: { periods: PeriodSpan[] }) {
+  if (periods.length === 0) return null;
   return (
-    <div className="closures">
-      <strong>⚠️ Fermetures / infos exceptionnelles</strong>
+    <div className="periods">
+      <strong>📅 Périodes sur la quinzaine</strong>
       <ul>
-        {withClosures.map((p) =>
-          p.closures.map((c, i) => (
-            <li key={`${p.id}-${i}`}>
-              <span className="closure-pool">{p.name}</span> — {c}
-            </li>
-          )),
-        )}
+        {periods.map((p, i) => (
+          <li key={i}>
+            <span className={`period-tag period-${p.period}`}>
+              {p.label ?? PERIOD_LABELS[p.period]}
+            </span>{" "}
+            du {fmtDate(p.start)} au {fmtDate(p.end)}
+          </li>
+        ))}
       </ul>
     </div>
   );
 }
 
-function PoolRow({ pool }: { pool: PoolResult }) {
+function ClosuresBanner({ pools }: { pools: PoolResult[] }) {
+  const items = pools.flatMap((p) =>
+    p.events
+      .filter((e) => e.closed)
+      .map((e) => ({ pool: p.name, e })),
+  );
+  if (items.length === 0) return null;
   return (
-    <tr>
-      <th scope="row" className="pool-col">
+    <div className="closures">
+      <strong>⚠️ Fermetures / événements</strong>
+      <ul>
+        {items.map(({ pool, e }, i) => (
+          <li key={i}>
+            <span className="closure-pool">{pool}</span> — {e.description} (
+            {fmtDate(e.start)}
+            {e.end && e.end !== e.start ? ` → ${fmtDate(e.end)}` : ""})
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
+  const todayDate = today.slice(0, 10);
+  return (
+    <section className="pool-card">
+      <h2>
         {pool.url ? (
           <a href={pool.url} target="_blank" rel="noreferrer">
             {pool.name}
@@ -98,30 +112,58 @@ function PoolRow({ pool }: { pool: PoolResult }) {
             indispo
           </span>
         )}
-      </th>
-      {DAY_KEYS.map((d) => (
-        <td key={d}>
-          <DayCell slots={pool.days[d]} error={pool.status === "error"} />
-        </td>
-      ))}
-    </tr>
+      </h2>
+      {pool.status === "error" ? (
+        <p className="muted">Horaires indisponibles ({pool.error}).</p>
+      ) : (
+        <ul className="days">
+          {pool.resolved.map((d) => (
+            <DayRow key={d.date} day={d} isToday={d.date === todayDate} />
+          ))}
+        </ul>
+      )}
+      {pool.notes && <p className="notes">{pool.notes}</p>}
+    </section>
   );
 }
 
-function DayCell({ slots, error }: { slots: Slot[]; error: boolean }) {
-  if (error) return <span className="muted">—</span>;
-  if (!slots || slots.length === 0)
-    return <span className="closed">Fermé</span>;
+function DayRow({ day, isToday }: { day: ResolvedDay; isToday: boolean }) {
   return (
-    <ul className="slots">
-      {slots.map((s, i) => (
-        <li key={i}>
-          <span className="time">
-            {s.start}–{s.end}
+    <li className={isToday ? "day today" : "day"}>
+      <span className="day-date">
+        {DAY_LABELS[day.day]} {fmtDate(day.date)}
+      </span>
+      <span className="day-slots">
+        {day.closed ? (
+          <span className="closed">
+            Fermé{day.events.length > 0 ? ` — ${day.events.join(", ")}` : ""}
           </span>
-          {s.label && <span className="label">{s.label}</span>}
-        </li>
-      ))}
-    </ul>
+        ) : day.slots.length === 0 ? (
+          <span className="closed">Fermé</span>
+        ) : (
+          day.slots.map((s, i) => (
+            <span className="slot" key={i}>
+              <span className="time">
+                {s.start}–{s.end}
+              </span>
+              {s.label && <span className="label">{s.label}</span>}
+            </span>
+          ))
+        )}
+        {!day.closed && day.events.length > 0 && (
+          <span className="day-event">{day.events.join(", ")}</span>
+        )}
+      </span>
+      <span className={`period-tag period-${day.period}`}>
+        {PERIOD_LABELS[day.period]}
+      </span>
+    </li>
   );
+}
+
+function fmtDate(iso: string): string {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("fr-FR", {
+    day: "2-digit",
+    month: "2-digit",
+  });
 }

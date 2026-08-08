@@ -8,16 +8,24 @@ import Anthropic from "@anthropic-ai/sdk";
 import { POOLS, type PoolConfig } from "./pools.ts";
 import {
   DAY_KEYS,
+  PERIOD_KEYS,
   type HorairesData,
+  type PeriodKey,
+  type PeriodSpan,
   type PoolResult,
   type PoolSchedule,
+  type ResolvedDay,
+  type WeeklySchedule,
 } from "../src/types.ts";
+import { fetchSchoolCalendar, type SchoolCalendar } from "./calendar.ts";
+import { addDays, dateRange, dayKeyOf, todayInParis } from "./dates.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_PATH = join(__dirname, "..", "public", "data", "horaires.json");
 
 const MODEL = "claude-opus-4-8";
 const MAX_HTML_CHARS = 40_000;
+const WINDOW_RADIUS = 7; // jours de part et d'autre de la date du jour
 
 // --- Schéma d'extraction (via forced tool use) ----------------------------
 
@@ -37,31 +45,72 @@ const SLOT_SCHEMA = {
 
 const DAY_SCHEMA = { type: "array", items: SLOT_SCHEMA } as const;
 
+const WEEKLY_SCHEMA = {
+  type: "object",
+  properties: Object.fromEntries(DAY_KEYS.map((k) => [k, DAY_SCHEMA])),
+  required: [...DAY_KEYS],
+  additionalProperties: false,
+} as const;
+
 const EXTRACTION_TOOL = {
   name: "record_horaires",
   description: "Enregistre les horaires extraits d'une piscine.",
   input_schema: {
     type: "object" as const,
     properties: {
-      days: {
+      periods: {
         type: "object",
-        description: "Créneaux d'ouverture au public pour chaque jour",
-        properties: Object.fromEntries(DAY_KEYS.map((k) => [k, DAY_SCHEMA])),
-        required: [...DAY_KEYS],
+        description:
+          "Une grille hebdomadaire d'ouverture au public par type de période. Si une période n'est pas précisée sur la page, réutilise la grille scolaire.",
+        properties: Object.fromEntries(
+          PERIOD_KEYS.map((k) => [k, WEEKLY_SCHEMA]),
+        ),
+        required: [...PERIOD_KEYS],
         additionalProperties: false,
       },
-      closures: {
+      events: {
         type: "array",
-        items: { type: "string" },
         description:
-          "Messages de fermeture exceptionnelle, travaux, jours fériés. Vide si aucun.",
+          "Fermetures exceptionnelles, travaux, jours fériés ou événements datés. Vide si aucun.",
+        items: {
+          type: "object",
+          properties: {
+            start: { type: "string", description: 'Date de début "YYYY-MM-DD"' },
+            end: {
+              type: ["string", "null"],
+              description: 'Date de fin "YYYY-MM-DD" incluse, ou null si un seul jour',
+            },
+            description: { type: "string" },
+            closed: {
+              type: "boolean",
+              description: "true si la piscine est fermée sur cette période",
+            },
+          },
+          required: ["start", "end", "description", "closed"],
+          additionalProperties: false,
+        },
+      },
+      periodOverrides: {
+        type: "array",
+        description:
+          "Dates de vacances explicitement annoncées sur CETTE page (encart infos du moment). Vide si la page ne donne pas de dates.",
+        items: {
+          type: "object",
+          properties: {
+            period: { type: "string", enum: [...PERIOD_KEYS] },
+            start: { type: "string", description: '"YYYY-MM-DD"' },
+            end: { type: "string", description: '"YYYY-MM-DD" incluse' },
+          },
+          required: ["period", "start", "end"],
+          additionalProperties: false,
+        },
       },
       notes: {
         type: ["string", "null"],
         description: "Autre info utile, sinon null",
       },
     },
-    required: ["days", "closures", "notes"],
+    required: ["periods", "events", "periodOverrides", "notes"],
     additionalProperties: false,
   },
 };
@@ -91,14 +140,33 @@ function htmlToText(html: string): string {
 const SYSTEM_PROMPT = `Tu extrais les horaires d'ouverture au public d'une piscine à partir du texte d'une page web, puis tu appelles l'outil record_horaires.
 Consignes :
 - Ne renseigne que les créneaux d'ouverture AU PUBLIC (nage libre / grand public). Ignore les cours, clubs et scolaires sauf s'ils sont le seul accès mentionné (dans ce cas, indique-le dans le label).
+- Renseigne trois grilles hebdomadaires : "scolaire" (période scolaire), "petites_vacances" (Toussaint, Noël, hiver, printemps) et "vacances_ete" (été). Si la page ne distingue pas les périodes, réutilise la même grille pour les trois.
 - Si un jour n'a aucun créneau (fermé), renvoie un tableau vide pour ce jour.
-- Mets dans "closures" tout message de fermeture exceptionnelle, travaux, ou horaires spéciaux (vacances, jours fériés).
-- N'invente jamais d'horaires : si l'information est absente ou ambiguë, laisse le jour vide et ajoute une note.`;
+- Mets dans "events" toute fermeture exceptionnelle, travaux, jour férié ou horaire spécial daté, avec closed=true si la piscine est fermée.
+- Si l'encart "informations du moment" donne des DATES précises de vacances (ex "vacances du 20 au 30 octobre"), reporte-les dans "periodOverrides" : elles priment sur le calendrier officiel.
+- Convertis toutes les dates au format "YYYY-MM-DD" en utilisant l'année courante fournie.
+- N'invente jamais d'horaires ni de dates : en cas d'absence ou d'ambiguïté, laisse vide et ajoute une note.`;
+
+function emptyWeekly(): WeeklySchedule {
+  return Object.fromEntries(DAY_KEYS.map((k) => [k, []])) as unknown as WeeklySchedule;
+}
+
+function emptySchedule(): PoolSchedule {
+  return {
+    periods: Object.fromEntries(
+      PERIOD_KEYS.map((k) => [k, emptyWeekly()]),
+    ) as PoolSchedule["periods"],
+    events: [],
+    periodOverrides: [],
+    notes: null,
+  };
+}
 
 async function extractPool(
   client: Anthropic,
   pool: PoolConfig,
-): Promise<PoolResult> {
+  today: string,
+): Promise<Omit<PoolResult, "resolved">> {
   const base = { id: pool.id, name: pool.name, url: pool.url };
 
   if (!pool.url) {
@@ -126,7 +194,7 @@ async function extractPool(
       messages: [
         {
           role: "user",
-          content: `Piscine : ${pool.name}\n\nContenu de la page :\n${text}`,
+          content: `Piscine : ${pool.name}\nDate du jour : ${today}\n\nContenu de la page :\n${text}`,
         },
       ],
     });
@@ -148,14 +216,48 @@ async function extractPool(
   }
 }
 
-function emptySchedule(): PoolSchedule {
-  return {
-    days: Object.fromEntries(
-      DAY_KEYS.map((k) => [k, [] as PoolSchedule["days"][keyof PoolSchedule["days"]]]),
-    ) as PoolSchedule["days"],
-    closures: [],
-    notes: null,
-  };
+// --- Résolution des horaires réels sur la fenêtre -------------------------
+
+function resolveDays(
+  sched: PoolSchedule,
+  dates: string[],
+  calendar: SchoolCalendar,
+): ResolvedDay[] {
+  return dates.map((date) => {
+    const day = dayKeyOf(date);
+    const override = sched.periodOverrides.find(
+      (o) => o.start <= date && date <= o.end,
+    );
+    const period: PeriodKey = override
+      ? override.period
+      : calendar.periodFor(date).period;
+
+    const dayEvents = sched.events.filter(
+      (e) => e.start <= date && date <= (e.end ?? e.start),
+    );
+    const closed = dayEvents.some((e) => e.closed);
+    const slots = closed ? [] : (sched.periods[period]?.[day] ?? []);
+
+    return { date, day, period, slots, closed, events: dayEvents.map((e) => e.description) };
+  });
+}
+
+/** Plages de période officielle (zone C) qui couvrent la fenêtre. */
+function computePeriodsInWindow(
+  dates: string[],
+  calendar: SchoolCalendar,
+): PeriodSpan[] {
+  const spans: PeriodSpan[] = [];
+  for (const date of dates) {
+    const { period, label } = calendar.periodFor(date);
+    const last = spans[spans.length - 1];
+    if (last && last.period === period && last.label === label) {
+      last.end = date;
+    } else {
+      spans.push({ period, label, start: date, end: date });
+    }
+  }
+  return spans;
 }
 
 // --- Main -----------------------------------------------------------------
@@ -174,17 +276,27 @@ async function main() {
 
   const client = new Anthropic(); // lit ANTHROPIC_API_KEY
 
+  const today = todayInParis();
+  const windowStart = addDays(today, -WINDOW_RADIUS);
+  const windowEnd = addDays(today, WINDOW_RADIUS);
+  const dates = dateRange(windowStart, windowEnd);
+  const calendar = await fetchSchoolCalendar(windowStart, windowEnd);
+
   // Mode dry-run : `npm run scrape -- <url> [<url> ...]`
-  // -> teste ces URLs, imprime le JSON, N'ÉCRIT PAS le fichier.
+  // -> teste ces URLs, imprime le JSON résolu, N'ÉCRIT PAS le fichier.
   const urlArgs = process.argv.slice(2).filter((a) => a.startsWith("http"));
   if (urlArgs.length > 0) {
     console.log(`🔎 Dry-run sur ${urlArgs.length} URL(s) (aucun fichier écrit)\n`);
     for (const url of urlArgs) {
-      const result = await extractPool(client, {
-        id: "dry-run",
-        name: url,
-        url,
-      });
+      const extracted = await extractPool(
+        client,
+        { id: "dry-run", name: url, url },
+        today,
+      );
+      const result: PoolResult = {
+        ...extracted,
+        resolved: resolveDays(extracted, dates, calendar),
+      };
       console.log(JSON.stringify(result, null, 2));
     }
     return;
@@ -194,13 +306,15 @@ async function main() {
   const pools: PoolResult[] = [];
   for (const pool of POOLS) {
     process.stdout.write(`  - ${pool.name}... `);
-    const result = await extractPool(client, pool);
-    console.log(result.status === "ok" ? "ok" : `erreur (${result.error})`);
-    pools.push(result);
+    const extracted = await extractPool(client, pool, today);
+    console.log(extracted.status === "ok" ? "ok" : `erreur (${extracted.error})`);
+    pools.push({ ...extracted, resolved: resolveDays(extracted, dates, calendar) });
   }
 
   const data: HorairesData = {
     generatedAt: new Date().toISOString(),
+    window: { start: windowStart, end: windowEnd, dates },
+    periodsInWindow: computePeriodsInWindow(dates, calendar),
     pools,
   };
 
