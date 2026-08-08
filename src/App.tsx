@@ -1,4 +1,4 @@
-import { useEffect, useState, type DragEvent } from "react";
+import { useEffect, useMemo, useState, type DragEvent } from "react";
 import {
   DAY_LABELS,
   PERIOD_LABELS,
@@ -104,11 +104,79 @@ function todayInParis(): string {
   }).format(new Date());
 }
 
+const POOL_ORDER_KEY = "poolPositions";
+
+const DEFAULT_POOL_ORDER = [
+  "olympique-antigone",
+  "neptune",
+  "suzanne-berlioux",
+  "pitot",
+  "marcel-spilliaert",
+  "jean-vives",
+  "jean-taris",
+  "alfred-nakache",
+  "francoise-et-yves-jarrousse",
+  "christine-caron",
+  "amphitrite",
+  "poseidon",
+  "heracles",
+  "les-nereides",
+  "alex-jany",
+];
+
+function loadPoolOrder(): string[] {
+  try {
+    const stored = localStorage.getItem(POOL_ORDER_KEY);
+    const parsed = stored ? JSON.parse(stored) : null;
+    if (Array.isArray(parsed) && parsed.every((id) => typeof id === "string")) {
+      return parsed;
+    }
+  } catch {
+    // localStorage indisponible ou JSON corrompu : on repart de l'ordre par défaut
+  }
+  return DEFAULT_POOL_ORDER;
+}
+
+/**
+ * Ordre d'affichage des piscines, persisté dans localStorage.
+ * L'ordre stocké est réconcilié avec les piscines réellement présentes dans les
+ * données : les inconnues sont ignorées, les nouvelles ajoutées à la fin.
+ */
+function usePoolOrder(poolIds: string[]): [string[], (from: number, to: number) => void] {
+  const [order, setOrder] = useState(loadPoolOrder);
+  const key = poolIds.join(",");
+
+  const ordered = useMemo(() => {
+    const known = order.filter((id) => poolIds.includes(id));
+    return [...known, ...poolIds.filter((id) => !known.includes(id))];
+  }, [order, key]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(POOL_ORDER_KEY, JSON.stringify(ordered));
+    } catch {
+      // stockage indisponible (mode privé, quota) : l'ordre reste en mémoire
+    }
+  }, [ordered]);
+
+  const move = (from: number, to: number) => {
+    const next = [...ordered];
+    const [id] = next.splice(from, 1);
+    next.splice(to, 0, id);
+    setOrder(next);
+  };
+
+  return [ordered, move];
+}
+
 /**
  * Réordonnancement des colonnes par drag & drop natif.
  * `dropIndex` est une position d'insertion (0..n), pas un index de colonne.
  */
-function useColumnDrag(poolIds: string[]) {
+function useColumnDrag(
+  poolIds: string[],
+  onReorder: (from: number, to: number) => void,
+) {
   const [dragIndex, setDragIndex] = useState<number | null>(null);
   const [dropIndex, setDropIndex] = useState<number | null>(null);
 
@@ -139,13 +207,7 @@ function useColumnDrag(poolIds: string[]) {
         e.preventDefault();
         if (dragIndex === null || dropIndex === null) return reset();
         const newIndex = dropIndex > dragIndex ? dropIndex - 1 : dropIndex;
-        if (newIndex !== dragIndex) {
-          console.log("réordonnancement", {
-            piscine_id: poolIds[dragIndex],
-            old_index: dragIndex,
-            new_index: newIndex,
-          });
-        }
+        if (newIndex !== dragIndex) onReorder(dragIndex, newIndex);
         reset();
       },
       onDragEnd: reset,
@@ -160,10 +222,13 @@ function TodayAgenda({ data }: { data: HorairesData }) {
     : data.generatedAt.slice(0, 10);
   const isToday = today === todayInParis();
 
-  const columns = data.pools.map((pool) => ({
-    pool,
-    day: pool.resolved.find((d) => d.date === today) ?? null,
-  }));
+  const [order, movePool] = usePoolOrder(data.pools.map((p) => p.id));
+
+  const columns = order.flatMap((id) => {
+    const pool = data.pools.find((p) => p.id === id);
+    if (!pool) return [];
+    return [{ pool, day: pool.resolved.find((d) => d.date === today) ?? null }];
+  });
 
   const allSlots = columns.flatMap(({ day }) =>
     day && !day.closed ? day.slots : [],
@@ -187,7 +252,10 @@ function TodayAgenda({ data }: { data: HorairesData }) {
   const showNow =
     isToday && nowMinutes >= startHour * 60 && nowMinutes <= endHour * 60;
 
-  const drag = useColumnDrag(columns.map(({ pool }) => pool.id));
+  const drag = useColumnDrag(
+    columns.map(({ pool }) => pool.id),
+    movePool,
+  );
 
   return (
     <section className="agenda">
