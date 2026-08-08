@@ -85,8 +85,14 @@ const EXTRACTION_TOOL = {
               type: "boolean",
               description: "true si la piscine est fermée sur cette période",
             },
+            slots: {
+              type: ["array", "null"],
+              description:
+                "Horaires exceptionnels annoncés pour cette date (remplacent la grille hebdomadaire). null si la page n'en donne pas ou si closed=true.",
+              items: SLOT_SCHEMA,
+            },
           },
-          required: ["start", "end", "description", "closed"],
+          required: ["start", "end", "description", "closed", "slots"],
           additionalProperties: false,
         },
       },
@@ -143,6 +149,8 @@ Consignes :
 - Renseigne trois grilles hebdomadaires : "scolaire" (période scolaire), "petites_vacances" (Toussaint, Noël, hiver, printemps) et "vacances_ete" (été). Si la page ne distingue pas les périodes, réutilise la même grille pour les trois.
 - Si un jour n'a aucun créneau (fermé), renvoie un tableau vide pour ce jour.
 - Mets dans "events" toute fermeture exceptionnelle, travaux, jour férié ou horaire spécial daté, avec closed=true si la piscine est fermée.
+- Si un événement annonce des horaires exceptionnels (ex "le 15 août : ouverture 9h00-13h15 et 15h00-19h15"), renseigne aussi son "slots" avec ces créneaux : ils remplaceront la grille hebdomadaire ce jour-là. Ne te contente pas de les décrire dans "description".
+- Utilise le format "HH:MM" sur deux chiffres pour les heures (ex "09:00", pas "9:00").
 - Si l'encart "informations du moment" donne des DATES précises de vacances (ex "vacances du 20 au 30 octobre"), reporte-les dans "periodOverrides" : elles priment sur le calendrier officiel.
 - Convertis toutes les dates au format "YYYY-MM-DD" en utilisant l'année courante fournie.
 - N'invente jamais d'horaires ni de dates : en cas d'absence ou d'ambiguïté, laisse vide et ajoute une note.`;
@@ -236,9 +244,23 @@ function resolveDays(
       (e) => e.start <= date && date <= (e.end ?? e.start),
     );
     const closed = dayEvents.some((e) => e.closed);
-    const slots = closed ? [] : (sched.periods[period]?.[day] ?? []);
+    const special = dayEvents.find((e) => !e.closed && e.slots && e.slots.length > 0);
+    const exceptional = !closed && special !== undefined;
+    const slots = closed
+      ? []
+      : exceptional
+        ? special!.slots!
+        : (sched.periods[period]?.[day] ?? []);
 
-    return { date, day, period, slots, closed, events: dayEvents.map((e) => e.description) };
+    return {
+      date,
+      day,
+      period,
+      slots,
+      closed,
+      exceptional,
+      events: dayEvents.map((e) => e.description),
+    };
   });
 }
 

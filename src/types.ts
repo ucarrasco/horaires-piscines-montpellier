@@ -54,6 +54,8 @@ export interface DatedEvent {
   description: string;
   /** true si la piscine est fermée sur cette période. */
   closed: boolean;
+  /** Horaires exceptionnels qui remplacent la grille hebdomadaire, ou null. */
+  slots: Slot[] | null;
 }
 
 /**
@@ -83,6 +85,8 @@ export interface ResolvedDay {
   period: PeriodKey;
   slots: Slot[]; // grille de la période, vide si fermé
   closed: boolean; // fermé par un événement daté
+  /** true si les créneaux viennent d'un événement et non de la grille. */
+  exceptional: boolean;
   events: string[]; // descriptions des événements ce jour
 }
 

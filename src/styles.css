@@ -160,6 +160,11 @@ header h1 {
   margin-left: 0.25rem;
 }
 
+.slot.exceptional .time {
+  color: #8a5a12;
+  text-decoration: underline dotted;
+}
+
 .day-event {
   color: #8a5a12;
   font-size: 0.78rem;

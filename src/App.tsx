@@ -142,7 +142,7 @@ function DayRow({ day, isToday }: { day: ResolvedDay; isToday: boolean }) {
           <span className="closed">Fermé</span>
         ) : (
           day.slots.map((s, i) => (
-            <span className="slot" key={i}>
+            <span className={day.exceptional ? "slot exceptional" : "slot"} key={i}>
               <span className="time">
                 {s.start}–{s.end}
               </span>

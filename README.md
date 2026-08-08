@@ -82,13 +82,16 @@ autour de la date de génération :
       "url": "https://...",
       "status": "ok",
       "periods": { "scolaire": { "monday": [], "...": [] }, "petites_vacances": {}, "vacances_ete": {} },
-      "events": [{ "start": "2026-08-15", "end": null, "description": "Assomption", "closed": true }],
+      "events": [
+        { "start": "2026-08-15", "end": null, "description": "Assomption : horaires spéciaux",
+          "closed": false, "slots": [{ "start": "09:00", "end": "13:15", "label": "Public" }] }
+      ],
       "periodOverrides": [],
       "notes": null,
       "resolved": [
         { "date": "2026-08-08", "day": "saturday", "period": "vacances_ete",
           "slots": [{ "start": "14:00", "end": "20:00", "label": "Public" }],
-          "closed": false, "events": [] }
+          "closed": false, "exceptional": false, "events": [] }
       ]
     }
   ]
