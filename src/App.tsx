@@ -75,6 +75,26 @@ function shortPoolName(name: string): string {
   return name.replace(/^(Piscine|Centre aquatique)\s+/i, "");
 }
 
+function nowMinutesInParis(): number {
+  return toMinutes(
+    new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Paris",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    }).format(new Date()),
+  );
+}
+
+function useNowMinutes(): number {
+  const [now, setNow] = useState(nowMinutesInParis);
+  useEffect(() => {
+    const id = setInterval(() => setNow(nowMinutesInParis()), 60_000);
+    return () => clearInterval(id);
+  }, []);
+  return now;
+}
+
 function todayInParis(): string {
   return new Intl.DateTimeFormat("en-CA", {
     timeZone: "Europe/Paris",
@@ -85,9 +105,11 @@ function todayInParis(): string {
 }
 
 function TodayAgenda({ data }: { data: HorairesData }) {
+  const nowMinutes = useNowMinutes();
   const today = data.window.dates.includes(todayInParis())
     ? todayInParis()
     : data.generatedAt.slice(0, 10);
+  const isToday = today === todayInParis();
 
   const columns = data.pools.map((pool) => ({
     pool,
@@ -109,8 +131,12 @@ function TodayAgenda({ data }: { data: HorairesData }) {
     (_, i) => startHour + i,
   );
   const bodyHeight = (endHour - startHour) * HOUR_HEIGHT + 2 * BODY_PADDING;
-  const offset = (hhmm: string) =>
-    BODY_PADDING + ((toMinutes(hhmm) - startHour * 60) / 60) * HOUR_HEIGHT;
+  const offsetOf = (minutes: number) =>
+    BODY_PADDING + ((minutes - startHour * 60) / 60) * HOUR_HEIGHT;
+  const offset = (hhmm: string) => offsetOf(toMinutes(hhmm));
+
+  const showNow =
+    isToday && nowMinutes >= startHour * 60 && nowMinutes <= endHour * 60;
 
   return (
     <section className="agenda">
@@ -129,8 +155,8 @@ function TodayAgenda({ data }: { data: HorairesData }) {
         <div
           className="agenda-grid"
           style={{
-            gridTemplateColumns: `3.5rem repeat(${columns.length}, 6.5rem)`,
-            ["--hour-height" as string]: `${HOUR_HEIGHT}px`,
+            gridTemplateColumns: `var(--gutter) repeat(${columns.length}, 6.5rem)`,
+            ["--gutter" as string]: "3.5rem",
           }}
         >
           <div className="agenda-corner" />
@@ -201,6 +227,17 @@ function TodayAgenda({ data }: { data: HorairesData }) {
                 ))}
             </div>
           ))}
+
+          {showNow && (
+            <div className="agenda-now-layer">
+              <div className="agenda-now" style={{ top: offsetOf(nowMinutes) }}>
+                <span className="agenda-now-time">
+                  {String(Math.floor(nowMinutes / 60)).padStart(2, "0")}:
+                  {String(nowMinutes % 60).padStart(2, "0")}
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -292,6 +292,32 @@ header h1 {
   white-space: nowrap;
 }
 
+.agenda-now-layer {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  position: relative;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.agenda-now {
+  position: absolute;
+  left: var(--gutter);
+  right: 0;
+  border-top: 1px solid #ff0000;
+}
+
+.agenda-now-time {
+  position: absolute;
+  right: calc(100% + 0.35rem);
+  transform: translateY(-50%);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #e03131;
+  background: var(--card);
+  font-variant-numeric: tabular-nums;
+}
+
 .agenda-empty {
   position: absolute;
   top: 0.5rem;
