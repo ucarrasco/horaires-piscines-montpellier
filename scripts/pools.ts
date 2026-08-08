@@ -15,26 +15,11 @@ export const POOLS: PoolConfig[] = [
   {
     id: "olympique-antigone",
     name: "Piscine Olympique d'Antigone",
-    url: "", // TODO: URL de la page horaires
-  },
-  {
-    id: "christine-caron",
-    name: "Piscine Christine Caron",
-    url: "", // TODO
+    url: "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti", // TODO: URL de la page horaires
   },
   {
     id: "neptune",
     name: "Piscine Neptune",
-    url: "", // TODO
-  },
-  {
-    id: "jean-vives",
-    name: "Piscine Jean Vivès",
-    url: "", // TODO
-  },
-  {
-    id: "alex-jany",
-    name: "Piscine Alex Jany",
-    url: "", // TODO
+    url: "https://www.montpellier.fr/territoire/lieux-equipements/centre-aquatique-neptune", // TODO
   },
 ];
