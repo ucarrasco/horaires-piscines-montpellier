@@ -33,23 +33,177 @@ export default function App() {
         </p>
       </header>
 
-      {error && <p className="error">Impossible de charger les horaires : {error}</p>}
+      {error && (
+        <p className="error">Impossible de charger les horaires : {error}</p>
+      )}
       {!error && !data && <p className="muted">Chargement…</p>}
 
       {data && (
         <>
-          <PeriodsBanner periods={data.periodsInWindow} />
-          <ClosuresBanner pools={data.pools} />
+          <TodayAgenda data={data} />
+          {/* <PeriodsBanner periods={data.periodsInWindow} />
+          <ClosuresBanner pools={data.pools} /> */}
           {data.pools.map((pool) => (
             <PoolCard key={pool.id} pool={pool} today={data.generatedAt} />
           ))}
           <footer>
-            Fenêtre du {fmtDate(data.window.start)} au {fmtDate(data.window.end)} —
-            dernière mise à jour : {new Date(data.generatedAt).toLocaleString("fr-FR")}
+            Fenêtre du {fmtDate(data.window.start)} au{" "}
+            {fmtDate(data.window.end)} — dernière mise à jour :{" "}
+            {new Date(data.generatedAt).toLocaleString("fr-FR")}
           </footer>
         </>
       )}
     </div>
+  );
+}
+
+const HOUR_HEIGHT = 52; // px
+const BODY_PADDING = 30; // px de respiration au-dessus/en-dessous de la grille
+const DEFAULT_RANGE = [8, 22];
+
+function toMinutes(hhmm: string): number {
+  const [h, m] = hhmm.split(":");
+  return Number(h) * 60 + Number(m ?? 0);
+}
+
+function fmtTime(hhmm: string): string {
+  const [h, m] = hhmm.split(":");
+  return `${h.padStart(2, "0")}:${(m ?? "00").padStart(2, "0")}`;
+}
+
+function shortPoolName(name: string): string {
+  return name.replace(/^(Piscine|Centre aquatique)\s+/i, "");
+}
+
+function todayInParis(): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Paris",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+
+function TodayAgenda({ data }: { data: HorairesData }) {
+  const today = data.window.dates.includes(todayInParis())
+    ? todayInParis()
+    : data.generatedAt.slice(0, 10);
+
+  const columns = data.pools.map((pool) => ({
+    pool,
+    day: pool.resolved.find((d) => d.date === today) ?? null,
+  }));
+
+  const allSlots = columns.flatMap(({ day }) =>
+    day && !day.closed ? day.slots : [],
+  );
+  const [startHour, endHour] = allSlots.length
+    ? [
+        Math.floor(Math.min(...allSlots.map((s) => toMinutes(s.start))) / 60),
+        Math.ceil(Math.max(...allSlots.map((s) => toMinutes(s.end))) / 60),
+      ]
+    : DEFAULT_RANGE;
+
+  const hours = Array.from(
+    { length: endHour - startHour + 1 },
+    (_, i) => startHour + i,
+  );
+  const bodyHeight = (endHour - startHour) * HOUR_HEIGHT + 2 * BODY_PADDING;
+  const offset = (hhmm: string) =>
+    BODY_PADDING + ((toMinutes(hhmm) - startHour * 60) / 60) * HOUR_HEIGHT;
+
+  return (
+    <section className="agenda">
+      <h2>
+        Aujourd'hui
+        <span className="agenda-date">
+          {new Date(`${today}T12:00:00Z`).toLocaleDateString("fr-FR", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+          })}
+        </span>
+      </h2>
+
+      <div className="agenda-scroll">
+        <div
+          className="agenda-grid"
+          style={{
+            gridTemplateColumns: `3.5rem repeat(${columns.length}, 6.5rem)`,
+            ["--hour-height" as string]: `${HOUR_HEIGHT}px`,
+          }}
+        >
+          <div className="agenda-corner" />
+          {columns.map(({ pool, day }) => {
+            const info = day && !day.closed ? day.events.join(" · ") : null;
+            return (
+              <div
+                className={info ? "agenda-head has-info" : "agenda-head"}
+                key={pool.id}
+              >
+                <span className="agenda-pool" title={pool.name}>
+                  {shortPoolName(pool.name)}
+                </span>
+                {info && (
+                  <span className="agenda-info" title={info}>
+                    ⓘ
+                  </span>
+                )}
+              </div>
+            );
+          })}
+
+          <div className="agenda-gutter" style={{ height: bodyHeight }}>
+            {hours.map((h) => (
+              <span
+                className="agenda-tick"
+                key={h}
+                style={{ top: offset(`${h}:00`) }}
+              >
+                {String(h).padStart(2, "0")}h
+              </span>
+            ))}
+          </div>
+
+          {columns.map(({ pool, day }) => (
+            <div
+              className="agenda-col"
+              style={{ height: bodyHeight }}
+              key={pool.id}
+            >
+              {hours.map((h) => (
+                <div
+                  className="agenda-line"
+                  key={h}
+                  style={{ top: offset(`${h}:00`) }}
+                />
+              ))}
+              {(!day || day.closed || day.slots.length === 0) && (
+                <span className="agenda-empty">
+                  {pool.status === "error" ? "Horaires indispo" : "Fermé"}
+                </span>
+              )}
+              {day &&
+                !day.closed &&
+                day.slots.map((s, i) => (
+                  <div
+                    className="agenda-slot"
+                    key={i}
+                    style={{
+                      top: offset(s.start),
+                      height: Math.max(offset(s.end) - offset(s.start), 20),
+                    }}
+                  >
+                    <span className="agenda-slot-time">
+                      {fmtTime(s.start)} – {fmtTime(s.end)}
+                    </span>
+                  </div>
+                ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -74,9 +228,7 @@ function PeriodsBanner({ periods }: { periods: PeriodSpan[] }) {
 
 function ClosuresBanner({ pools }: { pools: PoolResult[] }) {
   const items = pools.flatMap((p) =>
-    p.events
-      .filter((e) => e.closed)
-      .map((e) => ({ pool: p.name, e })),
+    p.events.filter((e) => e.closed).map((e) => ({ pool: p.name, e })),
   );
   if (items.length === 0) return null;
   return (
@@ -142,7 +294,10 @@ function DayRow({ day, isToday }: { day: ResolvedDay; isToday: boolean }) {
           <span className="closed">Fermé</span>
         ) : (
           day.slots.map((s, i) => (
-            <span className={day.exceptional ? "slot exceptional" : "slot"} key={i}>
+            <span
+              className={day.exceptional ? "slot exceptional" : "slot"}
+              key={i}
+            >
               <span className="time">
                 {s.start}–{s.end}
               </span>

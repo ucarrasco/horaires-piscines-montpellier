@@ -176,6 +176,132 @@ header h1 {
   font-size: 0.82rem;
 }
 
+.agenda {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 0 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.agenda h2 {
+  margin: 0 1.1rem 0.75rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.agenda-date {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.agenda-scroll {
+  overflow-x: auto;
+  padding: 0 1.1rem 0.5rem;
+}
+
+.agenda-grid {
+  display: grid;
+  min-width: max-content;
+}
+
+.agenda-head {
+  padding: 0 0.35rem 0.45rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.agenda-head.has-info {
+  border-bottom-color: var(--warn-line);
+}
+
+.agenda-pool {
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.agenda-info {
+  color: #8a5a12;
+  cursor: help;
+  flex: none;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.agenda-corner {
+  border-bottom: 1px solid var(--line);
+}
+
+.agenda-gutter,
+.agenda-col {
+  position: relative;
+}
+
+.agenda-col + .agenda-col,
+.agenda-head + .agenda-head {
+  border-left: 1px solid var(--line);
+}
+
+.agenda-tick {
+  position: absolute;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.agenda-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px solid var(--line);
+}
+
+.agenda-col + .agenda-col .agenda-line {
+  left: -1px;
+}
+
+.agenda-slot {
+  position: absolute;
+  left: 0.15rem;
+  right: 0.15rem;
+  background: var(--accent);
+  border-radius: 5px;
+  padding: 0.15rem 0.35rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.agenda-slot-time {
+  font-size: 0.68rem;
+  color: #ffffff;
+  opacity: 0.85;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.agenda-empty {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
 .table-wrap {
   overflow-x: auto;
   background: var(--card);
