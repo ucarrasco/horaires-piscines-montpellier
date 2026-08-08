@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type DragEvent } from "react";
 import {
   DAY_LABELS,
   PERIOD_LABELS,
@@ -104,6 +104,55 @@ function todayInParis(): string {
   }).format(new Date());
 }
 
+/**
+ * Réordonnancement des colonnes par drag & drop natif.
+ * `dropIndex` est une position d'insertion (0..n), pas un index de colonne.
+ */
+function useColumnDrag(poolIds: string[]) {
+  const [dragIndex, setDragIndex] = useState<number | null>(null);
+  const [dropIndex, setDropIndex] = useState<number | null>(null);
+
+  const reset = () => {
+    setDragIndex(null);
+    setDropIndex(null);
+  };
+
+  return {
+    dragIndex,
+    dropIndex,
+    handlers: (index: number) => ({
+      draggable: true,
+      onDragStart: (e: DragEvent) => {
+        setDragIndex(index);
+        setDropIndex(index);
+        e.dataTransfer.effectAllowed = "move";
+        e.dataTransfer.setData("text/plain", poolIds[index]);
+      },
+      onDragOver: (e: DragEvent) => {
+        if (dragIndex === null) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = "move";
+        const { left, width } = e.currentTarget.getBoundingClientRect();
+        setDropIndex(e.clientX < left + width / 2 ? index : index + 1);
+      },
+      onDrop: (e: DragEvent) => {
+        e.preventDefault();
+        if (dragIndex === null || dropIndex === null) return reset();
+        const newIndex = dropIndex > dragIndex ? dropIndex - 1 : dropIndex;
+        if (newIndex !== dragIndex) {
+          console.log("réordonnancement", {
+            piscine_id: poolIds[dragIndex],
+            old_index: dragIndex,
+            new_index: newIndex,
+          });
+        }
+        reset();
+      },
+      onDragEnd: reset,
+    }),
+  };
+}
+
 function TodayAgenda({ data }: { data: HorairesData }) {
   const nowMinutes = useNowMinutes();
   const today = data.window.dates.includes(todayInParis())
@@ -138,6 +187,8 @@ function TodayAgenda({ data }: { data: HorairesData }) {
   const showNow =
     isToday && nowMinutes >= startHour * 60 && nowMinutes <= endHour * 60;
 
+  const drag = useColumnDrag(columns.map(({ pool }) => pool.id));
+
   return (
     <section className="agenda">
       <h2>
@@ -155,18 +206,28 @@ function TodayAgenda({ data }: { data: HorairesData }) {
         <div
           className="agenda-grid"
           style={{
-            gridTemplateColumns: `var(--gutter) repeat(${columns.length}, 6.5rem)`,
+            gridTemplateColumns: `var(--gutter) repeat(${columns.length}, var(--col))`,
+            gridTemplateRows: `auto ${bodyHeight}px`,
             ["--gutter" as string]: "3.5rem",
+            ["--col" as string]: "6.5rem",
           }}
         >
-          <div className="agenda-corner" />
-          {columns.map(({ pool, day }) => {
+          <div className="agenda-corner" style={{ gridArea: "1 / 1" }} />
+          {columns.map(({ pool, day }, index) => {
             const info = day && !day.closed ? day.events.join(" · ") : null;
+            const classes = ["agenda-head"];
+            if (info) classes.push("has-info");
+            if (drag.dragIndex === index) classes.push("dragging");
             return (
               <div
-                className={info ? "agenda-head has-info" : "agenda-head"}
+                className={classes.join(" ")}
                 key={pool.id}
+                style={{ gridArea: `1 / ${index + 2}` }}
+                {...drag.handlers(index)}
               >
+                <span className="agenda-grip" aria-hidden="true">
+                  ⠿
+                </span>
                 <span className="agenda-pool" title={pool.name}>
                   {shortPoolName(pool.name)}
                 </span>
@@ -179,7 +240,7 @@ function TodayAgenda({ data }: { data: HorairesData }) {
             );
           })}
 
-          <div className="agenda-gutter" style={{ height: bodyHeight }}>
+          <div className="agenda-gutter" style={{ gridArea: "2 / 1" }}>
             {hours.map((h) => (
               <span
                 className="agenda-tick"
@@ -191,10 +252,10 @@ function TodayAgenda({ data }: { data: HorairesData }) {
             ))}
           </div>
 
-          {columns.map(({ pool, day }) => (
+          {columns.map(({ pool, day }, index) => (
             <div
               className="agenda-col"
-              style={{ height: bodyHeight }}
+              style={{ gridArea: `2 / ${index + 2}` }}
               key={pool.id}
             >
               {hours.map((h) => (
@@ -227,6 +288,17 @@ function TodayAgenda({ data }: { data: HorairesData }) {
                 ))}
             </div>
           ))}
+
+          {drag.dropIndex !== null && (
+            <div className="agenda-drop-layer">
+              <div
+                className="agenda-drop"
+                style={{
+                  left: `calc(var(--gutter) + ${drag.dropIndex} * var(--col))`,
+                }}
+              />
+            </div>
+          )}
 
           {showNow && (
             <div className="agenda-now-layer">
