@@ -1,4 +1,5 @@
 import { writeFile, mkdir } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -160,7 +161,34 @@ function emptySchedule(): PoolSchedule {
 // --- Main -----------------------------------------------------------------
 
 async function main() {
+  // Charge .env s'il existe (dev local). En CI la clé vient d'un secret.
+  const envPath = join(__dirname, "..", ".env");
+  if (existsSync(envPath)) process.loadEnvFile(envPath);
+
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error(
+      "❌ ANTHROPIC_API_KEY manquante. Fais: export ANTHROPIC_API_KEY=sk-ant-...",
+    );
+    process.exit(1);
+  }
+
   const client = new Anthropic(); // lit ANTHROPIC_API_KEY
+
+  // Mode dry-run : `npm run scrape -- <url> [<url> ...]`
+  // -> teste ces URLs, imprime le JSON, N'ÉCRIT PAS le fichier.
+  const urlArgs = process.argv.slice(2).filter((a) => a.startsWith("http"));
+  if (urlArgs.length > 0) {
+    console.log(`🔎 Dry-run sur ${urlArgs.length} URL(s) (aucun fichier écrit)\n`);
+    for (const url of urlArgs) {
+      const result = await extractPool(client, {
+        id: "dry-run",
+        name: url,
+        url,
+      });
+      console.log(JSON.stringify(result, null, 2));
+    }
+    return;
+  }
 
   console.log(`Extraction de ${POOLS.length} piscine(s)...`);
   const pools: PoolResult[] = [];
