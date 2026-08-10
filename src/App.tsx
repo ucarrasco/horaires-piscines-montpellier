@@ -29,7 +29,8 @@ export default function App() {
       <header>
         <h1>🏊 Piscines de Montpellier</h1>
         <p className="subtitle">
-          Horaires réels des 2 prochaines semaines, mis à jour chaque jour.
+          Horaires réels des prochains jours.
+          {data && <FreshnessBadge generatedAt={data.generatedAt} />}
         </p>
       </header>
 
@@ -47,13 +48,50 @@ export default function App() {
             <PoolCard key={pool.id} pool={pool} today={data.generatedAt} />
           ))}
           <footer>
-            Fenêtre du {fmtDate(data.window.start)} au{" "}
-            {fmtDate(data.window.end)} — dernière mise à jour :{" "}
-            {new Date(data.generatedAt).toLocaleString("fr-FR")}
+            Fenêtre du {fmtDate(data.window.start)} au {fmtDate(data.window.end)}
           </footer>
         </>
       )}
     </div>
+  );
+}
+
+const FRESH_MAX_HOURS = 24;
+const STALE_MAX_HOURS = 5 * 24;
+
+/**
+ * How old the data is: a colour level based on elapsed hours, and a delay
+ * expressed in calendar days in Paris (so a 20:00 → 08:00 gap reads "hier").
+ */
+function freshness(generatedAt: string) {
+  const hours = (Date.now() - new Date(generatedAt).getTime()) / 3_600_000;
+  const level =
+    hours < FRESH_MAX_HOURS
+      ? "fresh"
+      : hours < STALE_MAX_HOURS
+        ? "stale"
+        : "old";
+
+  const days = Math.round(
+    (Date.parse(`${todayInParis()}T12:00:00Z`) -
+      Date.parse(`${parisDateOf(new Date(generatedAt))}T12:00:00Z`)) /
+      86_400_000,
+  );
+  const delay =
+    days <= 0 ? "aujourd'hui" : days === 1 ? "hier" : `il y a ${days} jours`;
+
+  return { level, delay };
+}
+
+function FreshnessBadge({ generatedAt }: { generatedAt: string }) {
+  const { level, delay } = freshness(generatedAt);
+  return (
+    <span
+      className={`freshness freshness-${level}`}
+      title={`Dernier relevé des horaires : ${new Date(generatedAt).toLocaleString("fr-FR")}`}
+    >
+      Mis à jour : {delay}
+    </span>
   );
 }
 
@@ -95,13 +133,18 @@ function useNowMinutes(): number {
   return now;
 }
 
-function todayInParis(): string {
+/** Calendar date "YYYY-MM-DD" of an instant, as seen in Paris. */
+function parisDateOf(date: Date): string {
   return new Intl.DateTimeFormat("en-CA", {
     timeZone: "Europe/Paris",
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
-  }).format(new Date());
+  }).format(date);
+}
+
+function todayInParis(): string {
+  return parisDateOf(new Date());
 }
 
 const POOL_ORDER_KEY = "poolPositions";

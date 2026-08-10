@@ -37,6 +37,31 @@ header h1 {
   color: var(--muted);
 }
 
+.freshness {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  cursor: help;
+}
+
+.freshness-fresh {
+  background: #dcf1e3;
+  color: #1e6b3c;
+}
+
+.freshness-stale {
+  background: #fdefd6;
+  color: #8a5a12;
+}
+
+.freshness-old {
+  background: #fbe3e3;
+  color: var(--closed);
+}
+
 .muted {
   color: var(--muted);
 }
