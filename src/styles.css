@@ -124,6 +124,36 @@ header h1 {
   color: #1e6b3c;
 }
 
+.disclosure {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0.55rem 0.8rem;
+  background: #eaeef3;
+  border: none;
+  border-radius: 8px;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.disclosure:hover {
+  background: #e0e6ed;
+  color: var(--ink);
+}
+
+.disclosure-caret {
+  color: var(--muted);
+  transition: transform 0.15s;
+}
+
+.disclosure[aria-expanded="true"] .disclosure-caret {
+  transform: rotate(90deg);
+}
+
 .pool-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -209,12 +239,48 @@ header h1 {
   margin-bottom: 1.5rem;
 }
 
-.agenda h2 {
+.agenda-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin: 0 1.1rem 0.75rem;
+}
+
+.agenda h2 {
+  margin: 0;
   font-size: 1.1rem;
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
+}
+
+.agenda-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.agenda-nav button {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  background: #eaeef3;
+  border: none;
+  border-radius: 6px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.agenda-nav button:hover:not(:disabled) {
+  background: #e0e6ed;
+}
+
+.agenda-nav button:disabled {
+  color: var(--line);
+  cursor: default;
 }
 
 .agenda-date {
@@ -470,10 +536,4 @@ thead th {
   border-radius: 6px;
   padding: 0 0.3rem;
   vertical-align: middle;
-}
-
-footer {
-  margin-top: 1rem;
-  color: var(--muted);
-  font-size: 0.8rem;
 }

@@ -13,6 +13,7 @@ const DATA_URL = `${import.meta.env.BASE_URL}data/schedules.json`;
 export default function App() {
   const [data, setData] = useState<SchedulesData | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [showPools, setShowPools] = useState(false);
 
   useEffect(() => {
     fetch(DATA_URL)
@@ -29,7 +30,7 @@ export default function App() {
       <header>
         <h1>🏊 Piscines de Montpellier</h1>
         <p className="subtitle">
-          Horaires réels des prochains jours.
+          Horaires réels des prochains jours, mis à jour depuis les pages officielles.
           {data && <FreshnessBadge generatedAt={data.generatedAt} />}
         </p>
       </header>
@@ -41,15 +42,24 @@ export default function App() {
 
       {data && (
         <>
-          <TodayAgenda data={data} />
-          {/* <PeriodsBanner periods={data.periodsInWindow} />
-          <ClosuresBanner pools={data.pools} /> */}
-          {data.pools.map((pool) => (
-            <PoolCard key={pool.id} pool={pool} today={data.generatedAt} />
-          ))}
-          <footer>
-            Fenêtre du {fmtDate(data.window.start)} au {fmtDate(data.window.end)}
-          </footer>
+          <DayAgenda data={data} />
+
+          <button
+            type="button"
+            className="disclosure"
+            aria-expanded={showPools}
+            onClick={() => setShowPools((v) => !v)}
+          >
+            <span className="disclosure-caret" aria-hidden="true">
+              ▸
+            </span>
+            Détails par piscine
+          </button>
+
+          {showPools &&
+            data.pools.map((pool) => (
+              <PoolCard key={pool.id} pool={pool} today={anchorDate(data)} />
+            ))}
         </>
       )}
     </div>
@@ -145,6 +155,35 @@ function parisDateOf(date: Date): string {
 
 function todayInParis(): string {
   return parisDateOf(new Date());
+}
+
+function fmtLongDate(iso: string): string {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("fr-FR", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  });
+}
+
+/** "Aujourd'hui" / "Demain", or the full date for any other day. */
+function dayLabel(iso: string): string {
+  const today = todayInParis();
+  if (iso === today) return "Aujourd'hui";
+
+  const tomorrow = new Date(`${today}T12:00:00Z`);
+  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+  if (iso === tomorrow.toISOString().slice(0, 10)) return "Demain";
+
+  return fmtLongDate(iso);
+}
+
+/**
+ * The date the site anchors "today" to: the real current date, or the
+ * generation date when the data is too old to cover today.
+ */
+function anchorDate(data: SchedulesData): string {
+  const today = todayInParis();
+  return data.window.dates.includes(today) ? today : data.generatedAt.slice(0, 10);
 }
 
 const POOL_ORDER_KEY = "poolPositions";
@@ -260,19 +299,22 @@ function useColumnDrag(
   };
 }
 
-function TodayAgenda({ data }: { data: SchedulesData }) {
+function DayAgenda({ data }: { data: SchedulesData }) {
   const nowMinutes = useNowMinutes();
-  const today = data.window.dates.includes(todayInParis())
-    ? todayInParis()
-    : data.generatedAt.slice(0, 10);
-  const isToday = today === todayInParis();
+  const [date, setDate] = useState(() => anchorDate(data));
+  const isToday = date === todayInParis();
+
+  // Navigation is bounded by the days the scraper actually resolved.
+  const dates = data.window.dates;
+  const index = dates.indexOf(date);
+  const step = (delta: number) => setDate(dates[index + delta]);
 
   const [order, movePool] = usePoolOrder(data.pools.map((p) => p.id));
 
   const columns = order.flatMap((id) => {
     const pool = data.pools.find((p) => p.id === id);
     if (!pool) return [];
-    return [{ pool, day: pool.resolved.find((d) => d.date === today) ?? null }];
+    return [{ pool, day: pool.resolved.find((d) => d.date === date) ?? null }];
   });
 
   const allSlots = columns.flatMap(({ day }) =>
@@ -304,16 +346,32 @@ function TodayAgenda({ data }: { data: SchedulesData }) {
 
   return (
     <section className="agenda">
-      <h2>
-        Aujourd'hui
-        <span className="agenda-date">
-          {new Date(`${today}T12:00:00Z`).toLocaleDateString("fr-FR", {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-          })}
-        </span>
-      </h2>
+      <div className="agenda-header">
+        <h2>
+          {dayLabel(date)}
+          {dayLabel(date) !== fmtLongDate(date) && (
+            <span className="agenda-date">{fmtLongDate(date)}</span>
+          )}
+        </h2>
+        <div className="agenda-nav">
+          <button
+            type="button"
+            onClick={() => step(-1)}
+            disabled={index <= 0}
+            aria-label="Jour précédent"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            onClick={() => step(1)}
+            disabled={index < 0 || index >= dates.length - 1}
+            aria-label="Jour suivant"
+          >
+            ›
+          </button>
+        </div>
+      </div>
 
       <div className="agenda-scroll">
         <div
@@ -470,7 +528,7 @@ function ClosuresBanner({ pools }: { pools: PoolResult[] }) {
 }
 
 function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
-  const todayDate = today.slice(0, 10);
+  const upcoming = pool.resolved.filter((d) => d.date >= today);
   return (
     <section className="pool-card">
       <h2>
@@ -491,8 +549,8 @@ function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
         <p className="muted">Horaires indisponibles ({pool.error}).</p>
       ) : (
         <ul className="days">
-          {pool.resolved.map((d) => (
-            <DayRow key={d.date} day={d} isToday={d.date === todayDate} />
+          {upcoming.map((d) => (
+            <DayRow key={d.date} day={d} isToday={d.date === today} />
           ))}
         </ul>
       )}
