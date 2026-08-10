@@ -124,7 +124,24 @@ header h1 {
   color: #1e6b3c;
 }
 
+.back-link {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.pool-details summary::-webkit-details-marker {
+  display: none;
+}
+
 .disclosure {
+  list-style: none;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -150,8 +167,52 @@ header h1 {
   transition: transform 0.15s;
 }
 
-.disclosure[aria-expanded="true"] .disclosure-caret {
+.pool-details[open] .disclosure-caret {
   transform: rotate(90deg);
+}
+
+.weekly-title {
+  margin: 1rem 0 0.35rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.weekly {
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.weekly th {
+  width: 9rem;
+  font-weight: 400;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: normal;
+  background: none;
+  position: static;
+  font-size: 0.9rem;
+}
+
+.weekly td .slot + .slot {
+  margin-left: 0.75rem;
+}
+
+.weekly td .label {
+  display: inline;
+  margin-left: 0.25rem;
+}
+
+.event-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.event-list li + li {
+  margin-top: 0.35rem;
 }
 
 .pool-card {

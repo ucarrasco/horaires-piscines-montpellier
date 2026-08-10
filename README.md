@@ -9,13 +9,36 @@ The site itself is in French; the codebase is in English.
 
 ```
 Daily cron (GitHub Actions)
-  └─ scripts/scrape.ts : fetch HTML → Claude (JSON extraction) → public/data/schedules.json
+  └─ scripts/scrape.ts    : fetch HTML → Claude (JSON extraction) → public/data/schedules.json
+  └─ scripts/prerender.ts : renders every route to static HTML → dist/
 Frontend (Vite + React)
-  └─ reads public/data/schedules.json → agenda + per-pool tables
+  └─ hydrates the prerendered page → agenda + per-pool tables
 Hosting: GitHub Pages
 ```
 
 No database: the data fits in a single versioned JSON file.
+
+## Static rendering
+
+The site is prerendered at build time so that the HTML contains the actual
+opening hours — a client-rendered SPA would be an empty `<div>` to crawlers.
+`npm run build` therefore runs three steps: the client build, an SSR bundle
+(`src/entry-server.tsx`), then `scripts/prerender.ts`, which writes one page per
+route plus `sitemap.xml`, `robots.txt` and, on a custom domain, `CNAME`.
+
+Routes are `/` and `/piscine-<id>/`, listed by `allRoutes()` in
+[`src/paths.ts`](src/paths.ts). Navigation between them uses plain links, so no
+router is involved.
+
+Each page inlines the data it needs in a `<script type="application/json">` tag,
+which the client reads to hydrate without a second round trip.
+
+**Anything that depends on the current time must render the same on the server
+and on the first client pass**, otherwise React reports a hydration mismatch.
+The pattern used throughout is to start from the build-time value and switch to
+the real one in an effect: see `useNow` and `useNowMinutes` in
+[`src/App.tsx`](src/App.tsx). The same applies to `localStorage` (the pool order),
+which is read after mount.
 
 ## Requirements
 
@@ -50,7 +73,22 @@ with its `id`, display `name` and the URL of its page.
 4. The [`.github/workflows/daily.yml`](.github/workflows/daily.yml) workflow:
    - runs every day at 04:00 UTC (and manually via *Run workflow*),
    - regenerates `public/data/schedules.json` and commits it when it changed,
-   - builds the site and deploys it to Pages.
+   - builds, prerenders and deploys the site to Pages.
+
+### Site URL and custom domain
+
+Everything URL-related derives from `SITE_URL`, defined once in
+[`scripts/site.ts`](scripts/site.ts): Vite's `base`, the canonical tags, the
+sitemap entries and whether a `CNAME` file is emitted.
+
+It defaults to the GitHub Pages URL. To move to a custom domain, add a
+**repository variable** (not a secret) named `SITE_URL` under *Settings → Secrets
+and variables → Actions → Variables*, for example
+`https://piscines-montpellier.fr`. Nothing else changes: the next build emits the
+`CNAME` file and rewrites every absolute URL. Point the domain's DNS at GitHub
+Pages, then declare the site in the Google Search Console.
+
+Locally, `SITE_URL=https://example.org npm run build` does the same.
 
 ## JSON shape
 

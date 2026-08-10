@@ -1,9 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// base: "./" -> relative paths, which work both locally and on GitHub Pages
-// (where the site is served under /<repo-name>/).
+import { BASE_PATH } from "./scripts/site.ts";
+
+// The base is derived from SITE_URL: pages live in sub-directories
+// (/piscine-neptune/), so relative asset paths would not resolve.
 export default defineConfig({
-  base: "./",
+  base: BASE_PATH,
   plugins: [react()],
 });

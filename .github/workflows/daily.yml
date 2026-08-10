@@ -53,7 +53,13 @@ jobs:
             echo "No schedule changes."
           fi
 
-      - run: npm run build
+      # SITE_URL drives Vite's base, the canonical URLs, the sitemap and the
+      # CNAME file. Set it as a repository variable when moving to a custom
+      # domain; without it the build targets the default github.io URL.
+      - name: Build and prerender
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: npm run build
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

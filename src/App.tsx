@@ -1,69 +1,86 @@
 import { useEffect, useMemo, useState, type DragEvent } from "react";
 import {
+  DAY_KEYS,
   DAY_LABELS,
+  PERIOD_KEYS,
   PERIOD_LABELS,
   type SchedulesData,
   type PeriodSpan,
   type PoolResult,
   type ResolvedDay,
+  type WeeklySchedule,
 } from "./types.ts";
+import type { Route } from "./paths.ts";
+import { poolPath } from "./paths.ts";
+import { href } from "./site.ts";
 
-const DATA_URL = `${import.meta.env.BASE_URL}data/schedules.json`;
-
-export default function App() {
-  const [data, setData] = useState<SchedulesData | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [showPools, setShowPools] = useState(false);
-
-  useEffect(() => {
-    fetch(DATA_URL)
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json() as Promise<SchedulesData>;
-      })
-      .then(setData)
-      .catch((e) => setError(e instanceof Error ? e.message : String(e)));
-  }, []);
+export default function App({
+  data,
+  route,
+}: {
+  data: SchedulesData;
+  route: Route;
+}) {
+  const now = useNow(Date.parse(data.generatedAt));
+  const today = parisDateOf(new Date(now));
+  const pool =
+    route.kind === "pool"
+      ? data.pools.find((p) => p.id === route.id)
+      : undefined;
 
   return (
     <div className="page">
       <header>
-        <h1>🏊 Piscines de Montpellier</h1>
+        {pool ? (
+          <>
+            <a className="back-link" href={href("")}>
+              ← Toutes les piscines
+            </a>
+            <h1>{pool.name}</h1>
+          </>
+        ) : (
+          <h1>🏊 Piscines de Montpellier</h1>
+        )}
         <p className="subtitle">
-          Horaires réels des prochains jours, mis à jour depuis les pages officielles.
-          {data && <FreshnessBadge generatedAt={data.generatedAt} />}
+          {pool
+            ? "Horaires d'ouverture au public, relevés sur la page officielle de la Ville de Montpellier."
+            : "Horaires réels des prochains jours, mis à jour depuis les pages officielles."}
+          <FreshnessBadge generatedAt={data.generatedAt} now={now} />
         </p>
       </header>
 
-      {error && (
-        <p className="error">Impossible de charger les horaires : {error}</p>
-      )}
-      {!error && !data && <p className="muted">Chargement…</p>}
-
-      {data && (
+      {pool ? (
+        <PoolPage pool={pool} today={today} />
+      ) : (
         <>
-          <DayAgenda data={data} />
+          <DayAgenda data={data} today={today} />
 
-          <button
-            type="button"
-            className="disclosure"
-            aria-expanded={showPools}
-            onClick={() => setShowPools((v) => !v)}
-          >
-            <span className="disclosure-caret" aria-hidden="true">
-              ▸
-            </span>
-            Détails par piscine
-          </button>
-
-          {showPools &&
-            data.pools.map((pool) => (
-              <PoolCard key={pool.id} pool={pool} today={anchorDate(data)} />
+          <details className="pool-details">
+            <summary className="disclosure">
+              <span className="disclosure-caret" aria-hidden="true">
+                ▸
+              </span>
+              Détails par piscine
+            </summary>
+            {data.pools.map((p) => (
+              <PoolCard key={p.id} pool={p} today={anchorDate(data, today)} />
             ))}
+          </details>
         </>
       )}
     </div>
   );
+}
+
+/**
+ * Current time in ms. Prerendered HTML cannot know when it will be read, so the
+ * first render reuses the build-time value — which hydration requires the client
+ * to match — and the real clock lands right after mount.
+ */
+function useNow(fallback: number): number {
+  const [now, setNow] = useState(fallback);
+  useEffect(() => setNow(Date.now()), []);
+  return now;
 }
 
 const FRESH_MAX_HOURS = 24;
@@ -73,8 +90,8 @@ const STALE_MAX_HOURS = 5 * 24;
  * How old the data is: a colour level based on elapsed hours, and a delay
  * expressed in calendar days in Paris (so a 20:00 → 08:00 gap reads "hier").
  */
-function freshness(generatedAt: string) {
-  const hours = (Date.now() - new Date(generatedAt).getTime()) / 3_600_000;
+function freshness(generatedAt: string, now: number) {
+  const hours = (now - Date.parse(generatedAt)) / 3_600_000;
   const level =
     hours < FRESH_MAX_HOURS
       ? "fresh"
@@ -82,8 +99,10 @@ function freshness(generatedAt: string) {
         ? "stale"
         : "old";
 
+  // The delay is counted in Paris calendar days, so a 20:00 → 08:00 gap reads
+  // "hier" rather than "aujourd'hui".
   const days = Math.round(
-    (Date.parse(`${todayInParis()}T12:00:00Z`) -
+    (Date.parse(`${parisDateOf(new Date(now))}T12:00:00Z`) -
       Date.parse(`${parisDateOf(new Date(generatedAt))}T12:00:00Z`)) /
       86_400_000,
   );
@@ -93,8 +112,14 @@ function freshness(generatedAt: string) {
   return { level, delay };
 }
 
-function FreshnessBadge({ generatedAt }: { generatedAt: string }) {
-  const { level, delay } = freshness(generatedAt);
+function FreshnessBadge({
+  generatedAt,
+  now,
+}: {
+  generatedAt: string;
+  now: number;
+}) {
+  const { level, delay } = freshness(generatedAt, now);
   return (
     <span
       className={`freshness freshness-${level}`}
@@ -134,9 +159,11 @@ function nowMinutesInParis(): number {
   );
 }
 
-function useNowMinutes(): number {
-  const [now, setNow] = useState(nowMinutesInParis);
+/** Minutes since midnight in Paris, or null until the component has mounted. */
+function useNowMinutes(): number | null {
+  const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
+    setNow(nowMinutesInParis());
     const id = setInterval(() => setNow(nowMinutesInParis()), 60_000);
     return () => clearInterval(id);
   }, []);
@@ -153,10 +180,6 @@ function parisDateOf(date: Date): string {
   }).format(date);
 }
 
-function todayInParis(): string {
-  return parisDateOf(new Date());
-}
-
 function fmtLongDate(iso: string): string {
   return new Date(`${iso}T12:00:00Z`).toLocaleDateString("fr-FR", {
     weekday: "long",
@@ -166,8 +189,7 @@ function fmtLongDate(iso: string): string {
 }
 
 /** "Aujourd'hui" / "Demain", or the full date for any other day. */
-function dayLabel(iso: string): string {
-  const today = todayInParis();
+function dayLabel(iso: string, today: string): string {
   if (iso === today) return "Aujourd'hui";
 
   const tomorrow = new Date(`${today}T12:00:00Z`);
@@ -178,12 +200,13 @@ function dayLabel(iso: string): string {
 }
 
 /**
- * The date the site anchors "today" to: the real current date, or the
- * generation date when the data is too old to cover today.
+ * The date the site anchors "today" to: the current date, or the generation
+ * date when the data is too old to cover today.
  */
-function anchorDate(data: SchedulesData): string {
-  const today = todayInParis();
-  return data.window.dates.includes(today) ? today : data.generatedAt.slice(0, 10);
+function anchorDate(data: SchedulesData, today: string): string {
+  return data.window.dates.includes(today)
+    ? today
+    : data.generatedAt.slice(0, 10);
 }
 
 const POOL_ORDER_KEY = "poolPositions";
@@ -223,25 +246,34 @@ function loadPoolOrder(): string[] {
  * Display order of the pools, persisted in localStorage.
  * The stored order is reconciled with the pools actually present in the data:
  * unknown ids are dropped, new pools are appended at the end.
+ *
+ * `order` stays null until the stored value has been read, which keeps the first
+ * render identical to the prerendered HTML and avoids writing the default order
+ * over the visitor's own before it has even been loaded.
  */
 function usePoolOrder(
   poolIds: string[],
 ): [string[], (from: number, to: number) => void] {
-  const [order, setOrder] = useState(loadPoolOrder);
+  const [order, setOrder] = useState<string[] | null>(null);
   const key = poolIds.join(",");
 
+  useEffect(() => setOrder(loadPoolOrder()), []);
+
   const ordered = useMemo(() => {
-    const known = order.filter((id) => poolIds.includes(id));
+    const known = (order ?? DEFAULT_POOL_ORDER).filter((id) =>
+      poolIds.includes(id),
+    );
     return [...known, ...poolIds.filter((id) => !known.includes(id))];
   }, [order, key]);
 
   useEffect(() => {
+    if (order === null) return;
     try {
       localStorage.setItem(POOL_ORDER_KEY, JSON.stringify(ordered));
     } catch {
       // storage unavailable (private mode, quota): the order stays in memory only
     }
-  }, [ordered]);
+  }, [order, ordered]);
 
   const move = (from: number, to: number) => {
     const next = [...ordered];
@@ -299,15 +331,18 @@ function useColumnDrag(
   };
 }
 
-function DayAgenda({ data }: { data: SchedulesData }) {
+function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
   const nowMinutes = useNowMinutes();
-  const [date, setDate] = useState(() => anchorDate(data));
-  const isToday = date === todayInParis();
+  // Left null until the visitor navigates, so the displayed day follows `today`
+  // once the real date replaces the build-time one.
+  const [picked, setPicked] = useState<string | null>(null);
+  const date = picked ?? anchorDate(data, today);
+  const isToday = date === today;
 
   // Navigation is bounded by the days the scraper actually resolved.
   const dates = data.window.dates;
   const index = dates.indexOf(date);
-  const step = (delta: number) => setDate(dates[index + delta]);
+  const step = (delta: number) => setPicked(dates[index + delta]);
 
   const [order, movePool] = usePoolOrder(data.pools.map((p) => p.id));
 
@@ -337,7 +372,10 @@ function DayAgenda({ data }: { data: SchedulesData }) {
   const offset = (hhmm: string) => offsetOf(toMinutes(hhmm));
 
   const showNow =
-    isToday && nowMinutes >= startHour * 60 && nowMinutes <= endHour * 60;
+    isToday &&
+    nowMinutes !== null &&
+    nowMinutes >= startHour * 60 &&
+    nowMinutes <= endHour * 60;
 
   const drag = useColumnDrag(
     columns.map(({ pool }) => pool.id),
@@ -348,8 +386,8 @@ function DayAgenda({ data }: { data: SchedulesData }) {
     <section className="agenda">
       <div className="agenda-header">
         <h2>
-          {dayLabel(date)}
-          {dayLabel(date) !== fmtLongDate(date) && (
+          {dayLabel(date, today)}
+          {dayLabel(date, today) !== fmtLongDate(date) && (
             <span className="agenda-date">{fmtLongDate(date)}</span>
           )}
         </h2>
@@ -471,7 +509,7 @@ function DayAgenda({ data }: { data: SchedulesData }) {
             </div>
           )}
 
-          {showNow && (
+          {showNow && nowMinutes !== null && (
             <div className="agenda-now-layer">
               <div className="agenda-now" style={{ top: offsetOf(nowMinutes) }}>
                 <span className="agenda-now-time">
@@ -532,13 +570,7 @@ function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
   return (
     <section className="pool-card">
       <h2>
-        {pool.url ? (
-          <a href={pool.url} target="_blank" rel="noreferrer">
-            {pool.name}
-          </a>
-        ) : (
-          pool.name
-        )}
+        <a href={href(poolPath(pool.id))}>{pool.name}</a>
         {pool.status === "error" && (
           <span className="badge-error" title={pool.error}>
             indispo
@@ -556,6 +588,108 @@ function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
       )}
       {pool.notes && <p className="notes">{pool.notes}</p>}
     </section>
+  );
+}
+
+/** Full page for one pool: the crawlable, linkable version of a PoolCard. */
+function PoolPage({ pool, today }: { pool: PoolResult; today: string }) {
+  const upcoming = pool.resolved.filter((d) => d.date >= today);
+  const events = pool.events.filter((e) => (e.end ?? e.start) >= today);
+
+  return (
+    <>
+      {pool.status === "error" && (
+        <p className="error">
+          Les horaires de cette piscine n'ont pas pu être relevés ({pool.error}).
+        </p>
+      )}
+
+      {upcoming.length > 0 && (
+        <section className="pool-card">
+          <h2>Prochains jours</h2>
+          <ul className="days">
+            {upcoming.map((d) => (
+              <DayRow key={d.date} day={d} isToday={d.date === today} />
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {events.length > 0 && (
+        <section className="pool-card">
+          <h2>Fermetures et horaires exceptionnels</h2>
+          <ul className="event-list">
+            {events.map((e, i) => (
+              <li key={i}>
+                <strong>
+                  {fmtLongDate(e.start)}
+                  {e.end && e.end !== e.start ? ` → ${fmtLongDate(e.end)}` : ""}
+                </strong>{" "}
+                — {e.description}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section className="pool-card">
+        <h2>Horaires habituels</h2>
+        {PERIOD_KEYS.map((period) => (
+          <WeeklyTable
+            key={period}
+            title={PERIOD_LABELS[period]}
+            schedule={pool.periods[period]}
+          />
+        ))}
+        {pool.notes && <p className="notes">{pool.notes}</p>}
+        {pool.url && (
+          <p className="notes">
+            Source :{" "}
+            <a href={pool.url} target="_blank" rel="noreferrer">
+              page officielle de la {pool.name}
+            </a>
+          </p>
+        )}
+      </section>
+    </>
+  );
+}
+
+function WeeklyTable({
+  title,
+  schedule,
+}: {
+  title: string;
+  schedule: WeeklySchedule;
+}) {
+  if (DAY_KEYS.every((d) => schedule[d].length === 0)) return null;
+  return (
+    <>
+      <h3 className="weekly-title">{title}</h3>
+      <table className="weekly">
+        <tbody>
+          {DAY_KEYS.map((d) => (
+            <tr key={d}>
+              <th scope="row">{DAY_LABELS[d]}</th>
+              <td>
+                {schedule[d].length === 0 ? (
+                  <span className="closed">Fermé</span>
+                ) : (
+                  schedule[d].map((s, i) => (
+                    <span className="slot" key={i}>
+                      <span className="time">
+                        {s.start}–{s.end}
+                      </span>
+                      {s.label && <span className="label">{s.label}</span>}
+                    </span>
+                  ))
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 }
 
