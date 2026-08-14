@@ -6,13 +6,13 @@ export interface PoolConfig {
 
 export const POOLS: PoolConfig[] = [
   {
-    id: "olympique-antigone",
-    name: "Piscine Olympique d'Antigone",
+    id: "olympique-angelotti",
+    name: "Piscine Olympique Angelotti",
     url: "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti",
   },
   {
     id: "neptune",
-    name: "Piscine Neptune",
+    name: "Centre aquatique Neptune",
     url: "https://www.montpellier.fr/territoire/lieux-equipements/centre-aquatique-neptune",
   },
   {
