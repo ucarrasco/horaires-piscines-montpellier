@@ -54,6 +54,29 @@ export interface DatedEvent {
   closed: boolean;
   /** Exceptional opening hours replacing the weekly schedule, or null. */
   slots: Slot[] | null;
+  /**
+   * Set when the event was not announced on this pool's own page, but deduced
+   * from a NetworkClaim found on another pool's page. Traceability only: the
+   * event is displayed like any other.
+   */
+  inferredFrom?: { poolId: string; poolName: string; url: string };
+}
+
+/**
+ * A statement found on ONE pool's page, but which is about OTHER pools or about
+ * the whole municipal network (e.g. "seule piscine du réseau ouverte"). These
+ * are turned into DatedEvents on the pools they concern, see applyNetworkClaims
+ * in scripts/scrape.ts.
+ */
+export interface NetworkClaim {
+  start: string; // "YYYY-MM-DD"
+  end: string | null; // "YYYY-MM-DD" inclusive, or null for a single day
+  scope: "all_pools" | "all_other_pools" | "named_pools";
+  /** Pool names as written on the page; only meaningful for "named_pools". */
+  pools: string[];
+  closed: boolean;
+  /** In French, phrased from the point of view of the pools it applies TO. */
+  description: string;
 }
 
 /**
@@ -72,6 +95,8 @@ export interface PoolSchedule {
   periods: Record<PeriodKey, WeeklySchedule>;
   events: DatedEvent[];
   periodOverrides: PeriodOverride[];
+  /** What this page says about OTHER pools. Applied to them, not to this one. */
+  networkClaims: NetworkClaim[];
   /** Any other useful information (pricing, remarks), or null. */
   notes: string | null;
 }

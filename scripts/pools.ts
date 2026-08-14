@@ -93,3 +93,60 @@ export const POOLS: PoolConfig[] = [
     url: "https://www.montpellier.fr/territoire/lieux-equipements/piscine-francoise-et-yves-jarrousse",
   },
 ];
+
+// --- Matching a pool name written in free text ----------------------------
+// Used to resolve the pool names quoted in a NetworkClaim (a sentence on one
+// pool's page naming other pools) back to entries of POOLS.
+
+/** Words that carry no identity: every pool is a "piscine" of some kind. */
+const GENERIC_WORDS = new Set([
+  "piscine",
+  "piscines",
+  "centre",
+  "aquatique",
+  "nautique",
+  "complexe",
+  "olympique",
+  "municipale",
+  "de",
+  "du",
+  "des",
+  "la",
+  "le",
+  "les",
+  "et",
+  "d",
+  "l",
+]);
+
+/** "Piscine Olympique Angelotti" -> "angelotti", "Centre aquatique Neptune" -> "neptune". */
+export function normalizePoolName(name: string): string {
+  return name
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter((w) => w && !GENERIC_WORDS.has(w))
+    .join("");
+}
+
+const NORMALIZED = POOLS.map((p) => ({ pool: p, key: normalizePoolName(p.name) }));
+
+/**
+ * Resolves a pool name written in free text to a POOLS entry.
+ * Returns null when nothing matches, or when the match is ambiguous — we never
+ * guess, since a wrong match would close the wrong pool.
+ */
+export function matchPool(name: string): PoolConfig | null {
+  const key = normalizePoolName(name);
+  if (!key) return null;
+
+  const exact = NORMALIZED.filter((c) => c.key === key);
+  if (exact.length === 1) return exact[0].pool;
+  if (exact.length > 1) return null;
+
+  const partial = NORMALIZED.filter(
+    (c) => c.key.includes(key) || key.includes(c.key),
+  );
+  return partial.length === 1 ? partial[0].pool : null;
+}
