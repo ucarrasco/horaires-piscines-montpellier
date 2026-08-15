@@ -13,8 +13,6 @@ import {
 import type { Route } from "./paths.ts";
 import { ABOUT_PATH, poolPath } from "./paths.ts";
 import { AUTHOR_URL, GITHUB_URL, href } from "./site.ts";
-// Design exploration scaffolding — TEMPORARY, remove with src/themes/.
-import { THEMES, THEME_KEY } from "./themes/index.ts";
 
 export default function App({
   data,
@@ -81,70 +79,6 @@ export default function App({
       )}
 
       <SiteFooter />
-      <ThemeSwitcher />
-    </div>
-  );
-}
-
-/**
- * Design exploration scaffolding — TEMPORARY, remove with src/themes/.
- *
- * Swaps [data-theme] on <html>, which is enough to restyle the site because
- * every theme is scoped under that attribute. Shown on the dev server, or on
- * any build when the URL carries ?themes.
- *
- * Renders null until mounted, like `usePoolOrder` below: the prerendered HTML
- * knows nothing of localStorage, and hydration requires the first client render
- * to match it exactly.
- */
-function ThemeSwitcher() {
-  const [visible, setVisible] = useState(false);
-  const [theme, setTheme] = useState<string | null>(null);
-
-  useEffect(() => {
-    const on =
-      import.meta.env.DEV || new URLSearchParams(location.search).has("themes");
-    if (!on) return;
-    setVisible(true);
-    setTheme(localStorage.getItem(THEME_KEY));
-  }, []);
-
-  useEffect(() => {
-    if (!visible) return;
-    const root = document.documentElement;
-    if (theme) {
-      root.dataset.theme = theme;
-      localStorage.setItem(THEME_KEY, theme);
-    } else {
-      delete root.dataset.theme;
-      localStorage.removeItem(THEME_KEY);
-    }
-  }, [visible, theme]);
-
-  if (!visible) return null;
-
-  const current = THEMES.find((t) => t.id === theme);
-
-  return (
-    <div className="theme-switcher">
-      <button
-        type="button"
-        aria-pressed={theme === null}
-        onClick={() => setTheme(null)}
-      >
-        Base
-      </button>
-      {THEMES.map((t) => (
-        <button
-          key={t.id}
-          type="button"
-          aria-pressed={theme === t.id}
-          onClick={() => setTheme(t.id)}
-        >
-          {t.name}
-        </button>
-      ))}
-      <span className="theme-blurb">{current?.blurb ?? "actuel"}</span>
     </div>
   );
 }

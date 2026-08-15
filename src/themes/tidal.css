@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap");
-
 /*
- * tidal — aquatique profond.
+ * tidal — aquatique profond. The site's active skin.
+ *
+ * Kept scoped under [data-theme="tidal"], which index.html sets on <html>:
+ * removing that attribute falls back to the plain base design in styles.css.
+ * Manrope is loaded from index.html (a font @import here would block rendering).
  *
  * Looking down into a pool: a lit surface at the top of the page fading into
  * depth, lanes ruled in pale turquoise, créneaux drawn as columns of water
@@ -314,7 +316,6 @@
 
 [data-theme="tidal"] .day.today {
   background: var(--surface-today);
-  box-shadow: inset 3px 0 0 var(--accent);
   border-bottom-color: transparent;
 }
 
@@ -573,10 +574,6 @@
 [data-theme="tidal"] .footer-sep {
   color: var(--muted);
   opacity: 0.5;
-}
-
-[data-theme="tidal"] .footer-heart {
-  color: var(--closed);
 }
 
 /* ------------------------------------------------------------------ */

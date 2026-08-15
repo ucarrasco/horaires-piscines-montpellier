@@ -674,10 +674,6 @@ thead th {
   text-decoration: underline;
 }
 
-.footer-heart {
-  color: var(--closed);
-}
-
 .footer-sep {
   color: var(--line);
 }
