@@ -411,14 +411,14 @@ function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
         </div>
       </div>
 
+      {/* --gutter and --col live in the stylesheet so the mobile media query
+          can shrink them; only the JS-derived sizes are inline. */}
       <div className="agenda-scroll">
         <div
           className="agenda-grid"
           style={{
             gridTemplateColumns: `var(--gutter) repeat(${columns.length}, var(--col))`,
             gridTemplateRows: `auto ${bodyHeight}px`,
-            ["--gutter" as string]: "3.5rem",
-            ["--col" as string]: "6.5rem",
           }}
         >
           <div className="agenda-corner" style={{ gridArea: "1 / 1" }} />
@@ -497,8 +497,12 @@ function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
                       height: Math.max(offset(s.end) - offset(s.start), 20),
                     }}
                   >
+                    {/* Three parts so the mobile media query can stack them
+                        vertically once the columns get too narrow. */}
                     <span className="agenda-slot-time">
-                      {fmtTime(s.start)} – {fmtTime(s.end)}
+                      <span>{fmtTime(s.start)}</span>
+                      <span className="agenda-slot-sep">–</span>
+                      <span>{fmtTime(s.end)}</span>
                     </span>
                   </div>
                 ))}
