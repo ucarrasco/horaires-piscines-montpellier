@@ -212,21 +212,21 @@ function anchorDate(data: SchedulesData, today: string): string {
 const POOL_ORDER_KEY = "poolPositions";
 
 const DEFAULT_POOL_ORDER = [
-  "olympique-antigone",
-  "neptune",
-  "suzanne-berlioux",
+  "olympique-angelotti",
   "pitot",
-  "marcel-spilliaert",
   "jean-vives",
+  "suzanne-berlioux",
+  "neptune",
   "jean-taris",
+  "marcel-spilliaert",
   "alfred-nakache",
   "francoise-et-yves-jarrousse",
-  "christine-caron",
   "amphitrite",
-  "poseidon",
-  "heracles",
+  "christine-caron",
   "les-nereides",
+  "poseidon",
   "alex-jany",
+  "heracles",
 ];
 
 function loadPoolOrder(): string[] {
