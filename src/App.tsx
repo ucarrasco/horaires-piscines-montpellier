@@ -11,8 +11,8 @@ import {
   type WeeklySchedule,
 } from "./types.ts";
 import type { Route } from "./paths.ts";
-import { poolPath } from "./paths.ts";
-import { href } from "./site.ts";
+import { ABOUT_PATH, poolPath } from "./paths.ts";
+import { AUTHOR_URL, GITHUB_URL, href } from "./site.ts";
 
 export default function App({
   data,
@@ -27,29 +27,38 @@ export default function App({
     route.kind === "pool"
       ? data.pools.find((p) => p.id === route.id)
       : undefined;
+  // An unknown pool id falls back to the home page, as routeFromPathname does.
+  const kind = route.kind === "pool" && !pool ? "home" : route.kind;
 
   return (
     <div className="page">
       <header>
-        {pool ? (
-          <>
-            <a className="back-link" href={href("")}>
-              ← Toutes les piscines
-            </a>
-            <h1>{pool.name}</h1>
-          </>
-        ) : (
-          <h1>🏊 Piscines de Montpellier</h1>
+        {kind !== "home" && (
+          <a className="back-link" href={href("")}>
+            ← Toutes les piscines
+          </a>
         )}
+        <h1>
+          {kind === "about"
+            ? "À propos"
+            : (pool?.name ?? "🏊 Piscines de Montpellier")}
+        </h1>
         <p className="subtitle">
-          {pool
-            ? "Horaires d'ouverture au public, relevés sur la page officielle de la Ville de Montpellier."
-            : "Horaires réels des prochains jours, mis à jour depuis les pages officielles."}
-          <FreshnessBadge generatedAt={data.generatedAt} now={now} />
+          {kind === "about"
+            ? "Comment ce site relève et recalcule les horaires."
+            : pool
+              ? "Horaires d'ouverture au public, relevés sur la page officielle de la Ville de Montpellier."
+              : "Horaires réels des prochains jours, mis à jour depuis les pages officielles."}
+          {/* The about page shows no schedules, so its freshness is moot. */}
+          {kind !== "about" && (
+            <FreshnessBadge generatedAt={data.generatedAt} now={now} />
+          )}
         </p>
       </header>
 
-      {pool ? (
+      {kind === "about" ? (
+        <AboutPage />
+      ) : pool ? (
         <PoolPage pool={pool} today={today} />
       ) : (
         <>
@@ -68,7 +77,32 @@ export default function App({
           </details>
         </>
       )}
+
+      <SiteFooter />
     </div>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <a href={href(ABOUT_PATH)}>À propos</a>
+      <span className="footer-sep" aria-hidden="true">
+        ·
+      </span>
+      <a href={GITHUB_URL} target="_blank" rel="noreferrer">
+        GitHub
+      </a>
+      <span className="footer-sep" aria-hidden="true">
+        ·
+      </span>
+      <span>
+        Créé par{" "}
+        <a href={AUTHOR_URL} target="_blank" rel="noreferrer">
+          Ugo
+        </a>
+      </span>
+    </footer>
   );
 }
 
@@ -602,6 +636,72 @@ function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
   );
 }
 
+/**
+ * Static page explaining the pipeline behind the site. Renders no schedules,
+ * so the prerenderer inlines an empty pool list for it (scripts/prerender.ts).
+ */
+function AboutPage() {
+  return (
+    <article className="about">
+      <p className="about-lead">
+        Les horaires des piscines municipales de Montpellier sont publiés sur le
+        site de la Ville, une page par piscine. Ce site les relève chaque jour
+        et en recalcule les horaires réels, jour par jour.
+      </p>
+
+      <h2>Comment ça marche</h2>
+
+      <ol className="about-steps">
+        <li>
+          Chaque matin, la page officielle de chacune des piscines est
+          récupérée.
+        </li>
+        <li>
+          Une IA en extrait les <strong>horaires théoriques</strong> de la
+          semaine ainsi que les{" "}
+          <strong>messages d'information du moment</strong> — fermetures,
+          travaux, jours fériés, horaires exceptionnels.
+        </li>
+        <li>
+          Les deux sont combinés jour par jour : l'horaire habituel s'applique,
+          sauf quand une information du moment vient le remplacer.
+        </li>
+      </ol>
+
+      <h2>Ce que ça vaut</h2>
+
+      <p>
+        Ce site n'est ni officiel ni affilié à la Ville de Montpellier. La
+        lecture automatique peut se tromper, et une information publiée après le
+        dernier relevé n'y figure pas encore. La date du dernier relevé est
+        affichée en haut de chaque page, et chaque fiche de piscine renvoie vers
+        sa page officielle — qui fait foi.
+      </p>
+
+      <p>
+        Il arrive aussi qu'une piscine ait une fermeture exceptionnelle qui
+        n'était pas mentionnée sur le site officiel (et non ça ne fait pas
+        plaisir quand ça arrive), dans ce cas pas de magie non plus 🤷
+      </p>
+
+      <p>
+        Seuls les créneaux ouverts au public (« nage libre », « grand public »)
+        sont retenus : les cours, clubs et scolaires sont ignorés.
+      </p>
+
+      <p>Site entièrement vibe-codé ✨</p>
+
+      <p>
+        Le code est ouvert :{" "}
+        <a href={GITHUB_URL} target="_blank" rel="noreferrer">
+          voir le dépôt sur GitHub
+        </a>
+        .
+      </p>
+    </article>
+  );
+}
+
 /** Full page for one pool: the crawlable, linkable version of a PoolCard. */
 function PoolPage({ pool, today }: { pool: PoolResult; today: string }) {
   const upcoming = pool.resolved.filter((d) => d.date >= today);
@@ -611,7 +711,8 @@ function PoolPage({ pool, today }: { pool: PoolResult; today: string }) {
     <>
       {pool.status === "error" && (
         <p className="error">
-          Les horaires de cette piscine n'ont pas pu être relevés ({pool.error}).
+          Les horaires de cette piscine n'ont pas pu être relevés ({pool.error}
+          ).
         </p>
       )}
 

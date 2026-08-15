@@ -607,6 +607,65 @@ thead th {
   vertical-align: middle;
 }
 
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.footer-heart {
+  color: var(--closed);
+}
+
+.footer-sep {
+  color: var(--line);
+}
+
+.about {
+  max-width: 44rem;
+  line-height: 1.6;
+}
+
+.about-lead {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.about a {
+  color: var(--accent);
+}
+
+.about h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.about-steps {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.about-steps li + li {
+  margin-top: 0.85rem;
+}
+
 /* Mobile: the agenda goes full-bleed and the columns shrink, so every
    horizontal pixel spent on the card chrome is a pixel of grid lost. */
 @media (max-width: 640px) {

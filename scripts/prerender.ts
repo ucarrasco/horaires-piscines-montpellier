@@ -10,7 +10,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { allRoutes, routePath, type Route } from "../src/paths.ts";
 import type { SchedulesData } from "../src/types.ts";
-import { homeHead, poolHead, safeJson } from "./seo.ts";
+import { aboutHead, homeHead, poolHead, safeJson } from "./seo.ts";
 import { HAS_CUSTOM_DOMAIN, SITE_URL, absoluteUrl } from "./site.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -22,6 +22,7 @@ type Renderer = (route: Route, data: SchedulesData) => string;
 
 function headFor(route: Route, data: SchedulesData, today: string): string {
   if (route.kind === "home") return homeHead(data);
+  if (route.kind === "about") return aboutHead();
   const pool = data.pools.find((p) => p.id === route.id)!;
   return poolHead(pool, today);
 }
@@ -33,6 +34,8 @@ function headFor(route: Route, data: SchedulesData, today: string): string {
  */
 function dataFor(route: Route, data: SchedulesData): SchedulesData {
   if (route.kind === "home") return data;
+  // The about page reads no schedules at all.
+  if (route.kind === "about") return { ...data, pools: [] };
   return { ...data, pools: data.pools.filter((p) => p.id === route.id) };
 }
 

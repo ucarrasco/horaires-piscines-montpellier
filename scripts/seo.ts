@@ -8,7 +8,7 @@ import {
   type PoolResult,
   type SchedulesData,
 } from "../src/types.ts";
-import { poolPath } from "../src/paths.ts";
+import { ABOUT_PATH, poolPath } from "../src/paths.ts";
 import { SITE_NAME, SITE_URL, absoluteUrl } from "./site.ts";
 
 /** schema.org day names, in the same order as DAY_KEYS. */
@@ -127,6 +127,25 @@ export function homeHead(data: SchedulesData): string {
         name: pool.name,
         url: absoluteUrl(poolPath(pool.id)),
       })),
+    }),
+  ].join("\n    ");
+}
+
+export function aboutHead(): string {
+  const canonical = absoluteUrl(ABOUT_PATH);
+  const title = `À propos — ${SITE_NAME}`;
+  const description = `Comment ce site relève les horaires des piscines de Montpellier : lecture par IA des pages officielles, prise en compte des messages d'information du moment et recalcul des horaires réels jour par jour.`;
+
+  return [
+    metaTags({ title, description, canonical }),
+    jsonLd({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: title,
+      description,
+      url: canonical,
+      inLanguage: "fr-FR",
+      isPartOf: { "@type": "WebSite", name: SITE_NAME, url: `${SITE_URL}/` },
     }),
   ].join("\n    ");
 }

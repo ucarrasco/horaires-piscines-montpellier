@@ -3,16 +3,26 @@
 
 import type { SchedulesData } from "./types.ts";
 
-export type Route = { kind: "home" } | { kind: "pool"; id: string };
+export type Route =
+  { kind: "home" } | { kind: "pool"; id: string } | { kind: "about" };
 
 /** Path of a pool page, relative to the base and without leading slash. */
 export function poolPath(id: string): string {
   return `piscine-${id}/`;
 }
 
+export const ABOUT_PATH = "a-propos/";
+
 /** Path of a route, relative to the base: "" or "piscine-neptune/". */
 export function routePath(route: Route): string {
-  return route.kind === "home" ? "" : poolPath(route.id);
+  switch (route.kind) {
+    case "home":
+      return "";
+    case "about":
+      return ABOUT_PATH;
+    case "pool":
+      return poolPath(route.id);
+  }
 }
 
 /** Every route the site prerenders, in sitemap order. */
@@ -20,5 +30,6 @@ export function allRoutes(data: SchedulesData): Route[] {
   return [
     { kind: "home" },
     ...data.pools.map((p): Route => ({ kind: "pool", id: p.id })),
+    { kind: "about" },
   ];
 }
