@@ -554,9 +554,16 @@
 }
 
 [data-theme="tidal"] .site-footer {
-  border-top: none;
-  margin-top: 0;
-  padding-top: 0;
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0),
+      var(--line) 25%,
+      var(--tidal-glow) 50%,
+      var(--line) 75%,
+      rgba(0, 0, 0, 0)
+    )
+    1;
   letter-spacing: 0.01em;
 }
 

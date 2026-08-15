@@ -64,7 +64,7 @@ export default function App({
         <>
           <DayAgenda data={data} today={today} />
 
-          {/* <details className="pool-details">
+          <details className="pool-details">
             <summary className="disclosure">
               <span className="disclosure-caret" aria-hidden="true">
                 ▸
@@ -74,7 +74,7 @@ export default function App({
             {data.pools.map((p) => (
               <PoolCard key={p.id} pool={p} today={anchorDate(data, today)} />
             ))}
-          </details> */}
+          </details>
         </>
       )}
 
@@ -570,6 +570,46 @@ function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
   );
 }
 
+function PeriodsBanner({ periods }: { periods: PeriodSpan[] }) {
+  if (periods.length === 0) return null;
+  return (
+    <div className="periods">
+      <strong>📅 Périodes sur la quinzaine</strong>
+      <ul>
+        {periods.map((p, i) => (
+          <li key={i}>
+            <span className={`period-tag period-${p.period}`}>
+              {p.label ?? PERIOD_LABELS[p.period]}
+            </span>{" "}
+            du {fmtDate(p.start)} au {fmtDate(p.end)}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ClosuresBanner({ pools }: { pools: PoolResult[] }) {
+  const items = pools.flatMap((p) =>
+    p.events.filter((e) => e.closed).map((e) => ({ pool: p.name, e })),
+  );
+  if (items.length === 0) return null;
+  return (
+    <div className="closures">
+      <strong>⚠️ Fermetures / événements</strong>
+      <ul>
+        {items.map(({ pool, e }, i) => (
+          <li key={i}>
+            <span className="closure-pool">{pool}</span> — {e.description} (
+            {fmtDate(e.start)}
+            {e.end && e.end !== e.start ? ` → ${fmtDate(e.end)}` : ""})
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
   const upcoming = pool.resolved.filter((d) => d.date >= today);
   return (
@@ -591,6 +631,7 @@ function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
           ))}
         </ul>
       )}
+      {pool.notes && <p className="notes">{pool.notes}</p>}
     </section>
   );
 }
