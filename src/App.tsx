@@ -437,9 +437,16 @@ function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
                 <span className="agenda-grip" aria-hidden="true">
                   ⠿
                 </span>
-                <span className="agenda-pool" title={pool.name}>
+                {/* draggable={false} so the gesture falls through to the
+                    header, which is the drag source for the column. */}
+                <a
+                  className="agenda-pool"
+                  href={href(poolPath(pool.id))}
+                  title={pool.name}
+                  draggable={false}
+                >
                   {shortPoolName(pool.name)}
-                </span>
+                </a>
                 {info && (
                   <span className="agenda-info" title={info}>
                     ⓘ
