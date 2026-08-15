@@ -1,14 +1,52 @@
+/*
+ * Design tokens. Every colour, font, radius and shadow used below goes through
+ * one of these, so a theme can restyle the whole site by redefining them —
+ * see src/themes/. Nothing outside this block should hardcode a colour.
+ */
 :root {
+  /* Surfaces and text */
   --bg: #f7f9fb;
   --card: #ffffff;
   --ink: #16202a;
   --muted: #6b7885;
   --line: #e3e8ee;
   --accent: #0a7ea4;
+  --surface-sunken: #eaeef3;
+  --surface-sunken-hover: #e0e6ed;
+  --surface-head: #f0f4f8;
+  --surface-today: #f2f8fb;
+
+  /* States: closures and warnings */
   --closed: #b23b3b;
+  --danger-chip-bg: #fbe3e3;
   --warn-bg: #fff6e6;
   --warn-line: #f0c874;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --warn-ink: #8a5a12;
+  --warn-chip-bg: #fdefd6;
+  --ok-chip-bg: #dcf1e3;
+  --ok-ink: #1e6b3c;
+  --info-bg: #eef5fb;
+  --info-line: #cfe0ef;
+  --neutral-chip-bg: #e7edf3;
+  --neutral-chip-ink: #45586a;
+
+  /* Agenda */
+  --slot-bg: var(--accent);
+  --slot-ink: #ffffff;
+  --now-line: #ff0000;
+  --now-ink: #e03131;
+
+  /* Type and shape */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-body);
+  --radius-card: 12px;
+  --radius-box: 10px;
+  --radius-control: 8px;
+  --radius-chip: 6px;
+  --radius-slot: 5px;
+  --shadow-card: none;
+
+  font-family: var(--font-body);
 }
 
 * {
@@ -30,6 +68,7 @@ body {
 
 header h1 {
   margin: 0 0 0.25rem;
+  font-family: var(--font-display);
   font-size: 1.6rem;
 }
 
@@ -42,24 +81,24 @@ header h1 {
   display: inline-block;
   margin-left: 0.5rem;
   padding: 0.05rem 0.45rem;
-  border-radius: 6px;
+  border-radius: var(--radius-chip);
   font-size: 0.75rem;
   white-space: nowrap;
   cursor: help;
 }
 
 .freshness-fresh {
-  background: #dcf1e3;
-  color: #1e6b3c;
+  background: var(--ok-chip-bg);
+  color: var(--ok-ink);
 }
 
 .freshness-stale {
-  background: #fdefd6;
-  color: #8a5a12;
+  background: var(--warn-chip-bg);
+  color: var(--warn-ink);
 }
 
 .freshness-old {
-  background: #fbe3e3;
+  background: var(--danger-chip-bg);
   color: var(--closed);
 }
 
@@ -74,7 +113,7 @@ header h1 {
 .closures {
   background: var(--warn-bg);
   border: 1px solid var(--warn-line);
-  border-radius: 10px;
+  border-radius: var(--radius-box);
   padding: 0.75rem 1rem;
   margin-bottom: 1.25rem;
 }
@@ -89,9 +128,9 @@ header h1 {
 }
 
 .periods {
-  background: #eef5fb;
-  border: 1px solid #cfe0ef;
-  border-radius: 10px;
+  background: var(--info-bg);
+  border: 1px solid var(--info-line);
+  border-radius: var(--radius-box);
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
 }
@@ -106,23 +145,23 @@ header h1 {
   display: inline-block;
   font-size: 0.72rem;
   padding: 0.05rem 0.4rem;
-  border-radius: 6px;
+  border-radius: var(--radius-chip);
   white-space: nowrap;
 }
 
 .period-term {
-  background: #e7edf3;
-  color: #45586a;
+  background: var(--neutral-chip-bg);
+  color: var(--neutral-chip-ink);
 }
 
 .period-short_holidays {
-  background: #fdefd6;
-  color: #8a5a12;
+  background: var(--warn-chip-bg);
+  color: var(--warn-ink);
 }
 
 .period-summer_holidays {
-  background: #dcf1e3;
-  color: #1e6b3c;
+  background: var(--ok-chip-bg);
+  color: var(--ok-ink);
 }
 
 .back-link {
@@ -148,9 +187,9 @@ header h1 {
   gap: 0.4rem;
   margin-bottom: 1rem;
   padding: 0.55rem 0.8rem;
-  background: #eaeef3;
+  background: var(--surface-sunken);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-control);
   color: var(--muted);
   font: inherit;
   font-size: 0.82rem;
@@ -159,7 +198,7 @@ header h1 {
 }
 
 .disclosure:hover {
-  background: #e0e6ed;
+  background: var(--surface-sunken-hover);
   color: var(--ink);
 }
 
@@ -219,13 +258,15 @@ header h1 {
 .pool-card {
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   padding: 1rem 1.1rem;
   margin-bottom: 1rem;
+  box-shadow: var(--shadow-card);
 }
 
 .pool-card h2 {
   margin: 0 0 0.75rem;
+  font-family: var(--font-display);
   font-size: 1.1rem;
 }
 
@@ -255,8 +296,8 @@ header h1 {
 }
 
 .day.today {
-  background: #f2f8fb;
-  border-radius: 6px;
+  background: var(--surface-today);
+  border-radius: var(--radius-chip);
   padding-inline: 0.4rem;
   font-weight: 600;
 }
@@ -278,12 +319,12 @@ header h1 {
 }
 
 .slot.exceptional .time {
-  color: #8a5a12;
+  color: var(--warn-ink);
   text-decoration: underline dotted;
 }
 
 .day-event {
-  color: #8a5a12;
+  color: var(--warn-ink);
   font-size: 0.78rem;
 }
 
@@ -296,9 +337,10 @@ header h1 {
 .agenda {
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 1rem 0 0.75rem;
+  border-radius: var(--radius-card);
+  padding: 1rem 0 0;
   margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-card);
 }
 
 .agenda-header {
@@ -310,6 +352,7 @@ header h1 {
 
 .agenda h2 {
   margin: 0;
+  font-family: var(--font-display);
   font-size: 1.1rem;
   display: flex;
   align-items: baseline;
@@ -326,9 +369,9 @@ header h1 {
   width: 1.75rem;
   height: 1.75rem;
   padding: 0;
-  background: #eaeef3;
+  background: var(--surface-sunken);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-chip);
   color: var(--ink);
   font: inherit;
   font-size: 1rem;
@@ -337,7 +380,7 @@ header h1 {
 }
 
 .agenda-nav button:hover:not(:disabled) {
-  background: #e0e6ed;
+  background: var(--surface-sunken-hover);
 }
 
 .agenda-nav button:disabled {
@@ -389,7 +432,7 @@ header h1 {
 }
 
 .agenda-info {
-  color: #8a5a12;
+  color: var(--warn-ink);
   cursor: help;
   flex: none;
   position: absolute;
@@ -435,8 +478,8 @@ header h1 {
   position: absolute;
   left: 0.15rem;
   right: 0.15rem;
-  background: var(--accent);
-  border-radius: 5px;
+  background: var(--slot-bg);
+  border-radius: var(--radius-slot);
   padding: 0.15rem 0.35rem;
   overflow: hidden;
   text-align: center;
@@ -446,7 +489,7 @@ header h1 {
   display: inline-flex;
   gap: 0.25em;
   font-size: 0.68rem;
-  color: #ffffff;
+  color: var(--slot-ink);
   opacity: 0.85;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -501,7 +544,7 @@ header h1 {
   position: absolute;
   left: var(--gutter);
   right: 0;
-  border-top: 1px solid #ff0000;
+  border-top: 1px solid var(--now-line);
 }
 
 .agenda-now-time {
@@ -510,7 +553,7 @@ header h1 {
   transform: translateY(-50%);
   font-size: 0.65rem;
   font-weight: 600;
-  color: #e03131;
+  color: var(--now-ink);
   background: var(--card);
   font-variant-numeric: tabular-nums;
 }
@@ -529,7 +572,8 @@ header h1 {
   overflow-x: auto;
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
 }
 
 table {
@@ -548,7 +592,7 @@ td {
 }
 
 thead th {
-  background: #f0f4f8;
+  background: var(--surface-head);
   position: sticky;
   top: 0;
   font-size: 0.8rem;
@@ -602,7 +646,7 @@ thead th {
   font-size: 0.68rem;
   color: var(--closed);
   border: 1px solid currentColor;
-  border-radius: 6px;
+  border-radius: var(--radius-chip);
   padding: 0 0.3rem;
   vertical-align: middle;
 }
@@ -654,6 +698,7 @@ thead th {
 
 .about h2 {
   margin: 2rem 0 0.75rem;
+  font-family: var(--font-display);
   font-size: 1.05rem;
 }
 
@@ -668,8 +713,17 @@ thead th {
 
 /* Mobile: the agenda goes full-bleed and the columns shrink, so every
    horizontal pixel spent on the card chrome is a pixel of grid lost. */
+/*
+ * Mobile layout. Every selector here carries a `:root:root` prefix on purpose.
+ *
+ * A theme rule reads `[data-theme="x"] .agenda` — two attributes/classes, and
+ * it lives in a later stylesheet, so a bare `.agenda` here would lose and the
+ * full-bleed treatment would silently come undone. `:root:root` adds two
+ * pseudo-classes, putting these rules one level above any theme.
+ * This block is layout, not skin: themes are not meant to reach it.
+ */
 @media (max-width: 640px) {
-  .agenda {
+  :root:root .agenda {
     /* Cancel the page gutter: the card spans the full viewport width. */
     margin-inline: calc(-1 * var(--page-pad));
     border-inline: none;
@@ -677,26 +731,26 @@ thead th {
   }
 
   /* The title keeps its gutter; the scroller gives its width to the grid. */
-  .agenda-header {
+  :root:root .agenda-header {
     margin-inline: var(--page-pad);
   }
 
-  .agenda-scroll {
+  :root:root .agenda-scroll {
     padding-inline: 0;
   }
 
-  .agenda-grid {
+  :root:root .agenda-grid {
     --gutter: 2.4rem;
     --col: 4.75rem;
   }
 
-  .agenda-head {
+  :root:root .agenda-head {
     padding-inline: 0.25rem;
     font-size: 0.72rem;
   }
 
   /* Too narrow for "09:00 – 12:30" on one line: stack start / – / end. */
-  .agenda-slot-time {
+  :root:root .agenda-slot-time {
     flex-direction: column;
     align-items: center;
     gap: 0;
@@ -704,12 +758,12 @@ thead th {
     line-height: 1.2;
   }
 
-  .agenda-slot-sep {
+  :root:root .agenda-slot-sep {
     line-height: 0.9;
   }
 
   /* "Horaires indispo" no longer fits on one line at this column width. */
-  .agenda-empty {
+  :root:root .agenda-empty {
     left: 0;
     right: 0;
     transform: none;

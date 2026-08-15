@@ -5,6 +5,16 @@ import { routeFromPathname } from "./site.ts";
 import type { SchedulesData } from "./types.ts";
 import "./styles.css";
 
+// Design exploration scaffolding — TEMPORARY. All five skins ship together so
+// the switcher can swap them without a reload; the chosen one will be folded
+// into styles.css and these imports deleted.
+import "./themes/switcher.css";
+import "./themes/tidal.css";
+import "./themes/swiss.css";
+import "./themes/gazette.css";
+import "./themes/blockparty.css";
+import "./themes/carrelage.css";
+
 const container = document.getElementById("root")!;
 const inlined = document.getElementById("schedules-data")?.textContent;
 

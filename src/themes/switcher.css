@@ -1,0 +1,57 @@
+/*
+ * Design exploration scaffolding — TEMPORARY, delete with src/themes/.
+ *
+ * Deliberately hardcoded colours: this bar must stay readable whatever the
+ * theme under test does, so it is the one place that must NOT use the tokens.
+ */
+
+.theme-switcher {
+  position: fixed;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  max-width: calc(100vw - 1rem);
+  overflow-x: auto;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: #14181dee;
+  box-shadow: 0 6px 24px #00000040;
+  backdrop-filter: blur(6px);
+  font-family: system-ui, sans-serif;
+}
+
+.theme-switcher button {
+  flex: none;
+  padding: 0.35rem 0.7rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: #c8d0d8;
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.theme-switcher button:hover {
+  background: #ffffff1a;
+  color: #ffffff;
+}
+
+.theme-switcher button[aria-pressed="true"] {
+  background: #ffffff;
+  color: #14181d;
+  font-weight: 600;
+}
+
+.theme-switcher .theme-blurb {
+  color: #7d8894;
+  font-size: 0.72rem;
+  padding-inline: 0.5rem;
+  white-space: nowrap;
+}

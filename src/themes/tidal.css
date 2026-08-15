@@ -1,0 +1,606 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap");
+
+/*
+ * tidal — aquatique profond.
+ *
+ * Looking down into a pool: a lit surface at the top of the page fading into
+ * depth, lanes ruled in pale turquoise, créneaux drawn as columns of water
+ * (vertical gradient + surface highlight) rather than flat rectangles. Warm
+ * sand tones carry the warnings so they cut through the blue.
+ *
+ * Light   surface #f5fbfd → #d9ebf2, ink #07293a, accent #0e7490
+ * Dark    night pool #062430 → #03121b, ink #e6f6fb, accent #4fd3d8
+ * Type    Manrope throughout — no separate display face.
+ *
+ * Sections: 1 tokens · 2 dark · 3 page shell · 4 states & chips
+ *           5 cards & lists · 6 agenda · 7 tables · 8 about & footer
+ *           9 mobile
+ */
+
+/* ------------------------------------------------------------------ */
+/* 1. Tokens — light                                                   */
+/* ------------------------------------------------------------------ */
+
+[data-theme="tidal"] {
+  color-scheme: light;
+  /* Surfaces and text */
+  --bg: #edf6f9;
+  --card: #ffffff;
+  --ink: #07293a;
+  --muted: #3a6373;
+  --line: #cde3ea;
+  --accent: #0c6a86;
+  --surface-sunken: #dcedf2;
+  --surface-sunken-hover: #c9e3eb;
+  --surface-head: #e6f3f7;
+  --surface-today: #ddf0f5;
+
+  /* States: closures and warnings — sand and coral against the blue */
+  --closed: #a83a46;
+  --danger-chip-bg: #fbe0e2;
+  --warn-bg: #fdf3e0;
+  --warn-line: #e6c07c;
+  --warn-ink: #86560f;
+  --warn-chip-bg: #fbeacd;
+  --ok-chip-bg: #cdeee4;
+  --ok-ink: #10695a;
+  --info-bg: #e4f2f8;
+  --info-line: #bcdcea;
+  --neutral-chip-bg: #dbe9ef;
+  --neutral-chip-ink: #35596b;
+
+  /* Agenda */
+  --slot-bg: #0a7290;
+  --slot-ink: #f2fdff;
+  --now-line: #ff4d5e;
+  --now-ink: #c8323f;
+
+  /* Type and shape */
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* No separate display face: headings use the body font. */
+  --font-display: var(--font-body);
+  --radius-card: 16px;
+  --radius-box: 14px;
+  --radius-control: 999px;
+  --radius-chip: 7px;
+  --radius-slot: 7px;
+  --shadow-card:
+    0 1px 1px rgba(9, 58, 77, 0.04), 0 12px 30px -18px rgba(9, 58, 77, 0.45);
+
+  /* Theme-private helpers (not part of the base token set) */
+  --tidal-wash:
+    radial-gradient(
+      90rem 42rem at 50% -12rem,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0) 62%
+    ),
+    linear-gradient(180deg, #f5fbfd 0%, #e4f1f6 42%, #d9ebf2 100%);
+  --tidal-depth: linear-gradient(
+    180deg,
+    rgba(14, 116, 144, 0) 0%,
+    rgba(14, 116, 144, 0.055) 100%
+  );
+  --tidal-slot-top: #075f7c;
+  --tidal-slot-mid: #0a7290;
+  --tidal-slot-bot: #0d8098;
+  --tidal-slot-edge: rgba(255, 255, 255, 0.3);
+  --tidal-slot-shadow: 0 1px 3px rgba(6, 52, 70, 0.28);
+  --tidal-grid-line: rgba(14, 116, 144, 0.14);
+  --tidal-lane-line: rgba(14, 116, 144, 0.1);
+  --tidal-glow: rgba(14, 116, 144, 0.18);
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. Tokens — dark (a pool at night: black water, lit from the edge)  */
+/* ------------------------------------------------------------------ */
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="tidal"] {
+    /* Native UI (scrollbars, form controls) must follow the theme. */
+    color-scheme: dark;
+    --bg: #04161f;
+    --card: #0a2430;
+    --ink: #e6f6fb;
+    --muted: #8fb3c1;
+    --line: #1a3d4e;
+    --accent: #4fd3d8;
+    --surface-sunken: #10303e;
+    --surface-sunken-hover: #174354;
+    --surface-head: #0e2b38;
+    --surface-today: #113645;
+
+    --closed: #f4868c;
+    --danger-chip-bg: #40202a;
+    --warn-bg: #2e2413;
+    --warn-line: #6b5423;
+    --warn-ink: #f0c987;
+    --warn-chip-bg: #3a2c14;
+    --ok-chip-bg: #10382f;
+    --ok-ink: #6ee0bd;
+    --info-bg: #0c2a38;
+    --info-line: #1d4a5e;
+    --neutral-chip-bg: #17313d;
+    --neutral-chip-ink: #a8c6d3;
+
+    --slot-bg: #0a5c73;
+    --slot-ink: #e9fbff;
+    --now-line: #ff5566;
+    --now-ink: #ff8a92;
+
+    --shadow-card:
+      0 1px 0 rgba(160, 230, 245, 0.04), 0 22px 44px -26px rgba(0, 0, 0, 0.9);
+
+    --tidal-wash:
+      radial-gradient(
+        70rem 34rem at 50% -9rem,
+        rgba(79, 211, 216, 0.2),
+        rgba(0, 0, 0, 0) 66%
+      ),
+      linear-gradient(180deg, #062430 0%, #041924 55%, #03121b 100%);
+    --tidal-depth: linear-gradient(
+      180deg,
+      rgba(79, 211, 216, 0) 0%,
+      rgba(79, 211, 216, 0.07) 100%
+    );
+    --tidal-slot-top: #083f55;
+    --tidal-slot-mid: #0a5c73;
+    --tidal-slot-bot: #0d7288;
+    --tidal-slot-edge: rgba(150, 240, 255, 0.22);
+    --tidal-slot-shadow:
+      0 2px 10px rgba(0, 0, 0, 0.45), 0 0 14px -4px rgba(79, 211, 216, 0.35);
+    --tidal-grid-line: rgba(120, 200, 220, 0.16);
+    --tidal-lane-line: rgba(120, 200, 220, 0.11);
+    --tidal-glow: rgba(79, 211, 216, 0.3);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. Page shell                                                       */
+/* ------------------------------------------------------------------ */
+
+[data-theme="tidal"] body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image: var(--tidal-wash);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-theme="tidal"] header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+[data-theme="tidal"] .subtitle {
+  max-width: 46rem;
+  line-height: 1.55;
+}
+
+[data-theme="tidal"] a {
+  text-underline-offset: 0.18em;
+}
+
+[data-theme="tidal"] ::selection {
+  background: var(--tidal-glow);
+  color: var(--ink);
+}
+
+[data-theme="tidal"] a:focus-visible,
+[data-theme="tidal"] button:focus-visible,
+[data-theme="tidal"] summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+[data-theme="tidal"] .back-link {
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+[data-theme="tidal"] .back-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. States and chips                                                 */
+/* ------------------------------------------------------------------ */
+
+[data-theme="tidal"] .freshness,
+[data-theme="tidal"] .period-tag,
+[data-theme="tidal"] .badge-error {
+  border-radius: 999px;
+  padding-inline: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+}
+
+[data-theme="tidal"] .freshness-fresh {
+  background: var(--ok-chip-bg);
+  color: var(--ok-ink);
+}
+
+[data-theme="tidal"] .freshness-stale {
+  background: var(--warn-chip-bg);
+  color: var(--warn-ink);
+}
+
+[data-theme="tidal"] .freshness-old {
+  background: var(--danger-chip-bg);
+  color: var(--closed);
+}
+
+[data-theme="tidal"] .period-term {
+  background: var(--neutral-chip-bg);
+  color: var(--neutral-chip-ink);
+}
+
+[data-theme="tidal"] .period-short_holidays {
+  background: var(--warn-chip-bg);
+  color: var(--warn-ink);
+}
+
+[data-theme="tidal"] .period-summer_holidays {
+  background: var(--ok-chip-bg);
+  color: var(--ok-ink);
+}
+
+/* Banners: a thicker coloured edge reads as a waterline on the left. */
+[data-theme="tidal"] .closures,
+[data-theme="tidal"] .periods {
+  border-left-width: 4px;
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="tidal"] .closures strong,
+[data-theme="tidal"] .periods strong {
+  letter-spacing: 0.01em;
+}
+
+[data-theme="tidal"] .closures {
+  color: var(--warn-ink);
+}
+
+[data-theme="tidal"] .closures .closure-pool {
+  color: var(--ink);
+}
+
+[data-theme="tidal"] .error {
+  color: var(--closed);
+  font-weight: 600;
+}
+
+[data-theme="tidal"] .closed {
+  color: var(--closed);
+  opacity: 0.85;
+}
+
+[data-theme="tidal"] .badge-error {
+  border-color: currentColor;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+[data-theme="tidal"] .slot.exceptional .time {
+  color: var(--warn-ink);
+  font-weight: 600;
+  text-decoration: underline dotted currentColor;
+  text-underline-offset: 0.2em;
+}
+
+[data-theme="tidal"] .day-event {
+  color: var(--warn-ink);
+  font-style: italic;
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. Cards, day rows, disclosure                                      */
+/* ------------------------------------------------------------------ */
+
+[data-theme="tidal"] .pool-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+[data-theme="tidal"] .pool-card h2 a:hover {
+  text-decoration: underline;
+}
+
+[data-theme="tidal"] .day.today {
+  background: var(--surface-today);
+  box-shadow: inset 3px 0 0 var(--accent);
+  border-bottom-color: transparent;
+}
+
+[data-theme="tidal"] .day.today .day-date {
+  color: var(--ink);
+}
+
+[data-theme="tidal"] .notes {
+  line-height: 1.55;
+}
+
+[data-theme="tidal"] .disclosure {
+  border: 1px solid var(--line);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  box-shadow: var(--shadow-card);
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+}
+
+[data-theme="tidal"] .disclosure:hover {
+  background: var(--surface-sunken-hover);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+[data-theme="tidal"] .disclosure-caret {
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------------ */
+/* 6. Agenda — the pool seen from above                                */
+/* ------------------------------------------------------------------ */
+
+[data-theme="tidal"] .agenda h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+[data-theme="tidal"] .agenda-date {
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
+}
+
+[data-theme="tidal"] .agenda-nav button {
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--accent);
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+[data-theme="tidal"] .agenda-nav button:hover:not(:disabled) {
+  background: var(--surface-sunken-hover);
+  border-color: var(--accent);
+}
+
+[data-theme="tidal"] .agenda-nav button:disabled {
+  color: var(--muted);
+  border-color: var(--line);
+  opacity: 0.4;
+}
+
+[data-theme="tidal"] .agenda-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tidal-glow) transparent;
+}
+
+[data-theme="tidal"] .agenda-head {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--tidal-grid-line);
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+}
+
+[data-theme="tidal"] .agenda-head.has-info {
+  border-bottom-color: var(--warn-line);
+}
+
+[data-theme="tidal"] .agenda-head.dragging {
+  background: var(--surface-sunken);
+  border-bottom-color: var(--accent);
+}
+
+[data-theme="tidal"] .agenda-pool:hover {
+  color: var(--accent);
+}
+
+[data-theme="tidal"] .agenda-info {
+  color: var(--warn-ink);
+}
+
+[data-theme="tidal"] .agenda-grip {
+  color: var(--accent);
+}
+
+[data-theme="tidal"] .agenda-corner {
+  border-bottom: 2px solid var(--tidal-grid-line);
+}
+
+/* Lane rulings: fainter than the card borders, like tile joints. */
+[data-theme="tidal"] .agenda-col + .agenda-col,
+[data-theme="tidal"] .agenda-head + .agenda-head {
+  border-left-color: var(--tidal-lane-line);
+}
+
+[data-theme="tidal"] .agenda-line {
+  border-top-color: var(--tidal-grid-line);
+}
+
+[data-theme="tidal"] .agenda-tick {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Créneaux as columns of water rather than flat blocks. */
+[data-theme="tidal"] .agenda-slot {
+  background-color: var(--slot-bg);
+}
+
+[data-theme="tidal"] .agenda-slot-time {
+  opacity: 1;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 1px rgba(3, 30, 40, 0.35);
+}
+
+[data-theme="tidal"] .agenda-empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+[data-theme="tidal"] .agenda-drop {
+  box-shadow:
+    0 0 0 1px var(--card),
+    0 0 10px var(--tidal-glow);
+}
+
+[data-theme="tidal"] .agenda-now {
+  border-top: 1px solid var(--now-line);
+}
+
+[data-theme="tidal"] .agenda-now-time {
+  padding: 0 0.2rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+/* ------------------------------------------------------------------ */
+/* 7. Tables                                                           */
+/* ------------------------------------------------------------------ */
+
+[data-theme="tidal"] .table-wrap {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tidal-glow) transparent;
+}
+
+[data-theme="tidal"] thead th {
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0),
+    var(--tidal-lane-line)
+  );
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-bottom-color: var(--tidal-grid-line);
+}
+
+[data-theme="tidal"] .pool-col a:hover {
+  color: var(--accent);
+}
+
+[data-theme="tidal"] .weekly-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.005em;
+}
+
+[data-theme="tidal"] .weekly th {
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  border-bottom-color: var(--tidal-lane-line);
+}
+
+[data-theme="tidal"] .weekly td {
+  border-bottom-color: var(--tidal-lane-line);
+}
+
+/* ------------------------------------------------------------------ */
+/* 8. About page and footer                                            */
+/* ------------------------------------------------------------------ */
+
+[data-theme="tidal"] .about {
+  line-height: 1.7;
+}
+
+[data-theme="tidal"] .about-lead {
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+/* A single deep-water initial, in the display face. */
+[data-theme="tidal"] .about-lead::first-letter {
+  float: left;
+  margin: 0.18em 0.14em 0 0;
+  font-family: var(--font-display);
+  font-size: 3.1em;
+  font-weight: 600;
+  line-height: 0.72;
+  color: var(--accent);
+}
+
+[data-theme="tidal"] .about h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+[data-theme="tidal"] .about a {
+  text-decoration-color: var(--tidal-glow);
+  text-decoration-thickness: 2px;
+}
+
+[data-theme="tidal"] .about a:hover {
+  text-decoration-color: currentColor;
+}
+
+[data-theme="tidal"] .site-footer {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0),
+      var(--line) 25%,
+      var(--tidal-glow) 50%,
+      var(--line) 75%,
+      rgba(0, 0, 0, 0)
+    )
+    1;
+  letter-spacing: 0.01em;
+}
+
+[data-theme="tidal"] .site-footer a:hover {
+  color: var(--accent);
+}
+
+[data-theme="tidal"] .footer-sep {
+  color: var(--muted);
+  opacity: 0.5;
+}
+
+[data-theme="tidal"] .footer-heart {
+  color: var(--closed);
+}
+
+/* ------------------------------------------------------------------ */
+/* 9. Mobile — restore the full-bleed agenda the base sheet asks for   */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  [data-theme="tidal"] .agenda {
+    border-inline: none;
+    border-radius: 0;
+  }
+
+  [data-theme="tidal"] header h1 {
+    font-size: 1.7rem;
+  }
+
+  [data-theme="tidal"] .agenda-head {
+    padding-bottom: 0.4rem;
+  }
+
+  /* The pill padding pushed this past the 2.4rem mobile gutter and it clipped
+     on the left edge; drop the padding and the tracking to fit. */
+  [data-theme="tidal"] .agenda-now-time {
+    padding: 0;
+    letter-spacing: 0;
+  }
+}

@@ -1,0 +1,624 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400..700&display=swap");
+
+/*
+ * BLOCK PARTY — néo-brutaliste, joyeux et mémorable.
+ *
+ * Hard outlines, hard offset shadows (no blur), flat saturated fields.
+ * Three saturated colours only — pool-float yellow #FFD62E, float cyan
+ * #45D3E8, hot coral #FF4A2E — everything else is near-black, white and one
+ * warm off-white. The loud treatment is reserved for headings, chips, buttons
+ * and card chrome; the agenda grid stays quiet so the data stays readable.
+ *
+ * Type: Archivo Black (display, uppercase) over Archivo (body).
+ *
+ * Two private tokens do the heavy lifting on top of the base ones:
+ *   --edge   outline colour   (near-black in light, off-white in dark)
+ *   --stamp  drop-shadow colour (near-black in light, cyan in dark)
+ *   --on-bright  text laid over a saturated field (always near-black)
+ *   --chip-edge  chip outline (black in light, the chip's own ink in dark)
+ */
+
+/* ------------------------------------------------------------------ *
+ * Tokens — light
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] {
+  color-scheme: light;
+  /* Surfaces and text */
+  --bg: #faf3e3;
+  --card: #ffffff;
+  --ink: #100f0c;
+  --muted: #59513f;
+  --line: #d8cfb8;
+  --accent: #00707f;
+  --surface-sunken: #ffd62e;
+  --surface-sunken-hover: #45d3e8;
+  --surface-head: #ffd62e;
+  --surface-today: #ffe97a;
+
+  /* States */
+  --closed: #b32414;
+  --danger-chip-bg: #ffdcd5;
+  --warn-bg: #fff6d6;
+  --warn-line: #e8880a;
+  --warn-ink: #6b3a00;
+  --warn-chip-bg: #ffd62e;
+  --ok-chip-bg: #9be9f5;
+  --ok-ink: #0a4c58;
+  --info-bg: #dff7fb;
+  --info-line: #45d3e8;
+  --neutral-chip-bg: #efe6d0;
+  --neutral-chip-ink: #2b2720;
+
+  /* Agenda */
+  --slot-bg: #45d3e8;
+  --slot-ink: #0d2a2f;
+  --now-line: #ff4a2e;
+  --now-ink: #b32414;
+
+  /* Type and shape */
+  --font-body: "Archivo", system-ui, -apple-system, sans-serif;
+  --font-display: "Archivo Black", "Archivo", system-ui, sans-serif;
+  --radius-card: 12px;
+  --radius-box: 12px;
+  --radius-control: 999px;
+  --radius-chip: 8px;
+  --radius-slot: 4px;
+
+  /* Theme-private */
+  --edge: #100f0c;
+  --stamp: #100f0c;
+  --on-bright: #100f0c;
+  --chip-edge: #100f0c;
+  --shadow-card: 6px 6px 0 var(--stamp);
+}
+
+/* ------------------------------------------------------------------ *
+ * Tokens — dark. Fields drop to near-black, accents stay saturated,
+ * outlines flip from black to off-white so the hard edges survive.
+ * ------------------------------------------------------------------ */
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="blockparty"] {
+    /* Native UI (scrollbars, form controls) must follow the theme. */
+    color-scheme: dark;
+    --bg: #0d0d0f;
+    --card: #161618;
+    --ink: #f4efe2;
+    --muted: #a79e8a;
+    --line: #38383d;
+    --accent: #45d3e8;
+    --surface-sunken: #ffc61e;
+    --surface-sunken-hover: #45d3e8;
+    --surface-head: #ffc61e;
+    --surface-today: #33290a;
+
+    --closed: #ff6b57;
+    --danger-chip-bg: #3d0f09;
+    --warn-bg: #2b2205;
+    --warn-line: #ffc61e;
+    --warn-ink: #ffc61e;
+    --warn-chip-bg: #3a2a05;
+    --ok-chip-bg: #06343c;
+    --ok-ink: #5edcee;
+    --info-bg: #062a31;
+    --info-line: #45d3e8;
+    --neutral-chip-bg: #2a2a2e;
+    --neutral-chip-ink: #e4decd;
+
+    --slot-bg: #3fcde4;
+    --slot-ink: #06232a;
+    --now-line: #ff5a3c;
+    --now-ink: #ff7a5f;
+
+    --edge: #f2ecdd;
+    --stamp: #45d3e8;
+    --on-bright: #0d0d0f;
+    --chip-edge: currentColor;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Base typography
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] body {
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-theme="blockparty"] :focus-visible {
+  outline: 3px solid var(--now-line);
+  outline-offset: 2px;
+}
+
+[data-theme="blockparty"] strong {
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------ *
+ * Page header — the title is a stamped block
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] header h1 {
+  display: inline-block;
+  margin: 0.15rem 0 0.9rem;
+  padding: 0.4rem 0.75rem 0.45rem;
+  background: var(--surface-sunken);
+  color: var(--on-bright);
+  border: 3px solid var(--edge);
+  border-radius: var(--radius-card);
+  box-shadow: 6px 6px 0 var(--stamp);
+  font-size: 1.7rem;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+[data-theme="blockparty"] .subtitle {
+  margin-bottom: 1.35rem;
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------------ *
+ * Chips: freshness, period tags, error badge
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] .freshness,
+[data-theme="blockparty"] .period-tag,
+[data-theme="blockparty"] .badge-error {
+  border: 2px solid var(--chip-edge);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+[data-theme="blockparty"] .badge-error {
+  background: var(--danger-chip-bg);
+  color: var(--closed);
+  vertical-align: middle;
+}
+
+/* ------------------------------------------------------------------ *
+ * Banners: closures, periods, errors
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] .closures,
+[data-theme="blockparty"] .periods {
+  border: 3px solid var(--edge);
+  box-shadow: 5px 5px 0 var(--stamp);
+  margin-bottom: 1.5rem;
+  padding: 0.85rem 1.05rem;
+}
+
+[data-theme="blockparty"] .closures strong,
+[data-theme="blockparty"] .periods strong {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+[data-theme="blockparty"] .closures li::marker {
+  color: var(--closed);
+}
+
+[data-theme="blockparty"] .periods li::marker {
+  color: var(--accent);
+}
+
+[data-theme="blockparty"] .closure-pool {
+  font-weight: 700;
+}
+
+[data-theme="blockparty"] .error {
+  padding: 0.8rem 1rem;
+  background: var(--danger-chip-bg);
+  border: 3px solid var(--edge);
+  border-radius: var(--radius-box);
+  box-shadow: 5px 5px 0 var(--stamp);
+  color: var(--closed);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------ *
+ * Controls: back link, disclosure, agenda nav.
+ * All share the press-in interaction: the shadow collapses as the
+ * element slides into it.
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] .back-link {
+  margin-bottom: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  background: var(--card);
+  border: 2px solid var(--edge);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--stamp);
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s,
+    background 0.1s;
+}
+
+[data-theme="blockparty"] .back-link:hover {
+  background: var(--surface-sunken);
+  color: var(--on-bright);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--stamp);
+}
+
+[data-theme="blockparty"] .disclosure {
+  margin-bottom: 1.35rem;
+  background: var(--surface-sunken);
+  border: 3px solid var(--edge);
+  box-shadow: 4px 4px 0 var(--stamp);
+  color: var(--on-bright);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s,
+    background 0.1s;
+}
+
+[data-theme="blockparty"] .disclosure:hover {
+  background: var(--surface-sunken-hover);
+  color: var(--on-bright);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--stamp);
+}
+
+[data-theme="blockparty"] .disclosure-caret {
+  color: var(--on-bright);
+}
+
+[data-theme="blockparty"] .agenda-nav button {
+  background: var(--surface-sunken);
+  border: 2px solid var(--edge);
+  border-radius: 999px;
+  box-shadow: 2px 2px 0 var(--stamp);
+  color: var(--on-bright);
+  font-weight: 700;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s,
+    background 0.1s;
+}
+
+[data-theme="blockparty"] .agenda-nav button:hover:not(:disabled) {
+  background: var(--surface-sunken-hover);
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--stamp);
+}
+
+[data-theme="blockparty"] .agenda-nav button:disabled {
+  background: transparent;
+  border-color: var(--line);
+  box-shadow: none;
+  color: var(--line);
+  transform: none;
+}
+
+/* ------------------------------------------------------------------ *
+ * Cards
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] .pool-card,
+[data-theme="blockparty"] .table-wrap {
+  border: 3px solid var(--edge);
+}
+
+[data-theme="blockparty"] .pool-card {
+  margin-bottom: 1.6rem;
+  padding: 1.05rem 1.15rem 1.15rem;
+}
+
+[data-theme="blockparty"] .pool-card h2 {
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+
+[data-theme="blockparty"] .pool-card h2 a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--slot-bg);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 3px;
+}
+
+[data-theme="blockparty"] .pool-card h2 a:hover {
+  text-decoration-color: var(--now-line);
+}
+
+/* Day rows -------------------------------------------------------- */
+
+[data-theme="blockparty"] .day-date {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-theme="blockparty"] .day.today {
+  border: 2px solid var(--edge);
+  border-radius: var(--radius-chip);
+  padding: 0.35rem 0.5rem;
+  font-weight: 700;
+}
+
+[data-theme="blockparty"] .day-event {
+  font-weight: 600;
+}
+
+[data-theme="blockparty"] .slot.exceptional .time {
+  color: var(--warn-ink);
+  font-weight: 700;
+  text-decoration: underline dotted var(--warn-line);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* `.closed` shows up constantly; the base 0.7 opacity would drop it below
+   a comfortable contrast, so it is opaque and bold instead. */
+[data-theme="blockparty"] .closed {
+  opacity: 1;
+  font-weight: 700;
+}
+
+[data-theme="blockparty"] .notes {
+  font-weight: 500;
+}
+
+[data-theme="blockparty"] .event-list li::marker {
+  color: var(--now-line);
+}
+
+/* ------------------------------------------------------------------ *
+ * Tables: weekly (borderless, inside a card) and the wide table
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] .weekly-title {
+  padding-left: 0.5rem;
+  border-left: 5px solid var(--slot-bg);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+[data-theme="blockparty"] .weekly th {
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+[data-theme="blockparty"] .weekly td .label,
+[data-theme="blockparty"] .label {
+  font-weight: 600;
+}
+
+[data-theme="blockparty"] thead th {
+  background: var(--surface-head);
+  border-bottom: 3px solid var(--edge);
+  color: var(--on-bright);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+[data-theme="blockparty"] .pool-col a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------ *
+ * Agenda. The dense part of the site: outlined and stamped on the
+ * outside, deliberately calm on the inside. Borders that sit inside the
+ * grid stay at 1–2px so they do not eat the fixed column widths.
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] .agenda {
+  border: 3px solid var(--edge);
+  margin-bottom: 2rem;
+}
+
+[data-theme="blockparty"] .agenda h2 {
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+
+[data-theme="blockparty"] .agenda-date {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+[data-theme="blockparty"] .agenda-head {
+  border-bottom: 2px solid var(--edge);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+/* Re-stated after the shorthand above, which resets the border colour. */
+[data-theme="blockparty"] .agenda-head.has-info {
+  border-bottom-color: var(--warn-line);
+}
+
+[data-theme="blockparty"] .agenda-head.dragging {
+  opacity: 0.45;
+  background: var(--slot-bg);
+}
+
+[data-theme="blockparty"] .agenda-corner {
+  border-bottom: 2px solid var(--edge);
+}
+
+[data-theme="blockparty"] .agenda-pool {
+  font-weight: 700;
+}
+
+[data-theme="blockparty"] .agenda-grip {
+  color: var(--ink);
+}
+
+[data-theme="blockparty"] .agenda-info {
+  color: var(--warn-ink);
+  font-weight: 700;
+}
+
+[data-theme="blockparty"] .agenda-tick {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="blockparty"] .agenda-slot {
+  border: 2px solid var(--edge);
+}
+
+[data-theme="blockparty"] .agenda-slot-time {
+  opacity: 1;
+  font-weight: 700;
+}
+
+[data-theme="blockparty"] .agenda-empty {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+[data-theme="blockparty"] .agenda-now {
+  border-top: 2px solid var(--now-line);
+}
+
+/* A stamped tag rather than text floating on the card. Kept narrow: it
+   lives in the 3.5rem gutter (2.4rem on mobile, see below). */
+[data-theme="blockparty"] .agenda-now-time {
+  padding: 0.05rem 0.25rem;
+  background: var(--now-line);
+  border-radius: 3px;
+  color: var(--on-bright);
+  font-weight: 700;
+}
+
+[data-theme="blockparty"] .agenda-drop {
+  background: var(--now-line);
+  border-radius: 0;
+}
+
+/* ------------------------------------------------------------------ *
+ * Footer
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] .site-footer {
+  border-top: 3px solid var(--edge);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+[data-theme="blockparty"] .site-footer a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+[data-theme="blockparty"] .site-footer a:hover {
+  background: var(--surface-sunken);
+  box-shadow: 0 0 0 3px var(--surface-sunken);
+  color: var(--on-bright);
+  text-decoration: none;
+}
+
+[data-theme="blockparty"] .footer-heart {
+  color: var(--now-line);
+}
+
+/* ------------------------------------------------------------------ *
+ * About page
+ * ------------------------------------------------------------------ */
+
+[data-theme="blockparty"] .about-lead {
+  padding-left: 0.9rem;
+  border-left: 6px solid var(--slot-bg);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+[data-theme="blockparty"] .about h2 {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 5px solid var(--surface-sunken);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+[data-theme="blockparty"] .about a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+[data-theme="blockparty"] .about-steps li::marker {
+  color: var(--now-line);
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------ *
+ * Mobile. The base sheet makes the agenda full-bleed here, so the card
+ * chrome added above has to be taken back off — otherwise these rules
+ * (0,2,0) would override the base ones (0,1,0).
+ * ------------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  [data-theme="blockparty"] header h1 {
+    padding: 0.3rem 0.55rem 0.35rem;
+    border-width: 2px;
+    box-shadow: 4px 4px 0 var(--stamp);
+    font-size: 1.05rem;
+  }
+
+  [data-theme="blockparty"] .agenda {
+    border-inline: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  [data-theme="blockparty"] .agenda-head {
+    font-size: 0.66rem;
+  }
+
+  /* The gutter is only 2.4rem wide here: the tag has to stay tiny. */
+  [data-theme="blockparty"] .agenda-now-time {
+    padding: 0 0.15rem;
+    font-size: 0.6rem;
+  }
+
+  [data-theme="blockparty"] .pool-card,
+  [data-theme="blockparty"] .table-wrap,
+  [data-theme="blockparty"] .closures,
+  [data-theme="blockparty"] .periods,
+  [data-theme="blockparty"] .error {
+    box-shadow: 4px 4px 0 var(--stamp);
+  }
+}

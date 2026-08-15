@@ -1,0 +1,683 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400;500;600&display=swap");
+
+/*
+ * swiss — "produit net, rigueur typographique".
+ *
+ * The look of a well-made software tool: near-neutral greys with a cool cast,
+ * ONE accent (indigo #4f5bd5 / #8f9bff) spent only where it carries meaning,
+ * hairline rules, small radii, a single 1px shadow. All the character comes
+ * from type (Inter / Inter Tight, tight tracking, tabular figures) and from a
+ * strict vertical rhythm.
+ *
+ * Light : bg #f7f8fa · card #ffffff · ink #0e1116 · muted #5d6470 · line #e3e5ea
+ * Dark  : bg #08090b · card #0e1013 · ink #eceef2 · muted #8b929e · line #272c35
+ *
+ * Sections: 1 tokens · 2 dark tokens · 3 typography & rhythm · 4 chips & states
+ * 5 banners · 6 controls · 7 agenda · 8 pool cards & tables · 9 footer & about.
+ */
+
+/* ------------------------------------------------------------------ *
+ * 1. Tokens — light
+ * ------------------------------------------------------------------ */
+
+[data-theme="swiss"] {
+  color-scheme: light;
+
+  /* Surfaces and text */
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --ink: #0e1116;
+  --muted: #5d6470;
+  --line: #e3e5ea;
+  --accent: #4f5bd5;
+  --surface-sunken: #eef0f4;
+  --surface-sunken-hover: #e5e8ee;
+  --surface-head: #f3f4f7;
+  --surface-today: #f2f3fd;
+
+  /* States: closures and warnings */
+  --closed: #cd2b31;
+  --danger-chip-bg: #fdebec;
+  --warn-bg: #fdf6e7;
+  --warn-line: #e6d3a4;
+  --warn-ink: #855a10;
+  --warn-chip-bg: #fbeecd;
+  --ok-chip-bg: #e0f0e6;
+  --ok-ink: #1c6b3f;
+  --info-bg: #f0f2fd;
+  --info-line: #dde1f8;
+  --neutral-chip-bg: #eceef2;
+  --neutral-chip-ink: #4d5563;
+
+  /* Agenda: a tinted block with a solid accent rule, not a solid fill —
+     the accent stays legible across fifteen columns. */
+  --slot-bg: #e9edfb;
+  --slot-ink: #2f3bb0;
+  --now-line: #e5484d;
+  --now-ink: #c62a2f;
+
+  /* Type and shape */
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --radius-card: 8px;
+  --radius-box: 6px;
+  --radius-control: 6px;
+  --radius-chip: 4px;
+  --radius-slot: 2px;
+  --shadow-card: 0 1px 2px rgba(15, 20, 30, 0.05);
+}
+
+/* ------------------------------------------------------------------ *
+ * 2. Tokens — dark (true near-black product dark, not an inverted grey)
+ * ------------------------------------------------------------------ */
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="swiss"] {
+    color-scheme: dark;
+
+    --bg: #08090b;
+    --card: #0e1013;
+    --ink: #eceef2;
+    --muted: #8b929e;
+    --line: #272c35;
+    --accent: #8f9bff;
+    --surface-sunken: #171a20;
+    --surface-sunken-hover: #1e222a;
+    --surface-head: #14171c;
+    --surface-today: #12172a;
+
+    --closed: #f87171;
+    --danger-chip-bg: #2b1315;
+    --warn-bg: #201a0e;
+    --warn-line: #3f3317;
+    --warn-ink: #e9b872;
+    --warn-chip-bg: #2b2110;
+    --ok-chip-bg: #0e2418;
+    --ok-ink: #63d19a;
+    --info-bg: #101425;
+    --info-line: #242c4a;
+    --neutral-chip-bg: #1c2028;
+    --neutral-chip-ink: #a7aebc;
+
+    --slot-bg: #1b2140;
+    --slot-ink: #c3caff;
+    --now-line: #ff5f5f;
+    --now-ink: #ff8585;
+
+    --shadow-card: none;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * 3. Typography and vertical rhythm
+ * ------------------------------------------------------------------ */
+
+[data-theme="swiss"] body {
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="swiss"] ::selection {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+[data-theme="swiss"] .page {
+  padding-top: 2.25rem;
+  padding-bottom: 4rem;
+}
+
+/* One hairline under the masthead: the page starts on a ruled baseline. */
+[data-theme="swiss"] header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+[data-theme="swiss"] header h1 {
+  margin-bottom: 0.4rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.032em;
+  text-wrap: balance;
+}
+
+[data-theme="swiss"] .subtitle {
+  max-width: 46rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+
+[data-theme="swiss"] .muted,
+[data-theme="swiss"] .notes {
+  color: var(--muted);
+}
+
+[data-theme="swiss"] .notes {
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+[data-theme="swiss"] .time {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: 0;
+}
+
+[data-theme="swiss"] .label {
+  font-size: 0.68rem;
+  letter-spacing: 0.015em;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------ *
+ * 4. Chips and states
+ * ------------------------------------------------------------------ */
+
+/* All micro-labels share one shape: a tinted fill plus a hairline ring
+   derived from their own ink, so every state reads as the same object. */
+[data-theme="swiss"] .freshness,
+[data-theme="swiss"] .period-tag,
+[data-theme="swiss"] .badge-error {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 22%, transparent);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+[data-theme="swiss"] .freshness {
+  padding: 0.1rem 0.4rem;
+  font-size: 0.68rem;
+}
+
+[data-theme="swiss"] .freshness-fresh {
+  background: var(--ok-chip-bg);
+  color: var(--ok-ink);
+}
+
+[data-theme="swiss"] .freshness-stale {
+  background: var(--warn-chip-bg);
+  color: var(--warn-ink);
+}
+
+[data-theme="swiss"] .freshness-old {
+  background: var(--danger-chip-bg);
+  color: var(--closed);
+}
+
+[data-theme="swiss"] .period-tag {
+  padding: 0.1rem 0.4rem;
+  font-size: 0.68rem;
+}
+
+[data-theme="swiss"] .period-term {
+  background: var(--neutral-chip-bg);
+  color: var(--neutral-chip-ink);
+}
+
+[data-theme="swiss"] .period-short_holidays {
+  background: var(--warn-chip-bg);
+  color: var(--warn-ink);
+}
+
+[data-theme="swiss"] .period-summer_holidays {
+  background: var(--ok-chip-bg);
+  color: var(--ok-ink);
+}
+
+[data-theme="swiss"] .badge-error {
+  padding: 0.05rem 0.3rem;
+  border-color: color-mix(in srgb, currentColor 45%, transparent);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--closed);
+}
+
+/* "Fermé" is information, not decoration: full opacity, no fading. */
+[data-theme="swiss"] .closed {
+  color: var(--closed);
+  opacity: 1;
+  font-weight: 500;
+}
+
+[data-theme="swiss"] .slot.exceptional .time {
+  color: var(--warn-ink);
+  font-weight: 500;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+[data-theme="swiss"] .day-event {
+  color: var(--warn-ink);
+  font-size: 0.75rem;
+  letter-spacing: 0.005em;
+}
+
+/* Page-level failure: a boxed notice rather than loose red text. */
+[data-theme="swiss"] .error {
+  margin: 0 0 1.25rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--danger-chip-bg);
+  border: 1px solid color-mix(in srgb, var(--closed) 30%, transparent);
+  border-radius: var(--radius-box);
+  color: var(--closed);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------------ *
+ * 5. Banners
+ * ------------------------------------------------------------------ */
+
+[data-theme="swiss"] .closures,
+[data-theme="swiss"] .periods {
+  padding: 0.7rem 0.9rem 0.8rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+[data-theme="swiss"] .closures strong,
+[data-theme="swiss"] .periods strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+[data-theme="swiss"] .closures strong {
+  color: var(--warn-ink);
+}
+
+[data-theme="swiss"] .periods strong {
+  color: var(--accent);
+}
+
+[data-theme="swiss"] .closures ul,
+[data-theme="swiss"] .periods ul {
+  margin-top: 0.35rem;
+  padding-left: 1rem;
+}
+
+[data-theme="swiss"] .closures li + li,
+[data-theme="swiss"] .periods li + li {
+  margin-top: 0.2rem;
+}
+
+[data-theme="swiss"] .closure-pool {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------ *
+ * 6. Controls — hairline-bordered, never filled
+ * ------------------------------------------------------------------ */
+
+[data-theme="swiss"] .back-link {
+  margin-bottom: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+[data-theme="swiss"] .back-link:hover {
+  color: var(--ink);
+}
+
+[data-theme="swiss"] .disclosure {
+  margin-bottom: 1.25rem;
+  padding: 0.45rem 0.7rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+[data-theme="swiss"] .disclosure:hover {
+  background: var(--surface-sunken);
+  border-color: color-mix(in srgb, var(--muted) 35%, var(--line));
+  color: var(--ink);
+}
+
+[data-theme="swiss"] .disclosure-caret {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+[data-theme="swiss"] .agenda-nav button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+[data-theme="swiss"] .agenda-nav button:hover:not(:disabled) {
+  background: var(--surface-sunken);
+  border-color: color-mix(in srgb, var(--muted) 35%, var(--line));
+  color: var(--ink);
+}
+
+[data-theme="swiss"] .agenda-nav button:disabled {
+  background: transparent;
+  border-color: var(--line);
+  color: color-mix(in srgb, var(--muted) 45%, transparent);
+}
+
+/* ------------------------------------------------------------------ *
+ * 7. Agenda
+ *
+ * Mechanics untouched: no rule below changes position, display: grid,
+ * grid-area, overflow, --gutter or --col, and none uses the `border`,
+ * `padding` or `margin` shorthands on elements the mobile block tunes.
+ * ------------------------------------------------------------------ */
+
+[data-theme="swiss"] .agenda-header {
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid var(--line);
+}
+
+[data-theme="swiss"] .agenda h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="swiss"] .agenda-date {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+[data-theme="swiss"] .agenda-scroll,
+[data-theme="swiss"] .table-wrap {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--muted) 45%, transparent) transparent;
+}
+
+/* The header row carries the one heavy rule of the grid; everything else
+   below it is a hairline. */
+[data-theme="swiss"] .agenda-head,
+[data-theme="swiss"] .agenda-corner {
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent);
+}
+
+[data-theme="swiss"] .agenda-head {
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+[data-theme="swiss"] .agenda-head.has-info {
+  border-bottom-color: var(--warn-ink);
+}
+
+[data-theme="swiss"] .agenda-head.dragging {
+  background: var(--surface-sunken);
+  opacity: 0.35;
+}
+
+[data-theme="swiss"] .agenda-info {
+  color: var(--warn-ink);
+  font-size: 0.7rem;
+}
+
+[data-theme="swiss"] .agenda-grip {
+  color: color-mix(in srgb, var(--muted) 70%, transparent);
+  font-size: 0.7rem;
+}
+
+[data-theme="swiss"] .agenda-tick {
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+[data-theme="swiss"] .agenda-line {
+  border-top-color: var(--line);
+}
+
+[data-theme="swiss"] .agenda-slot {
+  background: var(--slot-bg);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-left: 2px solid var(--accent);
+  padding-top: 0.18rem;
+  padding-bottom: 0.18rem;
+}
+
+[data-theme="swiss"] .agenda-slot-time {
+  color: var(--slot-ink);
+  opacity: 1;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+[data-theme="swiss"] .agenda-empty {
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+[data-theme="swiss"] .agenda-drop {
+  background: var(--accent);
+  border-radius: 0;
+}
+
+[data-theme="swiss"] .agenda-now {
+  border-top-color: var(--now-line);
+}
+
+[data-theme="swiss"] .agenda-now-time {
+  padding-left: 0.15rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--now-ink);
+  background: var(--card);
+}
+
+/* ------------------------------------------------------------------ *
+ * 8. Pool cards, day rows and tables
+ * ------------------------------------------------------------------ */
+
+[data-theme="swiss"] .pool-card {
+  padding: 1.1rem 1.2rem 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="swiss"] .pool-card h2 {
+  margin-bottom: 0.65rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+}
+
+/* Pool names stay ink; the accent is reserved for state, not for every link. */
+[data-theme="swiss"] .pool-card h2 a,
+[data-theme="swiss"] .pool-col a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+[data-theme="swiss"] .pool-card h2 a:hover,
+[data-theme="swiss"] .pool-col a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+[data-theme="swiss"] .day {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-size: 0.875rem;
+  border-bottom-color: var(--line);
+}
+
+[data-theme="swiss"] .day-date {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Today is marked by a rule, not by a pill: the row bleeds into the card
+   padding so the columns stay aligned with every other row. */
+[data-theme="swiss"] .day.today {
+  margin-inline: -0.55rem;
+  padding-inline: 0.55rem;
+  background: var(--surface-today);
+  border-radius: 0;
+  box-shadow: inset 2px 0 0 var(--accent);
+  font-weight: 600;
+}
+
+[data-theme="swiss"] .day.today .day-date {
+  color: var(--ink);
+}
+
+[data-theme="swiss"] .event-list {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+[data-theme="swiss"] .weekly-title {
+  margin: 1.5rem 0 0.15rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+[data-theme="swiss"] .weekly {
+  font-size: 0.875rem;
+}
+
+/* Flush-left table: the day column aligns with the card's text edge. */
+[data-theme="swiss"] .weekly th,
+[data-theme="swiss"] .weekly td {
+  padding: 0.45rem 0.7rem 0.45rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+[data-theme="swiss"] .weekly th {
+  width: 8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+[data-theme="swiss"] .weekly tr:last-child th,
+[data-theme="swiss"] .weekly tr:last-child td {
+  border-bottom: none;
+}
+
+[data-theme="swiss"] .table-wrap {
+  background: var(--card);
+  border-color: var(--line);
+}
+
+[data-theme="swiss"] th,
+[data-theme="swiss"] td {
+  border-bottom-color: var(--line);
+  font-size: 0.875rem;
+}
+
+[data-theme="swiss"] thead th {
+  background: var(--surface-head);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+[data-theme="swiss"] .pool-col {
+  font-weight: 500;
+}
+
+[data-theme="swiss"] .slots {
+  gap: 0.3rem;
+}
+
+/* ------------------------------------------------------------------ *
+ * 9. Footer and about page
+ * ------------------------------------------------------------------ */
+
+[data-theme="swiss"] .site-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  letter-spacing: 0.005em;
+  color: var(--muted);
+}
+
+[data-theme="swiss"] .site-footer a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+[data-theme="swiss"] .footer-sep {
+  color: color-mix(in srgb, var(--muted) 45%, transparent);
+}
+
+[data-theme="swiss"] .footer-heart {
+  color: var(--closed);
+}
+
+[data-theme="swiss"] .about {
+  max-width: 40rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+[data-theme="swiss"] .about-lead {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+[data-theme="swiss"] .about h2 {
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+}
+
+[data-theme="swiss"] .about a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+[data-theme="swiss"] .about a:hover {
+  text-decoration-color: currentColor;
+}
+
+[data-theme="swiss"] .about-steps li + li {
+  margin-top: 1rem;
+}
