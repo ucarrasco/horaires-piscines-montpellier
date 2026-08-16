@@ -1,4 +1,11 @@
-import { useEffect, useMemo, useState, type DragEvent } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type DragEvent,
+  type PointerEvent as ReactPointerEvent,
+} from "react";
 import {
   DAY_KEYS,
   DAY_LABELS,
@@ -365,6 +372,103 @@ function useColumnDrag(
   };
 }
 
+/** Pixels of travel before a press turns into a pan rather than a click. */
+const PAN_THRESHOLD = 4;
+
+/**
+ * Click-and-drag panning of the agenda's horizontal scroller.
+ *
+ * Mouse only: touch devices already pan natively, and hijacking their pointer
+ * events would fight the browser's own scrolling. Presses that start on a
+ * column header are ignored — that is where `useColumnDrag` reorders pools, and
+ * two drag gestures cannot share the same pixels.
+ *
+ * A press only becomes a pan past PAN_THRESHOLD, so clicking a pool link still
+ * navigates; once it does pan, the click that follows is swallowed so a gesture
+ * ending on a link does not navigate on release.
+ */
+function useDragScroll() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const gesture = useRef({
+    active: false,
+    startX: 0,
+    startLeft: 0,
+    panning: false,
+  });
+  const [panning, setPanning] = useState(false);
+  const [scrollable, setScrollable] = useState(false);
+
+  // No dependency array: the day and the column order both change the width.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const update = () => setScrollable(el.scrollWidth > el.clientWidth + 1);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  });
+
+  const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el || e.pointerType !== "mouse" || e.button !== 0) return;
+    if (el.scrollWidth <= el.clientWidth) return;
+    if ((e.target as HTMLElement).closest(".agenda-head")) return;
+    gesture.current = {
+      active: true,
+      startX: e.clientX,
+      startLeft: el.scrollLeft,
+      panning: false,
+    };
+  };
+
+  const onPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const g = gesture.current;
+    const el = ref.current;
+    if (!g.active || !el) return;
+    const dx = e.clientX - g.startX;
+    if (!g.panning) {
+      if (Math.abs(dx) < PAN_THRESHOLD) return;
+      g.panning = true;
+      setPanning(true);
+      el.setPointerCapture(e.pointerId);
+    }
+    el.scrollLeft = g.startLeft - dx;
+  };
+
+  const endPan = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const g = gesture.current;
+    const el = ref.current;
+    if (!g.active || !el) return;
+    g.active = false;
+    if (!g.panning) return;
+    g.panning = false;
+    setPanning(false);
+    if (el.hasPointerCapture(e.pointerId))
+      el.releasePointerCapture(e.pointerId);
+
+    const swallow = (ev: MouseEvent) => {
+      ev.preventDefault();
+      ev.stopPropagation();
+    };
+    el.addEventListener("click", swallow, { capture: true, once: true });
+    // Nothing to swallow if the release produced no click.
+    setTimeout(() => el.removeEventListener("click", swallow, true), 0);
+  };
+
+  const classes = ["agenda-scroll"];
+  if (scrollable) classes.push("can-pan");
+  if (panning) classes.push("panning");
+
+  return {
+    ref,
+    className: classes.join(" "),
+    onPointerDown,
+    onPointerMove,
+    onPointerUp: endPan,
+    onPointerCancel: endPan,
+  };
+}
+
 function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
   const nowMinutes = useNowMinutes();
   // Left null until the visitor navigates, so the displayed day follows `today`
@@ -415,6 +519,7 @@ function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
     columns.map(({ pool }) => pool.id),
     movePool,
   );
+  const dragScroll = useDragScroll();
 
   return (
     <section className="agenda">
@@ -447,7 +552,7 @@ function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
 
       {/* --gutter and --col live in the stylesheet so the mobile media query
           can shrink them; only the JS-derived sizes are inline. */}
-      <div className="agenda-scroll">
+      <div {...dragScroll}>
         <div
           className="agenda-grid"
           style={{

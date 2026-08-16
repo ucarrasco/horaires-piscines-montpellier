@@ -399,6 +399,22 @@ header h1 {
   padding: 0 1.1rem 0.5rem;
 }
 
+/*
+ * Drag-to-pan affordance. Mouse-only, and only once the grid actually
+ * overflows — `can-pan` is set from JS, which measures it. Touch devices pan
+ * natively and never get the grab cursor.
+ */
+@media (hover: hover) and (pointer: fine) {
+  .agenda-scroll.can-pan {
+    cursor: grab;
+  }
+
+  .agenda-scroll.panning {
+    cursor: grabbing;
+    user-select: none;
+  }
+}
+
 .agenda-grid {
   /* Read by the inline grid-template-columns and by the drop/now overlays. */
   --gutter: 3.5rem;
