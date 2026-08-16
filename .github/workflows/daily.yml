@@ -34,8 +34,14 @@ jobs:
       - run: npm ci
 
       # Regenerate the schedules (skipped on a plain push, to save API calls).
+      #
+      # Exits non-zero when a pool could not be scraped, but the JSON is still
+      # written: continue-on-error lets the pools that worked reach the site,
+      # and the last step of the job turns the run red so the failure is seen.
       - name: Scrape schedules
+        id: scrape
         if: github.event_name != 'push'
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: npm run scrape
@@ -67,3 +73,20 @@ jobs:
           path: dist
       - id: deploy
         uses: actions/deploy-pages@v4
+
+      # Last on purpose: the site has already shipped the pools that worked.
+      # Failing here marks the run red, which is what triggers GitHub's
+      # "workflow failed" email (Settings > Notifications > Actions).
+      - name: Report pools that could not be scraped
+        if: steps.scrape.outcome == 'failure'
+        run: |
+          node -e '
+            const d = require("./public/data/schedules.json");
+            const bad = d.pools.filter((p) => p.status !== "ok");
+            const lines = bad.length
+              ? bad.map((p) => `- **${p.name}** — \`${p.error}\``).join("\n")
+              : "- The scrape step failed before writing any result (missing API key? network down?).";
+            console.log(`## ❌ ${bad.length}/${d.pools.length} pool(s) failed\n\n${lines}`);
+          ' | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "::error::At least one pool could not be scraped — see the job summary."
+          exit 1

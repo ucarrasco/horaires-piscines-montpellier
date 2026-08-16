@@ -28,6 +28,10 @@ const OUTPUT_PATH = join(__dirname, "..", "public", "data", "schedules.json");
 const MODEL = "claude-opus-4-8";
 const MAX_HTML_CHARS = 40_000;
 const WINDOW_RADIUS = 7; // days on either side of today
+const RETRIES = 1; // extra attempts per pool, on top of the first one
+const RETRY_DELAY_MS = 10_000;
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 // --- Extraction schema (via forced tool use) ------------------------------
 
@@ -228,6 +232,47 @@ function emptySchedule(): PoolSchedule {
   };
 }
 
+/** One extraction attempt. Throws on any failure, so the caller can retry. */
+async function extractOnce(
+  client: Anthropic,
+  pool: PoolConfig & { url: string },
+  today: string,
+): Promise<PoolSchedule> {
+  const res = await fetch(pool.url, {
+    headers: { "User-Agent": "pool-schedules-bot/1.0" },
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const text = htmlToText(await res.text());
+
+  const message = await client.messages.create({
+    model: MODEL,
+    max_tokens: 4096,
+    system: SYSTEM_PROMPT,
+    tools: [EXTRACTION_TOOL],
+    tool_choice: { type: "tool", name: EXTRACTION_TOOL.name },
+    messages: [
+      {
+        role: "user",
+        content: `Pool: ${pool.name}\nToday's date: ${today}\n\nPage content:\n${text}`,
+      },
+    ],
+  });
+
+  const toolUse = message.content.find((b) => b.type === "tool_use");
+  if (!toolUse || toolUse.type !== "tool_use") {
+    throw new Error("No tool call in the response");
+  }
+  return toolUse.input as PoolSchedule;
+}
+
+/**
+ * Extracts one pool, with a single retry after RETRY_DELAY_MS.
+ *
+ * The city pages fail transiently often enough that one blip should not be
+ * reported as a broken pool — and since a failure now turns the whole run red,
+ * a false alarm costs an email. The retry covers the API call too: an overload
+ * there is just as transient as an HTTP 503 from montpellier.fr.
+ */
 async function extractPool(
   client: Anthropic,
   pool: PoolConfig,
@@ -244,42 +289,28 @@ async function extractPool(
     };
   }
 
-  try {
-    const res = await fetch(pool.url, {
-      headers: { "User-Agent": "pool-schedules-bot/1.0" },
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const text = htmlToText(await res.text());
+  const withUrl = { ...pool, url: pool.url };
 
-    const message = await client.messages.create({
-      model: MODEL,
-      max_tokens: 4096,
-      system: SYSTEM_PROMPT,
-      tools: [EXTRACTION_TOOL],
-      tool_choice: { type: "tool", name: EXTRACTION_TOOL.name },
-      messages: [
-        {
-          role: "user",
-          content: `Pool: ${pool.name}\nToday's date: ${today}\n\nPage content:\n${text}`,
-        },
-      ],
-    });
-
-    const toolUse = message.content.find((b) => b.type === "tool_use");
-    if (!toolUse || toolUse.type !== "tool_use") {
-      throw new Error("No tool call in the response");
+  for (let attempt = 1; attempt <= 1 + RETRIES; attempt++) {
+    try {
+      const parsed = await extractOnce(client, withUrl, today);
+      return { ...base, status: "ok", ...parsed };
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      if (attempt <= RETRIES) {
+        // Same line as the "  - Pool name... " prefix already written.
+        process.stdout.write(
+          `${msg}, retrying in ${RETRY_DELAY_MS / 1000}s... `,
+        );
+        await sleep(RETRY_DELAY_MS);
+        continue;
+      }
+      return { ...base, status: "error", error: msg, ...emptySchedule() };
     }
-    const parsed = toolUse.input as PoolSchedule;
-
-    return { ...base, status: "ok", ...parsed };
-  } catch (err) {
-    return {
-      ...base,
-      status: "error",
-      error: err instanceof Error ? err.message : String(err),
-      ...emptySchedule(),
-    };
   }
+
+  // Unreachable: the loop either returns or exhausts its attempts above.
+  throw new Error("unreachable");
 }
 
 // --- Cross-pool reconciliation --------------------------------------------
@@ -632,6 +663,16 @@ async function main() {
 
   const okCount = pools.filter((p) => p.status === "ok").length;
   console.log(`\nWrote ${OUTPUT_PATH} (${okCount}/${pools.length} ok)`);
+
+  // The file is written first on purpose: the pools that did work should still
+  // reach the site. Failing only afterwards turns the run red so the failure is
+  // noticed, without throwing away the good data.
+  const failed = pools.filter((p) => p.status !== "ok");
+  if (failed.length > 0) {
+    console.error(`\n❌ ${failed.length}/${pools.length} pool(s) failed:`);
+    for (const p of failed) console.error(`   - ${p.name}: ${p.error}`);
+    process.exitCode = 1;
+  }
 }
 
 main().catch((err) => {
