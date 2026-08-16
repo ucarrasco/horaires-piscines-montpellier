@@ -736,7 +736,7 @@ function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
           ))}
         </ul>
       )}
-      {pool.notes && <p className="notes">{pool.notes}</p>}
+      {/* {pool.notes && <p className="notes">{pool.notes}</p>} */}
     </section>
   );
 }
