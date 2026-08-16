@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T04:31:09.406Z",
+  "generatedAt": "2026-08-16T17:41:57.330Z",
   "window": {
     "start": "2026-08-09",
     "end": "2026-08-23",
@@ -34,47 +34,279 @@
       "id": "olympique-angelotti",
       "name": "Piscine Olympique Angelotti",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLGnKtfcm2oY2GEJBc\"}",
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Jour férié du samedi 15 août : ouverture exceptionnelle de la Piscine Olympique Angelotti (seule piscine du réseau ouverte)",
+          "closed": false,
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:15",
+              "label": null
+            },
+            {
+              "start": "15:00",
+              "end": "19:15",
+              "label": null
+            }
+          ]
+        },
+        {
+          "start": "2026-08-31",
+          "end": "2026-09-27",
+          "description": "Fermeture technique annuelle pour entretien, maintenance et contrôle des installations. Réouverture prévue le lundi 28 septembre 2026.",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-01-01",
+          "end": null,
+          "description": "1er janvier : fermeture de l'établissement",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-05-01",
+          "end": null,
+          "description": "1er mai : fermeture de l'établissement",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-12-25",
+          "end": null,
+          "description": "25 décembre : fermeture de l'établissement",
+          "closed": true,
+          "slots": null
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "scope": "all_other_pools",
+          "pools": [],
+          "closed": true,
+          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte"
+        }
+      ],
+      "notes": "Horaires principaux de l'établissement (bassin sportif) : Lundi-Vendredi 9:00-21:30, Samedi 9:00-19:15, Dimanche 9:00-13:15 et 15:00-19:15 — ces horaires ne distinguent pas période scolaire/vacances. La page fournit aussi des horaires spécifiques pour le bassin ludique, qui eux distinguent période scolaire et vacances (reportés ici dans les schémas). L'évacuation des bassins s'effectue 30 min avant la fermeture. La fermeture technique 31 août-27 septembre couvre la date du jour (2026-08-16 est avant, mais la fermeture débute le 31 août).",
       "periods": {
         "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
+              "end": "21:30",
+              "label": "Bassin ludique"
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
+              "end": "21:30",
+              "label": "Bassin ludique"
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
+              "end": "21:30",
+              "label": "Bassin ludique"
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
+              "end": "21:30",
+              "label": "Bassin ludique"
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
+              "end": "21:30",
+              "label": "Bassin ludique"
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:15",
+              "label": null
+            },
+            {
+              "start": "15:00",
+              "end": "19:15",
+              "label": null
+            }
+          ]
         },
         "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:15",
+              "label": null
+            },
+            {
+              "start": "15:00",
+              "end": "19:15",
+              "label": null
+            }
+          ]
         },
         "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:15",
+              "label": null
+            },
+            {
+              "start": "15:00",
+              "end": "19:15",
+              "label": null
+            }
+          ]
         }
       },
-      "events": [],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": null,
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:15",
+              "label": null
+            },
+            {
+              "start": "15:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -83,7 +315,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -92,7 +330,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -101,7 +345,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -110,7 +360,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -119,7 +375,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -128,16 +390,40 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:15",
+              "label": null
+            },
+            {
+              "start": "15:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
           "closed": false,
-          "exceptional": false,
-          "events": []
+          "exceptional": true,
+          "events": [
+            "Jour férié du samedi 15 août : ouverture exceptionnelle de la Piscine Olympique Angelotti (seule piscine du réseau ouverte)"
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:15",
+              "label": null
+            },
+            {
+              "start": "15:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -146,7 +432,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -155,7 +447,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -164,7 +462,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -173,7 +477,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -182,7 +492,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -191,7 +507,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -200,7 +522,18 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:15",
+              "label": null
+            },
+            {
+              "start": "15:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -211,47 +544,201 @@
       "id": "neptune",
       "name": "Centre aquatique Neptune",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/centre-aquatique-neptune",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLLan5qR1iuZncmrJN\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "olympique-angelotti",
+            "poolName": "Piscine Olympique Angelotti",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
+          }
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "La page affiche deux jeux d'horaires : un tableau général (Lundi 9:00-14:00, Mardi 12:00-14:00 et 17h-20h, Mercredi 11:30-16:00, Jeudi 12:00-14:00, Vendredi 12:00-14:00 et 17h-20h, Samedi 9:00-13:00, Dimanche 14:00-18:00) utilisé ici comme horaires de période scolaire, et des horaires spécifiques été et petites vacances. Les cours de natation et activités à la séance (aquagym, aquabike, etc.) n'ont pas été retenus. Depuis le 6 juillet 2026 les espaces extérieurs sont ouverts (mêmes horaires été indiqués).",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:30",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "20:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -260,7 +747,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -269,7 +762,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -278,7 +777,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -287,7 +792,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -296,7 +807,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -306,15 +823,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte"
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -323,7 +848,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -332,7 +863,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -341,7 +878,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -350,7 +893,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -359,7 +908,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -368,7 +923,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -377,7 +938,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -388,47 +955,215 @@
       "id": "poseidon",
       "name": "Piscine Poséidon",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLRQEwSQ1fVBiSWuzK\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-17",
+          "end": "2026-08-21",
+          "description": "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45",
+          "closed": false,
+          "slots": null
         },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+        {
+          "start": "2026-08-24",
+          "end": "2026-08-28",
+          "description": "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45",
+          "closed": false,
+          "slots": null
         },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "olympique-angelotti",
+            "poolName": "Piscine Olympique Angelotti",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
+          }
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "Deux blocs d'horaires figurent sur la page. Le bloc \"horaires\" détaillé par jour (Lundi 12:00-14:00, Mardi 12:00-14:00/17:00-20:00, Mercredi 11:00-16:00, Jeudi 12:00-14:00, Vendredi 9:00-14:00/17:00-20:00, Samedi 9:00-13:00, Dimanche 14:00-18:00) semble correspondre à la période scolaire (term) mais n'est pas explicitement labellisé ; il a été utilisé pour \"term\". Les blocs \"Horaires d'été\" et \"Horaires petites vacances scolaires\" sont explicitement labellisés. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -437,7 +1172,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -446,7 +1187,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -455,7 +1202,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -464,7 +1217,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -473,7 +1232,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -483,15 +1248,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte"
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -500,52 +1273,98 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45"
+          ]
         },
         {
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45"
+          ]
         },
         {
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45"
+          ]
         },
         {
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45"
+          ]
         },
         {
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45"
+          ]
         },
         {
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -554,7 +1373,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -565,47 +1390,208 @@
       "id": "heracles",
       "name": "Piscine Héraclès",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLUkQTc1YrPpDwtCMN\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-07-27",
+          "end": "2026-07-30",
+          "description": "Piscines en Fête à la piscine Héraclès : 4 journées d'animations. Cours aquatiques le matin (Aquapaddle 11h00, Circuit Training 11h45, Aquabike 12h30, Aquagym 13h10), parcours gonflable de 14h30 à 17h45, Escape Pool de 15h00 à 16h30, jeux terrestres toute la journée.",
+          "closed": false,
+          "slots": null
         },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "olympique-angelotti",
+            "poolName": "Piscine Olympique Angelotti",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
+          }
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "La section \\\"Infos horaires\\\" donne les horaires d'été (lun-ven 11:00-19:30, sam 9:00-13:00, dim 14:00-18:00) et les horaires petites vacances scolaires (lun-ven 10:30-19:00, sam 9:00-13:00, dim 14:00-18:00). Un autre bloc en haut de page indique des horaires différents par jour (lundi 12:00-14:00, mardi 12:00-14:00 et 17:00-20:00, mercredi 11:00-16:00, jeudi 12:00-14:00, vendredi 9:00-14:00 et 17:00-20:00, samedi 9:00-13:00, dimanche 14:00-18:00) sans indication de période ; ces horaires ont été retenus pour la période scolaire (term) faute de précision. Le dispositif de mise à l'eau pour personnes à mobilité réduite est momentanément indisponible. Vigilance rouge \\\"Feux de forêt\\\" annoncée pour le lundi 17 août (mesures générales, pas de fermeture de la piscine mentionnée).\"",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -614,7 +1600,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -623,7 +1615,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -632,7 +1630,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -641,7 +1645,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -650,7 +1660,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -660,15 +1676,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte"
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -677,7 +1701,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -686,7 +1716,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -695,7 +1731,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -704,7 +1746,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -713,7 +1761,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -722,7 +1776,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -731,7 +1791,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -742,47 +1808,201 @@
       "id": "suzanne-berlioux",
       "name": "Piscine Suzanne Berlioux",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLbLYFThTeJQ3kp6Mc\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "olympique-angelotti",
+            "poolName": "Piscine Olympique Angelotti",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
+          }
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "La billetterie en ligne couvre les 15 piscines du réseau. L'évacuation des bassins s'effectue 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:30",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -791,7 +2011,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -800,7 +2026,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -809,7 +2041,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -818,7 +2056,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -827,7 +2071,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -837,15 +2087,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte"
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -854,7 +2112,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -863,7 +2127,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -872,7 +2142,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -881,7 +2157,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -890,7 +2172,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -899,7 +2187,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -908,7 +2202,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -919,26 +2219,136 @@
       "id": "pitot",
       "name": "Piscine Pitot",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLgJgd9xxuQMRAxpQr\"}",
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-06-29",
+          "end": "2026-08-30",
+          "description": "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus.",
+          "closed": true,
+          "slots": null
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "La piscine est indiquée \\\"Fermé au public\\\" en tête de page (fermeture estivale en cours). Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets terminée 15 min avant l'évacuation.",
       "periods": {
         "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:30",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "07:30",
+              "end": "09:00",
+              "label": null
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
         },
         "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
         },
         "summer_holidays": {
           "monday": [],
@@ -950,145 +2360,171 @@
           "sunday": []
         }
       },
-      "events": [],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": null,
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         }
       ]
     },
@@ -1096,47 +2532,201 @@
       "id": "marcel-spilliaert",
       "name": "Piscine Marcel Spilliaert",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLjSwyEoLq47WgvtTs\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "olympique-angelotti",
+            "poolName": "Piscine Olympique Angelotti",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
+          }
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "Horaires \"term\" issus du bloc principal (Infos horaires standard). L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Le jeudi soir le petit bassin ferme à 17h45.",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "petit bassin 17h45"
+            }
+          ],
+          "friday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1145,7 +2735,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1154,7 +2750,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1163,7 +2765,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1172,7 +2780,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1181,7 +2795,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1191,15 +2811,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte"
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1208,7 +2836,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1217,7 +2851,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1226,7 +2866,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1235,7 +2881,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1244,7 +2896,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1253,7 +2911,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1262,7 +2926,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1273,47 +2943,214 @@
       "id": "les-nereides",
       "name": "Piscine Les Néréides",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-les-nereides",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLpsspfNgMScACNNB7\"}",
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "La piscine sera fermée le samedi 15 août.",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-08-03",
+          "end": "2026-08-06",
+          "description": "Dispositif Piscines en fête à la piscine Les Néréides : cours aquatiques, parcours gonflable, Escape Pool et jeux terrestres (sous réserve du droit d'entrée).",
+          "closed": false,
+          "slots": null
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "scope": "named_pools",
+          "pools": [
+            "La Piscine Olympique Angelotti"
+          ],
+          "closed": false,
+          "description": "Ouverture exceptionnelle le 15 août de 9h00 à 13h15 et de 15h00 à 19h15."
+        }
+      ],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation) ; vente des billets terminée 15 min avant l'évacuation. Deux blocs d'horaires figurent sur la page : un bloc hebdomadaire détaillé jour par jour (utilisé comme horaires période scolaire) et un bloc « Horaires d'été » / « Horaires petites vacances scolaires ».",
       "periods": {
         "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
         },
         "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
         },
         "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
         }
       },
-      "events": [],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": null,
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1322,7 +3159,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1331,7 +3174,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1340,7 +3189,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1349,7 +3204,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1358,7 +3219,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1368,15 +3235,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "La piscine sera fermée le samedi 15 août."
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1385,7 +3260,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1394,7 +3275,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1403,7 +3290,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1412,7 +3305,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1421,7 +3320,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1430,7 +3335,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1439,7 +3350,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1450,47 +3367,201 @@
       "id": "jean-vives",
       "name": "Piscine Jean Vivès",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLvB7bDuoeGrySrDkr\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "olympique-angelotti",
+            "poolName": "Piscine Olympique Angelotti",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
+          }
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "Horaires période scolaire tirés du bloc principal (Lundi/Mardi/etc.). Horaires d'été et petites vacances tirés du bloc \"Infos horaires\". Vigilance rouge \"Feux de forêt\" le lundi 17 août concerne des espaces naturels et le parc zoologique, sans mention explicite de fermeture de la piscine.",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1499,7 +3570,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1508,7 +3585,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1517,7 +3600,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1526,7 +3615,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1535,7 +3630,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1545,15 +3646,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte"
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1562,7 +3671,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1571,7 +3686,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1580,7 +3701,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1589,7 +3716,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1598,7 +3731,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1607,7 +3746,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1616,7 +3761,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1627,47 +3778,201 @@
       "id": "jean-taris",
       "name": "Piscine Jean Taris",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oLy5zJdJHMF4TsB49L\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "olympique-angelotti",
+            "poolName": "Piscine Olympique Angelotti",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
+          }
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "Les horaires \"période scolaire\" listent aussi des cours et activités (natation enfants/adultes, nages avec palmes, femmes enceintes, jardin aquatique) qui ne sont pas des créneaux grand public mais ne sont pas isolables des horaires d'ouverture affichés. L'alerte \"vigilance rouge feux de forêt\" du lundi 17 août ne concerne pas la piscine (parcs et espaces forestiers).",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "11:15",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:15",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:15",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:15",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1676,7 +3981,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1685,7 +3996,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1694,7 +4011,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1703,7 +4026,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1712,7 +4041,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1722,15 +4057,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte"
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1739,7 +4082,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1748,7 +4097,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1757,7 +4112,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1766,7 +4127,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1775,7 +4142,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1784,7 +4157,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1793,7 +4172,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1804,47 +4189,186 @@
       "id": "christine-caron",
       "name": "Piscine Christine Caron",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oM2KTGG1DisMYfKjVr\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "La piscine Caron sera fermée samedi 15 août 2026.",
+          "closed": true,
+          "slots": null
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "La page ne donne que les horaires d'été. En l'absence d'horaires distincts pour la période scolaire et les petites vacances, les horaires d'été sont réutilisés pour tous les périodes. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1853,7 +4377,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1862,7 +4392,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1871,7 +4407,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1880,7 +4422,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1889,7 +4437,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1899,15 +4453,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "La piscine Caron sera fermée samedi 15 août 2026."
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1916,7 +4478,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1925,7 +4493,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1934,7 +4508,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1943,7 +4523,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1952,7 +4538,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1961,7 +4553,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1970,7 +4568,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -1981,47 +4585,208 @@
       "id": "amphitrite",
       "name": "Piscine Amphitrite",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-amphitrite",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oM6e9xJ8oY5wzJgY9Q\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-17",
+          "end": null,
+          "description": "Vigilance rouge \"Feux de forêt\" dans la plaine viticole de l'est héraultais : accès interdit à plusieurs espaces naturels (réserve du Lez, bois de Montmaur, parc Méric, lac des Garrigues, parc Sophie Desmarets, Bouisses). Concerne les espaces forestiers, pas directement la piscine.",
+          "closed": false,
+          "slots": null
         },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "olympique-angelotti",
+            "poolName": "Piscine Olympique Angelotti",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
+          }
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "La page présente deux séries d'horaires distinctes. Une première liste (Lundi 9:00-14:00 et 17:00-20:00, Mardi 12:00-14:00, Mercredi 11:00-16:00, Jeudi 12:00-14:00 et 17:00-20:00, Vendredi 12:00-14:00, Samedi 14:00-18:00, Dimanche 9:00-13:00) a été retenue comme horaires de période scolaire. La section \\\"Infos horaires\\\" donne les horaires d'été et petites vacances scolaires. Évacuation des bassins 20 min avant fermeture (30 min en été), vente des billets terminée 15 min avant l'évacuation (30 min en été). Réseau de 15 piscines. Bonnet de bain obligatoire.",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2030,7 +4795,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2039,7 +4810,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2048,7 +4825,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2057,7 +4840,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2066,7 +4855,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2076,15 +4871,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte"
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2093,16 +4896,30 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Vigilance rouge \"Feux de forêt\" dans la plaine viticole de l'est héraultais : accès interdit à plusieurs espaces naturels (réserve du Lez, bois de Montmaur, parc Méric, lac des Garrigues, parc Sophie Desmarets, Bouisses). Concerne les espaces forestiers, pas directement la piscine."
+          ]
         },
         {
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2111,7 +4928,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2120,7 +4943,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2129,7 +4958,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2138,7 +4973,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2147,7 +4988,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2158,176 +5005,354 @@
       "id": "alfred-nakache",
       "name": "Piscine Alfred Nakache",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oMBBkmUkoqAHKbKxYf\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-01",
+          "end": "2026-08-30",
+          "description": "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus.",
+          "closed": true,
+          "slots": null
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "La piscine est actuellement fermée au public. Fermeture pour maintenance du 1er au 30 août inclus. Horaires période scolaire (term) issus du bloc principal ; possibles coquilles sur la page (ex. \\\"11:30-1400\\\" interprété comme 11:30-14:00). Deux versions des horaires d'été figurent sur la page, retenues comme lundi-vendredi 11:00-19:30.",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "07:30",
+              "end": "09:00",
+              "label": null
+            },
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:30",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         },
         {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+          ]
         }
       ]
     },
@@ -2335,47 +5360,203 @@
       "id": "alex-jany",
       "name": "Piscine Alex Jany",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alex-jany",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oMEUT6qETnMSeSynAf\"}",
-      "periods": {
-        "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+      "status": "ok",
+      "events": [
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "La piscine sera fermée samedi 15 août.",
+          "closed": true,
+          "slots": null
         },
-        "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
-        },
-        "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+        {
+          "start": "2026-07-20",
+          "end": "2026-07-23",
+          "description": "Piscines en Fête : 4 journées d'animations du lundi 20 au jeudi 23 juillet (cours aquatiques le matin, parcours gonflable, Escape Pool, jeux et animations).",
+          "closed": false,
+          "slots": null
         }
-      },
-      "events": [],
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "Bassin ludique partiellement inaccessible pendant les activités de 17h45 à 18h30 (lundi et vendredi en juillet ; lundi et jeudi en août). L'évacuation des bassins s'effectue 20 min avant la fermeture. Le 17 août, vigilance rouge feux de forêt dans l'est héraultais (mesures générales, pas de fermeture de la piscine annoncée).",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "12:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2384,7 +5565,13 @@
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2393,7 +5580,13 @@
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2402,7 +5595,13 @@
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2411,7 +5610,13 @@
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2420,7 +5625,13 @@
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2430,15 +5641,23 @@
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "La piscine sera fermée samedi 15 août."
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2447,7 +5666,13 @@
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2456,7 +5681,13 @@
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2465,7 +5696,13 @@
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2474,7 +5711,13 @@
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2483,7 +5726,13 @@
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2492,7 +5741,13 @@
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2501,7 +5756,13 @@
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
-          "slots": [],
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -2512,176 +5773,356 @@
       "id": "francoise-et-yves-jarrousse",
       "name": "Piscine Françoise et Yves Jarrousse",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-francoise-et-yves-jarrousse",
-      "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ce5oMHcxLcghmdBRXvfPc\"}",
+      "status": "ok",
       "periods": {
         "term": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "12:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
         },
         "short_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
         },
         "summer_holidays": {
-          "monday": [],
-          "tuesday": [],
-          "wednesday": [],
-          "thursday": [],
-          "friday": [],
-          "saturday": [],
-          "sunday": []
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
         }
       },
-      "events": [],
+      "events": [
+        {
+          "start": "2026-07-06",
+          "end": "2026-07-31",
+          "description": "Ouverture pour la saison estivale du 6 au 31 juillet 2026 (horaires d'été).",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-08-01",
+          "end": "2026-08-30",
+          "description": "Fermeture technique annuelle du 1er au 30 août 2026 inclus.",
+          "closed": true,
+          "slots": null
+        }
+      ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": null,
+      "notes": "La piscine est indiquée « Fermé au public » actuellement (fermeture technique jusqu'au 30 août 2026). L'évacuation des bassins se fait 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets terminée 15 min avant l'évacuation. La billetterie en ligne mentionne 15 piscines du réseau.",
       "resolved": [
         {
           "date": "2026-08-09",
           "day": "sunday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-10",
           "day": "monday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-12",
           "day": "wednesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-13",
           "day": "thursday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-16",
           "day": "sunday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-17",
           "day": "monday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-18",
           "day": "tuesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-19",
           "day": "wednesday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-20",
           "day": "thursday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-21",
           "day": "friday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-22",
           "day": "saturday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         },
         {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
           "slots": [],
-          "closed": false,
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture technique annuelle du 1er au 30 août 2026 inclus."
+          ]
         }
       ]
     }
