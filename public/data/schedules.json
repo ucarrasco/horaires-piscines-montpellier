@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-08-17T04:39:35.858Z",
+  "generatedAt": "2026-08-18T04:33:30.349Z",
   "window": {
-    "start": "2026-08-10",
-    "end": "2026-08-24",
+    "start": "2026-08-11",
+    "end": "2026-08-25",
     "dates": [
-      "2026-08-10",
       "2026-08-11",
       "2026-08-12",
       "2026-08-13",
@@ -18,15 +17,16 @@
       "2026-08-21",
       "2026-08-22",
       "2026-08-23",
-      "2026-08-24"
+      "2026-08-24",
+      "2026-08-25"
     ]
   },
   "periodsInWindow": [
     {
       "period": "summer_holidays",
       "label": "Vacances d'Été",
-      "start": "2026-08-10",
-      "end": "2026-08-24"
+      "start": "2026-08-11",
+      "end": "2026-08-25"
     }
   ],
   "pools": [
@@ -37,27 +37,9 @@
       "status": "ok",
       "events": [
         {
-          "start": "2026-08-15",
-          "end": null,
-          "description": "Ouverture exceptionnelle le samedi 15 août (jour férié) : la Piscine Olympique Angelotti accueille le public de 9h00 à 13h15 et de 15h00 à 19h15.",
-          "closed": false,
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:15",
-              "label": null
-            },
-            {
-              "start": "15:00",
-              "end": "19:15",
-              "label": null
-            }
-          ]
-        },
-        {
           "start": "2026-08-31",
           "end": "2026-09-27",
-          "description": "Fermeture technique annuelle pour maintenance : la Piscine Olympique Angelotti est fermée au public. Réouverture prévue le lundi 28 septembre 2026.",
+          "description": "Fermeture pour maintenance technique. Réouverture prévue le lundi 28 septembre 2026.",
           "closed": true,
           "slots": null
         },
@@ -84,71 +66,87 @@
         }
       ],
       "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-08-15",
-          "end": null,
-          "scope": "all_other_pools",
-          "pools": [],
-          "closed": true,
-          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte."
-        }
-      ],
-      "notes": "Horaires de l'établissement (accès public/nage libre) : Lundi au vendredi 9:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. Le bassin ludique a des horaires spécifiques en période scolaire (du lundi au vendredi 11:30-13:30 et 16:00-21:30) ; les horaires enregistrés correspondent à l'ouverture générale de l'établissement. L'évacuation des bassins s'effectue 30 min avant la fermeture.",
+      "networkClaims": [],
+      "notes": "Le bassin sportif \"Vénus\" (50m) est ouvert Lundi-Vendredi 9:00-21:30, Samedi 9:00-19:15, Dimanche 9:00-13:15 et 15:00-19:15 (horaires d'établissement). Les horaires par période enregistrés correspondent au bassin ludique. Évacuation des bassins 30 min avant la fermeture ; vente des billets jusqu'à 20h30 (lun-ven) et 18h15 (sam-dim). L'établissement est actuellement fermé au public (fermeture technique).",
       "periods": {
         "term": {
           "monday": [
             {
-              "start": "09:00",
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "tuesday": [
             {
-              "start": "09:00",
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "wednesday": [
             {
-              "start": "09:00",
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "thursday": [
             {
-              "start": "09:00",
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "friday": [
             {
-              "start": "09:00",
+              "start": "11:30",
+              "end": "13:30",
+              "label": "Bassin ludique"
+            },
+            {
+              "start": "16:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "saturday": [
             {
               "start": "09:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "sunday": [
             {
               "start": "09:00",
               "end": "13:15",
-              "label": null
+              "label": "Bassin ludique"
             },
             {
               "start": "15:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ]
         },
@@ -157,54 +155,54 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "tuesday": [
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "wednesday": [
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "thursday": [
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "friday": [
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "saturday": [
             {
               "start": "09:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "sunday": [
             {
               "start": "09:00",
               "end": "13:15",
-              "label": null
+              "label": "Bassin ludique"
             },
             {
               "start": "15:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ]
         },
@@ -213,74 +211,59 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "tuesday": [
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "wednesday": [
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "thursday": [
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "friday": [
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "saturday": [
             {
               "start": "09:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "sunday": [
             {
               "start": "09:00",
               "end": "13:15",
-              "label": null
+              "label": "Bassin ludique"
             },
             {
               "start": "15:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ]
         }
       },
       "resolved": [
-        {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "21:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-11",
           "day": "tuesday",
@@ -289,7 +272,7 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -304,7 +287,7 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -319,7 +302,7 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -334,7 +317,7 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -348,20 +331,13 @@
           "slots": [
             {
               "start": "09:00",
-              "end": "13:15",
-              "label": null
-            },
-            {
-              "start": "15:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
-          "exceptional": true,
-          "events": [
-            "Ouverture exceptionnelle le samedi 15 août (jour férié) : la Piscine Olympique Angelotti accueille le public de 9h00 à 13h15 et de 15h00 à 19h15."
-          ]
+          "exceptional": false,
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -371,12 +347,12 @@
             {
               "start": "09:00",
               "end": "13:15",
-              "label": null
+              "label": "Bassin ludique"
             },
             {
               "start": "15:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -391,7 +367,7 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -406,7 +382,7 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -421,7 +397,7 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -436,7 +412,7 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -451,7 +427,7 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -466,7 +442,7 @@
             {
               "start": "09:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -481,12 +457,12 @@
             {
               "start": "09:00",
               "end": "13:15",
-              "label": null
+              "label": "Bassin ludique"
             },
             {
               "start": "15:00",
               "end": "19:15",
-              "label": null
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -501,7 +477,22 @@
             {
               "start": "09:00",
               "end": "21:30",
-              "label": null
+              "label": "Bassin ludique"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": "Bassin ludique"
             }
           ],
           "closed": false,
@@ -517,21 +508,16 @@
       "status": "ok",
       "events": [
         {
-          "start": "2026-08-15",
+          "start": "2026-09-12",
           "end": null,
-          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte.",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "olympique-angelotti",
-            "poolName": "Piscine Olympique Angelotti",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
-          }
+          "description": "Samedi 12 septembre : célébrons l'ouverture de Neptune ! 9h ouverture au public, discours officiels, visite du centre. 11h inauguration officielle. 11h-18h animations (parcours gonflables, animations aquatiques, jeux, Escape Pool, village sport-santé, sensibilisation à la prévention des noyades).",
+          "closed": false,
+          "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "La page indique des horaires \"d'été\" (lun-ven 10h-20h, sam-dim 14h-20h) et des horaires \"petites vacances scolaires\" (lun-ven 10h30-19h, sam 9h-13h, dim 14h-18h). Un bloc d'horaires plus détaillé en haut de page (Lundi 9h-14h, Mardi 12h-14h et 17h-20h, etc.) a été utilisé comme horaires période scolaire faute d'autre libellé. Aucun libellé de type de créneau (public/couloirs) n'est précisé. Les espaces extérieurs sont accessibles à tous depuis le 6 juillet 2026.",
+      "notes": "La fiche principale affiche des horaires \"réguliers\" différents des horaires d'été indiqués dans l'encadré infos : Lundi 9h-14h, Mardi 12h-14h/17h-20h, Mercredi 11h30-16h, Jeudi 12h-14h, Vendredi 12h-14h/17h-20h, Samedi 9h-13h, Dimanche 14h-18h. Faute de précision de période, ces horaires ont été utilisés pour la période scolaire (term). Les horaires d'été et petites vacances proviennent de l'encadré \"Infos horaires\". Les espaces extérieurs (bassin 50m) sont accessibles depuis le 6 juillet 2026 aux horaires d'été.",
       "periods": {
         "term": {
           "monday": [
@@ -699,21 +685,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "10:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -777,12 +748,16 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
           "exceptional": false,
-          "events": [
-            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte."
-          ]
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -907,6 +882,21 @@
         {
           "date": "2026-08-24",
           "day": "monday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -928,21 +918,23 @@
       "status": "ok",
       "events": [
         {
-          "start": "2026-08-15",
-          "end": null,
-          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte.",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "olympique-angelotti",
-            "poolName": "Piscine Olympique Angelotti",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
-          }
+          "start": "2026-08-17",
+          "end": "2026-08-21",
+          "description": "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45 (test avant le stage obligatoire)",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-08-24",
+          "end": "2026-08-28",
+          "description": "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45 (test avant le stage obligatoire)",
+          "closed": false,
+          "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "La page indique deux jeux d'horaires distincts : les horaires \"réguliers\" (Lundi 12:00-14:00, etc.) affichés en haut, et les horaires d'été / petites vacances dans l'encadré \"Infos horaires\". Les horaires réguliers ont été utilisés pour la période scolaire (term). Stages enfants du 17 au 21 août et du 24 au 28 août (niveaux 1 et 2, non ouverts au grand public).",
+      "notes": "La page présente deux jeux d'horaires distincts : les horaires hebdomadaires détaillés en en-tête (Lundi 12h-14h, Mardi 12h-14h/17h-20h, Mercredi 11h-16h, Jeudi 12h-14h, Vendredi 9h-14h/17h-20h, Samedi 9h-13h, Dimanche 14h-18h), utilisés ici comme horaires en période scolaire, et les 'Horaires d'été' / 'Horaires petites vacances scolaires' de l'encart 'Infos horaires'. Les horaires en période scolaire ne sont pas explicitement étiquetés comme tels ; hypothèse retenue faute d'indication contraire.",
       "periods": {
         "term": {
           "monday": [
@@ -1110,21 +1102,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -1188,12 +1165,16 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
           "exceptional": false,
-          "events": [
-            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte."
-          ]
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -1223,7 +1204,9 @@
           ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45 (test avant le stage obligatoire)"
+          ]
         },
         {
           "date": "2026-08-18",
@@ -1238,7 +1221,9 @@
           ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45 (test avant le stage obligatoire)"
+          ]
         },
         {
           "date": "2026-08-19",
@@ -1253,7 +1238,9 @@
           ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45 (test avant le stage obligatoire)"
+          ]
         },
         {
           "date": "2026-08-20",
@@ -1268,7 +1255,9 @@
           ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45 (test avant le stage obligatoire)"
+          ]
         },
         {
           "date": "2026-08-21",
@@ -1283,7 +1272,9 @@
           ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45 (test avant le stage obligatoire)"
+          ]
         },
         {
           "date": "2026-08-22",
@@ -1328,7 +1319,26 @@
           ],
           "closed": false,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45 (test avant le stage obligatoire)"
+          ]
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Stages enfants de 5 jours : Niveau 1 (5 à 8 ans) de 11h à 11h45 et Niveau 2 (5 à 8 ans) de 12h à 12h45 (test avant le stage obligatoire)"
+          ]
         }
       ]
     },
@@ -1341,67 +1351,48 @@
         {
           "start": "2026-07-27",
           "end": "2026-07-30",
-          "description": "Piscines en Fête : 4 journées d'animations aquatiques pour toute la famille (cours aquatiques le matin, parcours gonflable 14h30-17h45, Escape Pool 15h00-16h30, jeux terrestres). Animations sous réserve du droit d'entrée.",
+          "description": "Piscines en Fête : 4 journées d'animations aquatiques pour toute la famille (cours aquatiques gratuits le matin, parcours gonflable de 14h30 à 17h45, Escape Pool de 15h00 à 16h30, jeux terrestres). Animations sous réserve du droit d'entrée.",
           "closed": false,
           "slots": null
-        },
-        {
-          "start": "2026-08-15",
-          "end": null,
-          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte.",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "olympique-angelotti",
-            "poolName": "Piscine Olympique Angelotti",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
-          }
         }
       ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "La section principale et l'encart « Infos horaires » ne donnent que les horaires d'été et petites vacances. Les horaires détaillés par jour (Lundi 12:00-14:00, etc.) figurent dans un bloc coordonnées sans indication de période — ils n'ont pas été utilisés comme horaires période scolaire car ambigus. Faute d'horaires période scolaire clairs, le schéma « petites vacances » a été réutilisé pour « term ». Le dispositif de mise à l'eau PMR est momentanément indisponible.",
       "periods": {
         "term": {
           "monday": [
             {
-              "start": "12:00",
-              "end": "14:00",
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
           "tuesday": [
             {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
           "wednesday": [
             {
-              "start": "11:00",
-              "end": "16:00",
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
           "thursday": [
             {
-              "start": "12:00",
-              "end": "14:00",
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
           "friday": [
             {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
@@ -1523,25 +1514,7 @@
           ]
         }
       },
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "La page présente deux jeux d'horaires : un bloc générique (Lundi 12:00-14:00, etc.) utilisé pour la période scolaire, et deux blocs 'Horaires d'été' (lun-ven 11h-19h30) et 'Horaires petites vacances scolaires' (lun-ven 10h30-19h). L'évacuation des bassins se fait 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Le dispositif de mise à l'eau pour personnes à mobilité réduite est momentanément indisponible.",
       "resolved": [
-        {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-11",
           "day": "tuesday",
@@ -1606,12 +1579,16 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
           "exceptional": false,
-          "events": [
-            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte."
-          ]
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -1736,6 +1713,21 @@
         {
           "date": "2026-08-24",
           "day": "monday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -1755,23 +1747,10 @@
       "name": "Piscine Suzanne Berlioux",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux",
       "status": "ok",
-      "events": [
-        {
-          "start": "2026-08-15",
-          "end": null,
-          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte.",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "olympique-angelotti",
-            "poolName": "Piscine Olympique Angelotti",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
-          }
-        }
-      ],
+      "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Le message d'alerte \"vigilance rouge Feux de forêt\" du 17 août ne concerne pas la piscine (parcs et espaces forestiers uniquement). Deux jeux d'horaires figurent sur la page : le bloc principal (Lundi 12:00-14:00, etc.) correspond aux horaires de période scolaire ; les \"Horaires d'été\" et \"Horaires petites vacances scolaires\" sont donnés séparément.",
+      "notes": "La page mentionne des horaires hebdomadaires détaillés (par jour) mais aussi un bloc \"Horaires d'été\" (lun-ven 11:00-19:30, sam-dim 9:00-13:00) et \"Horaires petites vacances scolaires\" (lun-ven 10:30-19:00, sam-dim 9:00-13:00). Les horaires détaillés par jour ont été utilisés pour la période scolaire (term). L'évacuation des bassins se fait 20 min avant la fermeture (30 min en forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
       "periods": {
         "term": {
           "monday": [
@@ -1939,21 +1918,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -2017,12 +1981,16 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
           "exceptional": false,
-          "events": [
-            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte."
-          ]
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -2147,6 +2115,21 @@
         {
           "date": "2026-08-24",
           "day": "monday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -2177,7 +2160,7 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Le bloc \\\"grandes vacances scolaires\\\" indique que la piscine est fermée durant les grandes vacances (été) ; cohérent avec la fermeture estivale 29 juin - 30 août.",
+      "notes": "La piscine est indiquée \\\"Fermé au public\\\" en haut de page. Fermée durant les grandes vacances scolaires (été) — schéma d'été laissé vide.",
       "periods": {
         "term": {
           "monday": [
@@ -2308,17 +2291,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
-          ]
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -2471,6 +2443,17 @@
           "events": [
             "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
           ]
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
+          "period": "summer_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         }
       ]
     },
@@ -2479,23 +2462,10 @@
       "name": "Piscine Marcel Spilliaert",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert",
       "status": "ok",
-      "events": [
-        {
-          "start": "2026-08-15",
-          "end": null,
-          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte.",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "olympique-angelotti",
-            "poolName": "Piscine Olympique Angelotti",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
-          }
-        }
-      ],
+      "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Le jeudi en période scolaire : petit bassin fermé à 17h45. Vigilance rouge \"Feux de forêt\" le 17 août concerne des espaces naturels, pas la piscine.",
+      "notes": "Évacuation des bassins 20 min avant fermeture (30 min si forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Jeudi (période scolaire) : petit bassin jusqu'à 17h45.",
       "periods": {
         "term": {
           "monday": [
@@ -2533,7 +2503,7 @@
             {
               "start": "17:00",
               "end": "20:00",
-              "label": null
+              "label": "petit bassin 17h45"
             }
           ],
           "friday": [
@@ -2663,21 +2633,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "18:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -2741,12 +2696,16 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
           "exceptional": false,
-          "events": [
-            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte."
-          ]
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -2871,6 +2830,21 @@
         {
           "date": "2026-08-24",
           "day": "monday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -2892,33 +2866,16 @@
       "status": "ok",
       "events": [
         {
-          "start": "2026-08-15",
-          "end": null,
-          "description": "La piscine sera fermée le samedi 15 août.",
-          "closed": true,
-          "slots": null
-        },
-        {
           "start": "2026-08-03",
           "end": "2026-08-06",
-          "description": "Du lundi 3 au jeudi 6 août, le dispositif Piscines en fête fait escale à la piscine Les Néréides : cours aquatiques, parcours gonflable, Escape Pool et jeux terrestres. Animations sous réserve du droit d'entrée.",
+          "description": "Piscines en fête à la piscine Les Néréides : programme d'animations (cours aquatiques, parcours gonflable, Escape Pool, jeux terrestres). Animations proposées sous réserve du droit d'entrée.",
           "closed": false,
           "slots": null
-        }
-      ],
-      "networkClaims": [
-        {
-          "start": "2026-08-15",
-          "end": null,
-          "scope": "named_pools",
-          "pools": [
-            "Piscine Olympique Angelotti"
-          ],
-          "closed": false,
-          "description": "Ouverture exceptionnelle le samedi 15 août de 9h à 13h15 et de 15h à 19h15."
         }
       ],
       "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Les horaires principaux listés en tête (Lundi 12:00-14:00, Mardi 12:00-14:00 et 17:00-20:00, Mercredi 11:00-16:00, Jeudi 12:00-14:00, Vendredi 9:00-14:00 et 17:00-20:00, Samedi 9:00-13:00, Dimanche 14:00-18:00) sont interprétés comme les horaires de période scolaire. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
       "periods": {
         "term": {
           "monday": [
@@ -3084,23 +3041,7 @@
           ]
         }
       },
-      "notes": "Le bloc \"Infos horaires\" donne les horaires d'été et petites vacances. La première liste horaire (Lundi 12:00-14:00, etc.) a été utilisée pour la période scolaire (term). L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min si forte fréquentation), vente des billets terminée 15 min avant l'évacuation.",
       "resolved": [
-        {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-11",
           "day": "tuesday",
@@ -3165,12 +3106,16 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
           "exceptional": false,
-          "events": [
-            "La piscine sera fermée le samedi 15 août."
-          ]
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -3295,6 +3240,21 @@
         {
           "date": "2026-08-24",
           "day": "monday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -3314,23 +3274,10 @@
       "name": "Piscine Jean Vivès",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives",
       "status": "ok",
-      "events": [
-        {
-          "start": "2026-08-15",
-          "end": null,
-          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte.",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "olympique-angelotti",
-            "poolName": "Piscine Olympique Angelotti",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
-          }
-        }
-      ],
+      "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "La page donne deux jeux d'horaires : un tableau général (Lundi 9h-14h et 17h-20h, Mardi 12h-14h, Mercredi 11h-16h, Jeudi 12h-14h et 17h-20h, Vendredi 12h-14h, Samedi 14h-18h, Dimanche 9h-13h) interprété ici comme horaires période scolaire, et des horaires d'été / petites vacances distincts. Le bandeau vigilance rouge 'Feux de forêt' du 17 août concerne des parcs et espaces forestiers, pas la piscine.",
+      "notes": "Les créneaux \"période scolaire\" proviennent du bloc horaires principal (Lundi-Dimanche). L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture. La billetterie est commune aux 15 piscines du réseau.",
       "periods": {
         "term": {
           "monday": [
@@ -3498,21 +3445,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -3576,12 +3508,16 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
           "exceptional": false,
-          "events": [
-            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte."
-          ]
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -3706,6 +3642,21 @@
         {
           "date": "2026-08-24",
           "day": "monday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -3725,23 +3676,10 @@
       "name": "Piscine Jean Taris",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris",
       "status": "ok",
-      "events": [
-        {
-          "start": "2026-08-15",
-          "end": null,
-          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte.",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "olympique-angelotti",
-            "poolName": "Piscine Olympique Angelotti",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
-          }
-        }
-      ],
+      "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Le message de vigilance rouge \"Feux de forêt\" du lundi 17 août concerne des espaces naturels (réserve du Lez, bois de Montmaur, etc.) et non la piscine ; aucun impact horaire annoncé pour la piscine. Le bloc principal listant les horaires jour par jour (Lundi 11h15-14h, Mardi 11h15-14h + 17h-20h, etc.) correspond aux horaires de période scolaire.",
+      "notes": "Le \"Jardin aquatique\" (dimanche 10h30-12h30) est une activité encadrée, non inclus dans la nage libre. Les créneaux hebdomadaires \"term\" correspondent aux horaires généraux affichés (comportant probablement des créneaux réservés aux cours/activités, mais la page ne distingue pas explicitement la nage libre).",
       "periods": {
         "term": {
           "monday": [
@@ -3909,21 +3847,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -3987,12 +3910,16 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
           "exceptional": false,
-          "events": [
-            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte."
-          ]
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -4117,6 +4044,21 @@
         {
           "date": "2026-08-24",
           "day": "monday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -4140,14 +4082,14 @@
         {
           "start": "2026-08-15",
           "end": null,
-          "description": "La piscine Caron sera fermée samedi 15 août 2026.",
+          "description": "La piscine Caron sera fermée le samedi 15 août 2026.",
           "closed": true,
           "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "La page ne présente que les horaires d'été (bassin extérieur, concept estival). Faute d'horaires distincts pour la période scolaire et les petites vacances, les horaires d'été sont réutilisés pour toutes les périodes. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min si forte fréquentation), vente des billets terminée 15 min avant.",
+      "notes": "La page présente principalement les horaires d'été (bassin extérieur, concept apprécié en saison estivale). Les horaires en tête de page (Lundi-Vendredi 11h-19h30, Samedi et Dimanche 14h-18h) correspondent aussi aux horaires d'été indiqués dans le corps du texte. Aucun horaire spécifique période scolaire / petites vacances n'est distingué, ces horaires ont donc été réutilisés pour tous les créneaux.",
       "periods": {
         "term": {
           "monday": [
@@ -4305,21 +4247,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -4387,7 +4314,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "La piscine Caron sera fermée samedi 15 août 2026."
+            "La piscine Caron sera fermée le samedi 15 août 2026."
           ]
         },
         {
@@ -4524,6 +4451,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4532,23 +4474,10 @@
       "name": "Piscine Amphitrite",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-amphitrite",
       "status": "ok",
-      "events": [
-        {
-          "start": "2026-08-15",
-          "end": null,
-          "description": "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte.",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "olympique-angelotti",
-            "poolName": "Piscine Olympique Angelotti",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti"
-          }
-        }
-      ],
+      "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Deux jeux d'horaires d'été figurent sur la page : l'un « Du lundi au vendredi : 11h-19h30 » et l'autre identique dans l'encart « Infos horaires ». Ils concordent. Évacuation des bassins 20 min avant fermeture (30 min l'été) ; billetterie s'arrête 15 min avant l'évacuation (30 min l'été).",
+      "notes": "Horaires période scolaire tirés du bloc horaires principal. Évacuation des bassins 20 min avant fermeture (période scolaire) / 30 min (été). Vente des billets se termine 15 min avant l'évacuation (scolaire) / 30 min (été).",
       "periods": {
         "term": {
           "monday": [
@@ -4716,21 +4645,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -4794,12 +4708,16 @@
           "date": "2026-08-15",
           "day": "saturday",
           "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
           "exceptional": false,
-          "events": [
-            "Fermeture le samedi 15 août (jour férié) — seule la Piscine Olympique Angelotti est ouverte."
-          ]
+          "events": []
         },
         {
           "date": "2026-08-16",
@@ -4935,6 +4853,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4947,14 +4880,14 @@
         {
           "start": "2026-08-01",
           "end": "2026-08-30",
-          "description": "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus.",
+          "description": "Fermeture pour maintenance technique",
           "closed": true,
           "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Le bloc principal donne aussi des horaires détaillés (Lundi 9:00-14:00/16:30-20:00, etc.) mais l'encart 'Infos horaires' ne distingue que les horaires d'été et petites vacances. J'ai utilisé le bloc détaillé pour la période scolaire (term). La piscine est actuellement fermée pour maintenance (1er-30 août). Le mardi indiqué '11:30-1400' interprété comme 11:30-14:00.",
+      "notes": "Horaires période scolaire (term) fournis en tête de page. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La piscine est actuellement fermée pour maintenance du 1er au 30 août 2026 inclus. Le mardi indique '11:30-1400' (probablement 14:00).",
       "periods": {
         "term": {
           "monday": [
@@ -5127,17 +5060,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
-          ]
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -5145,7 +5067,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5156,7 +5078,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5167,7 +5089,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5178,7 +5100,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5189,7 +5111,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5200,7 +5122,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5211,7 +5133,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5222,7 +5144,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5233,7 +5155,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5244,7 +5166,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5255,7 +5177,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5266,7 +5188,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5277,7 +5199,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
           ]
         },
         {
@@ -5288,7 +5210,18 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique du samedi 1 août au dimanche 30 août inclus."
+            "Fermeture pour maintenance technique"
+          ]
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
+          "period": "summer_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture pour maintenance technique"
           ]
         }
       ]
@@ -5305,11 +5238,18 @@
           "description": "La piscine sera fermée samedi 15 août.",
           "closed": true,
           "slots": null
+        },
+        {
+          "start": "2026-07-20",
+          "end": "2026-07-23",
+          "description": "Piscines en Fête : 4 journées d'animations du lundi 20 au jeudi 23 juillet (cours aquatiques, parcours gonflable, escape pool, jeux et animations). Animations sous réserve du droit d'entrée.",
+          "closed": false,
+          "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Vente des billets se termine 15 min avant l'évacuation ; évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation). Bassin ludique partiellement inaccessible pendant les activités de 17h45 à 18h30 (lundi et vendredi en juillet, lundi et jeudi en août).",
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). Une partie du bassin ludique est inaccessible pendant les activités de 17h45 à 18h30 (lundi et vendredi en juillet ; lundi et jeudi en août).",
       "periods": {
         "term": {
           "monday": [
@@ -5476,21 +5416,6 @@
         }
       },
       "resolved": [
-        {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-11",
           "day": "tuesday",
@@ -5696,6 +5621,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -5708,7 +5648,7 @@
         {
           "start": "2026-07-06",
           "end": "2026-07-31",
-          "description": "Ouverture estivale de l'établissement",
+          "description": "Ouverture pour la saison estivale",
           "closed": false,
           "slots": null
         },
@@ -5722,7 +5662,7 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture. Les horaires d'été affichés en encart (lun-ven 11:00-19:30, sam 9:00-13:00, dim 14:00-18:00) correspondent à la saison estivale, mais l'établissement n'est ouvert que du 6 au 31 juillet 2026 puis fermé du 1er au 30 août 2026.",
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation), la vente des billets se termine 15 min avant l'évacuation. Prévoir une pièce de 0,50€ pour le vestiaire. La page indique « Fermé au public » (fermeture technique du 1er au 30 août 2026).",
       "periods": {
         "term": {
           "monday": [
@@ -5890,17 +5830,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-10",
-          "day": "monday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture technique annuelle"
-          ]
-        },
-        {
           "date": "2026-08-11",
           "day": "tuesday",
           "period": "summer_holidays",
@@ -6046,6 +5975,17 @@
         {
           "date": "2026-08-24",
           "day": "monday",
+          "period": "summer_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture technique annuelle"
+          ]
+        },
+        {
+          "date": "2026-08-25",
+          "day": "tuesday",
           "period": "summer_holidays",
           "slots": [],
           "closed": true,
