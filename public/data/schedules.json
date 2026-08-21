@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-08-20T04:34:52.203Z",
+  "generatedAt": "2026-08-21T04:35:42.033Z",
   "window": {
-    "start": "2026-08-13",
-    "end": "2026-08-27",
+    "start": "2026-08-14",
+    "end": "2026-08-28",
     "dates": [
-      "2026-08-13",
       "2026-08-14",
       "2026-08-15",
       "2026-08-16",
@@ -18,15 +17,16 @@
       "2026-08-24",
       "2026-08-25",
       "2026-08-26",
-      "2026-08-27"
+      "2026-08-27",
+      "2026-08-28"
     ]
   },
   "periodsInWindow": [
     {
       "period": "summer_holidays",
       "label": "Vacances d'Été",
-      "start": "2026-08-13",
-      "end": "2026-08-27"
+      "start": "2026-08-14",
+      "end": "2026-08-28"
     }
   ],
   "pools": [
@@ -39,35 +39,35 @@
         {
           "start": "2026-08-31",
           "end": "2026-09-27",
-          "description": "Fermeture pour maintenance technique du lundi 31 août au dimanche 27 septembre 2026 inclus. Réouverture prévue le lundi 28 septembre 2026.",
+          "description": "Fermeture pour maintenance technique du lundi 31 août au dimanche 27 septembre inclus. Réouverture prévue le lundi 28 septembre 2026.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-01-01",
           "end": null,
-          "description": "1er janvier : fermeture de l'établissement",
+          "description": "1er janvier : fermeture de l'établissement.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-05-01",
           "end": null,
-          "description": "1er mai : fermeture de l'établissement",
+          "description": "1er mai : fermeture de l'établissement.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-12-25",
           "end": null,
-          "description": "25 décembre : fermeture de l'établissement",
+          "description": "25 décembre : fermeture de l'établissement.",
           "closed": true,
           "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Horaires principaux de l'établissement (accueil) : Lun-Ven 9:00-21:30, Sam 9:00-19:15, Dim 9:00-13:15 et 15:00-19:15. Le bassin ludique a des horaires spécifiques (repris ici comme grille publique). Évacuation des bassins 30 min avant fermeture ; vente des billets s'arrête à 20h30 (lun-ven) et 18h15 (sam-dim). Réouverture le 28/09/2026 aux horaires habituels.",
+      "notes": "Le réseau compte 14 piscines de Montpellier Méditerranée Métropole. L'évacuation des bassins s'effectue 30 min avant la fermeture. Les horaires généraux de l'établissement sont : Lundi-Vendredi 9:00-21:30, Samedi 9:00-19:15, Dimanche 9:00-13:15 et 15:00-19:15. Les horaires enregistrés ci-dessus correspondent à l'ouverture du bassin ludique (grand public), qui diffère en période scolaire.",
       "periods": {
         "term": {
           "monday": [
@@ -264,21 +264,6 @@
         }
       },
       "resolved": [
-        {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "21:30",
-              "label": "Bassin ludique"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-14",
           "day": "friday",
@@ -487,6 +472,21 @@
         {
           "date": "2026-08-27",
           "day": "thursday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": "Bassin ludique"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -510,14 +510,14 @@
         {
           "start": "2026-09-12",
           "end": null,
-          "description": "Samedi 12 septembre : célébration de l'ouverture de Neptune. 9h : ouverture, discours officiels et visite du centre ; 11h : temps officiel ; 11h-18h : animations (parcours gonflables, animations aquatiques, jeux, Escape Pool, village sport-santé, sensibilisation à la prévention des noyades).",
+          "description": "Samedi 12 septembre : célébration de l'ouverture de Neptune ! 9h ouverture, discours officiels et visite ; 11h temps officiel ; 11h-18h animations (parcours gonflables, animations aquatiques, jeux d'adresse et d'équilibre, Escape Pool, village sport-santé, sensibilisation à la prévention des noyades).",
           "closed": false,
           "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Deux jeux d'horaires figurent sur la page : un tableau hebdomadaire (Lundi 9:00-14:00, Mardi 12:00-14:00 & 17:00-20:00, Mercredi 11:30-16:00, Jeudi 12:00-14:00, Vendredi 12:00-14:00 & 17:00-20:00, Samedi 9:00-13:00, Dimanche 14:00-18:00) utilisé ici comme horaires période scolaire, et des horaires d'été / petites vacances scolaires distincts. Les espaces extérieurs sont accessibles depuis le 6 juillet 2026.",
+      "notes": "La fiche latérale donne des horaires hebdomadaires détaillés (période scolaire) : Lundi 9h-14h, Mardi 12h-14h et 17h-20h, Mercredi 11h30-16h, Jeudi 12h-14h, Vendredi 12h-14h et 17h-20h, Samedi 9h-13h, Dimanche 14h-18h. Ces horaires ne précisent pas s'il s'agit d'accès public/nage libre. Les espaces extérieurs (bassin 50m) sont accessibles à tous depuis le 6 juillet 2026 avec des horaires d'été distincts.",
       "periods": {
         "term": {
           "monday": [
@@ -685,21 +685,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "10:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
@@ -908,6 +893,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "10:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -919,7 +919,7 @@
       "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Le stage enfants (17-21 août et 24-28 août, niveau 1 de 11h à 11h45, niveau 2 de 12h à 12h45) est un cours encadré, non retenu comme créneau public. La page présente aussi des horaires hebdomadaires détaillés dans l'en-tête (Lundi 12:00-14:00, etc.) qui semblent être les horaires de période scolaire ; ils ont été utilisés pour le terme. Les cours et activités (natation, aquagym, etc.) ne sont pas des créneaux grand public.",
+      "notes": "Les horaires \"période scolaire\" (term) proviennent du bloc horaires principal de la page (Lundi 12:00-14:00, etc.). Les stages enfants du 17 au 28 août ne sont pas des créneaux grand public. La billetterie couvre les 15 piscines du réseau (non retranscrit en networkClaim car aucune ouverture/fermeture datée).",
       "periods": {
         "term": {
           "monday": [
@@ -1087,21 +1087,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
@@ -1299,6 +1284,21 @@
         {
           "date": "2026-08-27",
           "day": "thursday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -1322,11 +1322,14 @@
         {
           "start": "2026-07-27",
           "end": "2026-07-30",
-          "description": "Piscines en Fête : 4 journées d'animations aquatiques pour toute la famille (cours aquatiques gratuits le matin, parcours gonflable de 14h30 à 17h45, Escape Pool de 15h00 à 16h30, jeux terrestres toute la journée). Sous réserve du droit d'entrée.",
+          "description": "Piscines en Fête : 4 journées d'animations aquatiques pour toute la famille (cours aquatiques gratuits le matin, parcours gonflable, Escape Pool, jeux terrestres). Animations sous réserve du droit d'entrée.",
           "closed": false,
           "slots": null
         }
       ],
+      "networkClaims": [],
+      "periodOverrides": [],
+      "notes": "La page donne deux jeux d'horaires différents. Le bloc de contact indique des horaires détaillés par jour (Lundi 12h-14h ; Mardi 12h-14h et 17h-20h ; Mercredi 11h-16h ; Jeudi 12h-14h ; Vendredi 9h-14h et 17h-20h ; Samedi 9h-13h ; Dimanche 14h-18h), utilisés ici comme horaires période scolaire. Le bloc \\\"Infos horaires\\\" donne des horaires d'été et des horaires petites vacances scolaires, utilisés respectivement. Le dispositif de mise à l'eau PMR est momentanément indisponible.",
       "periods": {
         "term": {
           "monday": [
@@ -1492,25 +1495,7 @@
           ]
         }
       },
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "La section principale liste deux jeux d'horaires : les horaires hebdomadaires détaillés par jour (utilisés ici comme période scolaire) et les « Horaires d'été » (lun-ven 11h-19h30, sam 9h-13h, dim 14h-18h). Les « Horaires petites vacances scolaires » sont lun-ven 10h30-19h, sam 9h-13h, dim 14h-18h. Le dispositif de mise à l'eau PMR est momentanément indisponible. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; vente des billets jusqu'à 15 min avant l'évacuation.",
       "resolved": [
-        {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-14",
           "day": "friday",
@@ -1720,6 +1705,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -1731,7 +1731,7 @@
       "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Horaires période scolaire issus du bloc principal (Lundi-Dimanche). Le bassin est évacué 20 min avant la fermeture (30 min en cas de forte fréquentation) et la vente des billets se termine 15 min avant l'évacuation.",
+      "notes": "Le bloc \"Infos horaires\" donne des horaires d'été et de petites vacances scolaires différents du tableau principal (horaires période scolaire). Horaires club/cours de natation ignorés.",
       "periods": {
         "term": {
           "monday": [
@@ -1899,21 +1899,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
@@ -2111,6 +2096,21 @@
         {
           "date": "2026-08-27",
           "day": "thursday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -2141,7 +2141,7 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. La piscine est indiquée \\\"Fermé au public\\\" (période de fermeture estivale en cours). Le réseau compte 15 piscines.",
+      "notes": "La page indique aussi que la piscine est fermée durant les grandes vacances scolaires (été). Le bandeau \\\"Fermé au public\\\" figure en haut de la page.",
       "periods": {
         "term": {
           "monday": [
@@ -2272,17 +2272,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
-          ]
-        },
-        {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
@@ -2435,6 +2424,17 @@
           "events": [
             "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
           ]
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
+          "period": "summer_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture estivale : la piscine sera fermée du lundi 29 juin au dimanche 30 août inclus."
+          ]
         }
       ]
     },
@@ -2446,7 +2446,7 @@
       "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Le parc zoologique est fermé pour travaux (info hors piscine). Test de niveau pour cours annuels / certificat de natation possibles lundi 12h30-13h30, mardi 13h-13h30, mercredi 11h-15h30. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Jeudi : petit bassin ferme à 17h45.",
+      "notes": "La billetterie en ligne dessert les 15 piscines du réseau. Évacuation des bassins 20 min avant la fermeture (30 min si forte fréquentation).",
       "periods": {
         "term": {
           "monday": [
@@ -2614,21 +2614,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "18:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
@@ -2826,6 +2811,21 @@
         {
           "date": "2026-08-27",
           "day": "thursday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -2849,14 +2849,14 @@
         {
           "start": "2026-08-03",
           "end": "2026-08-06",
-          "description": "Piscines en fête : programme d'animations (cours aquatiques, parcours gonflable, Escape Pool et jeux terrestres) du lundi 3 au jeudi 6 août. Animations proposées sous réserve du droit d'entrée.",
+          "description": "Piscines en fête : programme d'animations (cours aquatiques, parcours gonflable, Escape Pool, jeux terrestres) du lundi 3 au jeudi 6 août. Animations proposées sous réserve du droit d'entrée.",
           "closed": false,
           "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "La page présente deux jeux d'horaires distincts. Le bloc principal donne des horaires détaillés par jour (Lundi 12:00-14:00 ; Mardi 12:00-14:00 et 17:00-20:00 ; Mercredi 11:00-16:00 ; Jeudi 12:00-14:00 ; Vendredi 9:00-14:00 et 17:00-20:00 ; Samedi 9:00-13:00 ; Dimanche 14:00-18:00) qui ont été utilisés pour la période scolaire (term). Le bloc 'Infos horaires' donne les horaires d'été et petites vacances. Évacuation des bassins 20 min avant fermeture, vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 15 piscines.",
+      "notes": "Deux séries d'horaires figurent sur la page. Les horaires jour par jour (Lundi 12:00-14:00, etc.) sont considérés comme les horaires en période scolaire. Un encadré \\\"Infos horaires\\\" donne des horaires d'été et des horaires petites vacances scolaires distincts. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation).",
       "periods": {
         "term": {
           "monday": [
@@ -3023,21 +3023,6 @@
         }
       },
       "resolved": [
-        {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-14",
           "day": "friday",
@@ -3236,6 +3221,21 @@
         {
           "date": "2026-08-27",
           "day": "thursday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -3258,7 +3258,7 @@
       "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Le parc zoologique de Lunaret est fermé pour travaux longs (vigilance orange feux de forêt) - sans rapport avec la piscine. La billetterie en ligne concerne les 15 piscines du réseau.",
+      "notes": "Horaires période scolaire issus de l'encart principal (\"div]:first-letter:capitalize\"). Horaires été et petites vacances issus de l'encart \"Infos horaires\". Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets 15 min avant l'évacuation.",
       "periods": {
         "term": {
           "monday": [
@@ -3425,21 +3425,6 @@
         }
       },
       "resolved": [
-        {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-14",
           "day": "friday",
@@ -3638,6 +3623,21 @@
         {
           "date": "2026-08-27",
           "day": "thursday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -3660,7 +3660,7 @@
       "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Le réseau compte 14 piscines. Test de niveau pour cours annuels dès l'été, préinscription à partir du 1er septembre à 11h. Évacuation des bassins 20 min avant fermeture (30 min si forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
+      "notes": "Horaires période scolaire tirés du bloc jour par jour. Horaires petites vacances et été indiqués comme plages continues du lundi au vendredi.",
       "periods": {
         "term": {
           "monday": [
@@ -3827,21 +3827,6 @@
         }
       },
       "resolved": [
-        {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-14",
           "day": "friday",
@@ -4040,6 +4025,21 @@
         {
           "date": "2026-08-27",
           "day": "thursday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -4070,7 +4070,7 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "La page ne présente que les horaires d'été (bassin extérieur, concept estival). Les horaires affichés (Lun-Ven 11h-19h30, Sam-Dim 14h-18h) sont repris pour toutes les périodes faute d'informations distinctes. Évacuation des bassins 20 min avant fermeture, vente des billets jusqu'à 15 min avant évacuation.",
+      "notes": "La page ne présente que les horaires d'été. Les mêmes horaires sont réutilisés pour les autres périodes faute d'information distincte.",
       "periods": {
         "term": {
           "monday": [
@@ -4179,69 +4179,54 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "tuesday": [
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "wednesday": [
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "thursday": [
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "friday": [
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "saturday": [
             {
               "start": "14:00",
               "end": "18:00",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "sunday": [
             {
               "start": "14:00",
               "end": "18:00",
-              "label": "Horaires d'été"
+              "label": null
             }
           ]
         }
       },
       "resolved": [
-        {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": "Horaires d'été"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-14",
           "day": "friday",
@@ -4250,7 +4235,7 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4276,7 +4261,7 @@
             {
               "start": "14:00",
               "end": "18:00",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4291,7 +4276,7 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4306,7 +4291,7 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4321,7 +4306,7 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4336,7 +4321,7 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4351,7 +4336,7 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4366,7 +4351,7 @@
             {
               "start": "14:00",
               "end": "18:00",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4381,7 +4366,7 @@
             {
               "start": "14:00",
               "end": "18:00",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4396,7 +4381,7 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4411,7 +4396,7 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4426,7 +4411,7 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
             }
           ],
           "closed": false,
@@ -4441,7 +4426,22 @@
             {
               "start": "11:00",
               "end": "19:30",
-              "label": "Horaires d'été"
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
             }
           ],
           "closed": false,
@@ -4458,7 +4458,7 @@
       "events": [],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Réseau de 15 piscines de Montpellier Méditerranée Métropole. Évacuation des bassins 20 min avant fermeture en période scolaire, 30 min en période estivale. Vente des billets se termine 15 min avant l'évacuation en période scolaire, 30 min en période estivale.",
+      "notes": "La billetterie en ligne est commune aux 15 piscines du réseau. Évacuation des bassins 20 min avant fermeture (période scolaire) / 30 min (été).",
       "periods": {
         "term": {
           "monday": [
@@ -4626,21 +4626,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
@@ -4849,6 +4834,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4868,7 +4868,7 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "La piscine est indiquée \\\"Fermé au public\\\". Horaires \\\"term\\\" issus du tableau hebdomadaire principal (une coquille sur mardi : \\\"11:30-1400\\\" interprétée comme 11:30-14:00). Évacuation des bassins 20 min (30 min en forte fréquentation) avant fermeture, vente des billets jusqu'à 15 min avant l'évacuation.",
+      "notes": "Les horaires hebdomadaires principaux (Lundi 9:00-14:00/16:30-20:00, Mardi 7:30-9:00/11:30-14:00, Mercredi 11:30-16:00, Jeudi 11:30-14:00/16:30-20:00, Vendredi 11:30-14:00, Samedi 14:00-18:00, Dimanche 9:00-13:00) ne précisent pas la période ; ils ont été utilisés comme horaires de période scolaire. La mention 'Mardi 11:30-1400' a été interprétée comme 14:00. La piscine appartient à un réseau de 15 piscines.",
       "periods": {
         "term": {
           "monday": [
@@ -5041,17 +5041,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture pour maintenance technique"
-          ]
-        },
-        {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
@@ -5204,6 +5193,17 @@
           "events": [
             "Fermeture pour maintenance technique"
           ]
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
+          "period": "summer_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture pour maintenance technique"
+          ]
         }
       ]
     },
@@ -5216,21 +5216,21 @@
         {
           "start": "2026-08-15",
           "end": null,
-          "description": "La piscine sera fermée samedi 15 août.",
+          "description": "La piscine sera fermée le samedi 15 août.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-07-20",
           "end": "2026-07-23",
-          "description": "Piscines en Fête : 4 journées d'animations (cours aquatiques, parcours gonflable, escape pool, jeux et animations) du lundi 20 au jeudi 23 juillet. Animations sous réserve du droit d'entrée.",
+          "description": "Piscines en Fête : 4 journées d'animations du lundi 20 au jeudi 23 juillet (cours aquatiques le matin, parcours gonflable, Escape Pool, jeux et animations en accès libre de 11h à 17h45).",
           "closed": false,
           "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). Une partie du bassin ludique est inaccessible pendant les activités de 17h45 à 18h30 (lundi et vendredi en juillet, lundi et jeudi en août). Bassin ludique à partir de 17h les lundis et jeudis. Bonnets de bain obligatoires.",
+      "notes": "Horaires période scolaire (term) : les horaires hebdomadaires généraux affichés en tête de fiche sont supposés correspondre à la période scolaire. Bassin ludique partiellement inaccessible pendant les activités de 17h45 à 18h30 (lundi et vendredi en juillet, lundi et jeudi en août).",
       "periods": {
         "term": {
           "monday": [
@@ -5398,21 +5398,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
@@ -5435,7 +5420,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "La piscine sera fermée samedi 15 août."
+            "La piscine sera fermée le samedi 15 août."
           ]
         },
         {
@@ -5606,6 +5591,21 @@
         {
           "date": "2026-08-27",
           "day": "thursday",
+          "period": "summer_holidays",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
           "period": "summer_holidays",
           "slots": [
             {
@@ -5627,13 +5627,6 @@
       "status": "ok",
       "events": [
         {
-          "start": "2026-07-06",
-          "end": "2026-07-31",
-          "description": "Ouverture pour la saison estivale (horaires d'été)",
-          "closed": false,
-          "slots": null
-        },
-        {
           "start": "2026-08-01",
           "end": "2026-08-30",
           "description": "Fermeture technique annuelle",
@@ -5641,9 +5634,15 @@
           "slots": null
         }
       ],
-      "periodOverrides": [],
+      "periodOverrides": [
+        {
+          "period": "summer_holidays",
+          "start": "2026-07-06",
+          "end": "2026-07-31"
+        }
+      ],
       "networkClaims": [],
-      "notes": "L'établissement affiche \"Fermé au public\" en en-tête. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 15 piscines. Les horaires hebdomadaires principaux ont été enregistrés en période scolaire ; les horaires d'été correspondent aux dates du 6 au 31 juillet 2026 (fermeture technique du 1er au 30 août).",
+      "notes": "Pour la saison estivale, l'établissement est ouvert du 6 au 31 juillet 2026 puis fermé du 1er au 30 août 2026 inclus. Les horaires d'été fournis sont appliqués au schéma d'été.",
       "periods": {
         "term": {
           "monday": [
@@ -5811,17 +5810,6 @@
       },
       "resolved": [
         {
-          "date": "2026-08-13",
-          "day": "thursday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture technique annuelle"
-          ]
-        },
-        {
           "date": "2026-08-14",
           "day": "friday",
           "period": "summer_holidays",
@@ -5967,6 +5955,17 @@
         {
           "date": "2026-08-27",
           "day": "thursday",
+          "period": "summer_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture technique annuelle"
+          ]
+        },
+        {
+          "date": "2026-08-28",
+          "day": "friday",
           "period": "summer_holidays",
           "slots": [],
           "closed": true,
