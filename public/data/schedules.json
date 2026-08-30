@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-08-29T10:44:32.420Z",
+  "generatedAt": "2026-08-30T09:43:40.604Z",
   "window": {
-    "start": "2026-08-22",
-    "end": "2026-09-05",
+    "start": "2026-08-23",
+    "end": "2026-09-06",
     "dates": [
-      "2026-08-22",
       "2026-08-23",
       "2026-08-24",
       "2026-08-25",
@@ -18,21 +17,22 @@
       "2026-09-02",
       "2026-09-03",
       "2026-09-04",
-      "2026-09-05"
+      "2026-09-05",
+      "2026-09-06"
     ]
   },
   "periodsInWindow": [
     {
       "period": "summer_holidays",
       "label": "Vacances d'Été",
-      "start": "2026-08-22",
+      "start": "2026-08-23",
       "end": "2026-08-31"
     },
     {
       "period": "term",
       "label": null,
       "start": "2026-09-01",
-      "end": "2026-09-05"
+      "end": "2026-09-06"
     }
   ],
   "pools": [
@@ -76,15 +76,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-23",
           "day": "sunday",
@@ -205,6 +196,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -254,15 +254,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -382,6 +373,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -431,15 +431,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -559,6 +550,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -608,15 +608,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -736,6 +727,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -785,15 +785,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -913,6 +904,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -962,15 +962,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -1090,6 +1081,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1139,15 +1139,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -1267,6 +1258,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1316,15 +1316,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -1444,6 +1435,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1493,15 +1493,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -1621,6 +1612,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1670,15 +1670,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -1798,6 +1789,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1847,15 +1847,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -1975,6 +1966,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -2024,15 +2024,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -2152,6 +2143,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -2201,15 +2201,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -2329,6 +2320,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -2378,15 +2378,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -2506,6 +2497,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -2555,15 +2555,6 @@
       "notes": null,
       "resolved": [
         {
-          "date": "2026-08-22",
-          "day": "saturday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-08-23",
           "day": "sunday",
           "period": "summer_holidays",
@@ -2683,6 +2674,15 @@
         {
           "date": "2026-09-05",
           "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-06",
+          "day": "sunday",
           "period": "term",
           "slots": [],
           "closed": false,
