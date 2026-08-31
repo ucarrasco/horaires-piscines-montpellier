@@ -250,6 +250,43 @@ function anchorDate(data: SchedulesData, today: string): string {
     : data.generatedAt.slice(0, 10);
 }
 
+const EVENING_MINUTES = 20 * 60; // 20:00
+const CLOSED_GRACE_MINUTES = 30;
+
+/**
+ * The day the agenda opens on: today, or tomorrow once today is over.
+ *
+ * "Over" means both: it is past 20:00, and the last pool to close today shut at
+ * least 30 minutes ago. A day on which no pool opens at all counts as over —
+ * there is no closing time left to wait for.
+ *
+ * Returns the anchor while `nowMinutes` is null, which is the case on the
+ * server and on the first client render: the prerendered HTML cannot know what
+ * time it will be read, and hydration requires the two to match.
+ */
+function defaultDate(
+  data: SchedulesData,
+  anchor: string,
+  today: string,
+  nowMinutes: number | null,
+): string {
+  // Only meaningful while the data still covers the real today.
+  if (nowMinutes === null || anchor !== today) return anchor;
+  if (nowMinutes < EVENING_MINUTES) return anchor;
+
+  const tomorrow = data.window.dates[data.window.dates.indexOf(anchor) + 1];
+  if (!tomorrow) return anchor;
+
+  const closingTimes = data.pools.flatMap((pool) => {
+    const day = pool.resolved.find((d) => d.date === anchor);
+    return day && !day.closed ? day.slots.map((s) => toMinutes(s.end)) : [];
+  });
+  if (closingTimes.length === 0) return tomorrow;
+
+  const lastClose = Math.max(...closingTimes);
+  return nowMinutes >= lastClose + CLOSED_GRACE_MINUTES ? tomorrow : anchor;
+}
+
 const POOL_ORDER_KEY = "poolPositions";
 
 const DEFAULT_POOL_ORDER = [
@@ -472,9 +509,11 @@ function useDragScroll() {
 function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
   const nowMinutes = useNowMinutes();
   // Left null until the visitor navigates, so the displayed day follows `today`
-  // once the real date replaces the build-time one.
+  // once the real date replaces the build-time one — and so that an explicit
+  // choice is never overridden by the evening switch to tomorrow.
   const [picked, setPicked] = useState<string | null>(null);
-  const date = picked ?? anchorDate(data, today);
+  const anchor = anchorDate(data, today);
+  const date = picked ?? defaultDate(data, anchor, today, nowMinutes);
   const isToday = date === today;
 
   // Navigation is bounded by the days the scraper actually resolved.
