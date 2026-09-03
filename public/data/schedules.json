@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-09-02T08:23:00.753Z",
+  "generatedAt": "2026-09-03T08:32:56.393Z",
   "window": {
-    "start": "2026-08-26",
-    "end": "2026-09-09",
+    "start": "2026-08-27",
+    "end": "2026-09-10",
     "dates": [
-      "2026-08-26",
       "2026-08-27",
       "2026-08-28",
       "2026-08-29",
@@ -18,21 +17,22 @@
       "2026-09-06",
       "2026-09-07",
       "2026-09-08",
-      "2026-09-09"
+      "2026-09-09",
+      "2026-09-10"
     ]
   },
   "periodsInWindow": [
     {
       "period": "summer_holidays",
       "label": "Vacances d'Été",
-      "start": "2026-08-26",
+      "start": "2026-08-27",
       "end": "2026-08-31"
     },
     {
       "period": "term",
       "label": null,
       "start": "2026-09-01",
-      "end": "2026-09-09"
+      "end": "2026-09-10"
     }
   ],
   "pools": [
@@ -41,7 +41,7 @@
       "name": "Piscine Olympique Angelotti",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHanABW1HsmTVGCqBeK\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCA9pebHMqWF2q7vaay\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -76,15 +76,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -205,6 +196,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -218,7 +218,7 @@
       "name": "Centre aquatique Neptune",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/centre-aquatique-neptune",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHba3Chew5Suzi6P6hR\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCAvhe8a3boTTmikKXB\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -253,15 +253,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -382,6 +373,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -395,7 +395,7 @@
       "name": "Piscine Poséidon",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHcNUxR8wiptkjCSMby\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCBi7PLKVDN1ACyPHW2\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -430,15 +430,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -559,6 +550,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -572,7 +572,7 @@
       "name": "Piscine Héraclès",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHdD2xJ838XMyE6a2Dv\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCCVKEA9Ux65Ueq9sMX\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -607,15 +607,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -736,6 +727,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -749,7 +749,7 @@
       "name": "Piscine Suzanne Berlioux",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHdzzwRNPfj6ykGSeQb\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCDGX4TZcTj78smag5a\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -784,15 +784,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -913,6 +904,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -926,7 +926,7 @@
       "name": "Piscine Pitot",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHeo1PqJAuzPnSVkbqh\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCE4M74UqnydTGtbuXL\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -961,15 +961,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -1090,6 +1081,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1103,7 +1103,7 @@
       "name": "Piscine Marcel Spilliaert",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHfcBJbPFwrbUxXxF8y\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCEssr21yUbUbnGVd4g\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -1138,15 +1138,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -1267,6 +1258,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1280,7 +1280,7 @@
       "name": "Piscine Les Néréides",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-les-nereides",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHgRKE4YUSgokeG2xiR\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCFf1iCfPmUiiPgbc9e\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -1315,15 +1315,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -1444,6 +1435,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1457,7 +1457,7 @@
       "name": "Piscine Jean Vivès",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHhDFiW2KEmQHKc7ZCg\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCGS2eTbp3dSQPWdnZh\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -1492,15 +1492,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -1621,6 +1612,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1634,7 +1634,7 @@
       "name": "Piscine Jean Taris",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHi1ADsadsRNY67qUJw\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCHE4avdxknwuMfNJGe\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -1669,15 +1669,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -1798,6 +1789,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1811,7 +1811,7 @@
       "name": "Piscine Christine Caron",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHinwnWgDRqtdfd7r9s\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCJ1GBG9HWLqL8fgwgV\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -1846,15 +1846,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -1975,6 +1966,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -1988,7 +1988,7 @@
       "name": "Piscine Amphitrite",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-amphitrite",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHjbAeAEXH5cMePPAuQ\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCJocyDBKkbU6qcnKhj\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -2023,15 +2023,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -2152,6 +2143,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -2165,7 +2165,7 @@
       "name": "Piscine Alfred Nakache",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHkRHrA4GbmptaNee6n\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCKavGYzz2ifdTkVPoD\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -2200,15 +2200,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -2329,6 +2320,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -2342,7 +2342,7 @@
       "name": "Piscine Alex Jany",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alex-jany",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHmNm5SskVCnpQDXxzL\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCLMrUkgCuUrrrpYSCs\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -2377,15 +2377,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -2506,6 +2497,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
@@ -2519,7 +2519,7 @@
       "name": "Piscine Françoise et Yves Jarrousse",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-francoise-et-yves-jarrousse",
       "status": "error",
-      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CeeHnKB3fSyAvC59gcztK\"}",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CegCM8zMHtq4Q13zJvRfs\"}",
       "periods": {
         "term": {
           "monday": [],
@@ -2554,15 +2554,6 @@
       "networkClaims": [],
       "notes": null,
       "resolved": [
-        {
-          "date": "2026-08-26",
-          "day": "wednesday",
-          "period": "summer_holidays",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-08-27",
           "day": "thursday",
@@ -2683,6 +2674,15 @@
         {
           "date": "2026-09-09",
           "day": "wednesday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-09-10",
+          "day": "thursday",
           "period": "term",
           "slots": [],
           "closed": false,
