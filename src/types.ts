@@ -117,9 +117,16 @@ export interface PoolResult extends PoolSchedule {
   id: string;
   name: string;
   url: string;
-  status: "ok" | "error";
-  /** Error message when status === "error". */
+  /**
+   * "ok": read from the page during this run. "stale": the page could not be
+   * read this time, so this is the schedule from the last successful read,
+   * re-resolved over the current window. "error": nothing to show.
+   */
+  status: "ok" | "stale" | "error";
+  /** Why the page could not be read, when status !== "ok". */
   error?: string;
+  /** ISO timestamp of the last successful read of the page; absent for "error". */
+  scrapedAt?: string;
   /** Actual day-by-day hours over the window (computed, not extracted). */
   resolved: ResolvedDay[];
 }

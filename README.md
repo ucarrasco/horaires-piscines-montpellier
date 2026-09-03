@@ -75,6 +75,23 @@ with its `id`, display `name` and the URL of its page.
    - regenerates `public/data/schedules.json` and commits it when it changed,
    - builds, prerenders and deploys the site to Pages.
 
+### Failure notifications
+
+When a pool cannot be read, or the build or deploy fails, the last step of the
+workflow posts a summary to a Discord channel and turns the run red. Add a
+`DISCORD_WEBHOOK_URL` secret holding a channel webhook URL (*channel settings →
+Integrations → Webhooks*). Without it, the run still goes red but nothing is
+posted. [`scripts/notify.mjs`](scripts/notify.mjs) can be tried locally:
+
+```bash
+SCRAPE_FAILED=true DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/... node scripts/notify.mjs
+```
+
+A pool whose page could not be read keeps the schedule of its last successful
+read (`status: "stale"`, dated by `scrapedAt`), re-resolved over the current
+window, so a bad day for the API or for montpellier.fr does not empty the site.
+The site shows those pools normally, with a note giving the date of the read.
+
 ### Site URL and custom domain
 
 Everything URL-related derives from `SITE_URL`, defined once in
@@ -121,6 +138,7 @@ generation date:
       "name": "Piscine Neptune",
       "url": "https://...",
       "status": "ok",
+      "scrapedAt": "2026-08-08T04:00:00.000Z",
       "periods": { "term": { "monday": [], "...": [] }, "short_holidays": {}, "summer_holidays": {} },
       "events": [
         { "start": "2026-08-15", "end": null, "description": "Assomption : horaires spéciaux",
@@ -137,6 +155,10 @@ generation date:
   ]
 }
 ```
+
+`status` is `"ok"` when the page was read during that run, `"stale"` when it
+could not be and the previous read is kept (`scrapedAt` says when), `"error"`
+when there is nothing to show.
 
 Note that `label`, `description` and `notes` hold text copied from the source
 pages, so they are in French — they are displayed as-is on the site.

@@ -240,6 +240,12 @@ function dayLabel(iso: string, today: string): string {
   return fmtLongDate(iso);
 }
 
+/** Shown wherever a "stale" pool appears: its hours come from an older read. */
+function staleNote(pool: PoolResult): string {
+  const date = fmtLongDate(parisDateOf(new Date(pool.scrapedAt ?? 0)));
+  return `Horaires relevés le ${date} : la page officielle n'a pas pu être relue depuis.`;
+}
+
 /**
  * The date the site anchors "today" to: the current date, or the generation
  * date when the data is too old to cover today.
@@ -601,7 +607,9 @@ function DayAgenda({ data, today }: { data: SchedulesData; today: string }) {
         >
           <div className="agenda-corner" style={{ gridArea: "1 / 1" }} />
           {columns.map(({ pool, day }, index) => {
-            const info = day && !day.closed ? day.events.join(" · ") : null;
+            const notes = day && !day.closed ? [...day.events] : [];
+            if (pool.status === "stale") notes.push(staleNote(pool));
+            const info = notes.length > 0 ? notes.join(" · ") : null;
             const classes = ["agenda-head"];
             if (info) classes.push("has-info");
             if (drag.dragIndex === index) classes.push("dragging");
@@ -775,6 +783,7 @@ function PoolCard({ pool, today }: { pool: PoolResult; today: string }) {
           ))}
         </ul>
       )}
+      {pool.status === "stale" && <p className="muted">{staleNote(pool)}</p>}
       {/* {pool.notes && <p className="notes">{pool.notes}</p>} */}
     </section>
   );
@@ -859,6 +868,7 @@ function PoolPage({ pool, today }: { pool: PoolResult; today: string }) {
           ).
         </p>
       )}
+      {pool.status === "stale" && <p className="muted">{staleNote(pool)}</p>}
 
       {upcoming.length > 0 && (
         <section className="pool-card">

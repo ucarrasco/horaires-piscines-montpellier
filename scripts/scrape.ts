@@ -294,7 +294,12 @@ async function extractPool(
   for (let attempt = 1; attempt <= 1 + RETRIES; attempt++) {
     try {
       const parsed = await extractOnce(client, withUrl, today);
-      return { ...base, status: "ok", ...parsed };
+      return {
+        ...base,
+        status: "ok",
+        scrapedAt: new Date().toISOString(),
+        ...parsed,
+      };
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       if (attempt <= RETRIES) {
@@ -313,12 +318,57 @@ async function extractPool(
   throw new Error("unreachable");
 }
 
+// --- Falling back on the previous run -------------------------------------
+
+type Extracted = Omit<PoolResult, "resolved">;
+
+interface Previous {
+  generatedAt: string;
+  pools: Map<string, PoolResult>;
+}
+
+async function loadPrevious(): Promise<Previous | null> {
+  if (!existsSync(OUTPUT_PATH)) return null;
+  const data = JSON.parse(await readFile(OUTPUT_PATH, "utf8")) as SchedulesData;
+  return {
+    generatedAt: data.generatedAt,
+    pools: new Map(data.pools.map((p) => [p.id, p])),
+  };
+}
+
+/**
+ * A pool whose page could not be read this time keeps the schedule of its last
+ * successful read, marked "stale". The weekly hours hardly ever change and the
+ * events are dated, so yesterday's read still answers "is it open today?" —
+ * far better than the empty column an "error" pool shows. Without this, one
+ * bad API day (expired key, empty credit) wiped every pool off the site.
+ */
+function fallBackOnPrevious(
+  result: Extracted,
+  previous: Previous | null,
+): Extracted {
+  if (result.status !== "error" || !previous) return result;
+  const prev = previous.pools.get(result.id);
+  if (!prev || prev.status === "error") return result;
+
+  return {
+    ...result,
+    status: "stale",
+    // Files written before scrapedAt existed only carry the run timestamp.
+    scrapedAt: prev.scrapedAt ?? previous.generatedAt,
+    periods: prev.periods,
+    // Inferred events are re-derived by pass 2 from this run's claims.
+    events: prev.events.filter((e) => !e.inferredFrom),
+    periodOverrides: prev.periodOverrides,
+    networkClaims: prev.networkClaims ?? [],
+    notes: prev.notes,
+  };
+}
+
 // --- Cross-pool reconciliation --------------------------------------------
 // A pool's page sometimes talks about the OTHER pools ("seule piscine du réseau
 // ouverte"). Pass 1 records those sentences as networkClaims; this pass turns
 // them into ordinary events on the pools they concern. No API call involved.
-
-type Extracted = Omit<PoolResult, "resolved">;
 
 interface Candidate {
   claim: NetworkClaim;
@@ -373,7 +423,7 @@ function claimTargets(
 
   // Skip pools we know nothing about: their page failed to load, and "closed"
   // would read as knowledge where the site otherwise says "indisponible".
-  return targets.filter((t) => t.id !== source.id && t.status === "ok");
+  return targets.filter((t) => t.id !== source.id && t.status !== "error");
 }
 
 /**
@@ -394,7 +444,7 @@ function applyNetworkClaims(
 
   let claims = 0;
   for (const source of pools) {
-    if (source.status !== "ok") continue;
+    if (source.status === "error") continue;
     for (const claim of source.networkClaims ?? []) {
       claims++;
       for (const target of claimTargets(claim, source, pools, onWarn)) {
@@ -630,12 +680,23 @@ async function main() {
     return;
   }
 
+  const previous = await loadPrevious();
+
   console.log(`Extracting ${POOLS.length} pool(s)...`);
   const extracted: Extracted[] = [];
   for (const pool of POOLS) {
     process.stdout.write(`  - ${pool.name}... `);
-    const result = await extractPool(client, pool, today);
-    console.log(result.status === "ok" ? "ok" : `error (${result.error})`);
+    const result = fallBackOnPrevious(
+      await extractPool(client, pool, today),
+      previous,
+    );
+    console.log(
+      result.status === "ok"
+        ? "ok"
+        : result.status === "stale"
+          ? `error (${result.error}), keeping the read of ${result.scrapedAt}`
+          : `error (${result.error})`,
+    );
     extracted.push(result);
   }
 
@@ -661,16 +722,23 @@ async function main() {
   await mkdir(dirname(OUTPUT_PATH), { recursive: true });
   await writeFile(OUTPUT_PATH, JSON.stringify(data, null, 2) + "\n", "utf8");
 
-  const okCount = pools.filter((p) => p.status === "ok").length;
-  console.log(`\nWrote ${OUTPUT_PATH} (${okCount}/${pools.length} ok)`);
+  const count = (status: PoolResult["status"]) =>
+    pools.filter((p) => p.status === status).length;
+  console.log(
+    `\nWrote ${OUTPUT_PATH} (${count("ok")} ok, ${count("stale")} stale, ${count("error")} error)`,
+  );
 
   // The file is written first on purpose: the pools that did work should still
   // reach the site. Failing only afterwards turns the run red so the failure is
   // noticed, without throwing away the good data.
   const failed = pools.filter((p) => p.status !== "ok");
   if (failed.length > 0) {
-    console.error(`\n❌ ${failed.length}/${pools.length} pool(s) failed:`);
-    for (const p of failed) console.error(`   - ${p.name}: ${p.error}`);
+    console.error(`\n❌ ${failed.length}/${pools.length} pool(s) could not be read:`);
+    for (const p of failed) {
+      const kept =
+        p.status === "stale" ? ` (showing the read of ${p.scrapedAt})` : "";
+      console.error(`   - ${p.name}: ${p.error}${kept}`);
+    }
     process.exitCode = 1;
   }
 }

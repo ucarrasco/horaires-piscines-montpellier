@@ -36,8 +36,9 @@ jobs:
       # Regenerate the schedules (skipped on a plain push, to save API calls).
       #
       # Exits non-zero when a pool could not be scraped, but the JSON is still
-      # written: continue-on-error lets the pools that worked reach the site,
-      # and the last step of the job turns the run red so the failure is seen.
+      # written (a pool that failed keeps its previous read, see scrape.ts):
+      # continue-on-error lets it reach the site, and the last step of the job
+      # reports the failure and turns the run red.
       - name: Scrape schedules
         id: scrape
         if: github.event_name != 'push'
@@ -54,6 +55,8 @@ jobs:
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add public/data/schedules.json
             git commit -m "chore: update pool schedules [skip ci]"
+            # main may have moved while the scrape ran (~15 API calls).
+            git pull --rebase origin main
             git push
           else
             echo "No schedule changes."
@@ -74,19 +77,16 @@ jobs:
       - id: deploy
         uses: actions/deploy-pages@v4
 
-      # Last on purpose: the site has already shipped the pools that worked.
-      # Failing here marks the run red, which is what triggers GitHub's
-      # "workflow failed" email (Settings > Notifications > Actions).
-      - name: Report pools that could not be scraped
-        if: steps.scrape.outcome == 'failure'
-        run: |
-          node -e '
-            const d = require("./public/data/schedules.json");
-            const bad = d.pools.filter((p) => p.status !== "ok");
-            const lines = bad.length
-              ? bad.map((p) => `- **${p.name}** — \`${p.error}\``).join("\n")
-              : "- The scrape step failed before writing any result (missing API key? network down?).";
-            console.log(`## ❌ ${bad.length}/${d.pools.length} pool(s) failed\n\n${lines}`);
-          ' | tee -a "$GITHUB_STEP_SUMMARY"
-          echo "::error::At least one pool could not be scraped — see the job summary."
-          exit 1
+      # Last on purpose: the site has already shipped whatever could be built.
+      # Runs whenever something went wrong: a pool that could not be read (the
+      # scrape step is continue-on-error, hence the explicit check) or a failed
+      # build/deploy. Posts to Discord and exits non-zero on a scrape failure,
+      # so that the run shows red too.
+      - name: Report failures
+        if: failure() || steps.scrape.outcome == 'failure'
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SCRAPE_FAILED: ${{ steps.scrape.outcome == 'failure' }}
+          JOB_FAILED: ${{ job.status == 'failure' }}
+        run: node scripts/notify.mjs
