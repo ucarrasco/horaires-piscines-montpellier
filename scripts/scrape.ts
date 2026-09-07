@@ -177,7 +177,10 @@ const EXTRACTION_TOOL = {
 // --- HTML cleanup ---------------------------------------------------------
 
 function htmlToText(html: string): string {
-  return html
+  // Everything relevant sits in <main>; the surrounding menus and footer are
+  // three quarters of the text and cost as much per token as the schedules.
+  const main = html.match(/<main\b[^>]*>[\s\S]*?<\/main>/i)?.[0] ?? html;
+  return main
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
     .replace(/<!--[\s\S]*?-->/g, " ")
@@ -237,7 +240,7 @@ async function extractOnce(
   client: Anthropic,
   pool: PoolConfig & { url: string },
   today: string,
-): Promise<PoolSchedule> {
+): Promise<{ schedule: PoolSchedule; usage: string }> {
   const res = await fetch(pool.url, {
     headers: { "User-Agent": "pool-schedules-bot/1.0" },
   });
@@ -247,7 +250,15 @@ async function extractOnce(
   const message = await client.messages.create({
     model: MODEL,
     max_tokens: 4096,
-    system: SYSTEM_PROMPT,
+    // Tools render before system, so this breakpoint caches both. Pools are
+    // extracted back to back, well within the 5-minute TTL.
+    system: [
+      {
+        type: "text",
+        text: SYSTEM_PROMPT,
+        cache_control: { type: "ephemeral" },
+      },
+    ],
     tools: [EXTRACTION_TOOL],
     tool_choice: { type: "tool", name: EXTRACTION_TOOL.name },
     messages: [
@@ -262,7 +273,16 @@ async function extractOnce(
   if (!toolUse || toolUse.type !== "tool_use") {
     throw new Error("No tool call in the response");
   }
-  return toolUse.input as PoolSchedule;
+  return {
+    schedule: toolUse.input as PoolSchedule,
+    usage: formatUsage(message.usage),
+  };
+}
+
+function formatUsage(u: Anthropic.Usage): string {
+  const k = (n: number | null | undefined) =>
+    `${((n ?? 0) / 1000).toFixed(1)}k`;
+  return `${k(u.input_tokens)} in, ${k(u.cache_read_input_tokens)} cached, ${k(u.output_tokens)} out`;
 }
 
 /**
@@ -277,7 +297,7 @@ async function extractPool(
   client: Anthropic,
   pool: PoolConfig,
   today: string,
-): Promise<Omit<PoolResult, "resolved">> {
+): Promise<Extracted> {
   const base = { id: pool.id, name: pool.name, url: pool.url };
 
   if (!pool.url) {
@@ -293,12 +313,13 @@ async function extractPool(
 
   for (let attempt = 1; attempt <= 1 + RETRIES; attempt++) {
     try {
-      const parsed = await extractOnce(client, withUrl, today);
+      const { schedule, usage } = await extractOnce(client, withUrl, today);
       return {
         ...base,
         status: "ok",
         scrapedAt: new Date().toISOString(),
-        ...parsed,
+        usage,
+        ...schedule,
       };
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
@@ -320,7 +341,7 @@ async function extractPool(
 
 // --- Falling back on the previous run -------------------------------------
 
-type Extracted = Omit<PoolResult, "resolved">;
+type Extracted = Omit<PoolResult, "resolved"> & { usage?: string };
 
 interface Previous {
   generatedAt: string;
@@ -666,9 +687,10 @@ async function main() {
         { id: "dry-run", name: url, url },
         today,
       );
+      const { usage: _usage, ...rest } = extracted;
       const result: PoolResult = {
-        ...extracted,
-        resolved: resolveDays(extracted, dates, calendar),
+        ...rest,
+        resolved: resolveDays(rest, dates, calendar),
       };
       console.log(JSON.stringify(result, null, 2));
       // Called out on its own: a single pool run never applies them, so this
@@ -692,7 +714,7 @@ async function main() {
     );
     console.log(
       result.status === "ok"
-        ? "ok"
+        ? `ok (${result.usage})`
         : result.status === "stale"
           ? `error (${result.error}), keeping the read of ${result.scrapedAt}`
           : `error (${result.error})`,
@@ -707,7 +729,7 @@ async function main() {
     );
   }
 
-  const pools: PoolResult[] = extracted.map((pool) => ({
+  const pools: PoolResult[] = extracted.map(({ usage: _usage, ...pool }) => ({
     ...pool,
     resolved: resolveDays(pool, dates, calendar),
   }));
@@ -733,7 +755,9 @@ async function main() {
   // noticed, without throwing away the good data.
   const failed = pools.filter((p) => p.status !== "ok");
   if (failed.length > 0) {
-    console.error(`\n❌ ${failed.length}/${pools.length} pool(s) could not be read:`);
+    console.error(
+      `\n❌ ${failed.length}/${pools.length} pool(s) could not be read:`,
+    );
     for (const p of failed) {
       const kept =
         p.status === "stale" ? ` (showing the read of ${p.scrapedAt})` : "";
