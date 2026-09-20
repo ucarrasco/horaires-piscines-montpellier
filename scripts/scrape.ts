@@ -1,5 +1,6 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, appendFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -30,6 +31,23 @@ const MAX_HTML_CHARS = 40_000;
 const WINDOW_RADIUS = 7; // days on either side of today
 const RETRIES = 1; // extra attempts per pool, on top of the first one
 const RETRY_DELAY_MS = 10_000;
+
+/**
+ * Pools re-extracted per run even though their page is unchanged, oldest read
+ * first. Rotating a couple per run bounds both the bill and how long a bad
+ * extraction can survive, without the every-N-days stampede a plain age
+ * threshold would cause (all 15 are read within seconds of each other).
+ */
+const REVALIDATE_PER_RUN = 2;
+/** Hard ceiling, should the rotation ever fall behind. */
+const MAX_CACHE_AGE_DAYS = 10;
+
+/**
+ * Bump when htmlToText, the user-message template or the post-processing of
+ * the tool output changes: those shape the extraction but are not part of
+ * PROMPT_VERSION below, so nothing else would invalidate the stored hashes.
+ */
+const CACHE_VERSION = 1;
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -203,6 +221,8 @@ function htmlToText(html: string): string {
 const SYSTEM_PROMPT = `You extract a swimming pool's public opening hours from the text of a web page, then you call the record_schedules tool.
 Instructions:
 - Only record slots open TO THE PUBLIC ("nage libre" / "grand public"). Ignore lessons, clubs and school groups unless they are the only access mentioned (in that case, say so in the label).
+- When the page gives BOTH the opening hours of the establishment and hours specific to one area ("bassin ludique", "bassin extérieur", "bassins intérieurs", "espaces extérieurs"), the weekly schedule is the ESTABLISHMENT's. Area hours never replace it: put them in the slot "label" or in "notes". Answering "can I swim right now?" with the hours of one restricted area would show the pool closed while it is open.
+- If the page gives no establishment-wide hours but several areas, use the area open the most widely over the year and name it in every slot "label".
 - Fill in three weekly schedules: "term" (période scolaire), "short_holidays" (Toussaint, Noël, hiver, printemps) and "summer_holidays" (été). If the page does not distinguish periods, reuse the same schedule for all three.
 - If a day has no slot (closed), return an empty array for that day.
 - Put every exceptional closure, maintenance period, public holiday or dated special opening in "events", with closed=true when the pool is closed.
@@ -213,7 +233,8 @@ Instructions:
 - Only record a network claim when the page really states it. Never generalise this pool's own closure to the others.
 - Use the two-digit "HH:MM" format for times (e.g. "09:00", not "9:00").
 - If the current-info box gives precise holiday DATES (e.g. "vacances du 20 au 30 octobre"), report them in "periodOverrides": they take precedence over the official calendar.
-- Convert every date to the "YYYY-MM-DD" format, using the current year provided.
+- Convert every date to the "YYYY-MM-DD" format. A date written without a year means its next occurrence on or after today's date.
+- Never use today's date as a boundary, and never record a date that is not written on the page. The extraction must depend only on the page: an announcement that gives a single date ("les cours reprennent à partir du lundi 14 septembre") is that one date, with start = end. Do not turn it into a span running from today.
 - Never invent hours or dates: when something is missing or ambiguous, leave it empty and add a note.
 - Labels and descriptions are shown as-is on a French website: keep them in French, as written on the page.`;
 
@@ -235,18 +256,71 @@ function emptySchedule(): PoolSchedule {
   };
 }
 
-/** One extraction attempt. Throws on any failure, so the caller can retry. */
+// --- Source fingerprint ---------------------------------------------------
+
+/**
+ * Identifies everything that shapes an extraction apart from the page itself.
+ * Touching the prompt, the tool schema or the model changes it, which
+ * invalidates every stored hash and re-reads all 15 pools on the next run —
+ * that is how a prompt fix reaches pools whose page has not moved.
+ */
+const PROMPT_VERSION = createHash("sha256")
+  .update(
+    `${CACHE_VERSION}\n${MODEL}\n${SYSTEM_PROMPT}\n${JSON.stringify(EXTRACTION_TOOL)}`,
+  )
+  .digest("hex")
+  .slice(0, 12);
+
+const HASH_CUTOFF = /Documents\s+à\s+télécharger/i;
+let cutoffWarned = false;
+
+/**
+ * The page text the fingerprint covers: everything up to the download list,
+ * which closes all 15 pages and whose PDF sizes drift on their own (the pool
+ * guide went from 878 KB to 21366 KB in a fortnight). Nothing after it
+ * mentions opening hours, so cutting it only removes false re-reads.
+ */
+function hashableText(text: string): string {
+  const m = text.match(HASH_CUTOFF);
+  if (m) return text.slice(0, m.index);
+  if (!cutoffWarned) {
+    cutoffWarned = true;
+    // Fails open on cost, so it has to be said out loud: without the cut the
+    // hash moves whenever a PDF is reuploaded and the cache stops matching.
+    console.warn(
+      `\n⚠️  Repère "Documents à télécharger" introuvable : l'empreinte couvre toute la page.`,
+    );
+  }
+  return text;
+}
+
+function sourceFingerprint(text: string, url: string): string {
+  return createHash("sha256")
+    .update(`${PROMPT_VERSION}\n${url}\n${hashableText(text)}`)
+    .digest("hex")
+    .slice(0, 32);
+}
+
+async function fetchPageText(url: string): Promise<string> {
+  const res = await fetch(url, {
+    headers: { "User-Agent": "pool-schedules-bot/1.0" },
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return htmlToText(await res.text());
+}
+
+/**
+ * One extraction attempt on already-fetched text. Throws on any failure, so
+ * the caller can retry. The text is passed in rather than fetched here so that
+ * the fingerprint stored alongside the result is the one of the exact bytes
+ * the model saw.
+ */
 async function extractOnce(
   client: Anthropic,
   pool: PoolConfig & { url: string },
   today: string,
+  text: string,
 ): Promise<{ schedule: PoolSchedule; usage: string }> {
-  const res = await fetch(pool.url, {
-    headers: { "User-Agent": "pool-schedules-bot/1.0" },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const text = htmlToText(await res.text());
-
   const message = await client.messages.create({
     model: MODEL,
     max_tokens: 4096,
@@ -285,6 +359,59 @@ function formatUsage(u: Anthropic.Usage): string {
   return `${k(u.input_tokens)} in, ${k(u.cache_read_input_tokens)} cached, ${k(u.output_tokens)} out`;
 }
 
+interface CacheContext {
+  previous: Previous | null;
+  /** Ignore the cache entirely (dry run, --force). */
+  force: boolean;
+  /** Pool ids the rotation re-reads this run whatever their fingerprint. */
+  revalidate: Set<string>;
+  today: string;
+  window: { start: string; end: string };
+}
+
+/** Why this pool is, or is not, being sent to the model. Shown in the log. */
+function cacheDecision(
+  pool: PoolConfig,
+  sourceHash: string,
+  ctx: CacheContext,
+): { reuse: boolean; reason: string } {
+  if (ctx.force) return { reuse: false, reason: "forcé" };
+
+  // What makes a pool uncacheable is checked before the rotation, so that the
+  // log names the real blocker ("page modifiée") instead of the rotation that
+  // would have re-read it anyway.
+  const prev = ctx.previous?.pools.get(pool.id);
+  if (!prev) return { reuse: false, reason: "jamais relevée" };
+  if (prev.status !== "ok")
+    return { reuse: false, reason: "relevé précédent en échec" };
+  if (!prev.sourceHash) return { reuse: false, reason: "pas d'empreinte" };
+  if (!prev.scrapedAt) return { reuse: false, reason: "pas de date de relevé" };
+  if (prev.sourceHash !== sourceHash)
+    return { reuse: false, reason: "page modifiée" };
+  if (prev.scrapedAt.slice(0, 4) !== ctx.today.slice(0, 4)) {
+    // Bare dates ("1er janvier") are resolved against the year of the run, so
+    // an extraction made last year carries dates this window cannot match.
+    return { reuse: false, reason: "changement d'année" };
+  }
+  if (
+    (prev.networkClaims ?? []).some(
+      (c) =>
+        c.closed && overlaps(c.start, c.end, ctx.window.start, ctx.window.end),
+    )
+  ) {
+    // Pass 2 copies this pool's claims onto the 14 others, so a frozen closure
+    // would shut the whole network on a day it is open. Only closures are
+    // worth a re-read: the informational ones ("reprise des cours le 14") sit
+    // on all 15 pages for weeks and would never let anything cache.
+    return { reuse: false, reason: "fermeture réseau annoncée" };
+  }
+
+  if (ctx.revalidate.has(pool.id))
+    return { reuse: false, reason: "revalidation" };
+
+  return { reuse: true, reason: "page inchangée" };
+}
+
 /**
  * Extracts one pool, with a single retry after RETRY_DELAY_MS.
  *
@@ -292,11 +419,14 @@ function formatUsage(u: Anthropic.Usage): string {
  * reported as a broken pool — and since a failure now turns the whole run red,
  * a false alarm costs an email. The retry covers the API call too: an overload
  * there is just as transient as an HTTP 503 from montpellier.fr.
+ *
+ * The page is fetched on every run even when the model is not called: the
+ * fetch is free and it is what tells us whether anything changed.
  */
 async function extractPool(
   client: Anthropic,
   pool: PoolConfig,
-  today: string,
+  ctx: CacheContext,
 ): Promise<Extracted> {
   const base = { id: pool.id, name: pool.name, url: pool.url };
 
@@ -313,12 +443,41 @@ async function extractPool(
 
   for (let attempt = 1; attempt <= 1 + RETRIES; attempt++) {
     try {
-      const { schedule, usage } = await extractOnce(client, withUrl, today);
+      const text = await fetchPageText(withUrl.url);
+      const sourceHash = sourceFingerprint(text, withUrl.url);
+      const verdict = cacheDecision(pool, sourceHash, ctx);
+
+      if (verdict.reuse) {
+        const prev = ctx.previous!.pools.get(pool.id)!;
+        return {
+          ...base,
+          status: "ok",
+          scrapedAt: prev.scrapedAt,
+          sourceHash,
+          reason: verdict.reason,
+          // Field by field on purpose: spreading prev would drag the previous
+          // run's "resolved", "status" and "error" along with the schedule.
+          periods: prev.periods,
+          events: prev.events,
+          periodOverrides: prev.periodOverrides,
+          networkClaims: prev.networkClaims ?? [],
+          notes: prev.notes,
+        };
+      }
+
+      const { schedule, usage } = await extractOnce(
+        client,
+        withUrl,
+        ctx.today,
+        text,
+      );
       return {
         ...base,
         status: "ok",
         scrapedAt: new Date().toISOString(),
+        sourceHash,
         usage,
+        reason: verdict.reason,
         ...schedule,
       };
     } catch (err) {
@@ -341,7 +500,17 @@ async function extractPool(
 
 // --- Falling back on the previous run -------------------------------------
 
-type Extracted = Omit<PoolResult, "resolved"> & { usage?: string };
+/** Log-only fields, stripped by forOutput before the file is written. */
+type Extracted = Omit<PoolResult, "resolved"> & {
+  usage?: string;
+  reason?: string;
+};
+
+const forOutput = ({
+  usage: _usage,
+  reason: _reason,
+  ...pool
+}: Extracted): Omit<PoolResult, "resolved"> => pool;
 
 interface Previous {
   generatedAt: string;
@@ -353,7 +522,17 @@ async function loadPrevious(): Promise<Previous | null> {
   const data = JSON.parse(await readFile(OUTPUT_PATH, "utf8")) as SchedulesData;
   return {
     generatedAt: data.generatedAt,
-    pools: new Map(data.pools.map((p) => [p.id, p])),
+    pools: new Map(
+      data.pools.map((p) => [
+        p.id,
+        // Inferred events are dropped once here, for every consumer of the
+        // previous run. Pass 2 re-derives them from this run's claims, and
+        // letting one through would make it first-party evidence in
+        // applyNetworkClaims — a silent veto against a fresh contradicting
+        // claim, that nothing would ever clear.
+        { ...p, events: (p.events ?? []).filter((e) => !e.inferredFrom) },
+      ]),
+    ),
   };
 }
 
@@ -377,9 +556,12 @@ function fallBackOnPrevious(
     status: "stale",
     // Files written before scrapedAt existed only carry the run timestamp.
     scrapedAt: prev.scrapedAt ?? previous.generatedAt,
+    // Deliberately no sourceHash: the page may well have changed, and storing
+    // this run's fingerprint next to the previous run's schedule would make
+    // every later run a cache hit on hours nobody ever read.
+    sourceHash: undefined,
     periods: prev.periods,
-    // Inferred events are re-derived by pass 2 from this run's claims.
-    events: prev.events.filter((e) => !e.inferredFrom),
+    events: prev.events,
     periodOverrides: prev.periodOverrides,
     networkClaims: prev.networkClaims ?? [],
     notes: prev.notes,
@@ -644,6 +826,107 @@ async function replay(path: string) {
   if (changes === 0) console.log("  (aucun jour modifié)");
 }
 
+// --- Cache rotation and inspection ----------------------------------------
+
+/**
+ * The pools to re-read even though their page is unchanged: the oldest reads
+ * first, plus anything past MAX_CACHE_AGE_DAYS as a safety net.
+ *
+ * A plain age threshold would not do: the 15 reads are seconds apart, so they
+ * would all expire on the same day and the run would cost 15 calls every N
+ * days. Taking the k oldest spreads it evenly, and since any re-extraction
+ * (rotation or changed page) resets scrapedAt, the queue balances itself.
+ */
+function rotationDue(previous: Previous | null): Set<string> {
+  if (!previous) return new Set();
+
+  const dated = POOLS.map((p) => ({ id: p.id, prev: previous.pools.get(p.id) }))
+    .filter((c) => c.prev?.status === "ok" && c.prev.scrapedAt)
+    .sort((a, b) =>
+      a.prev!.scrapedAt === b.prev!.scrapedAt
+        ? a.id.localeCompare(b.id)
+        : a.prev!.scrapedAt! < b.prev!.scrapedAt!
+          ? -1
+          : 1,
+    );
+
+  const due = new Set(dated.slice(0, REVALIDATE_PER_RUN).map((c) => c.id));
+  const now = Date.now();
+  for (const c of dated) {
+    const ageDays = (now - Date.parse(c.prev!.scrapedAt!)) / 86_400_000;
+    if (ageDays > MAX_CACHE_AGE_DAYS) due.add(c.id);
+  }
+  return due;
+}
+
+/**
+ * Everything in an extraction that decides what the site shows — prose left
+ * out. The model rewords notes and descriptions on every read, so comparing
+ * the whole payload would flag every revalidation and signal nothing.
+ */
+const decisivePayload = (p: Omit<PoolResult, "resolved">) =>
+  JSON.stringify({
+    periods: p.periods,
+    events: (p.events ?? [])
+      .filter((e) => !e.inferredFrom)
+      .map((e) => [e.start, e.end, e.closed, e.slots]),
+    periodOverrides: p.periodOverrides,
+    networkClaims: (p.networkClaims ?? []).map((c) => [
+      c.start,
+      c.end,
+      c.closed,
+      c.scope,
+      c.pools,
+    ]),
+  });
+
+/**
+ * Dry inspection: fetches the 15 pages, prints what a real run would do and
+ * why, then stops. No API key, no call, nothing written — the only way to tell
+ * a working cache from a silently broken one without paying for it.
+ */
+async function checkCache(
+  today: string,
+  window: { start: string; end: string },
+) {
+  const previous = await loadPrevious();
+  const ctx: CacheContext = {
+    previous,
+    force: false,
+    revalidate: rotationDue(previous),
+    today,
+    window,
+  };
+
+  console.log(`🔍 Inspection du cache (aucun appel, rien d'écrit)\n`);
+  let reuse = 0;
+  for (const pool of POOLS) {
+    process.stdout.write(`  - ${pool.name}... `);
+    if (!pool.url) {
+      console.log("pas d'url");
+      continue;
+    }
+    try {
+      const text = await fetchPageText(pool.url);
+      const hash = sourceFingerprint(text, pool.url);
+      const verdict = cacheDecision(pool, hash, ctx);
+      if (verdict.reuse) reuse++;
+      // The fingerprint is printed so a cache that stopped matching can be
+      // diagnosed by comparing it with the one stored in schedules.json.
+      console.log(
+        `${verdict.reuse ? "cache" : "LLM  "} ${hash.slice(0, 8)} (${verdict.reason})`,
+      );
+    } catch (err) {
+      console.log(
+        `échec (${err instanceof Error ? err.message : String(err)})`,
+      );
+    }
+  }
+  console.log(
+    `\n${reuse}/${POOLS.length} en cache → ${POOLS.length - reuse} appel(s) LLM`,
+  );
+}
+
 // --- Main -----------------------------------------------------------------
 
 async function main() {
@@ -657,7 +940,20 @@ async function main() {
   // -> re-runs the cross-pool pass only. No API key needed, nothing written.
   const replayIdx = args.indexOf("--replay");
   if (replayIdx !== -1) {
-    await replay(args[replayIdx + 1] ?? OUTPUT_PATH);
+    const next = args[replayIdx + 1];
+    await replay(next && !next.startsWith("-") ? next : OUTPUT_PATH);
+    return;
+  }
+
+  const today = todayInParis();
+  const windowStart = addDays(today, -WINDOW_RADIUS);
+  const windowEnd = addDays(today, WINDOW_RADIUS);
+  const window = { start: windowStart, end: windowEnd };
+
+  // Inspection mode: `npm run scrape -- --check`
+  // -> says which pools would be sent to the model, without calling it.
+  if (args.includes("--check")) {
+    await checkCache(today, window);
     return;
   }
 
@@ -670,9 +966,6 @@ async function main() {
 
   const client = new Anthropic(); // reads ANTHROPIC_API_KEY
 
-  const today = todayInParis();
-  const windowStart = addDays(today, -WINDOW_RADIUS);
-  const windowEnd = addDays(today, WINDOW_RADIUS);
   const dates = dateRange(windowStart, windowEnd);
   const calendar = await fetchSchoolCalendar(windowStart, windowEnd);
 
@@ -685,9 +978,11 @@ async function main() {
       const extracted = await extractPool(
         client,
         { id: "dry-run", name: url, url },
-        today,
+        // force: a dry run exists to exercise the prompt, so it must always
+        // reach the model, even on a URL that matches a known pool.
+        { previous: null, force: true, revalidate: new Set(), today, window },
       );
-      const { usage: _usage, ...rest } = extracted;
+      const rest = forOutput(extracted);
       const result: PoolResult = {
         ...rest,
         resolved: resolveDays(rest, dates, calendar),
@@ -703,22 +998,45 @@ async function main() {
   }
 
   const previous = await loadPrevious();
+  const ctx: CacheContext = {
+    previous,
+    force: args.includes("--force"),
+    revalidate: rotationDue(previous),
+    today,
+    window,
+  };
 
   console.log(`Extracting ${POOLS.length} pool(s)...`);
   const extracted: Extracted[] = [];
   for (const pool of POOLS) {
     process.stdout.write(`  - ${pool.name}... `);
     const result = fallBackOnPrevious(
-      await extractPool(client, pool, today),
+      await extractPool(client, pool, ctx),
       previous,
     );
     console.log(
-      result.status === "ok"
-        ? `ok (${result.usage})`
-        : result.status === "stale"
-          ? `error (${result.error}), keeping the read of ${result.scrapedAt}`
-          : `error (${result.error})`,
+      result.status === "stale"
+        ? `error (${result.error}), keeping the read of ${result.scrapedAt}`
+        : result.status === "error"
+          ? `error (${result.error})`
+          : result.usage
+            ? `llm (${result.reason}) — ${result.usage}`
+            : `cache (${result.reason}, relevé du ${result.scrapedAt?.slice(0, 10)})`,
     );
+
+    // A re-read of an unchanged page that comes back different is the model
+    // being non-deterministic. Worth seeing: it is what the cache freezes.
+    const prev = previous?.pools.get(pool.id);
+    if (
+      result.reason === "revalidation" &&
+      prev &&
+      decisivePayload(prev) !== decisivePayload(result)
+    ) {
+      console.log(
+        `      ↳ horaires ou évènements différents sur une page inchangée`,
+      );
+    }
+
     extracted.push(result);
   }
 
@@ -729,8 +1047,8 @@ async function main() {
     );
   }
 
-  const pools: PoolResult[] = extracted.map(({ usage: _usage, ...pool }) => ({
-    ...pool,
+  const pools: PoolResult[] = extracted.map((pool) => ({
+    ...forOutput(pool),
     resolved: resolveDays(pool, dates, calendar),
   }));
 
@@ -746,6 +1064,29 @@ async function main() {
 
   const count = (status: PoolResult["status"]) =>
     pools.filter((p) => p.status === status).length;
+
+  // One line saying how many calls this run cost and why. Also written to the
+  // job summary: notify.mjs only runs on failure, so a green run would
+  // otherwise leave no trace outside the raw logs.
+  const called = extracted.filter((p) => p.usage);
+  const reused = extracted.filter((p) => p.status === "ok" && !p.usage);
+  const byReason = new Map<string, number>();
+  for (const p of called)
+    byReason.set(p.reason ?? "?", (byReason.get(p.reason ?? "?") ?? 0) + 1);
+  const summary =
+    `LLM ${called.length}/${POOLS.length}` +
+    (called.length > 0
+      ? ` — ${[...byReason].map(([r, n]) => `${r} ×${n}`).join(", ")}`
+      : "") +
+    `, ${reused.length} réutilisée(s)` +
+    (count("stale") + count("error") > 0
+      ? `, ${count("stale")} stale, ${count("error")} error`
+      : "");
+  console.log(`\n${summary}`);
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    await appendFile(process.env.GITHUB_STEP_SUMMARY, `${summary}\n`);
+  }
+
   console.log(
     `\nWrote ${OUTPUT_PATH} (${count("ok")} ok, ${count("stale")} stale, ${count("error")} error)`,
   );

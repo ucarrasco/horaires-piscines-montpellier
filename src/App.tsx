@@ -806,14 +806,15 @@ function AboutPage() {
 
       <ol className="about-steps">
         <li>
-          Chaque matin, la page officielle de chacune des piscines est
-          récupérée.
+          Chaque matin, la page officielle de chacune des piscines est récupérée
+          et comparée à la veille.
         </li>
         <li>
-          Une IA en extrait les <strong>horaires théoriques</strong> de la
-          semaine ainsi que les{" "}
+          Quand elle a changé, une IA en extrait les{" "}
+          <strong>horaires théoriques</strong> de la semaine ainsi que les{" "}
           <strong>messages d'information du moment</strong> — fermetures,
-          travaux, jours fériés, horaires exceptionnels.
+          travaux, jours fériés, horaires exceptionnels. Sinon, la lecture
+          précédente est conservée.
         </li>
         <li>
           Les deux sont combinés jour par jour : l'horaire habituel s'applique,

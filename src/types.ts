@@ -25,7 +25,11 @@ export const DAY_LABELS: Record<DayKey, string> = {
   sunday: "Dimanche",
 };
 
-export const PERIOD_KEYS = ["term", "short_holidays", "summer_holidays"] as const;
+export const PERIOD_KEYS = [
+  "term",
+  "short_holidays",
+  "summer_holidays",
+] as const;
 
 export type PeriodKey = (typeof PERIOD_KEYS)[number];
 
@@ -125,8 +129,20 @@ export interface PoolResult extends PoolSchedule {
   status: "ok" | "stale" | "error";
   /** Why the page could not be read, when status !== "ok". */
   error?: string;
-  /** ISO timestamp of the last successful read of the page; absent for "error". */
+  /**
+   * ISO timestamp of the last successful EXTRACTION; absent for "error".
+   * The page itself is re-read every run, so this can lag by a few days when
+   * the page has not changed and the extraction was reused (see sourceHash).
+   */
   scrapedAt?: string;
+  /**
+   * Fingerprint of the exact page text submitted to the model. When the next
+   * run computes the same one, the extraction above is reused as is and no
+   * API call is made. Only ever set on a "ok" pool: attaching it to a
+   * fallback would cache the previous run's schedule under the new page's
+   * fingerprint, and it would never be re-read.
+   */
+  sourceHash?: string;
   /** Actual day-by-day hours over the window (computed, not extracted). */
   resolved: ResolvedDay[];
 }

@@ -71,7 +71,7 @@ with its `id`, display `name` and the URL of its page.
    `ANTHROPIC_API_KEY` secret.
 3. Under **Settings → Pages**, pick **Source: GitHub Actions**.
 4. The [`.github/workflows/daily.yml`](.github/workflows/daily.yml) workflow:
-   - runs every day at 04:00 UTC (and manually via *Run workflow*),
+   - runs every day at 04:00 UTC (and manually via _Run workflow_),
    - regenerates `public/data/schedules.json` and commits it when it changed,
    - builds, prerenders and deploys the site to Pages.
 
@@ -79,8 +79,8 @@ with its `id`, display `name` and the URL of its page.
 
 When a pool cannot be read, or the build or deploy fails, the last step of the
 workflow posts a summary to a Discord channel and turns the run red. Add a
-`DISCORD_WEBHOOK_URL` secret holding a channel webhook URL (*channel settings →
-Integrations → Webhooks*). Without it, the run still goes red but nothing is
+`DISCORD_WEBHOOK_URL` secret holding a channel webhook URL (_channel settings →
+Integrations → Webhooks_). Without it, the run still goes red but nothing is
 posted. [`scripts/notify.mjs`](scripts/notify.mjs) can be tried locally:
 
 ```bash
@@ -99,8 +99,8 @@ Everything URL-related derives from `SITE_URL`, defined once in
 sitemap entries and whether a `CNAME` file is emitted.
 
 It defaults to the GitHub Pages URL. To move to a custom domain, add a
-**repository variable** (not a secret) named `SITE_URL` under *Settings → Secrets
-and variables → Actions → Variables*, for example
+**repository variable** (not a secret) named `SITE_URL` under _Settings → Secrets
+and variables → Actions → Variables_, for example
 `https://piscines-montpellier.fr`. Nothing else changes: the next build emits the
 `CNAME` file and rewrites every absolute URL. Point the domain's DNS at GitHub
 Pages, then declare the site in the Google Search Console.
@@ -130,7 +130,12 @@ generation date:
   "generatedAt": "2026-08-08T04:00:00.000Z",
   "window": { "start": "2026-08-01", "end": "2026-08-15", "dates": ["..."] },
   "periodsInWindow": [
-    { "period": "summer_holidays", "label": "Vacances d'Été", "start": "2026-08-01", "end": "2026-08-15" }
+    {
+      "period": "summer_holidays",
+      "label": "Vacances d'Été",
+      "start": "2026-08-01",
+      "end": "2026-08-15"
+    }
   ],
   "pools": [
     {
@@ -139,17 +144,32 @@ generation date:
       "url": "https://...",
       "status": "ok",
       "scrapedAt": "2026-08-08T04:00:00.000Z",
-      "periods": { "term": { "monday": [], "...": [] }, "short_holidays": {}, "summer_holidays": {} },
+      "periods": {
+        "term": { "monday": [], "...": [] },
+        "short_holidays": {},
+        "summer_holidays": {}
+      },
       "events": [
-        { "start": "2026-08-15", "end": null, "description": "Assomption : horaires spéciaux",
-          "closed": false, "slots": [{ "start": "09:00", "end": "13:15", "label": "Public" }] }
+        {
+          "start": "2026-08-15",
+          "end": null,
+          "description": "Assomption : horaires spéciaux",
+          "closed": false,
+          "slots": [{ "start": "09:00", "end": "13:15", "label": "Public" }]
+        }
       ],
       "periodOverrides": [],
       "notes": null,
       "resolved": [
-        { "date": "2026-08-08", "day": "saturday", "period": "summer_holidays",
+        {
+          "date": "2026-08-08",
+          "day": "saturday",
+          "period": "summer_holidays",
           "slots": [{ "start": "14:00", "end": "20:00", "label": "Public" }],
-          "closed": false, "exceptional": false, "events": [] }
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        }
       ]
     }
   ]
@@ -165,6 +185,20 @@ pages, so they are in French — they are displayed as-is on the site.
 
 ## Cost
 
-Extraction uses the `claude-opus-4-8` model, one request per pool per day. For
-~15 pools the daily cost is on the order of a few cents. Switch to
-`claude-sonnet-5` in [`scripts/scrape.ts`](scripts/scrape.ts) to reduce it.
+Extraction uses the `claude-opus-4-8` model. Every page is fetched on every
+run, but the model is only called for a pool whose page actually changed —
+plus `REVALIDATE_PER_RUN` pools re-read in rotation, oldest first, so that no
+extraction goes stale and a wrong one cannot stay frozen. A typical day costs
+two or three requests instead of fifteen.
+
+The fingerprint that drives this is stored per pool as `sourceHash`. It covers
+the exact text submitted to the model, minus the trailing download list whose
+PDF sizes drift on their own. It also covers the prompt, the tool schema and
+the model name, so editing any of them re-reads every pool on the next run.
+
+`npm run scrape -- --check` fetches the pages and prints what a real run would
+do, and why, without calling the model or writing anything — the way to tell a
+working cache from one that silently stopped matching. `--force` ignores it.
+
+Switch to `claude-sonnet-5` in [`scripts/scrape.ts`](scripts/scrape.ts) to
+reduce the cost of the calls that remain.
