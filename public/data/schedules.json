@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-09-23T09:02:00.392Z",
+  "generatedAt": "2026-09-24T08:57:34.619Z",
   "window": {
-    "start": "2026-09-16",
-    "end": "2026-09-30",
+    "start": "2026-09-17",
+    "end": "2026-10-01",
     "dates": [
-      "2026-09-16",
       "2026-09-17",
       "2026-09-18",
       "2026-09-19",
@@ -18,15 +17,16 @@
       "2026-09-27",
       "2026-09-28",
       "2026-09-29",
-      "2026-09-30"
+      "2026-09-30",
+      "2026-10-01"
     ]
   },
   "periodsInWindow": [
     {
       "period": "term",
       "label": null,
-      "start": "2026-09-16",
-      "end": "2026-09-30"
+      "start": "2026-09-17",
+      "end": "2026-10-01"
     }
   ],
   "pools": [
@@ -264,17 +264,6 @@
       "notes": "L'établissement compte 2 bassins : le bassin « Vénus » (50m) et le bassin ludique. Horaires spécifiques du bassin ludique — Période scolaire : lundi au vendredi 11:30-13:30 et 16:00-21:30 ; samedi 9:00-19:15 ; dimanche 9:00-13:15 et 15:00-19:15. Vacances scolaires : lundi au vendredi 9:00-21:30 ; samedi 9:00-19:15 ; dimanche 9:00-13:15 et 15:00-19:15. Évacuation des bassins 30 min avant fermeture ; vente des billets jusqu'à 20h30 (lun-ven) et 18h15 (sam-dim). Prévoir une pièce de 0,50€ pour le vestiaire. La networkClaim ne nomme aucune piscine précise (renvoi générique au réseau).\"",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture pour maintenance technique annuelle. Réouverture prévue le lundi 28 septembre 2026 aux horaires habituels."
-          ]
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -439,6 +428,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -449,47 +453,6 @@
       "status": "ok",
       "scrapedAt": "2026-09-23T09:01:39.693Z",
       "sourceHash": "a0de6f6d30b4817a69501c96ea4b9220",
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "amphitrite",
-            "poolName": "Piscine Amphitrite",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-amphitrite"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "La page ne donne pas d'horaires spécifiques aux vacances scolaires ni à l'été : le même horaire est repris pour toutes les périodes. Horaires valables à partir du 31 août 2026. Deux séries d'horaires par bassin : bassin extérieur 50 m et bassins intérieurs. Le planning hebdomadaire retenu correspond à l'amplitude de l'établissement (union des deux). Évacuation des bassins 30 minutes avant la fermeture. La reprise des cours et activités du réseau est indiquée à partir du lundi 14 septembre.",
       "periods": {
         "term": {
           "monday": [
@@ -795,27 +758,48 @@
           ]
         }
       },
-      "resolved": [
+      "events": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
+          "start": "2026-09-14",
+          "end": null,
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
           "closed": false,
-          "exceptional": false,
-          "events": []
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
         },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        },
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "amphitrite",
+            "poolName": "Piscine Amphitrite",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-amphitrite"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "La page ne donne pas d'horaires spécifiques aux vacances scolaires ni à l'été : le même horaire est repris pour toutes les périodes. Horaires valables à partir du 31 août 2026. Deux séries d'horaires par bassin : bassin extérieur 50 m et bassins intérieurs. Le planning hebdomadaire retenu correspond à l'amplitude de l'établissement (union des deux). Évacuation des bassins 30 minutes avant la fermeture. La reprise des cours et activités du réseau est indiquée à partir du lundi 14 septembre.",
+      "resolved": [
         {
           "date": "2026-09-17",
           "day": "thursday",
@@ -1119,6 +1103,31 @@
             {
               "start": "12:00",
               "end": "16:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": "Bassins intérieurs"
             }
           ],
@@ -1343,21 +1352,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Bonnet de bain obligatoire. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre. Horaires période scolaire indiqués dans l'encart principal ; horaires été et petites vacances indiqués dans « Infos horaires ».",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -1580,6 +1574,21 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -1804,21 +1813,6 @@
       "notes": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre. Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Bonnet de bain obligatoire.",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -2041,6 +2035,21 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -2265,21 +2274,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre. Bonnet de bain obligatoire. Bassin de 25 mètres avec 4 couloirs (type « tournesol »).",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -2502,6 +2496,21 @@
             {
               "start": "11:30",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -2693,21 +2702,6 @@
       "notes": "Fermée durant les grandes vacances scolaires. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Piscine de 5 couloirs de 25 m.",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -2946,6 +2940,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "07:30",
+              "end": "09:00",
+              "label": null
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2954,8 +2968,8 @@
       "name": "Piscine Marcel Spilliaert",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert",
       "status": "ok",
-      "scrapedAt": "2026-09-20T09:01:03.457Z",
-      "sourceHash": "229f599daf4b34f5b49fe66fabb5151b",
+      "scrapedAt": "2026-09-24T08:57:22.880Z",
+      "sourceHash": "66aef21a66f453333fb0e57f31ab7c63",
       "periods": {
         "term": {
           "monday": [
@@ -2993,7 +3007,7 @@
             {
               "start": "17:00",
               "end": "20:00",
-              "label": "petit bassin 17h45"
+              "label": "petit bassin 18h"
             }
           ],
           "friday": [
@@ -3168,23 +3182,8 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Bassin sportif 25m 5 couloirs + petit bassin. Le jeudi soir le petit bassin ferme à 17h45.",
+      "notes": "Bassin sportif de 25 m à 5 couloirs et un petit bassin. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Le jeudi soir, le petit bassin ferme à 18h. Reprise des cours du réseau le 14 septembre 2026 ; préinscriptions cours annuels à partir du 1er septembre à 11h.",
       "resolved": [
-        {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-17",
           "day": "thursday",
@@ -3198,7 +3197,7 @@
             {
               "start": "17:00",
               "end": "20:00",
-              "label": "petit bassin 17h45"
+              "label": "petit bassin 18h"
             }
           ],
           "closed": false,
@@ -3313,7 +3312,7 @@
             {
               "start": "17:00",
               "end": "20:00",
-              "label": "petit bassin 17h45"
+              "label": "petit bassin 18h"
             }
           ],
           "closed": false,
@@ -3414,6 +3413,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "petit bassin 18h"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -3422,8 +3441,49 @@
       "name": "Piscine Les Néréides",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-les-nereides",
       "status": "ok",
-      "scrapedAt": "2026-09-20T09:01:17.438Z",
+      "scrapedAt": "2026-09-24T08:57:32.647Z",
       "sourceHash": "895653be8a8a4adcd1ec4c815d2e77d1",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": null,
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        },
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "amphitrite",
+            "poolName": "Piscine Amphitrite",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-amphitrite"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Horaires période scolaire = horaires hebdomadaires principaux. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Rentrée des cours et activités du réseau à partir du lundi 14 septembre.",
       "periods": {
         "term": {
           "monday": [
@@ -3589,63 +3649,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "amphitrite",
-            "poolName": "Piscine Amphitrite",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-amphitrite"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
       "resolved": [
-        {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-17",
           "day": "thursday",
@@ -3869,6 +3873,21 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -4093,21 +4112,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Les cours et activités du réseau reprennent à partir du lundi 14 septembre.",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -4330,6 +4334,26 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -4554,21 +4578,6 @@
       "notes": "Bassin de 25 m avec 4 couloirs. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Les cours et activités du réseau reprennent à partir du lundi 14 septembre.",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:15",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -4791,6 +4800,21 @@
             {
               "start": "11:15",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:15",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -4985,21 +5009,6 @@
       "notes": "À compter du lundi 31 août 2026, la piscine passe aux horaires d'hiver (lundi au vendredi 11h30-14h30, fermée samedi et dimanche). Les horaires d'été indiqués (lundi-vendredi 11h00-19h30, samedi/dimanche 14h00-18h00) ont été placés dans summer_holidays. Bassin extérieur de 25m chauffé à 27° minimum. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -5173,6 +5182,21 @@
         {
           "date": "2026-09-30",
           "day": "wednesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:30",
+              "end": "14:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
           "period": "term",
           "slots": [
             {
@@ -5411,21 +5435,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture en période scolaire, 30 min en période estivale. La vente des billets se termine 15 min avant l'évacuation en période scolaire, 30 min en période estivale. Bonnet de bain obligatoire. Prévoir une pièce de 1 € pour le vestiaire.",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -5648,6 +5657,26 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -5886,21 +5915,6 @@
       "notes": "Bassin sportif de 25m avec 5 couloirs, profondeur constante 2m. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Bonnet de bain obligatoire. Réseau de 15 piscines. Note : l'horaire du mardi indiqué \\\"12:00-1400\\\" est interprété comme 12:00-14:00.",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -6133,6 +6147,26 @@
             {
               "start": "11:30",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -6357,21 +6391,6 @@
       "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis, partiellement inaccessible aux heures de cours. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -6594,6 +6613,26 @@
             {
               "start": "12:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -6827,21 +6866,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Préinscriptions aux cours 2026-2027 le 1er septembre à 11h.",
       "resolved": [
         {
-          "date": "2026-09-16",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-17",
           "day": "thursday",
           "period": "term",
@@ -7064,6 +7088,21 @@
             {
               "start": "12:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-01",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
