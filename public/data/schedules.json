@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-09-28T10:27:35.274Z",
+  "generatedAt": "2026-09-29T10:24:35.927Z",
   "window": {
-    "start": "2026-09-21",
-    "end": "2026-10-05",
+    "start": "2026-09-22",
+    "end": "2026-10-06",
     "dates": [
-      "2026-09-21",
       "2026-09-22",
       "2026-09-23",
       "2026-09-24",
@@ -18,15 +17,16 @@
       "2026-10-02",
       "2026-10-03",
       "2026-10-04",
-      "2026-10-05"
+      "2026-10-05",
+      "2026-10-06"
     ]
   },
   "periodsInWindow": [
     {
       "period": "term",
       "label": null,
-      "start": "2026-09-21",
-      "end": "2026-10-05"
+      "start": "2026-09-22",
+      "end": "2026-10-06"
     }
   ],
   "pools": [
@@ -35,54 +35,48 @@
       "name": "Piscine Olympique Angelotti",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti",
       "status": "ok",
-      "scrapedAt": "2026-09-28T10:27:17.128Z",
-      "sourceHash": "210d0b6c670bad971755d06c19f57c47",
+      "scrapedAt": "2026-09-29T10:21:54.883Z",
+      "sourceHash": "b2b8731fe0ec94c1b1e2e3e4cfd3d879",
       "events": [
         {
           "start": "2026-08-31",
           "end": "2026-09-27",
-          "description": "Fermeture pour maintenance technique. Réouverture prévue le lundi 28 septembre 2026.",
+          "description": "Fermeture pour maintenance technique du lundi 31 août au dimanche 27 septembre inclus. Réouverture aux horaires habituels.",
           "closed": true,
           "slots": null
         },
         {
-          "start": "2026-10-03",
-          "end": null,
-          "description": "3ᵉ édition de la Nage du Cœur : journée sportive, conviviale et solidaire ouverte à tous (défi de nage, activités aquatiques, animations, Village du Cœur place de Thessalie), de 10h à 17h.",
-          "closed": false,
-          "slots": [
-            {
-              "start": "10:00",
-              "end": "17:00",
-              "label": "Nage du Cœur"
-            }
-          ]
-        },
-        {
           "start": "2027-01-01",
-          "end": null,
-          "description": "Fermeture de l'établissement (1er janvier).",
+          "end": "2027-01-01",
+          "description": "1er janvier : fermeture de l'établissement.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2027-05-01",
-          "end": null,
-          "description": "Fermeture de l'établissement (1er mai).",
+          "end": "2027-05-01",
+          "description": "1er mai : fermeture de l'établissement.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-12-25",
-          "end": null,
-          "description": "Fermeture de l'établissement (25 décembre).",
+          "end": "2026-12-25",
+          "description": "25 décembre : fermeture de l'établissement.",
           "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-10-03",
+          "end": "2026-10-03",
+          "description": "La Nage du Cœur : 3ᵉ édition, journée sportive et solidaire de 10h à 17h (défi de nage, activités aquatiques, animations). Village du Cœur place de Thessalie.",
+          "closed": false,
           "slots": null
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Établissement constitué de 2 bassins : bassin « Vénus » (50m) et bassin ludique. Les horaires hebdomadaires enregistrés sont ceux de l'établissement. Le bassin ludique a des horaires spécifiques : Période scolaire — du lundi au vendredi 11:30-13:30 et 16:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15 ; Vacances scolaires — du lundi au vendredi 9:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. L'évacuation des bassins s'effectue 30 min avant la fermeture ; vente des billets jusqu'à 20h30 du lundi au vendredi et 18h15 le samedi et dimanche.",
+      "notes": "Horaires de l'établissement. Le bassin ludique a des horaires spécifiques : période scolaire du lundi au vendredi 11:30-13:30 et 16:00-21:30 ; vacances scolaires du lundi au vendredi 9:00-21:30 ; samedi 9:00-19:15 ; dimanche 9:00-13:15 et 15:00-19:15. L'évacuation des bassins se fait 30 min avant la fermeture, vente des billets jusqu'à 20h30 (lun-ven) et 18h15 (sam-dim). Prévoir une pièce de 0,50€ pour le vestiaire.",
       "periods": {
         "term": {
           "monday": [
@@ -255,17 +249,6 @@
       },
       "resolved": [
         {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture pour maintenance technique. Réouverture prévue le lundi 28 septembre 2026."
-          ]
-        },
-        {
           "date": "2026-09-22",
           "day": "tuesday",
           "period": "term",
@@ -273,7 +256,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique. Réouverture prévue le lundi 28 septembre 2026."
+            "Fermeture pour maintenance technique du lundi 31 août au dimanche 27 septembre inclus. Réouverture aux horaires habituels."
           ]
         },
         {
@@ -284,7 +267,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique. Réouverture prévue le lundi 28 septembre 2026."
+            "Fermeture pour maintenance technique du lundi 31 août au dimanche 27 septembre inclus. Réouverture aux horaires habituels."
           ]
         },
         {
@@ -295,7 +278,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique. Réouverture prévue le lundi 28 septembre 2026."
+            "Fermeture pour maintenance technique du lundi 31 août au dimanche 27 septembre inclus. Réouverture aux horaires habituels."
           ]
         },
         {
@@ -306,7 +289,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique. Réouverture prévue le lundi 28 septembre 2026."
+            "Fermeture pour maintenance technique du lundi 31 août au dimanche 27 septembre inclus. Réouverture aux horaires habituels."
           ]
         },
         {
@@ -317,7 +300,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique. Réouverture prévue le lundi 28 septembre 2026."
+            "Fermeture pour maintenance technique du lundi 31 août au dimanche 27 septembre inclus. Réouverture aux horaires habituels."
           ]
         },
         {
@@ -328,7 +311,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture pour maintenance technique. Réouverture prévue le lundi 28 septembre 2026."
+            "Fermeture pour maintenance technique du lundi 31 août au dimanche 27 septembre inclus. Réouverture aux horaires habituels."
           ]
         },
         {
@@ -412,15 +395,15 @@
           "period": "term",
           "slots": [
             {
-              "start": "10:00",
-              "end": "17:00",
-              "label": "Nage du Cœur"
+              "start": "09:00",
+              "end": "19:15",
+              "label": null
             }
           ],
           "closed": false,
-          "exceptional": true,
+          "exceptional": false,
           "events": [
-            "3ᵉ édition de la Nage du Cœur : journée sportive, conviviale et solidaire ouverte à tous (défi de nage, activités aquatiques, animations, Village du Cœur place de Thessalie), de 10h à 17h."
+            "La Nage du Cœur : 3ᵉ édition, journée sportive et solidaire de 10h à 17h (défi de nage, activités aquatiques, animations). Village du Cœur place de Thessalie."
           ]
         },
         {
@@ -446,6 +429,21 @@
         {
           "date": "2026-10-05",
           "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
           "period": "term",
           "slots": [
             {
@@ -465,8 +463,37 @@
       "name": "Centre aquatique Neptune",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/centre-aquatique-neptune",
       "status": "ok",
-      "scrapedAt": "2026-09-23T09:01:39.693Z",
-      "sourceHash": "a0de6f6d30b4817a69501c96ea4b9220",
+      "scrapedAt": "2026-09-29T10:22:15.812Z",
+      "sourceHash": "f2898e4bd3216f89c6c6bcc1a10438be",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Horaires de l'établissement à partir du 31 août 2026. La page ne distingue pas les périodes scolaires/vacances : même grille appliquée. Évacuation des bassins 30 minutes avant la fermeture de l'établissement. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre. Deux espaces distincts : bassin extérieur 50 m et bassins intérieurs (horaires reportés en label).",
       "periods": {
         "term": {
           "monday": [
@@ -772,73 +799,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "La page ne donne pas d'horaires spécifiques aux vacances scolaires ni à l'été : le même horaire est repris pour toutes les périodes. Horaires valables à partir du 31 août 2026. Deux séries d'horaires par bassin : bassin extérieur 50 m et bassins intérieurs. Le planning hebdomadaire retenu correspond à l'amplitude de l'établissement (union des deux). Évacuation des bassins 30 minutes avant la fermeture. La reprise des cours et activités du réseau est indiquée à partir du lundi 14 septembre.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -1142,6 +1103,31 @@
             {
               "start": "09:00",
               "end": "14:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": "Bassins intérieurs"
             }
           ],
@@ -1156,8 +1142,8 @@
       "name": "Piscine Poséidon",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon",
       "status": "ok",
-      "scrapedAt": "2026-09-28T10:27:28.807Z",
-      "sourceHash": "a377da7ab6f11a437288f8f5b9d7c264",
+      "scrapedAt": "2026-09-29T10:22:24.292Z",
+      "sourceHash": "13b27166fce9af3a89978bbfe1234fad",
       "periods": {
         "term": {
           "monday": [
@@ -1326,8 +1312,8 @@
       "events": [
         {
           "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
@@ -1337,21 +1323,9 @@
           }
         },
         {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
           "start": "2026-09-02",
           "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
           "closed": true,
           "slots": null,
           "inferredFrom": {
@@ -1363,23 +1337,8 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation des bassins. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre. Bonnet de bain obligatoire.",
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -1603,6 +1562,26 @@
             {
               "start": "12:00",
               "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -1617,8 +1596,8 @@
       "name": "Piscine Héraclès",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles",
       "status": "ok",
-      "scrapedAt": "2026-09-22T08:59:03.120Z",
-      "sourceHash": "e8955df468dda8f5dc8dbe2a04aa4f4c",
+      "scrapedAt": "2026-09-29T10:22:34.932Z",
+      "sourceHash": "9d3a3c58525f9fc378b60d93775dc288",
       "periods": {
         "term": {
           "monday": [
@@ -1787,8 +1766,15 @@
       "events": [
         {
           "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
@@ -1798,21 +1784,9 @@
           }
         },
         {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
           "start": "2026-09-02",
           "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
           "closed": true,
           "slots": null,
           "inferredFrom": {
@@ -1824,23 +1798,8 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre. Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Bonnet de bain obligatoire.",
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible. La reprise des cours au 14 septembre concerne l'ensemble du réseau des piscines, mais elle est formulée sans distinguer les autres établissements ; enregistrée comme événement de cette piscine uniquement.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -2064,6 +2023,26 @@
             {
               "start": "12:00",
               "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -2078,8 +2057,8 @@
       "name": "Piscine Suzanne Berlioux",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux",
       "status": "ok",
-      "scrapedAt": "2026-09-23T09:01:49.867Z",
-      "sourceHash": "42470c756ef0496c71e49cc1df300f82",
+      "scrapedAt": "2026-09-29T10:22:45.580Z",
+      "sourceHash": "f8cb86790a1ee13fe95c1b93d92ab84d",
       "periods": {
         "term": {
           "monday": [
@@ -2248,8 +2227,15 @@
       "events": [
         {
           "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
@@ -2259,21 +2245,9 @@
           }
         },
         {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
           "start": "2026-09-02",
           "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
           "closed": true,
           "slots": null,
           "inferredFrom": {
@@ -2285,23 +2259,8 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre. Bonnet de bain obligatoire. Bassin de 25 mètres avec 4 couloirs (type « tournesol »).",
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Prévoir une pièce de 1 € pour le vestiaire. Réseau de 15 piscines. La reprise des cours au 14 septembre concerne l'ensemble du réseau mais aucune date de fermeture n'est précisée pour cette piscine.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -2531,6 +2490,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2539,8 +2518,46 @@
       "name": "Piscine Pitot",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot",
       "status": "ok",
-      "scrapedAt": "2026-09-23T09:01:59.246Z",
-      "sourceHash": "dc614cffbda6d9df4f623cf8e06b5e87",
+      "scrapedAt": "2026-09-29T10:22:54.799Z",
+      "sourceHash": "f09552307b082d4c99d1c5b150c10f77",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "les-nereides",
+            "poolName": "Piscine Les Néréides",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-les-nereides"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "scope": "all_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre."
+        }
+      ],
+      "notes": "Piscine de 5 couloirs de 25 m. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation). Vente des billets jusqu'à 15 min avant l'évacuation. Fermée durant les grandes vacances scolaires.",
       "periods": {
         "term": {
           "monday": [
@@ -2669,67 +2686,7 @@
           "sunday": []
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "scope": "all_pools",
-          "pools": [],
-          "closed": false,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre"
-        }
-      ],
-      "notes": "Fermée durant les grandes vacances scolaires. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Piscine de 5 couloirs de 25 m.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -2963,6 +2920,26 @@
             {
               "start": "12:00",
               "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -2977,8 +2954,37 @@
       "name": "Piscine Marcel Spilliaert",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert",
       "status": "ok",
-      "scrapedAt": "2026-09-24T08:57:22.880Z",
-      "sourceHash": "66aef21a66f453333fb0e57f31ab7c63",
+      "scrapedAt": "2026-09-29T10:23:05.172Z",
+      "sourceHash": "c166abcf68d01ece728c2c917b911c85",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "La reprise des cours et activités du réseau des piscines est fixée au lundi 14 septembre. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Jeudi : petit bassin jusqu'à 18h.",
       "periods": {
         "term": {
           "monday": [
@@ -3144,75 +3150,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Bassin sportif de 25 m à 5 couloirs et un petit bassin. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Le jeudi soir, le petit bassin ferme à 18h. Reprise des cours du réseau le 14 septembre 2026 ; préinscriptions cours annuels à partir du 1er septembre à 11h.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -3436,6 +3374,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -3450,8 +3403,46 @@
       "name": "Piscine Les Néréides",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-les-nereides",
       "status": "ok",
-      "scrapedAt": "2026-09-24T08:57:32.647Z",
-      "sourceHash": "895653be8a8a4adcd1ec4c815d2e77d1",
+      "scrapedAt": "2026-09-29T10:23:17.035Z",
+      "sourceHash": "59b2a743b965a0592a3fa23b9c712e5d",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "scope": "all_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre"
+        }
+      ],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation des bassins. La reprise des cours est annoncée pour le 14 septembre (date sans année ; prochaine occurrence 2027-09-14).",
       "periods": {
         "term": {
           "monday": [
@@ -3617,63 +3608,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Horaires période scolaire = horaires hebdomadaires principaux. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Rentrée des cours et activités du réseau à partir du lundi 14 septembre.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -3897,6 +3832,26 @@
             {
               "start": "12:00",
               "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -3911,8 +3866,46 @@
       "name": "Piscine Jean Vivès",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives",
       "status": "ok",
-      "scrapedAt": "2026-09-25T09:18:36.232Z",
-      "sourceHash": "05ea1da14c90b7013f261c4a9e848a83",
+      "scrapedAt": "2026-09-29T10:23:28.504Z",
+      "sourceHash": "b1e14f6119209360450ff995b5a012a8",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "scope": "all_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre"
+        }
+      ],
+      "notes": "Reprise des cours et activités le 14 septembre. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Bonnet de bain obligatoire.",
       "periods": {
         "term": {
           "monday": [
@@ -4078,68 +4071,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Évacuation des bassins 20 min avant fermeture (30 min si forte fréquentation). Vente des billets jusqu'à 15 min avant l'évacuation. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -4363,6 +4295,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -4377,8 +4324,53 @@
       "name": "Piscine Jean Taris",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris",
       "status": "ok",
-      "scrapedAt": "2026-09-25T09:18:46.536Z",
-      "sourceHash": "6a7dc40238cc401e0e514a3b98555f11",
+      "scrapedAt": "2026-09-29T10:23:40.190Z",
+      "sourceHash": "6927174a199cd26bd11b8f63bbf2fda2",
+      "events": [
+        {
+          "start": "2026-09-29",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mardi 29 septembre, réouverture mercredi 30 septembre.",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "scope": "all_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre."
+        }
+      ],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Bassin de 25 m avec 4 couloirs.",
       "periods": {
         "term": {
           "monday": [
@@ -4544,72 +4536,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "alfred-nakache",
-            "poolName": "Piscine Alfred Nakache",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "scope": "all_pools",
-          "pools": [],
-          "closed": false,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre."
-        }
-      ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Bassin de 25 m avec 4 couloirs, type \"tournesol\". La reprise du 14 septembre concerne l'ensemble des 14 piscines du réseau.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:15",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -4729,21 +4656,12 @@
           "date": "2026-09-29",
           "day": "tuesday",
           "period": "term",
-          "slots": [
-            {
-              "start": "11:15",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
+          "slots": [],
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Fermeture exceptionnelle le mardi 29 septembre, réouverture mercredi 30 septembre."
+          ]
         },
         {
           "date": "2026-09-30",
@@ -4839,6 +4757,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:15",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4847,8 +4785,8 @@
       "name": "Piscine Christine Caron",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron",
       "status": "ok",
-      "scrapedAt": "2026-09-26T09:01:14.614Z",
-      "sourceHash": "c70d3081029a4715dfc9c6250839bb6d",
+      "scrapedAt": "2026-09-29T10:23:51.704Z",
+      "sourceHash": "948893729632fef52cf2497832264a31",
       "periods": {
         "term": {
           "monday": [
@@ -4990,8 +4928,8 @@
         },
         {
           "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
@@ -4999,21 +4937,15 @@
             "poolName": "Piscine Pitot",
             "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
           }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
         }
       ],
-      "periodOverrides": [],
+      "periodOverrides": [
+        {
+          "period": "term",
+          "start": "2026-08-31",
+          "end": "2026-08-31"
+        }
+      ],
       "networkClaims": [
         {
           "start": "2026-09-02",
@@ -5021,26 +4953,12 @@
           "scope": "all_other_pools",
           "pools": [],
           "closed": true,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée"
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "description ": ""
         }
       ],
-      "notes": "Horaires d'hiver à compter du lundi 31 août 2026 : du lundi au vendredi 11h30-14h30, fermé samedi et dimanche. Bassin extérieur de 25m chauffé. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Les horaires d'été (lun-ven 11:00-19:30, sam/dim 14:00-18:00) sont indiqués dans l'encart \\\"Infos horaires\\\" sans dates précises.",
+      "notes": "Passage aux horaires d'hiver à compter du lundi 31 août 2026. Bassin extérieur de 25m chauffé à 27° minimum. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets terminée 15 min avant l'évacuation. Réseau de 14 piscines. Les horaires d'été n'ont pas de dates précises indiquées.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -5215,6 +5133,21 @@
         {
           "date": "2026-10-05",
           "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:30",
+              "end": "14:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
           "period": "term",
           "slots": [
             {
@@ -5234,8 +5167,46 @@
       "name": "Piscine Amphitrite",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-amphitrite",
       "status": "ok",
-      "scrapedAt": "2026-09-26T09:01:24.083Z",
-      "sourceHash": "5a7a8bb364ac2018e152b29ee8609259",
+      "scrapedAt": "2026-09-29T10:24:02.583Z",
+      "sourceHash": "3fccca4fc6f5b907b7a7401bcdc2ea22",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "scope": "all_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre."
+        }
+      ],
+      "notes": "Évacuation des bassins 20 min avant la fermeture en période scolaire, 30 min en période estivale. Vente des billets close 15 min avant l'évacuation en période scolaire, 30 min en période estivale.",
       "periods": {
         "term": {
           "monday": [
@@ -5401,75 +5372,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture en période scolaire, 30 min en période estivale. La vente des billets se termine 15 min avant l'évacuation en période scolaire, 30 min en période estivale. Bonnet de bain obligatoire. Préinscription aux cours annuels à partir du 1er septembre à 11h.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -5699,6 +5602,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -5707,183 +5625,13 @@
       "name": "Piscine Alfred Nakache",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache",
       "status": "ok",
-      "scrapedAt": "2026-09-27T09:46:12.775Z",
-      "sourceHash": "ab7487c5bbf79167b9b698037628ddce",
-      "periods": {
-        "term": {
-          "monday": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "16:30",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "07:30",
-              "end": "09:00",
-              "label": null
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:30",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:30",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "16:30",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:30",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        },
-        "short_holidays": {
-          "monday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        },
-        "summer_holidays": {
-          "monday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        }
-      },
+      "scrapedAt": "2026-09-29T10:24:14.435Z",
+      "sourceHash": "ed9f878c54c860058ef8464e0d0dd0d1",
       "events": [
         {
           "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
@@ -5893,21 +5641,9 @@
           }
         },
         {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
           "start": "2026-09-02",
           "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
           "closed": true,
           "slots": null,
           "inferredFrom": {
@@ -5928,13 +5664,10 @@
           "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre"
         }
       ],
-      "notes": "Les horaires hebdomadaires \\\"term\\\" sont ceux affichés dans le bloc principal. La mention \\\"Mardi: 12:00-1400\\\" est probablement 12:00-14:00 (typo sur la page).",
-      "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
+      "notes": "Bassin sportif de 25m, 5 couloirs. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation). Vente des billets jusqu'à 15 min avant l'évacuation. L'horaire du mardi \"12:00-1400\" est probablement 12:00-14:00 (coquille sur la page).",
+      "periods": {
+        "term": {
+          "monday": [
             {
               "start": "09:00",
               "end": "14:00",
@@ -5946,10 +5679,163 @@
               "label": null
             }
           ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
+          "tuesday": [
+            {
+              "start": "07:30",
+              "end": "09:00",
+              "label": null
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:30",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
         },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
+      "resolved": [
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -6189,6 +6075,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "07:30",
+              "end": "09:00",
+              "label": null
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -6197,8 +6103,44 @@
       "name": "Piscine Alex Jany",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alex-jany",
       "status": "ok",
-      "scrapedAt": "2026-09-25T09:18:56.933Z",
-      "sourceHash": "1da09ba37cc1442859b811554a84ccad",
+      "scrapedAt": "2026-09-29T10:24:25.049Z",
+      "sourceHash": "dbe290a9768b4433836d26491dce9889",
+      "events": [
+        {
+          "start": "2026-09-24",
+          "end": null,
+          "description": "La pataugeoire ne sera pas accessible.",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis. Partiellement inaccessible aux heures de cours. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 14 piscines (Montpellier Méditerranée Métropole).",
       "periods": {
         "term": {
           "monday": [
@@ -6364,75 +6306,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-24",
-          "end": null,
-          "description": "La pataugeoire ne sera pas accessible.",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis. Partiellement inaccessible aux heures de cours. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Réseau de 14 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "16:30",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -6664,6 +6538,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -6672,8 +6561,46 @@
       "name": "Piscine Françoise et Yves Jarrousse",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-francoise-et-yves-jarrousse",
       "status": "ok",
-      "scrapedAt": "2026-09-27T09:46:22.613Z",
-      "sourceHash": "eb7c41e64b61056125c0415d47fa15d3",
+      "scrapedAt": "2026-09-29T10:24:35.925Z",
+      "sourceHash": "0a2ee8cb67564196cc753fa2115b56b1",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "pitot",
+            "poolName": "Piscine Pitot",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
+          }
+        },
+        {
+          "start": "2026-09-02",
+          "end": null,
+          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 — l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole est fermé toute la journée",
+          "closed": true,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "christine-caron",
+            "poolName": "Piscine Christine Caron",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "scope": "all_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre."
+        }
+      ],
+      "notes": "Cours de natation 2026-2027 : préinscriptions en ligne le mardi 1er septembre à 11h. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Prévoir une pièce de 0,50€ pour le vestiaire.",
       "periods": {
         "term": {
           "monday": [
@@ -6839,72 +6766,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": null,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "pitot",
-            "poolName": "Piscine Pitot",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-pitot"
-          }
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        },
-        {
-          "start": "2026-09-02",
-          "end": null,
-          "description": "Fermeture exceptionnelle le mercredi 2 septembre 2026 : l'ensemble des piscines du réseau de Montpellier Méditerranée Métropole sont fermées toute la journée",
-          "closed": true,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "scope": "all_pools",
-          "pools": [],
-          "closed": false,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre."
-        }
-      ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Prévoir une pièce de 0,50€ pour le vestiaire. Bonnet de bain obligatoire.",
       "resolved": [
-        {
-          "date": "2026-09-21",
-          "day": "monday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-22",
           "day": "tuesday",
@@ -7128,6 +6990,26 @@
             {
               "start": "12:00",
               "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-06",
+          "day": "tuesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
