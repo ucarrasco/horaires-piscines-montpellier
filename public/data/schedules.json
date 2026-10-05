@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-10-04T10:23:13.877Z",
+  "generatedAt": "2026-10-05T11:08:42.065Z",
   "window": {
-    "start": "2026-09-27",
-    "end": "2026-10-11",
+    "start": "2026-09-28",
+    "end": "2026-10-12",
     "dates": [
-      "2026-09-27",
       "2026-09-28",
       "2026-09-29",
       "2026-09-30",
@@ -18,15 +17,16 @@
       "2026-10-08",
       "2026-10-09",
       "2026-10-10",
-      "2026-10-11"
+      "2026-10-11",
+      "2026-10-12"
     ]
   },
   "periodsInWindow": [
     {
       "period": "term",
       "label": null,
-      "start": "2026-09-27",
-      "end": "2026-10-11"
+      "start": "2026-09-28",
+      "end": "2026-10-12"
     }
   ],
   "pools": [
@@ -35,8 +35,66 @@
       "name": "Piscine Olympique Angelotti",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti",
       "status": "ok",
-      "scrapedAt": "2026-10-01T10:40:53.102Z",
+      "scrapedAt": "2026-10-05T11:08:28.339Z",
       "sourceHash": "476e988f85f68195c284d69cddc98921",
+      "events": [
+        {
+          "start": "2026-10-03",
+          "end": "2026-10-03",
+          "description": "La Nage du Cœur : journée sportive et solidaire ouverte à tous de 10h à 17h (défi de nage, activités aquatiques et animations).",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-10-10",
+          "end": "2026-10-10",
+          "description": "La Piscine Olympique Angelotti fête ses 30 ans : grande journée festive, gratuite et ouverte à tous, de 9h à 20h. Évacuation des bassins à 19h30, fermeture de l'établissement à 20h.",
+          "closed": false,
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "20:00",
+              "label": "Journée festive 30 ans"
+            }
+          ]
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-01-01",
+          "description": "Fermeture de l'établissement (1er janvier).",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2027-05-01",
+          "end": "2027-05-01",
+          "description": "Fermeture de l'établissement (1er mai).",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-12-25",
+          "end": "2026-12-25",
+          "description": "Fermeture de l'établissement (25 décembre).",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "jean-taris",
+            "poolName": "Piscine Jean Taris",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "L'évacuation des bassins s'effectue 30 min avant la fermeture. Vente des billets terminée 30 min avant l'évacuation (20h30 du lundi au vendredi, 18h15 samedi et dimanche). L'établissement comprend 2 bassins : « Vénus » (50m, natation sportive) et un bassin ludique (loisirs). Les horaires « bassin ludique » indiqués en période scolaire (du lundi au vendredi 11:30-13:30 et 16:00-21:30) sont ceux du bassin ludique, non de l'établissement ; en vacances scolaires le bassin ludique est ouvert du lundi au vendredi 9:00-21:30.",
       "periods": {
         "term": {
           "monday": [
@@ -207,85 +265,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-10-03",
-          "end": "2026-10-03",
-          "description": "Nage du Cœur : 3ᵉ édition, journée sportive et solidaire ouverte à tous, de 10h à 17h (défi de nage, aquagym, aquabike, jeux aquatiques, Village du Cœur place de Thessalie).",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-10-10",
-          "end": "2026-10-10",
-          "description": "La Piscine Olympique Angelotti fête ses 30 ans : journée festive gratuite et ouverte à tous, de 9h à 20h (animations, scooters aquatiques de 14h30 à 17h30, Aquagym géant à 18h30). Évacuation des bassins à 19h30, fermeture de l'établissement à 20h.",
-          "closed": false,
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "20:00",
-              "label": null
-            }
-          ]
-        },
-        {
-          "start": "2027-01-01",
-          "end": "2027-01-01",
-          "description": "Fermeture de l'établissement (1er janvier).",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2027-05-01",
-          "end": "2027-05-01",
-          "description": "Fermeture de l'établissement (1er mai).",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-25",
-          "end": "2026-12-25",
-          "description": "Fermeture de l'établissement (25 décembre).",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 30 min avant la fermeture. La vente des billets se termine 30 min avant l'évacuation (20h30 du lundi au vendredi, 18h15 le samedi et dimanche). Les horaires du bassin ludique diffèrent de ceux de l'établissement : en période scolaire du lundi au vendredi 11:30-13:30 et 16:00-21:30 ; en vacances scolaires du lundi au vendredi 9:00-21:30 ; samedi 9:00-19:15 et dimanche 9:00-13:15 et 15:00-19:15. Les horaires hebdomadaires enregistrés sont ceux de l'établissement.",
       "resolved": [
-        {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:15",
-              "label": null
-            },
-            {
-              "start": "15:00",
-              "end": "19:15",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-28",
           "day": "monday",
@@ -375,7 +355,7 @@
           "closed": false,
           "exceptional": false,
           "events": [
-            "Nage du Cœur : 3ᵉ édition, journée sportive et solidaire ouverte à tous, de 10h à 17h (défi de nage, aquagym, aquabike, jeux aquatiques, Village du Cœur place de Thessalie)."
+            "La Nage du Cœur : journée sportive et solidaire ouverte à tous de 10h à 17h (défi de nage, activités aquatiques et animations)."
           ]
         },
         {
@@ -481,13 +461,13 @@
             {
               "start": "09:00",
               "end": "20:00",
-              "label": null
+              "label": "Journée festive 30 ans"
             }
           ],
           "closed": false,
           "exceptional": true,
           "events": [
-            "La Piscine Olympique Angelotti fête ses 30 ans : journée festive gratuite et ouverte à tous, de 9h à 20h (animations, scooters aquatiques de 14h30 à 17h30, Aquagym géant à 18h30). Évacuation des bassins à 19h30, fermeture de l'établissement à 20h."
+            "La Piscine Olympique Angelotti fête ses 30 ans : grande journée festive, gratuite et ouverte à tous, de 9h à 20h. Évacuation des bassins à 19h30, fermeture de l'établissement à 20h."
           ]
         },
         {
@@ -503,6 +483,21 @@
             {
               "start": "15:00",
               "end": "19:15",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
               "label": null
             }
           ],
@@ -835,21 +830,6 @@
       "notes": "Horaires de l'établissement à partir du 31 août 2026. Deux zones : bassin extérieur 50 m et bassins intérieurs. Les horaires enregistrés ci-dessus sont ceux de l'établissement (amplitude la plus large par jour entre les deux zones). Détail — Bassin extérieur 50 m : Lun 9h-14h30 et 17h-20h, Mar 11h-14h30, Mer 11h-16h, Jeu 11h-14h30 et 17h-20h, Ven 11h-14h30, Sam 9h-13h, Dim fermé. Bassins intérieurs : Lun 9h-14h, Mar 12h-14h et 17h-20h, Mer 12h-16h, Jeu 12h-14h, Ven 12h-14h et 17h-20h, Sam 9h-13h, Dim 9h-13h. Évacuation des bassins 30 minutes avant la fermeture. La page ne distingue pas les périodes scolaires/vacances : même grille appliquée partout.",
       "resolved": [
         {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-28",
           "day": "monday",
           "period": "term",
@@ -1150,6 +1130,31 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -1350,21 +1355,6 @@
       "notes": "Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 15 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
         {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-28",
           "day": "monday",
           "period": "term",
@@ -1587,6 +1577,21 @@
             {
               "start": "14:00",
               "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -1787,21 +1792,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible. Horaires petites vacances et été non différenciés pour samedi (09:00-13:00) et dimanche (14:00-18:00).",
       "resolved": [
         {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-28",
           "day": "monday",
           "period": "term",
@@ -2024,6 +2014,21 @@
             {
               "start": "14:00",
               "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -2224,21 +2229,6 @@
       "notes": "Bassin de 25 mètres avec 4 couloirs, piscine de type « tournesol » avec ouverture de la coupole en été. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Les horaires indiqués incluent les créneaux de cours de natation (enfants et adultes) qui n'ont pas été distingués du grand public sur la page.",
       "resolved": [
         {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-28",
           "day": "monday",
           "period": "term",
@@ -2467,6 +2457,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2630,21 +2635,6 @@
       "networkClaims": [],
       "notes": "Fermée durant les grandes vacances scolaires. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. 5 couloirs de 25 m.",
       "resolved": [
-        {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-28",
           "day": "monday",
@@ -2875,6 +2865,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -3068,21 +3073,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Jeudi en période scolaire : petit bassin jusqu'à 18h. Réseau de 15 piscines.",
       "resolved": [
-        {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-28",
           "day": "monday",
@@ -3306,6 +3296,26 @@
             {
               "start": "09:00",
               "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -3506,21 +3516,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Réseau de 15 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
         {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-28",
           "day": "monday",
           "period": "term",
@@ -3743,6 +3738,21 @@
             {
               "start": "14:00",
               "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -3943,21 +3953,6 @@
       "notes": "Piscine de type \"tournesol\" avec ouverture de la coupole sur espace pelousé en saison estivale. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Prévoir une pièce de 1 € pour le vestiaire. Bonnet de bain obligatoire ; shorts, caleçons et combinaisons interdits.",
       "resolved": [
         {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-28",
           "day": "monday",
           "period": "term",
@@ -4186,6 +4181,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4374,18 +4389,6 @@
               "label": null
             }
           ]
-        },
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "alfred-nakache",
-            "poolName": "Piscine Alfred Nakache",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
-          }
         }
       ],
       "periodOverrides": [],
@@ -4401,21 +4404,6 @@
       ],
       "notes": "Bassin de 25 m avec 4 couloirs, type \"tournesol\". L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. La fermeture exceptionnelle du vendredi de 17h00-20h00 concerne le créneau du soir ; les horaires du vendredi en période scolaire sont 9:00-14:00 + 17:00-20:00.",
       "resolved": [
-        {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-28",
           "day": "monday",
@@ -4642,6 +4630,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:15",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4652,23 +4655,6 @@
       "status": "ok",
       "scrapedAt": "2026-10-04T10:23:00.174Z",
       "sourceHash": "948893729632fef52cf2497832264a31",
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Bassin extérieur de 25m chauffé à 27° minimum. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Nouveaux horaires d'hiver à compter du lundi 31 août 2026. Les horaires d'été (du lundi au vendredi 11:00-19:30, samedi et dimanche 14:00-18:00) ont été classés en summer_holidays.",
       "periods": {
         "term": {
           "monday": [
@@ -4800,16 +4786,24 @@
           ]
         }
       },
-      "resolved": [
+      "events": [
         {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [],
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
-          "exceptional": false,
-          "events": []
-        },
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "jean-taris",
+            "poolName": "Piscine Jean Taris",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Bassin extérieur de 25m chauffé à 27° minimum. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Nouveaux horaires d'hiver à compter du lundi 31 août 2026. Les horaires d'été (du lundi au vendredi 11:00-19:30, samedi et dimanche 14:00-18:00) ont été classés en summer_holidays.",
+      "resolved": [
         {
           "date": "2026-09-28",
           "day": "monday",
@@ -4992,6 +4986,21 @@
           "day": "sunday",
           "period": "term",
           "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:30",
+              "end": "14:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -5189,21 +5198,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture en période scolaire, 30 min en période estivale. La vente des billets se termine 15 min avant l'évacuation en période scolaire, 30 min en période estivale. Réseau de 15 piscines. Les horaires listés correspondent aux cours/activités ne sont pas inclus (nage libre supposée sur les créneaux d'ouverture de l'établissement).",
       "resolved": [
         {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-28",
           "day": "monday",
           "period": "term",
@@ -5432,6 +5426,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -5440,8 +5454,25 @@
       "name": "Piscine Alfred Nakache",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache",
       "status": "ok",
-      "scrapedAt": "2026-09-29T10:24:14.435Z",
+      "scrapedAt": "2026-10-05T11:08:41.748Z",
       "sourceHash": "ed9f878c54c860058ef8464e0d0dd0d1",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "jean-taris",
+            "poolName": "Piscine Jean Taris",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre. Bassin sportif de 25m, 5 couloirs. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Horaire du mardi écrit \"12:00-1400\" sur la page (probablement 12:00-14:00).",
       "periods": {
         "term": {
           "monday": [
@@ -5612,48 +5643,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "scope": "all_pools",
-          "pools": [],
-          "closed": false,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre"
-        }
-      ],
-      "notes": "Bassin sportif de 25m, 5 couloirs. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation). Vente des billets jusqu'à 15 min avant l'évacuation. L'horaire du mardi \"12:00-1400\" est probablement 12:00-14:00 (coquille sur la page).",
       "resolved": [
-        {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-28",
           "day": "monday",
@@ -5887,6 +5877,26 @@
             {
               "start": "09:00",
               "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -6087,21 +6097,6 @@
       "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis. Partiellement inaccessible aux heures de cours. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 14 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
         {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-09-28",
           "day": "monday",
           "period": "term",
@@ -6324,6 +6319,26 @@
             {
               "start": "14:00",
               "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -6530,21 +6545,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture, 30 min en cas de forte fréquentation. La vente des billets d'entrée se termine 15 min avant l'évacuation des bassins. Fermeture indéfinie annoncée à compter du 1er octobre jusqu'à nouvel ordre.",
       "resolved": [
-        {
-          "date": "2026-09-27",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-09-28",
           "day": "monday",
@@ -6764,6 +6764,21 @@
             {
               "start": "14:00",
               "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-12",
+          "day": "monday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
