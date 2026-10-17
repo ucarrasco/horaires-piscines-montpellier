@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-10-16T08:42:39.658Z",
+  "generatedAt": "2026-10-17T08:13:27.938Z",
   "window": {
-    "start": "2026-10-09",
-    "end": "2026-10-23",
+    "start": "2026-10-10",
+    "end": "2026-10-24",
     "dates": [
-      "2026-10-09",
       "2026-10-10",
       "2026-10-11",
       "2026-10-12",
@@ -18,21 +17,22 @@
       "2026-10-20",
       "2026-10-21",
       "2026-10-22",
-      "2026-10-23"
+      "2026-10-23",
+      "2026-10-24"
     ]
   },
   "periodsInWindow": [
     {
       "period": "term",
       "label": null,
-      "start": "2026-10-09",
+      "start": "2026-10-10",
       "end": "2026-10-16"
     },
     {
       "period": "short_holidays",
       "label": "Vacances de la Toussaint",
       "start": "2026-10-17",
-      "end": "2026-10-23"
+      "end": "2026-10-24"
     }
   ],
   "pools": [
@@ -41,8 +41,8 @@
       "name": "Piscine Olympique Angelotti",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-olympique-angelotti",
       "status": "ok",
-      "scrapedAt": "2026-10-13T11:21:42.174Z",
-      "sourceHash": "c58bc1772cd1473b925704a3dc0f2202",
+      "scrapedAt": "2026-10-17T08:13:06.058Z",
+      "sourceHash": "cfd696dbda993a61ca126e41fe54b37e",
       "periods": {
         "term": {
           "monday": [
@@ -228,58 +228,50 @@
           ]
         },
         {
+          "start": "2026-10-31",
+          "end": null,
+          "description": "Octobre Rose : aquagym géant à 10h30 pour clôturer Octobre Rose. Places limitées, réservation conseillée.",
+          "closed": false,
+          "slots": null
+        },
+        {
           "start": "2027-01-01",
           "end": null,
-          "description": "Fermeture de l'établissement (1er janvier).",
+          "description": "1er janvier : fermeture de l'établissement.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2027-05-01",
           "end": null,
-          "description": "Fermeture de l'établissement (1er mai).",
+          "description": "1er mai : fermeture de l'établissement.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-12-25",
           "end": null,
-          "description": "Fermeture de l'établissement (25 décembre).",
+          "description": "25 décembre : fermeture de l'établissement.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Établissement comprenant le bassin « Vénus » (50m) et le bassin ludique. Horaires hebdomadaires = horaires de l'établissement. Ouverture du bassin ludique en période scolaire : lun-ven 11:30-13:30 et 16:00-21:30, sam 9:00-19:15, dim 9:00-13:15 et 15:00-19:15 ; pendant les vacances scolaires : lun-ven 9:00-21:30, sam 9:00-19:15, dim 9:00-13:15 et 15:00-19:15. Évacuation des bassins 30 min avant la fermeture. Vente des billets jusqu'à 20h30 (lun-ven) et 18h15 (sam-dim). Programme vacances de la Toussaint disponible en PDF.",
+      "notes": "Les horaires hebdomadaires sont ceux de l'établissement. Horaires spécifiques du bassin ludique : en période scolaire, du lundi au vendredi 11:30-13:30 et 16:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15 ; en vacances scolaires, du lundi au vendredi 9:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. Évacuation des bassins 30 min avant la fermeture. Vente des billets jusqu'à 20h30 du lundi au vendredi et 18h15 le week-end. Prévoir une pièce de 0,50€ pour le vestiaire. La POA fait partie des 14 piscines de Montpellier Méditerranée Métropole.",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "21:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -495,6 +487,21 @@
             {
               "start": "09:00",
               "end": "21:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "19:15",
               "label": null
             }
           ],
@@ -827,13 +834,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -841,31 +848,6 @@
       "networkClaims": [],
       "notes": "Horaires de l'établissement à partir du 31 août 2026. Le bassin extérieur 50 m et les bassins intérieurs ont des horaires distincts (voir labels). Évacuation des bassins 30 minutes avant la fermeture. La page ne distingue pas les périodes scolaires/vacances : même schéma appliqué partout.",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -1169,6 +1151,26 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": "Bassins intérieurs"
             }
           ],
@@ -1361,13 +1363,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -1375,26 +1377,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Réseau de 15 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -1608,6 +1590,21 @@
             {
               "start": "10:30",
               "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
@@ -1800,13 +1797,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -1814,26 +1811,6 @@
       "networkClaims": [],
       "notes": "Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation des bassins.",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -2026,6 +2003,17 @@
         {
           "date": "2026-10-23",
           "day": "friday",
+          "period": "short_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture technique"
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
           "period": "short_holidays",
           "slots": [],
           "closed": true,
@@ -2212,13 +2200,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -2226,26 +2214,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme spécifique « vacances de la Toussaint » est disponible en PDF mais les dates/horaires ne sont pas précisés dans le texte.",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -2459,6 +2427,21 @@
             {
               "start": "10:30",
               "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
@@ -2614,13 +2597,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -2628,26 +2611,6 @@
       "networkClaims": [],
       "notes": "Fermée durant les grandes vacances scolaires. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Piscine de 5 couloirs de 25 m. Réseau de 15 piscines.",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -2872,6 +2835,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2882,23 +2860,6 @@
       "status": "ok",
       "scrapedAt": "2026-10-16T08:42:26.229Z",
       "sourceHash": "c166abcf68d01ece728c2c917b911c85",
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Bassin sportif de 25 m (5 couloirs) et un petit bassin. Jeudi en période scolaire: petit bassin jusqu'à 18h. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF (dates/horaires non précisés sur la page).",
       "periods": {
         "term": {
           "monday": [
@@ -3064,22 +3025,24 @@
           ]
         }
       },
-      "resolved": [
+      "events": [
         {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
-          "exceptional": false,
-          "events": []
-        },
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Bassin sportif de 25 m (5 couloirs) et un petit bassin. Jeudi en période scolaire: petit bassin jusqu'à 18h. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF (dates/horaires non précisés sur la page).",
+      "resolved": [
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -3293,6 +3256,21 @@
             {
               "start": "10:30",
               "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
               "label": null
             }
           ],
@@ -3485,13 +3463,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -3499,26 +3477,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Réseau de 15 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -3711,6 +3669,17 @@
         {
           "date": "2026-10-23",
           "day": "friday",
+          "period": "short_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture technique : la piscine sera fermée du lundi 19 octobre au dimanche 1er novembre 2026 inclus."
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
           "period": "short_holidays",
           "slots": [],
           "closed": true,
@@ -3897,13 +3866,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -3911,21 +3880,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets d'entrée se termine 15 min avant l'évacuation des bassins. Piscine de type \\\"tournesol\\\" avec ouverture de la coupole sur un espace pelousé en saison estivale. Un programme des vacances de la Toussaint est téléchargeable (PDF) mais aucune date précise n'est indiquée sur la page.",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -4145,6 +4099,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4153,8 +4122,25 @@
       "name": "Piscine Jean Taris",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris",
       "status": "ok",
-      "scrapedAt": "2026-10-10T10:23:44.069Z",
+      "scrapedAt": "2026-10-17T08:13:16.344Z",
       "sourceHash": "6927174a199cd26bd11b8f63bbf2fda2",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Bassin de 25 m avec 4 couloirs, piscine de type \"tournesol\". L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation), la vente des billets se termine 15 min avant l'évacuation. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
       "periods": {
         "term": {
           "monday": [
@@ -4320,53 +4306,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "alfred-nakache",
-            "poolName": "Piscine Alfred Nakache",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "scope": "all_pools",
-          "pools": [],
-          "closed": false,
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre."
-        }
-      ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). Vente des billets jusqu'à 15 min avant l'évacuation. Bassin de 25 m avec 4 couloirs. Un programme des vacances de la Toussaint est téléchargeable (PDF non détaillé).",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -4580,6 +4520,21 @@
             {
               "start": "10:30",
               "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
               "label": null
             }
           ],
@@ -4731,13 +4686,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -4745,21 +4700,6 @@
       "networkClaims": [],
       "notes": "Bassin extérieur de 25m chauffé à 27° minimum. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Horaires d'hiver à compter du lundi 31 août 2026. Les horaires d'été ont été appliqués aux périodes short_holidays et summer_holidays faute de distinction précise sur la page.",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -4942,6 +4882,15 @@
               "label": null
             }
           ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -5138,13 +5087,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -5152,21 +5101,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture en période scolaire, 30 min en période estivale. La vente des billets se termine 15 min avant l'évacuation en période scolaire, 30 min en période estivale. Un programme des vacances de la Toussaint est disponible en PDF.",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -5380,6 +5314,21 @@
             {
               "start": "10:30",
               "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
               "label": null
             }
           ],
@@ -5566,20 +5515,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        }
-      ],
+      "events": [],
       "periodOverrides": [],
       "networkClaims": [
         {
@@ -5593,21 +5529,6 @@
       ],
       "notes": "Les cours et activités reprennent le lundi 14 septembre. Évacuation des bassins 20 min avant fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Bonnet de bain obligatoire. Mardi 12:00-1400 écrit ainsi sur la page (probablement 14:00).",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -5832,6 +5753,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -5840,8 +5776,25 @@
       "name": "Piscine Alex Jany",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alex-jany",
       "status": "ok",
-      "scrapedAt": "2026-10-10T10:23:56.991Z",
+      "scrapedAt": "2026-10-17T08:13:27.815Z",
       "sourceHash": "dc7fe29220e7c65a6bb95b563d514e9f",
+      "events": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis. Partiellement inaccessible aux heures de cours. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 14 piscines (Montpellier Méditerranée Métropole).",
       "periods": {
         "term": {
           "monday": [
@@ -6007,39 +5960,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-09-14",
-          "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis. Partiellement inaccessible aux heures de cours. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture, 30 min en cas de forte fréquentation. La vente des billets se termine 15 min avant l'évacuation. Réseau de 14 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -6253,6 +6174,21 @@
             {
               "start": "10:30",
               "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
@@ -6445,13 +6381,13 @@
         {
           "start": "2026-09-14",
           "end": "2026-09-14",
-          "description": "Reprise des cours et activités du réseau des piscines à partir du lundi 14 septembre.",
+          "description": "Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-taris",
-            "poolName": "Piscine Jean Taris",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
+            "poolId": "alfred-nakache",
+            "poolName": "Piscine Alfred Nakache",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache"
           }
         }
       ],
@@ -6459,26 +6395,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture, 30 min en cas de forte fréquentation. La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF (dates non précisées sur la page).",
       "resolved": [
-        {
-          "date": "2026-10-09",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-10",
           "day": "saturday",
@@ -6694,6 +6610,21 @@
             {
               "start": "10:30",
               "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-24",
+          "day": "saturday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
