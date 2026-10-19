@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-10-18T08:30:16.738Z",
+  "generatedAt": "2026-10-19T09:32:55.908Z",
   "window": {
-    "start": "2026-10-11",
-    "end": "2026-10-25",
+    "start": "2026-10-12",
+    "end": "2026-10-26",
     "dates": [
-      "2026-10-11",
       "2026-10-12",
       "2026-10-13",
       "2026-10-14",
@@ -18,21 +17,22 @@
       "2026-10-22",
       "2026-10-23",
       "2026-10-24",
-      "2026-10-25"
+      "2026-10-25",
+      "2026-10-26"
     ]
   },
   "periodsInWindow": [
     {
       "period": "term",
       "label": null,
-      "start": "2026-10-11",
+      "start": "2026-10-12",
       "end": "2026-10-16"
     },
     {
       "period": "short_holidays",
       "label": "Vacances de la Toussaint",
       "start": "2026-10-17",
-      "end": "2026-10-25"
+      "end": "2026-10-26"
     }
   ],
   "pools": [
@@ -261,26 +261,6 @@
       "notes": "Les horaires hebdomadaires sont ceux de l'établissement. Horaires spécifiques du bassin ludique : en période scolaire, du lundi au vendredi 11:30-13:30 et 16:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15 ; en vacances scolaires, du lundi au vendredi 9:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. Évacuation des bassins 30 min avant la fermeture. Vente des billets jusqu'à 20h30 du lundi au vendredi et 18h15 le week-end. Prévoir une pièce de 0,50€ pour le vestiaire. La POA fait partie des 14 piscines de Montpellier Méditerranée Métropole.",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:15",
-              "label": null
-            },
-            {
-              "start": "15:00",
-              "end": "19:15",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -501,6 +481,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -509,313 +504,8 @@
       "name": "Centre aquatique Neptune",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/centre-aquatique-neptune",
       "status": "ok",
-      "scrapedAt": "2026-10-12T11:36:53.012Z",
+      "scrapedAt": "2026-10-19T09:32:39.507Z",
       "sourceHash": "f2898e4bd3216f89c6c6bcc1a10438be",
-      "periods": {
-        "term": {
-          "monday": [
-            {
-              "start": "09:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "saturday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassins intérieurs"
-            }
-          ]
-        },
-        "short_holidays": {
-          "monday": [
-            {
-              "start": "09:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "saturday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassins intérieurs"
-            }
-          ]
-        },
-        "summer_holidays": {
-          "monday": [
-            {
-              "start": "09:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "saturday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassin extérieur 50 m"
-            },
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": "Bassins intérieurs"
-            }
-          ]
-        }
-      },
       "events": [
         {
           "start": "2026-10-26",
@@ -827,23 +517,313 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Horaires de l'établissement à partir du 31 août 2026. Le bassin extérieur 50 m et les bassins intérieurs ont des horaires distincts (voir labels). Évacuation des bassins 30 minutes avant la fermeture. La page ne distingue pas les périodes scolaires/vacances : même schéma appliqué partout.",
-      "resolved": [
-        {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
+      "notes": "Horaires en vigueur à partir du lundi 31 août 2026. L'établissement comprend un bassin extérieur 50 m et des bassins intérieurs ayant des horaires distincts (reportés dans les labels des créneaux). La page mentionne un \\\"Programme vacances de la Toussaint\\\" et des \\\"horaires vacances\\\" (bassin extérieur et intérieurs) téléchargeables en PDF, mais les horaires spécifiques aux vacances ne sont pas détaillés sur la page ; à défaut, les horaires de période scolaire sont réutilisés.",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "16:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassin extérieur 50 m"
+            },
             {
               "start": "09:00",
               "end": "13:00",
               "label": "Bassins intérieurs"
             }
           ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassins intérieurs"
+            }
+          ]
         },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "16:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassins intérieurs"
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "16:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "14:30",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassin extérieur 50 m"
+            },
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassins intérieurs"
+            }
+          ]
+        }
+      },
+      "resolved": [
         {
           "date": "2026-10-12",
           "day": "monday",
@@ -1153,6 +1133,17 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture technique le lundi 26 octobre 2026."
+          ]
         }
       ]
     },
@@ -1161,8 +1152,33 @@
       "name": "Piscine Poséidon",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon",
       "status": "ok",
-      "scrapedAt": "2026-10-12T11:37:02.226Z",
+      "scrapedAt": "2026-10-19T09:32:51.650Z",
       "sourceHash": "13b27166fce9af3a89978bbfe1234fad",
+      "events": [
+        {
+          "start": "2026-10-13",
+          "end": "2026-10-13",
+          "description": "Fermeture exceptionnelle au public de 17h à 20h (réouverture au public dès le mercredi aux horaires habituels). Accès aux clubs à partir de 20h.",
+          "closed": false,
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "17:00",
+              "label": null
+            }
+          ]
+        },
+        {
+          "start": "2026-10-26",
+          "end": "2026-11-01",
+          "description": "Fermeture technique. La piscine sera fermée du lundi 26 octobre au dimanche 1er novembre 2026 inclus.",
+          "closed": true,
+          "slots": null
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Le mardi 13 octobre, fermeture exceptionnelle au public de 17h à 20h : horaire habituel 12h-14h / 17h-20h, le créneau 17h-20h est donc supprimé ce jour.",
       "periods": {
         "term": {
           "monday": [
@@ -1328,34 +1344,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-10-26",
-          "end": "2026-11-01",
-          "description": "Fermeture technique",
-          "closed": true,
-          "slots": null
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Réseau de 15 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
-        {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-12",
           "day": "monday",
@@ -1378,18 +1367,15 @@
           "slots": [
             {
               "start": "12:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
+              "end": "17:00",
               "label": null
             }
           ],
           "closed": false,
-          "exceptional": false,
-          "events": []
+          "exceptional": true,
+          "events": [
+            "Fermeture exceptionnelle au public de 17h à 20h (réouverture au public dès le mercredi aux horaires habituels). Accès aux clubs à partir de 20h."
+          ]
         },
         {
           "date": "2026-10-14",
@@ -1575,6 +1561,17 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture technique. La piscine sera fermée du lundi 26 octobre au dimanche 1er novembre 2026 inclus."
+          ]
         }
       ]
     },
@@ -1764,21 +1761,6 @@
       "notes": "Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation des bassins.",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -1962,6 +1944,17 @@
         {
           "date": "2026-10-25",
           "day": "sunday",
+          "period": "short_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture technique"
+          ]
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
           "period": "short_holidays",
           "slots": [],
           "closed": true,
@@ -2150,21 +2143,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme spécifique « vacances de la Toussaint » est disponible en PDF mais les dates/horaires ne sont pas précisés dans le texte.",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -2377,6 +2355,21 @@
             {
               "start": "09:00",
               "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
@@ -2535,21 +2528,6 @@
       "notes": "Fermée durant les grandes vacances scolaires. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Piscine de 5 couloirs de 25 m. Réseau de 15 piscines.",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -2767,6 +2745,21 @@
             {
               "start": "09:00",
               "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
@@ -2954,21 +2947,6 @@
       "notes": "Bassin sportif de 25 m (5 couloirs) et un petit bassin. Jeudi en période scolaire: petit bassin jusqu'à 18h. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF (dates/horaires non précisés sur la page).",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -3181,6 +3159,21 @@
             {
               "start": "09:00",
               "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
@@ -3376,21 +3369,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Réseau de 15 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -3574,6 +3552,17 @@
         {
           "date": "2026-10-25",
           "day": "sunday",
+          "period": "short_holidays",
+          "slots": [],
+          "closed": true,
+          "exceptional": false,
+          "events": [
+            "Fermeture technique : la piscine sera fermée du lundi 19 octobre au dimanche 1er novembre 2026 inclus."
+          ]
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
           "period": "short_holidays",
           "slots": [],
           "closed": true,
@@ -3762,21 +3751,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets d'entrée se termine 15 min avant l'évacuation des bassins. Piscine de type \\\"tournesol\\\" avec ouverture de la coupole sur un espace pelousé en saison estivale. Un programme des vacances de la Toussaint est téléchargeable (PDF) mais aucune date précise n'est indiquée sur la page.",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -3989,6 +3963,21 @@
             {
               "start": "09:00",
               "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
@@ -4176,21 +4165,6 @@
       "notes": "Bassin de 25 m avec 4 couloirs, piscine de type \"tournesol\". L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation), la vente des billets se termine 15 min avant l'évacuation. Les cours et activités du réseau des piscines reprennent à partir du lundi 14 septembre.",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -4409,6 +4383,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4419,10 +4408,6 @@
       "status": "ok",
       "scrapedAt": "2026-10-18T08:30:05.976Z",
       "sourceHash": "948893729632fef52cf2497832264a31",
-      "events": [],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Bassin extérieur de 25m chauffé à 27° minimum. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. À compter du lundi 31 août 2026, passage aux horaires d'hiver (horaires période scolaire ci-dessus). Les horaires d'été correspondent au schéma summer_holidays.",
       "periods": {
         "term": {
           "monday": [
@@ -4554,16 +4539,11 @@
           ]
         }
       },
+      "events": [],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Bassin extérieur de 25m chauffé à 27° minimum. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. À compter du lundi 31 août 2026, passage aux horaires d'hiver (horaires période scolaire ci-dessus). Les horaires d'été correspondent au schéma summer_holidays.",
       "resolved": [
-        {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-12",
           "day": "monday",
@@ -4746,6 +4726,21 @@
           "day": "sunday",
           "period": "short_holidays",
           "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "11:30",
+              "end": "14:30",
+              "label": null
+            }
+          ],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -4945,21 +4940,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture en période scolaire, 30 min en période estivale. La vente des billets se termine 15 min avant l'évacuation en période scolaire, 30 min en période estivale. Un programme des vacances de la Toussaint est disponible en PDF.",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -5172,6 +5152,21 @@
             {
               "start": "09:00",
               "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
@@ -5372,21 +5367,6 @@
       "notes": "Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation). Vente des billets jusqu'à 15 min avant l'évacuation. Bonnet de bain obligatoire. Bassin sportif de 25m, 5 couloirs. Un programme PDF des vacances de la Toussaint est disponible mais sans dates précises sur la page.",
       "resolved": [
         {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-12",
           "day": "monday",
           "period": "term",
@@ -5610,6 +5590,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -5790,21 +5785,6 @@
       "networkClaims": [],
       "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis. Partiellement inaccessible aux heures de cours. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 14 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
-        {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-12",
           "day": "monday",
@@ -6024,6 +6004,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -6212,21 +6207,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture, 30 min en cas de forte fréquentation. La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF (dates non précisées sur la page).",
       "resolved": [
-        {
-          "date": "2026-10-11",
-          "day": "sunday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-12",
           "day": "monday",
@@ -6442,6 +6422,21 @@
             {
               "start": "14:00",
               "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-10-26",
+          "day": "monday",
+          "period": "short_holidays",
+          "slots": [
+            {
+              "start": "10:30",
+              "end": "19:00",
               "label": null
             }
           ],
