@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-10-28T10:17:51.573Z",
+  "generatedAt": "2026-10-29T10:41:28.038Z",
   "window": {
-    "start": "2026-10-21",
-    "end": "2026-11-04",
+    "start": "2026-10-22",
+    "end": "2026-11-05",
     "dates": [
-      "2026-10-21",
       "2026-10-22",
       "2026-10-23",
       "2026-10-24",
@@ -18,21 +17,22 @@
       "2026-11-01",
       "2026-11-02",
       "2026-11-03",
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-05"
     ]
   },
   "periodsInWindow": [
     {
       "period": "short_holidays",
       "label": "Vacances de la Toussaint",
-      "start": "2026-10-21",
+      "start": "2026-10-22",
       "end": "2026-11-01"
     },
     {
       "period": "term",
       "label": null,
       "start": "2026-11-02",
-      "end": "2026-11-04"
+      "end": "2026-11-05"
     }
   ],
   "pools": [
@@ -43,63 +43,6 @@
       "status": "ok",
       "scrapedAt": "2026-10-28T10:17:15.363Z",
       "sourceHash": "a1f60f3a26a8a8e2b98206790128c28c",
-      "events": [
-        {
-          "start": "2026-10-31",
-          "end": "2026-10-31",
-          "description": "En raison du match MWP / Douai, la piscine fermera ses portes à 18h30 (évacuation des bassins à 18h00). Aquagym géant à 10h30 (Octobre Rose).",
-          "closed": false,
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "18:30",
-              "label": null
-            }
-          ]
-        },
-        {
-          "start": "2026-11-01",
-          "end": "2026-11-01",
-          "description": "Dimanche d'Antigone : animations Halloween de 9h à 12h. Piscine ouverte de 9h à 13h15 et de 15h à 19h15.",
-          "closed": false,
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:15",
-              "label": null
-            },
-            {
-              "start": "15:00",
-              "end": "19:15",
-              "label": null
-            }
-          ]
-        },
-        {
-          "start": "2027-01-01",
-          "end": "2027-01-01",
-          "description": "1er janvier : fermeture de l'établissement.",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2027-05-01",
-          "end": "2027-05-01",
-          "description": "1er mai : fermeture de l'établissement.",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-25",
-          "end": "2026-12-25",
-          "description": "25 décembre : fermeture de l'établissement.",
-          "closed": true,
-          "slots": null
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Établissement constitué de 2 bassins : bassin « Vénus » (50m) et bassin ludique. Horaires de l'établissement enregistrés comme schedule hebdomadaire. Ouverture du bassin ludique — Période scolaire : du lundi au vendredi 11:30-13:30 et 16:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15 ; Vacances scolaires : du lundi au vendredi 9:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. L'évacuation des bassins s'effectue 30 min avant la fermeture ; la vente des billets se termine à 20h30 du lundi au vendredi et 18h15 le samedi et dimanche. Pendant les vacances scolaires, la piscine conserve ses horaires habituels.",
       "periods": {
         "term": {
           "monday": [
@@ -270,22 +213,64 @@
           ]
         }
       },
-      "resolved": [
+      "events": [
         {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "description": "En raison du match MWP / Douai, la piscine fermera ses portes à 18h30 (évacuation des bassins à 18h00). Aquagym géant à 10h30 (Octobre Rose).",
+          "closed": false,
           "slots": [
             {
               "start": "09:00",
-              "end": "21:30",
+              "end": "18:30",
               "label": null
             }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
+          ]
         },
+        {
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "description": "Dimanche d'Antigone : animations Halloween de 9h à 12h. Piscine ouverte de 9h à 13h15 et de 15h à 19h15.",
+          "closed": false,
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:15",
+              "label": null
+            },
+            {
+              "start": "15:00",
+              "end": "19:15",
+              "label": null
+            }
+          ]
+        },
+        {
+          "start": "2027-01-01",
+          "end": "2027-01-01",
+          "description": "1er janvier : fermeture de l'établissement.",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2027-05-01",
+          "end": "2027-05-01",
+          "description": "1er mai : fermeture de l'établissement.",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-12-25",
+          "end": "2026-12-25",
+          "description": "25 décembre : fermeture de l'établissement.",
+          "closed": true,
+          "slots": null
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Établissement constitué de 2 bassins : bassin « Vénus » (50m) et bassin ludique. Horaires de l'établissement enregistrés comme schedule hebdomadaire. Ouverture du bassin ludique — Période scolaire : du lundi au vendredi 11:30-13:30 et 16:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15 ; Vacances scolaires : du lundi au vendredi 9:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. L'évacuation des bassins s'effectue 30 min avant la fermeture ; la vente des billets se termine à 20h30 du lundi au vendredi et 18h15 le samedi et dimanche. Pendant les vacances scolaires, la piscine conserve ses horaires habituels.",
+      "resolved": [
         {
           "date": "2026-10-22",
           "day": "thursday",
@@ -498,6 +483,21 @@
         {
           "date": "2026-11-04",
           "day": "wednesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
           "period": "term",
           "slots": [
             {
@@ -743,21 +743,6 @@
       "notes": "Horaires donnés par bassin (pas d'horaires d'établissement global). Bassin extérieur 50 m : Lundi 9h–14h30 et 17h–20h, Mardi 11h–14h30, Mercredi 11h–16h, Jeudi 11h–14h30 et 17h–20h, Vendredi 11h–14h30, Samedi 9h–13h, Dimanche fermé. Les horaires enregistrés dans le planning hebdomadaire correspondent aux bassins intérieurs (ouverts le plus largement, notamment le dimanche). Des programmes d'horaires vacances (Toussaint) existent en PDF mais ne sont pas détaillés sur la page.",
       "resolved": [
         {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-22",
           "day": "thursday",
           "period": "short_holidays",
@@ -961,6 +946,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -1150,21 +1150,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est téléchargeable mais ne donne pas de dates précises sur la page.",
       "resolved": [
         {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-22",
           "day": "thursday",
           "period": "short_holidays",
@@ -1344,6 +1329,21 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -1546,17 +1546,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible.",
       "resolved": [
         {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture technique de la piscine"
-          ]
-        },
-        {
           "date": "2026-10-22",
           "day": "thursday",
           "period": "short_holidays",
@@ -1726,6 +1715,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -1734,20 +1738,20 @@
       "name": "Piscine Suzanne Berlioux",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux",
       "status": "ok",
-      "scrapedAt": "2026-10-28T10:17:28.121Z",
+      "scrapedAt": "2026-10-29T10:41:03.808Z",
       "sourceHash": "f8cb86790a1ee13fe95c1b93d92ab84d",
       "events": [
         {
           "start": "2026-10-23",
           "end": null,
-          "description": "Fermeture exceptionnelle à partir de 15h.",
+          "description": "Fermeture exceptionnelle à partir de 15h",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-11-01",
           "end": null,
-          "description": "Dimanche 1er novembre – Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti.",
+          "description": "Dimanche 1er novembre – Jour férié : la piscine est fermée",
           "closed": true,
           "slots": null
         }
@@ -1760,10 +1764,10 @@
           "scope": "all_other_pools",
           "pools": [],
           "closed": true,
-          "description": "Fermeture le dimanche 1er novembre (jour férié) — seule la Piscine Olympique Angelotti est ouverte, de 9h à 13h15 et de 15h à 19h15."
+          "description": "Fermeture le dimanche 1er novembre (jour férié) — seule la Piscine Olympique Angelotti est ouverte, de 9h à 13h15 et de 15h à 19h15"
         }
       ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en téléchargement. La Piscine Olympique Angelotti est ouverte le 1er novembre de 9h à 13h15 et de 15h à 19h15.",
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation.",
       "periods": {
         "term": {
           "monday": [
@@ -1931,21 +1935,6 @@
       },
       "resolved": [
         {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-22",
           "day": "thursday",
           "period": "short_holidays",
@@ -1968,7 +1957,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture exceptionnelle à partir de 15h."
+            "Fermeture exceptionnelle à partir de 15h"
           ]
         },
         {
@@ -2099,7 +2088,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Dimanche 1er novembre – Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti."
+            "Dimanche 1er novembre – Jour férié : la piscine est fermée"
           ]
         },
         {
@@ -2151,6 +2140,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2161,35 +2165,6 @@
       "status": "ok",
       "scrapedAt": "2026-10-28T10:17:38.540Z",
       "sourceHash": "f09552307b082d4c99d1c5b150c10f77",
-      "events": [
-        {
-          "start": "2026-11-01",
-          "end": "2026-11-01",
-          "description": "Piscine fermée le dimanche 1er novembre.",
-          "closed": true,
-          "slots": null
-        }
-      ],
-      "periodOverrides": [
-        {
-          "period": "short_holidays",
-          "start": "2026-10-19",
-          "end": "2026-11-01"
-        }
-      ],
-      "networkClaims": [
-        {
-          "start": "2026-11-01",
-          "end": "2026-11-01",
-          "scope": "named_pools",
-          "pools": [
-            "Piscine Olympique Angelotti"
-          ],
-          "closed": false,
-          "description": "Ouverture le dimanche 1er novembre de 9h à 13h15 et de 15h à 19h15 — seule la Piscine Olympique Angelotti est ouverte ce jour-là."
-        }
-      ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Piscine de 5 couloirs de 25 m.",
       "periods": {
         "term": {
           "monday": [
@@ -2318,22 +2293,36 @@
           "sunday": []
         }
       },
-      "resolved": [
+      "events": [
         {
-          "date": "2026-10-21",
-          "day": "wednesday",
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "description": "Piscine fermée le dimanche 1er novembre.",
+          "closed": true,
+          "slots": null
+        }
+      ],
+      "periodOverrides": [
+        {
           "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
+          "start": "2026-10-19",
+          "end": "2026-11-01"
+        }
+      ],
+      "networkClaims": [
+        {
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "scope": "named_pools",
+          "pools": [
+            "Piscine Olympique Angelotti"
           ],
           "closed": false,
-          "exceptional": false,
-          "events": []
-        },
+          "description": "Ouverture le dimanche 1er novembre de 9h à 13h15 et de 15h à 19h15 — seule la Piscine Olympique Angelotti est ouverte ce jour-là."
+        }
+      ],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Piscine de 5 couloirs de 25 m.",
+      "resolved": [
         {
           "date": "2026-10-22",
           "day": "thursday",
@@ -2538,6 +2527,26 @@
             {
               "start": "11:30",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "07:30",
+              "end": "09:00",
+              "label": null
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -2756,23 +2765,6 @@
       ],
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Jeudi : petit bassin fermé à 18h.",
       "resolved": [
-        {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": [
-            "Horaires des petites vacances scolaires"
-          ]
-        },
         {
           "date": "2026-10-22",
           "day": "thursday",
@@ -3004,6 +2996,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "petit bassin 18h"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -3200,17 +3212,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Réseau de 15 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
         {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Fermeture technique"
-          ]
-        },
-        {
           "date": "2026-10-22",
           "day": "thursday",
           "period": "short_holidays",
@@ -3374,6 +3375,21 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -3388,8 +3404,21 @@
       "name": "Piscine Jean Vivès",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives",
       "status": "ok",
-      "scrapedAt": "2026-10-23T09:02:04.664Z",
+      "scrapedAt": "2026-10-29T10:41:15.409Z",
       "sourceHash": "b1e14f6119209360450ff995b5a012a8",
+      "events": [],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "scope": "all_other_pools",
+          "pools": [],
+          "closed": true,
+          "description": "Fermeture le dimanche 1er novembre (jour férié) — seule la Piscine Olympique Angelotti est ouverte, de 9h à 13h15 et de 15h à 19h15."
+        }
+      ],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Piscine de type \"tournesol\" avec ouverture de la coupole en été.",
       "periods": {
         "term": {
           "monday": [
@@ -3555,26 +3584,7 @@
           ]
         }
       },
-      "events": [],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en téléchargement (dates non précisées sur la page).",
       "resolved": [
-        {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-22",
           "day": "thursday",
@@ -3783,6 +3793,26 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -3797,8 +3827,31 @@
       "name": "Piscine Jean Taris",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris",
       "status": "ok",
-      "scrapedAt": "2026-10-23T09:02:15.609Z",
+      "scrapedAt": "2026-10-29T10:41:26.543Z",
       "sourceHash": "6927174a199cd26bd11b8f63bbf2fda2",
+      "events": [
+        {
+          "start": "2026-11-01",
+          "end": null,
+          "description": "Dimanche 1er novembre – Jour férié : toutes les piscines du réseau sont fermées",
+          "closed": true,
+          "slots": null
+        }
+      ],
+      "networkClaims": [
+        {
+          "start": "2026-11-01",
+          "end": null,
+          "scope": "named_pools",
+          "pools": [
+            "Piscine Olympique Angelotti"
+          ],
+          "closed": false,
+          "description": "Dimanche 1er novembre (jour férié) : la Piscine Olympique Angelotti est ouverte de 9h à 13h15 et de 15h à 19h15, seule piscine du réseau ouverte"
+        }
+      ],
+      "periodOverrides": [],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est téléchargeable mais sans dates précises sur la page.",
       "periods": {
         "term": {
           "monday": [
@@ -3964,26 +4017,7 @@
           ]
         }
       },
-      "events": [],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Bassin de 25 m avec 4 couloirs. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Un document \"Programme des vacances de la Toussaint\" est téléchargeable mais ne donne pas de dates/horaires dans le texte de la page.",
       "resolved": [
-        {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-22",
           "day": "thursday",
@@ -4138,16 +4172,12 @@
           "date": "2026-11-01",
           "day": "sunday",
           "period": "short_holidays",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "closed": false,
+          "slots": [],
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "Dimanche 1er novembre – Jour férié : toutes les piscines du réseau sont fermées"
+          ]
         },
         {
           "date": "2026-11-02",
@@ -4192,6 +4222,21 @@
             {
               "start": "11:15",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:15",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -4363,21 +4408,6 @@
       ],
       "notes": "À compter du lundi 31 août 2026, la piscine passe aux horaires d'hiver (11h30-14h30 du lundi au vendredi, fermée le week-end). Les horaires d'été sont : du lundi au vendredi 11h00-19h30, samedi et dimanche 14h00-18h00. Bassin extérieur de 25m chauffé à 27° minimum. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
       "resolved": [
-        {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-22",
           "day": "thursday",
@@ -4554,6 +4584,21 @@
         {
           "date": "2026-11-04",
           "day": "wednesday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:30",
+              "end": "14:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
           "period": "term",
           "slots": [
             {
@@ -4778,21 +4823,6 @@
       "notes": "Évacuation des bassins 20 min avant la fermeture en période scolaire, 30 min en été. Vente des billets terminée 15 min avant l'évacuation en période scolaire, 30 min en été. L'établissement comprend un bassin sportif 25m x 15m, un bassin d'apprentissage et un bassin ludique.",
       "resolved": [
         {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-10-22",
           "day": "thursday",
           "period": "short_holidays",
@@ -5002,6 +5032,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -5204,21 +5254,6 @@
       ],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Bassin sportif de 25m, 5 couloirs.",
       "resolved": [
-        {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-22",
           "day": "thursday",
@@ -5434,6 +5469,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -5633,21 +5688,6 @@
       ],
       "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis. Partiellement inaccessible aux heures de cours. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Équipements : bassin sportif 25m 6 couloirs, bassin ludique, pataugeoire.",
       "resolved": [
-        {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-22",
           "day": "thursday",
@@ -5858,6 +5898,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -6057,21 +6117,6 @@
       ],
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est téléchargeable en PDF (dates non précisées sur la page).",
       "resolved": [
-        {
-          "date": "2026-10-21",
-          "day": "wednesday",
-          "period": "short_holidays",
-          "slots": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-10-22",
           "day": "thursday",
@@ -6276,6 +6321,21 @@
             {
               "start": "12:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-05",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
