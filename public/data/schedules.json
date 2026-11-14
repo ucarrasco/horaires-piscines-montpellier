@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-11-13T11:49:29.287Z",
+  "generatedAt": "2026-11-14T11:11:03.575Z",
   "window": {
-    "start": "2026-11-06",
-    "end": "2026-11-20",
+    "start": "2026-11-07",
+    "end": "2026-11-21",
     "dates": [
-      "2026-11-06",
       "2026-11-07",
       "2026-11-08",
       "2026-11-09",
@@ -18,15 +17,16 @@
       "2026-11-17",
       "2026-11-18",
       "2026-11-19",
-      "2026-11-20"
+      "2026-11-20",
+      "2026-11-21"
     ]
   },
   "periodsInWindow": [
     {
       "period": "term",
       "label": null,
-      "start": "2026-11-06",
-      "end": "2026-11-20"
+      "start": "2026-11-07",
+      "end": "2026-11-21"
     }
   ],
   "pools": [
@@ -252,25 +252,25 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
           "start": "2026-12-05",
           "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         }
       ],
@@ -278,21 +278,6 @@
       "networkClaims": [],
       "notes": "Horaires de l'établissement. Le bassin ludique a des horaires spécifiques : en période scolaire du lundi au vendredi 11:30-13:30 et 16:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15 ; en vacances scolaires du lundi au vendredi 9:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. Évacuation des bassins 30 min avant la fermeture. Vente des billets jusqu'à 20h30 du lundi au vendredi et 18h15 le week-end. Piscine constituée du bassin « Vénus » (50m, natation sportive) et du bassin ludique.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "21:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -514,6 +499,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -713,25 +713,25 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
           "start": "2026-12-05",
           "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         }
       ],
@@ -739,26 +739,6 @@
       "networkClaims": [],
       "notes": "Horaires en vigueur à partir du lundi 31 août 2026. Le centre dispose d'un bassin extérieur 50 m et de bassins intérieurs (bassin 25 m + bassin ludique 15x15 avec pataugeoire). Les horaires enregistrés correspondent aux bassins intérieurs ; horaires du bassin extérieur 50 m : Lundi 9h-14h30 et 17h-20h, Mardi 11h-14h30, Mercredi 11h-16h, Jeudi 11h-14h30 et 17h-20h, Vendredi 11h-14h30, Samedi 9h-13h, Dimanche fermé. La page ne distingue pas période scolaire / vacances.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -988,6 +968,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -996,68 +991,8 @@
       "name": "Piscine Poséidon",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon",
       "status": "ok",
-      "scrapedAt": "2026-11-13T11:48:37.137Z",
+      "scrapedAt": "2026-11-14T11:10:20.352Z",
       "sourceHash": "42e8be4575a7bdb84537b9e731d3284a",
-      "events": [
-        {
-          "start": "2026-11-11",
-          "end": null,
-          "description": "Jour férié — toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti.",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Téléthon : opération solidaire, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon. Ouverture habituelle.",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "suzanne-berlioux",
-            "poolName": "Piscine Suzanne Berlioux",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
-          }
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
-          }
-        }
-      ],
-      "networkClaims": [
-        {
-          "start": "2026-11-11",
-          "end": null,
-          "scope": "all_other_pools",
-          "pools": [],
-          "closed": true,
-          "description": "Fermeture le mercredi 11 novembre (jour férié) — seule la Piscine Olympique Angelotti est ouverte, de 9h00 à 13h15 et de 15h00 à 19h15."
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "scope": "all_pools",
-          "pools": [],
-          "closed": false,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon."
-        }
-      ],
-      "periodOverrides": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation des bassins.",
       "periods": {
         "term": {
           "monday": [
@@ -1223,27 +1158,61 @@
           ]
         }
       },
-      "resolved": [
+      "events": [
         {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
+          "start": "2026-11-11",
+          "end": null,
+          "description": "Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti.",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Téléthon : ouverture habituelle, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
+          }
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-11-11",
+          "end": null,
+          "scope": "named_pools",
+          "pools": [
+            "Piscine Olympique Angelotti"
           ],
           "closed": false,
-          "exceptional": false,
-          "events": []
-        },
+          "description": "Mercredi 11 novembre (jour férié) : ouverture exceptionnelle de 9h à 13h15 et de 15h à 19h15 — seule piscine du réseau ouverte."
+        }
+      ],
+      "notes": "Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets terminée 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF (dates non précisées sur la page).",
+      "resolved": [
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -1317,7 +1286,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Jour férié — toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti."
+            "Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti."
           ]
         },
         {
@@ -1463,6 +1432,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
@@ -1662,25 +1646,25 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
           "start": "2026-12-05",
           "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         }
       ],
@@ -1697,26 +1681,6 @@
       ],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -1942,6 +1906,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2134,26 +2113,26 @@
         },
         {
           "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         },
         {
           "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+          "end": null,
+          "description": "Téléthon — toutes les piscines du réseau se mobilisent : chaque entrée est reversée au profit de l'AFM-Téléthon",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
+            "poolId": "amphitrite",
+            "poolName": "Piscine Amphitrite",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-amphitrite"
           }
         }
       ],
@@ -2178,26 +2157,6 @@
       ],
       "notes": "Bassin de 25 mètres avec 4 couloirs, piscine de type « tournesol ». L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) et la vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF mais sans horaires détaillés sur la page.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -2423,6 +2382,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2572,25 +2546,25 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
           "start": "2026-12-05",
           "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         }
       ],
@@ -2598,26 +2572,6 @@
       "networkClaims": [],
       "notes": "Fermée durant les grandes vacances scolaires (été). L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Bassin de 5 couloirs de 25 m.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -2848,6 +2802,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2856,40 +2825,40 @@
       "name": "Piscine Marcel Spilliaert",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert",
       "status": "ok",
-      "scrapedAt": "2026-11-13T11:49:00.655Z",
+      "scrapedAt": "2026-11-14T11:10:35.277Z",
       "sourceHash": "54aa6b31735e614e305a357fcf6e9b4d",
       "events": [
         {
           "start": "2026-11-09",
-          "end": null,
-          "description": "Fermeture technique exceptionnelle de 9h à 12h en raison d'un problème technique.",
+          "end": "2026-11-09",
+          "description": "Fermeture technique exceptionnelle au public de 9h à 12h en raison d'un problème technique.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-11-11",
-          "end": null,
-          "description": "Jour férié : fermeture de la piscine.",
+          "end": "2026-11-11",
+          "description": "Mercredi 11 novembre – Jour férié : la piscine est fermée.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-12-05",
-          "end": null,
-          "description": "Téléthon : venez nager comme à votre habitude pour une belle cause. L'intégralité des recettes des entrées sera reversée à l'AFM-Téléthon.",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l'intégralité des recettes des entrées reversée à l'AFM-Téléthon.",
           "closed": false,
           "slots": null
         },
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
@@ -2909,22 +2878,22 @@
       "networkClaims": [
         {
           "start": "2026-11-11",
-          "end": null,
+          "end": "2026-11-11",
           "scope": "all_other_pools",
           "pools": [],
           "closed": true,
-          "description": "Fermeture le mercredi 11 novembre (jour férié) — seule la Piscine Olympique Angelotti est ouverte, de 9h à 13h15 et de 15h à 19h15."
+          "description": "Mercredi 11 novembre – Jour férié : fermeture, sauf la Piscine Olympique Angelotti ouverte de 9h à 13h15 et de 15h à 19h15."
         },
         {
           "start": "2026-12-05",
-          "end": null,
+          "end": "2026-12-05",
           "scope": "all_pools",
           "pools": [],
           "closed": false,
-          "description": "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent. L'intégralité des recettes des entrées sera reversée à l'AFM-Téléthon."
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon."
         }
       ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Jeudi : petit bassin ferme à 18h.",
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Jeudi en période scolaire : petit bassin jusqu'à 18h. La Piscine Olympique Angelotti est ouverte le 11 novembre de 9h à 13h15 et de 15h à 19h15.",
       "periods": {
         "term": {
           "monday": [
@@ -2962,7 +2931,7 @@
             {
               "start": "17:00",
               "end": "20:00",
-              "label": "petit bassin 18h"
+              "label": "petit bassin jusqu'à 18h"
             }
           ],
           "friday": [
@@ -3092,21 +3061,6 @@
       },
       "resolved": [
         {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-07",
           "day": "saturday",
           "period": "term",
@@ -3144,7 +3098,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Fermeture technique exceptionnelle de 9h à 12h en raison d'un problème technique."
+            "Fermeture technique exceptionnelle au public de 9h à 12h en raison d'un problème technique."
           ]
         },
         {
@@ -3170,7 +3124,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Jour férié : fermeture de la piscine."
+            "Mercredi 11 novembre – Jour férié : la piscine est fermée."
           ]
         },
         {
@@ -3186,7 +3140,7 @@
             {
               "start": "17:00",
               "end": "20:00",
-              "label": "petit bassin 18h"
+              "label": "petit bassin jusqu'à 18h"
             }
           ],
           "closed": false,
@@ -3301,7 +3255,7 @@
             {
               "start": "17:00",
               "end": "20:00",
-              "label": "petit bassin 18h"
+              "label": "petit bassin jusqu'à 18h"
             }
           ],
           "closed": false,
@@ -3322,6 +3276,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -3332,60 +3301,6 @@
       "status": "ok",
       "scrapedAt": "2026-11-13T11:49:13.753Z",
       "sourceHash": "59b2a743b965a0592a3fa23b9c712e5d",
-      "events": [
-        {
-          "start": "2026-11-11",
-          "end": null,
-          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées, à l’exception de la Piscine Olympique Angelotti.",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l’intégralité des recettes des entrées reversée à l’AFM-Téléthon.",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
-          }
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
-          }
-        }
-      ],
-      "networkClaims": [
-        {
-          "start": "2026-11-11",
-          "end": null,
-          "scope": "named_pools",
-          "pools": [
-            "Piscine Olympique Angelotti"
-          ],
-          "closed": false,
-          "description": "Mercredi 11 novembre (jour férié) : ouverture exceptionnelle de 9h à 13h15 et de 15h à 19h15, alors que les autres piscines du réseau sont fermées.",
-          "cre": false
-        }
-      ],
-      "periodOverrides": [],
       "periods": {
         "term": {
           "monday": [
@@ -3551,28 +3466,62 @@
           ]
         }
       },
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Prévoir une pièce de 1 € pour le vestiaire. Bonnet de bain obligatoire.",
-      "resolved": [
+      "events": [
         {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
+          "start": "2026-11-11",
+          "end": null,
+          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées, à l’exception de la Piscine Olympique Angelotti.",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l’intégralité des recettes des entrées reversée à l’AFM-Téléthon.",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
+          }
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-11-11",
+          "end": null,
+          "scope": "named_pools",
+          "pools": [
+            "Piscine Olympique Angelotti"
           ],
           "closed": false,
-          "exceptional": false,
-          "events": []
-        },
+          "description": "Mercredi 11 novembre (jour férié) : ouverture exceptionnelle de 9h à 13h15 et de 15h à 19h15, alors que les autres piscines du réseau sont fermées.",
+          "cre": false
+        }
+      ],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Prévoir une pièce de 1 € pour le vestiaire. Bonnet de bain obligatoire.",
+      "resolved": [
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -3798,6 +3747,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -3991,25 +3955,25 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
           "start": "2026-12-05",
           "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent pour une opération solidaire. L'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         }
       ],
@@ -4036,21 +4000,6 @@
       ],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture, 30 min en cas de forte fréquentation. La vente des billets d'entrée se termine 15 min avant l'évacuation des bassins. Un programme des vacances de la Toussaint est disponible en PDF (horaires non détaillés sur la page).",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -4276,6 +4225,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4284,8 +4248,67 @@
       "name": "Piscine Jean Taris",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris",
       "status": "ok",
-      "scrapedAt": "2026-11-10T12:03:41.032Z",
+      "scrapedAt": "2026-11-14T11:10:50.130Z",
       "sourceHash": "dd001155cff39e8a1502c3173709b1a3",
+      "events": [
+        {
+          "start": "2026-11-11",
+          "end": "2026-11-11",
+          "description": "Mercredi 11 novembre (jour férié) : la piscine est fermée.",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre : opération Téléthon, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon. Ouverture habituelle.",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
+          }
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
+          }
+        }
+      ],
+      "networkClaims": [
+        {
+          "start": "2026-11-11",
+          "end": "2026-11-11",
+          "scope": "all_other_pools",
+          "pools": [],
+          "closed": true,
+          "description": "Mercredi 11 novembre (jour férié) : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti, ouverte de 9h à 13h15 et de 15h à 19h15."
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "scope": "all_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent pour une opération solidaire ; l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon."
+        }
+      ],
+      "periodOverrides": [],
       "periods": {
         "term": {
           "monday": [
@@ -4451,81 +4474,8 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-11-11",
-          "end": null,
-          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau seront fermées.",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
-          }
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-11-11",
-          "end": null,
-          "scope": "named_pools",
-          "pools": [
-            "Piscine Olympique Angelotti"
-          ],
-          "closed": false,
-          "description": "Mercredi 11 novembre – Jour férié : la Piscine Olympique Angelotti est ouverte de 9h à 13h15 et de 15h à 19h15 (seule piscine du réseau ouverte)."
-        }
-      ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Bassin de 25 m avec 4 couloirs. Le Téléthon du 5 décembre concerne tout le réseau des piscines.",
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture, 30 min en cas de forte fréquentation. La vente des billets d'entrée se termine 15 min avant l'évacuation des bassins. Bassin de 25 m avec 4 couloirs, piscine de type \"tournesol\" avec ouverture de la coupole en saison estivale. Un programme des vacances de la Toussaint est téléchargeable (PDF) mais aucune date précise n'est indiquée sur la page.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -4599,7 +4549,7 @@
           "closed": true,
           "exceptional": false,
           "events": [
-            "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau seront fermées."
+            "Mercredi 11 novembre (jour férié) : la piscine est fermée."
           ]
         },
         {
@@ -4745,6 +4695,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
               "label": null
             }
           ],
@@ -4910,25 +4875,25 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
           "start": "2026-12-05",
           "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         }
       ],
@@ -4955,21 +4920,6 @@
       ],
       "notes": "À compter du lundi 31 août 2026, la piscine passe aux horaires d'hiver (période scolaire) : 11h30-14h30 du lundi au vendredi. Bassin extérieur de 25m chauffé à 27° minimum. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Les horaires d'été ne précisent pas de distinction vacances scolaires courtes ; le schéma période scolaire a été réutilisé pour les petites vacances.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -5148,6 +5098,15 @@
               "label": null
             }
           ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -5351,25 +5310,25 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
           "start": "2026-12-05",
           "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         }
       ],
@@ -5386,21 +5345,6 @@
       ],
       "notes": "Évacuation des bassins 20 min avant la fermeture en période scolaire, 30 min en été. Vente des billets terminée 15 min avant l'évacuation en période scolaire, 30 min en été.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -5624,6 +5568,21 @@
             {
               "start": "12:00",
               "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
               "label": null
             }
           ],
@@ -5828,25 +5787,25 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
           "start": "2026-12-05",
           "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         }
       ],
@@ -5873,21 +5832,6 @@
       ],
       "notes": "Bassin sportif de 25m, 5 couloirs, profondeur 2m. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Horaire du mardi \\\"12:00-1400\\\" interprété comme 12:00-14:00 (coquille sur la page). Un \\\"Programme vacances de la Toussaint\\\" est disponible en PDF mais sans dates indiquées.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -6123,6 +6067,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -6131,8 +6090,62 @@
       "name": "Piscine Alex Jany",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alex-jany",
       "status": "ok",
-      "scrapedAt": "2026-11-10T12:04:33.230Z",
+      "scrapedAt": "2026-11-14T11:11:02.951Z",
       "sourceHash": "f21392aff706a00bfca431f336511a8b",
+      "events": [
+        {
+          "start": "2026-11-11",
+          "end": "2026-11-11",
+          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées.",
+          "closed": true,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre : journée solidaire spéciale Téléthon avec animations. Programme détaillé à venir.",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
+          }
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-11-11",
+          "end": "2026-11-11",
+          "scope": "named_pools",
+          "pools": [
+            "Piscine Olympique Angelotti"
+          ],
+          "closed": false,
+          "description": "Mercredi 11 novembre (jour férié) : seule la Piscine Olympique Angelotti est ouverte, de 9h à 13h15 et de 15h à 19h15."
+        }
+      ],
+      "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis, partiellement inaccessible aux heures de cours. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
       "periods": {
         "term": {
           "monday": [
@@ -6298,76 +6311,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-11-11",
-          "end": "2026-11-11",
-          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées.",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Journée solidaire Téléthon : animations et moments de partage. Programme détaillé à venir.",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
-          }
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-11-11",
-          "end": "2026-11-11",
-          "scope": "named_pools",
-          "pools": [
-            "Piscine Olympique Angelotti"
-          ],
-          "closed": false,
-          "description": "Mercredi 11 novembre (jour férié) : seule la Piscine Olympique Angelotti est ouverte, de 9h à 13h15 et de 15h à 19h15."
-        }
-      ],
-      "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis. Partiellement inaccessible aux heures de cours. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Bassin sportif 25m 6 couloirs, bassin ludique et pataugeoire.",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -6593,6 +6537,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -6772,25 +6731,25 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre : Téléthon — toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+            "poolId": "suzanne-berlioux",
+            "poolName": "Piscine Suzanne Berlioux",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-suzanne-berlioux"
           }
         },
         {
           "start": "2026-12-05",
           "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "jean-vives",
-            "poolName": "Piscine Jean Vivès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-vives"
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
           }
         }
       ],
@@ -6798,26 +6757,6 @@
       "networkClaims": [],
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. La piscine est de nouveau accessible au public aux horaires habituels après réouverture. Un programme des vacances de la Toussaint est téléchargeable (PDF non détaillé sur la page).",
       "resolved": [
-        {
-          "date": "2026-11-06",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-07",
           "day": "saturday",
@@ -7041,6 +6980,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-21",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
