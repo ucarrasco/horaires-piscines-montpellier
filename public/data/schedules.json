@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-11-18T12:36:24.375Z",
+  "generatedAt": "2026-11-19T12:26:24.188Z",
   "window": {
-    "start": "2026-11-11",
-    "end": "2026-11-25",
+    "start": "2026-11-12",
+    "end": "2026-11-26",
     "dates": [
-      "2026-11-11",
       "2026-11-12",
       "2026-11-13",
       "2026-11-14",
@@ -18,15 +17,16 @@
       "2026-11-22",
       "2026-11-23",
       "2026-11-24",
-      "2026-11-25"
+      "2026-11-25",
+      "2026-11-26"
     ]
   },
   "periodsInWindow": [
     {
       "period": "term",
       "label": null,
-      "start": "2026-11-11",
-      "end": "2026-11-25"
+      "start": "2026-11-12",
+      "end": "2026-11-26"
     }
   ],
   "pools": [
@@ -266,21 +266,6 @@
       "notes": "Horaires de l'établissement retenus. Horaires spécifiques du bassin ludique — Période scolaire : du lundi au vendredi 11:30-13:30 et 16:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. Vacances scolaires : du lundi au vendredi 9:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. L'évacuation des bassins s'effectue 30 min avant la fermeture ; vente des billets jusqu'à 20h30 du lundi au vendredi et 18h15 le week-end. La POA fait partie des 14 piscines de Montpellier Méditerranée Métropole.",
       "resolved": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "21:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-12",
           "day": "thursday",
           "period": "term",
@@ -499,6 +484,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "21:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -509,42 +509,6 @@
       "status": "ok",
       "scrapedAt": "2026-11-18T12:35:30.426Z",
       "sourceHash": "ffac426be57e56748a4fbf91eec7e251",
-      "events": [
-        {
-          "start": "2026-12-10",
-          "end": null,
-          "description": "Fermeture exceptionnelle de 11h à 14h",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "heracles",
-            "poolName": "Piscine Héraclès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
-          }
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "marcel-spilliaert",
-            "poolName": "Piscine Marcel Spilliaert",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "La page donne deux grilles d'horaires distinctes : bassin extérieur 50 m et bassins intérieurs. Il n'y a pas d'horaires d'établissement globaux. Les horaires enregistrés dans le planning hebdomadaire sont ceux des bassins intérieurs (ouverts plus largement sur l'année, notamment le dimanche), avec le label. Horaires du bassin extérieur 50 m (à partir du 31/08/2026) : Lundi 9h-14h30 et 17h-20h ; Mardi 11h-14h30 ; Mercredi 11h-16h ; Jeudi 11h-14h30 et 17h-20h ; Vendredi 11h-14h30 ; Samedi 9h-13h ; Dimanche fermé. La fermeture exceptionnelle du jeudi 10 décembre (11h-14h) correspond aux horaires du bassin extérieur. Aucune distinction de périodes scolaires/vacances n'est donnée : même grille appliquée partout.",
       "periods": {
         "term": {
           "monday": [
@@ -730,22 +694,43 @@
           ]
         }
       },
-      "resolved": [
+      "events": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
+          "start": "2026-12-10",
+          "end": null,
+          "description": "Fermeture exceptionnelle de 11h à 14h",
+          "closed": true,
+          "slots": null
         },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "heracles",
+            "poolName": "Piscine Héraclès",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
+          }
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "La page donne deux grilles d'horaires distinctes : bassin extérieur 50 m et bassins intérieurs. Il n'y a pas d'horaires d'établissement globaux. Les horaires enregistrés dans le planning hebdomadaire sont ceux des bassins intérieurs (ouverts plus largement sur l'année, notamment le dimanche), avec le label. Horaires du bassin extérieur 50 m (à partir du 31/08/2026) : Lundi 9h-14h30 et 17h-20h ; Mardi 11h-14h30 ; Mercredi 11h-16h ; Jeudi 11h-14h30 et 17h-20h ; Vendredi 11h-14h30 ; Samedi 9h-13h ; Dimanche fermé. La fermeture exceptionnelle du jeudi 10 décembre (11h-14h) correspond aux horaires du bassin extérieur. Aucune distinction de périodes scolaires/vacances n'est donnée : même grille appliquée partout.",
+      "resolved": [
         {
           "date": "2026-11-12",
           "day": "thursday",
@@ -969,6 +954,21 @@
             {
               "start": "12:00",
               "end": "16:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": "Bassins intérieurs"
             }
           ],
@@ -1206,17 +1206,6 @@
       "notes": "Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets terminée 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF (dates non précisées sur la page).",
       "resolved": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti."
-          ]
-        },
-        {
           "date": "2026-11-12",
           "day": "thursday",
           "period": "term",
@@ -1439,6 +1428,21 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -1682,17 +1686,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible. Établissement comprenant un bassin sportif de 25 m (6 couloirs), un bassin ludique, une pataugeoire et des plages extérieures avec toboggan.",
       "resolved": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées."
-          ]
-        },
-        {
           "date": "2026-11-12",
           "day": "thursday",
           "period": "term",
@@ -1915,6 +1908,21 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -2160,17 +2168,6 @@
       "notes": "Bassin de 25 mètres avec 4 couloirs, piscine de type « tournesol ». Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Prévoir une pièce de 1 € pour le vestiaire.",
       "resolved": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Mercredi 11 novembre (jour férié) — toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti."
-          ]
-        },
-        {
           "date": "2026-11-12",
           "day": "thursday",
           "period": "term",
@@ -2399,6 +2396,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2409,42 +2421,6 @@
       "status": "ok",
       "scrapedAt": "2026-11-18T12:35:40.234Z",
       "sourceHash": "23c575626e0356ce539f58543b6f8362",
-      "events": [
-        {
-          "start": "2026-11-18",
-          "end": null,
-          "description": "Fermeture technique : en raison d'un problème technique, la piscine Pitot est fermée au public jusqu'à nouvel ordre.",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "heracles",
-            "poolName": "Piscine Héraclès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
-          }
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "marcel-spilliaert",
-            "poolName": "Piscine Marcel Spilliaert",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "La piscine est actuellement fermée au public jusqu'à nouvel ordre (fermeture technique). L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), la vente des billets se termine 15 min avant l'évacuation. Fermée durant les grandes vacances scolaires.",
       "periods": {
         "term": {
           "monday": [
@@ -2573,22 +2549,43 @@
           "sunday": []
         }
       },
-      "resolved": [
+      "events": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
+          "start": "2026-11-18",
+          "end": null,
+          "description": "Fermeture technique : en raison d'un problème technique, la piscine Pitot est fermée au public jusqu'à nouvel ordre.",
+          "closed": true,
+          "slots": null
         },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "heracles",
+            "poolName": "Piscine Héraclès",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
+          }
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "La piscine est actuellement fermée au public jusqu'à nouvel ordre (fermeture technique). L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), la vente des billets se termine 15 min avant l'évacuation. Fermée durant les grandes vacances scolaires.",
+      "resolved": [
         {
           "date": "2026-11-12",
           "day": "thursday",
@@ -2824,6 +2821,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "07:30",
+              "end": "09:00",
+              "label": null
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -2834,6 +2851,171 @@
       "status": "ok",
       "scrapedAt": "2026-11-18T12:35:55.586Z",
       "sourceHash": "54aa6b31735e614e305a357fcf6e9b4d",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "petit bassin 18h"
+            }
+          ],
+          "friday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "18:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "events": [
         {
           "start": "2026-11-09",
@@ -2911,183 +3093,7 @@
         }
       ],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Jeudi en période scolaire : petit bassin jusqu'à 18h.",
-      "periods": {
-        "term": {
-          "monday": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "petit bassin 18h"
-            }
-          ],
-          "friday": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        },
-        "short_holidays": {
-          "monday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        },
-        "summer_holidays": {
-          "monday": [
-            {
-              "start": "11:00",
-              "end": "18:30",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "11:00",
-              "end": "18:30",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "18:30",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:00",
-              "end": "18:30",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:00",
-              "end": "18:30",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        }
-      },
       "resolved": [
-        {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti."
-          ]
-        },
         {
           "date": "2026-11-12",
           "day": "thursday",
@@ -3317,6 +3323,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": "petit bassin 18h"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -3325,185 +3351,20 @@
       "name": "Piscine Les Néréides",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-les-nereides",
       "status": "ok",
-      "scrapedAt": "2026-11-13T11:49:13.753Z",
+      "scrapedAt": "2026-11-19T12:26:08.222Z",
       "sourceHash": "59b2a743b965a0592a3fa23b9c712e5d",
-      "periods": {
-        "term": {
-          "monday": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ]
-        },
-        "short_holidays": {
-          "monday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ]
-        },
-        "summer_holidays": {
-          "monday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ]
-        }
-      },
       "events": [
         {
           "start": "2026-11-11",
-          "end": null,
-          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées, à l’exception de la Piscine Olympique Angelotti.",
+          "end": "2026-11-11",
+          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l’intégralité des recettes des entrées reversée à l’AFM-Téléthon.",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null
         },
@@ -3532,33 +3393,187 @@
           }
         }
       ],
-      "periodOverrides": [],
       "networkClaims": [
         {
           "start": "2026-11-11",
-          "end": null,
+          "end": "2026-11-11",
           "scope": "named_pools",
           "pools": [
             "Piscine Olympique Angelotti"
           ],
           "closed": false,
-          "description": "Mercredi 11 novembre (jour férié) : ouverture exceptionnelle de 9h à 13h15 et de 15h à 19h15, alors que les autres piscines du réseau sont fermées.",
-          "cre": false
+          "description": "Mercredi 11 novembre – Jour férié : ouverture de 9h à 13h15 et de 15h à 19h15 (seule piscine du réseau ouverte).",
+          "end_note": null
         }
       ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Prévoir une pièce de 1 € pour le vestiaire. Bonnet de bain obligatoire.",
-      "resolved": [
-        {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées, à l’exception de la Piscine Olympique Angelotti."
+      "periodOverrides": [],
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
           ]
         },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ]
+        }
+      },
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Bonnet de bain obligatoire. Prévoir une pièce de 1 € pour le vestiaire.",
+      "resolved": [
         {
           "date": "2026-11-12",
           "day": "thursday",
@@ -3782,6 +3797,21 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -4025,17 +4055,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF mais sans dates sur la page.",
       "resolved": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Mercredi 11 novembre – Jour férié : fermeture de la piscine."
-          ]
-        },
-        {
           "date": "2026-11-12",
           "day": "thursday",
           "period": "term",
@@ -4258,6 +4277,26 @@
             {
               "start": "11:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -4502,17 +4541,6 @@
       "notes": "Bassin de 25 m avec 4 couloirs, piscine de type \"tournesol\" avec ouverture de la coupole en saison estivale. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation.",
       "resolved": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti."
-          ]
-        },
-        {
           "date": "2026-11-12",
           "day": "thursday",
           "period": "term",
@@ -4735,6 +4763,21 @@
             {
               "start": "11:15",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:15",
+              "end": "14:00",
               "label": null
             }
           ],
@@ -4944,17 +4987,6 @@
       "notes": "Bassin extérieur de 25m chauffé à 27° minimum. Passage aux horaires d'hiver à compter du lundi 31 août 2026. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Les horaires d'été n'ont pas de dates précises sur la page : la répartition term/été est une interprétation.",
       "resolved": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Jour férié — toutes les piscines du réseau sont fermées"
-          ]
-        },
-        {
           "date": "2026-11-12",
           "day": "thursday",
           "period": "term",
@@ -5139,6 +5171,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:30",
+              "end": "14:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -5149,6 +5196,171 @@
       "status": "ok",
       "scrapedAt": "2026-11-18T12:36:23.220Z",
       "sourceHash": "3348f4dad936758456b076d8fd39869d",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
       "events": [
         {
           "start": "2026-11-29",
@@ -5208,187 +5420,7 @@
         }
       ],
       "notes": "Évacuation des bassins 20 min avant la fermeture en période scolaire, 30 min en période estivale. Vente des billets terminée 15 min avant l'évacuation en période scolaire, 30 min en période estivale.",
-      "periods": {
-        "term": {
-          "monday": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        },
-        "short_holidays": {
-          "monday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        },
-        "summer_holidays": {
-          "monday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        }
-      },
       "resolved": [
-        {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-12",
           "day": "thursday",
@@ -5618,6 +5650,26 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "17:00",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -5626,190 +5678,20 @@
       "name": "Piscine Alfred Nakache",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alfred-nakache",
       "status": "ok",
-      "scrapedAt": "2026-11-13T11:49:28.272Z",
+      "scrapedAt": "2026-11-19T12:26:22.956Z",
       "sourceHash": "ed9f878c54c860058ef8464e0d0dd0d1",
-      "periods": {
-        "term": {
-          "monday": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "16:30",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "07:30",
-              "end": "09:00",
-              "label": null
-            },
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:30",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:30",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "16:30",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:30",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        },
-        "short_holidays": {
-          "monday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "10:30",
-              "end": "19:00",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        },
-        "summer_holidays": {
-          "monday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "tuesday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "wednesday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "thursday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "friday": [
-            {
-              "start": "11:00",
-              "end": "19:30",
-              "label": null
-            }
-          ],
-          "saturday": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "sunday": [
-            {
-              "start": "09:00",
-              "end": "13:00",
-              "label": null
-            }
-          ]
-        }
-      },
       "events": [
         {
           "start": "2026-11-11",
-          "end": null,
-          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti.",
+          "end": "2026-11-11",
+          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau seront fermées.",
           "closed": true,
           "slots": null
         },
         {
           "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon.",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l'intégralité des recettes des entrées sera reversée à l'AFM-Téléthon.",
           "closed": false,
           "slots": null
         },
@@ -5842,36 +5724,193 @@
       "networkClaims": [
         {
           "start": "2026-11-11",
-          "end": null,
-          "scope": "named_pools",
-          "pools": [
-            "Piscine Olympique Angelotti"
-          ],
+          "end": "2026-11-11",
+          "scope": "all_other_pools",
+          "pools": [],
           "closed": false,
           "description": "Mercredi 11 novembre – Jour férié : la Piscine Olympique Angelotti est ouverte de 9h à 13h15 et de 15h à 19h15 (seule piscine du réseau ouverte)."
         },
         {
           "start": "2026-12-05",
-          "end": null,
+          "end": "2026-12-05",
           "scope": "all_pools",
           "pools": [],
           "closed": false,
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée au profit de l'AFM-Téléthon."
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon."
         }
       ],
-      "notes": "Bassin sportif de 25m, 5 couloirs, profondeur 2m. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Horaire du mardi \\\"12:00-1400\\\" interprété comme 12:00-14:00 (coquille sur la page). Un \\\"Programme vacances de la Toussaint\\\" est disponible en PDF mais sans dates indiquées.",
-      "resolved": [
-        {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [],
-          "closed": true,
-          "exceptional": false,
-          "events": [
-            "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti."
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. L'horaire du mardi indiqué \"12:00-1400\" a été interprété comme 12:00-14:00.",
+      "periods": {
+        "term": {
+          "monday": [
+            {
+              "start": "09:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "07:30",
+              "end": "09:00",
+              "label": null
+            },
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:30",
+              "end": "16:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
           ]
         },
+        "short_holidays": {
+          "monday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "10:30",
+              "end": "19:00",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        },
+        "summer_holidays": {
+          "monday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "thursday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "friday": [
+            {
+              "start": "11:00",
+              "end": "19:30",
+              "label": null
+            }
+          ],
+          "saturday": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "sunday": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ]
+        }
+      },
+      "resolved": [
         {
           "date": "2026-11-12",
           "day": "thursday",
@@ -6105,6 +6144,26 @@
             {
               "start": "11:30",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "11:30",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -6324,21 +6383,6 @@
       "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis, partiellement inaccessible aux heures de cours. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Équipements : bassin sportif 25m 6 couloirs, bassin ludique, pataugeoire.",
       "resolved": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-12",
           "day": "thursday",
           "period": "term",
@@ -6561,6 +6605,26 @@
             {
               "start": "12:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
+              "label": null
+            },
+            {
+              "start": "16:30",
+              "end": "20:00",
               "label": null
             }
           ],
@@ -6773,21 +6837,6 @@
       "notes": "Page mentionne une réouverture : \"La piscine est de nouveau accessible au public, aux horaires habituels.\" Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 15 piscines.",
       "resolved": [
         {
-          "date": "2026-11-11",
-          "day": "wednesday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "16:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-12",
           "day": "thursday",
           "period": "term",
@@ -7010,6 +7059,21 @@
             {
               "start": "12:00",
               "end": "16:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-26",
+          "day": "thursday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "12:00",
+              "end": "14:00",
               "label": null
             }
           ],
