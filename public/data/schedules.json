@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-11-20T12:27:05.248Z",
+  "generatedAt": "2026-11-21T12:00:42.718Z",
   "window": {
-    "start": "2026-11-13",
-    "end": "2026-11-27",
+    "start": "2026-11-14",
+    "end": "2026-11-28",
     "dates": [
-      "2026-11-13",
       "2026-11-14",
       "2026-11-15",
       "2026-11-16",
@@ -18,15 +17,16 @@
       "2026-11-24",
       "2026-11-25",
       "2026-11-26",
-      "2026-11-27"
+      "2026-11-27",
+      "2026-11-28"
     ]
   },
   "periodsInWindow": [
     {
       "period": "term",
       "label": null,
-      "start": "2026-11-13",
-      "end": "2026-11-27"
+      "start": "2026-11-14",
+      "end": "2026-11-28"
     }
   ],
   "pools": [
@@ -266,21 +266,6 @@
       "notes": "Horaires de l'établissement retenus. Horaires spécifiques du bassin ludique — Période scolaire : du lundi au vendredi 11:30-13:30 et 16:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. Vacances scolaires : du lundi au vendredi 9:00-21:30, samedi 9:00-19:15, dimanche 9:00-13:15 et 15:00-19:15. L'évacuation des bassins s'effectue 30 min avant la fermeture ; vente des billets jusqu'à 20h30 du lundi au vendredi et 18h15 le week-end. La POA fait partie des 14 piscines de Montpellier Méditerranée Métropole.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "21:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -493,6 +478,21 @@
             {
               "start": "09:00",
               "end": "21:30",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "19:15",
               "label": null
             }
           ],
@@ -732,26 +732,6 @@
       "notes": "La page donne deux grilles d'horaires distinctes : bassin extérieur 50 m et bassins intérieurs. Il n'y a pas d'horaires d'établissement globaux. Les horaires enregistrés dans le planning hebdomadaire sont ceux des bassins intérieurs (ouverts plus largement sur l'année, notamment le dimanche), avec le label. Horaires du bassin extérieur 50 m (à partir du 31/08/2026) : Lundi 9h-14h30 et 17h-20h ; Mardi 11h-14h30 ; Mercredi 11h-16h ; Jeudi 11h-14h30 et 17h-20h ; Vendredi 11h-14h30 ; Samedi 9h-13h ; Dimanche fermé. La fermeture exceptionnelle du jeudi 10 décembre (11h-14h) correspond aux horaires du bassin extérieur. Aucune distinction de périodes scolaires/vacances n'est donnée : même grille appliquée partout.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": "Bassins intérieurs"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -974,6 +954,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": "Bassins intérieurs"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": "Bassins intérieurs"
             }
           ],
@@ -1209,26 +1204,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Le Téléthon du 5 décembre concerne tout le réseau des piscines.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -1451,6 +1426,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
@@ -1694,26 +1684,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible. Établissement comprenant un bassin sportif de 25 m (6 couloirs), un bassin ludique, une pataugeoire et des plages extérieures avec toboggan.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -1942,6 +1912,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -1952,66 +1937,6 @@
       "status": "ok",
       "scrapedAt": "2026-11-20T12:27:03.387Z",
       "sourceHash": "f8cb86790a1ee13fe95c1b93d92ab84d",
-      "events": [
-        {
-          "start": "2026-11-11",
-          "end": "2026-11-11",
-          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées.",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "heracles",
-            "poolName": "Piscine Héraclès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
-          }
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "marcel-spilliaert",
-            "poolName": "Piscine Marcel Spilliaert",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-11-11",
-          "end": "2026-11-11",
-          "scope": "all_other_pools",
-          "pools": [],
-          "closed": false,
-          "description": "Mercredi 11 novembre – Jour férié : seule la Piscine Olympique Angelotti est ouverte, de 9h à 13h15 et de 15h à 19h15."
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "scope": "all_pools",
-          "pools": [],
-          "closed": false,
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon."
-        }
-      ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est téléchargeable mais sans dates précises sur la page.",
       "periods": {
         "term": {
           "monday": [
@@ -2177,27 +2102,67 @@
           ]
         }
       },
-      "resolved": [
+      "events": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
+          "start": "2026-11-11",
+          "end": "2026-11-11",
+          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées.",
+          "closed": true,
+          "slots": null
         },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "heracles",
+            "poolName": "Piscine Héraclès",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
+          }
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-11-11",
+          "end": "2026-11-11",
+          "scope": "all_other_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Mercredi 11 novembre – Jour férié : seule la Piscine Olympique Angelotti est ouverte, de 9h à 13h15 et de 15h à 19h15."
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "scope": "all_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon."
+        }
+      ],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est téléchargeable mais sans dates précises sur la page.",
+      "resolved": [
         {
           "date": "2026-11-14",
           "day": "saturday",
@@ -2421,6 +2386,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
@@ -2602,26 +2582,6 @@
       "networkClaims": [],
       "notes": "La piscine est actuellement fermée au public jusqu'à nouvel ordre (fermeture technique). L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), la vente des billets se termine 15 min avant l'évacuation. Fermée durant les grandes vacances scolaires.",
       "resolved": [
-        {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-14",
           "day": "saturday",
@@ -2857,6 +2817,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -3069,13 +3044,13 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre — Téléthon : toutes les piscines du réseau se mobilisent, les recettes des entrées sont reversées à l'AFM-Téléthon",
+          "description": "Samedi 5 décembre – Opération solidaire Téléthon : toutes les piscines du réseau se mobilisent, chaque entrée est reversée au profit de l'AFM-Téléthon.",
           "closed": false,
           "slots": null,
           "inferredFrom": {
-            "poolId": "christine-caron",
-            "poolName": "Piscine Christine Caron",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-christine-caron"
+            "poolId": "jean-taris",
+            "poolName": "Piscine Jean Taris",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris"
           }
         }
       ],
@@ -3110,21 +3085,6 @@
       ],
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Jeudi en période scolaire : petit bassin jusqu'à 18h.",
       "resolved": [
-        {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-14",
           "day": "saturday",
@@ -3348,6 +3308,21 @@
             {
               "start": "12:00",
               "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
               "label": null
             }
           ],
@@ -3586,26 +3561,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Bonnet de bain obligatoire. Prévoir une pièce de 1 € pour le vestiaire.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -3828,6 +3783,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
@@ -4071,21 +4041,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF mais sans dates sur la page.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -4314,6 +4269,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -4322,8 +4292,53 @@
       "name": "Piscine Jean Taris",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris",
       "status": "ok",
-      "scrapedAt": "2026-11-15T11:43:54.936Z",
+      "scrapedAt": "2026-11-21T12:00:32.391Z",
       "sourceHash": "dd001155cff39e8a1502c3173709b1a3",
+      "events": [
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Opération solidaire Téléthon : venez nager comme à votre habitude, chaque entrée est reversée au profit de l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null
+        },
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "heracles",
+            "poolName": "Piscine Héraclès",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
+          }
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "scope": "all_other_pools",
+          "pools": [],
+          "closed": false,
+          "description": "Samedi 5 décembre – Opération solidaire Téléthon : toutes les piscines du réseau se mobilisent, chaque entrée est reversée au profit de l'AFM-Téléthon."
+        }
+      ],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est téléchargeable (dates non précisées sur la page).",
       "periods": {
         "term": {
           "monday": [
@@ -4489,88 +4504,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-11-11",
-          "end": "2026-11-11",
-          "description": "Mercredi 11 novembre – Jour férié : toutes les piscines du réseau sont fermées, à l'exception de la Piscine Olympique Angelotti.",
-          "closed": true,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : ouverture habituelle, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "heracles",
-            "poolName": "Piscine Héraclès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
-          }
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "marcel-spilliaert",
-            "poolName": "Piscine Marcel Spilliaert",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [
-        {
-          "start": "2026-11-11",
-          "end": "2026-11-11",
-          "scope": "named_pools",
-          "pools": [
-            "Piscine Olympique Angelotti"
-          ],
-          "closed": false,
-          "description": "Mercredi 11 novembre (jour férié) : ouverture exceptionnelle de 9h à 13h15 et de 15h à 19h15 — seule piscine du réseau ouverte."
-        },
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "scope": "all_pools",
-          "closed": false,
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée à l'AFM-Téléthon."
-        }
-      ],
-      "notes": "Bassin de 25 m avec 4 couloirs, piscine de type \"tournesol\" avec ouverture de la coupole en saison estivale. L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation.",
       "resolved": [
-        {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-14",
           "day": "saturday",
@@ -4794,6 +4728,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
               "label": null
             }
           ],
@@ -5003,21 +4952,6 @@
       "notes": "Bassin extérieur de 25m chauffé à 27° minimum. Passage aux horaires d'hiver à compter du lundi 31 août 2026. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Les horaires d'été n'ont pas de dates précises sur la page : la répartition term/été est une interprétation.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -5199,6 +5133,15 @@
               "label": null
             }
           ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [],
           "closed": false,
           "exceptional": false,
           "events": []
@@ -5438,21 +5381,6 @@
       "notes": "Évacuation des bassins 20 min avant la fermeture en période scolaire, 30 min en période estivale. Vente des billets terminée 15 min avant l'évacuation en période scolaire, 30 min en période estivale.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -5675,6 +5603,21 @@
             {
               "start": "12:00",
               "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
               "label": null
             }
           ],
@@ -5923,21 +5866,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. L'horaire du mardi indiqué \"12:00-1400\" a été interprété comme 12:00-14:00.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -6170,6 +6098,21 @@
             {
               "start": "11:30",
               "end": "14:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
               "label": null
             }
           ],
@@ -6389,21 +6332,6 @@
       "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis, partiellement inaccessible aux heures de cours. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Équipements : bassin sportif 25m 6 couloirs, bassin ludique, pataugeoire.",
       "resolved": [
         {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-14",
           "day": "saturday",
           "period": "term",
@@ -6632,6 +6560,21 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
         }
       ]
     },
@@ -6640,8 +6583,37 @@
       "name": "Piscine Françoise et Yves Jarrousse",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-francoise-et-yves-jarrousse",
       "status": "ok",
-      "scrapedAt": "2026-11-15T11:44:05.556Z",
+      "scrapedAt": "2026-11-21T12:00:42.714Z",
       "sourceHash": "c8e4e986381615db215d396204cad995",
+      "events": [
+        {
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "heracles",
+            "poolName": "Piscine Héraclès",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
+          }
+        },
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "marcel-spilliaert",
+            "poolName": "Piscine Marcel Spilliaert",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Réouverture annoncée : la piscine est de nouveau accessible au public, aux horaires habituels.",
       "periods": {
         "term": {
           "monday": [
@@ -6807,56 +6779,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-12-05",
-          "end": "2026-12-05",
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "heracles",
-            "poolName": "Piscine Héraclès",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-heracles"
-          }
-        },
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre – Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "marcel-spilliaert",
-            "poolName": "Piscine Marcel Spilliaert",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-marcel-spilliaert"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "Page mentionne une réouverture : \"La piscine est de nouveau accessible au public, aux horaires habituels.\" Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 15 piscines.",
       "resolved": [
-        {
-          "date": "2026-11-13",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-14",
           "day": "saturday",
@@ -7080,6 +7003,21 @@
             {
               "start": "17:00",
               "end": "20:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": []
+        },
+        {
+          "date": "2026-11-28",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
               "label": null
             }
           ],
