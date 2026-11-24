@@ -77,7 +77,7 @@ with its `id`, display `name` and the URL of its page.
 
 ### Failure notifications
 
-When a pool cannot be read, or the build or deploy fails, the last step of the
+When a pool cannot be read, or the build or deploy fails, the last job of the
 workflow posts a summary to a Discord channel and turns the run red. Add a
 `DISCORD_WEBHOOK_URL` secret holding a channel webhook URL (_channel settings →
 Integrations → Webhooks_). Without it, the run still goes red but nothing is

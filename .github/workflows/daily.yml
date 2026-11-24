@@ -18,11 +18,12 @@ permissions:
   id-token: write
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+    outputs:
+      scrape_failed: ${{ steps.scrape.outcome == 'failure' }}
+      # The commit holding the schedules this run wrote, for the report job.
+      sha: ${{ steps.commit.outputs.sha || github.sha }}
     steps:
       - uses: actions/checkout@v4
 
@@ -37,8 +38,8 @@ jobs:
       #
       # Exits non-zero when a pool could not be scraped, but the JSON is still
       # written (a pool that failed keeps its previous read, see scrape.ts):
-      # continue-on-error lets it reach the site, and the last step of the job
-      # reports the failure and turns the run red.
+      # continue-on-error lets it reach the site, and the report job reports
+      # the failure and turns the run red.
       - name: Scrape schedules
         id: scrape
         if: github.event_name != 'push'
@@ -48,6 +49,7 @@ jobs:
         run: npm run scrape
 
       - name: Commit schedules if changed
+        id: commit
         if: github.event_name != 'push'
         run: |
           if [ -n "$(git status --porcelain public/data/schedules.json)" ]; then
@@ -58,6 +60,7 @@ jobs:
             # main may have moved while the scrape ran (~15 API calls).
             git pull --rebase origin main
             git push
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           else
             echo "No schedule changes."
           fi
@@ -74,19 +77,44 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+
+  # A job of its own: deploy-pages run in the same job as the upload
+  # intermittently finds no artifact (actions/deploy-pages#451).
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
       - id: deploy
         uses: actions/deploy-pages@v4
 
-      # Last on purpose: the site has already shipped whatever could be built.
-      # Runs whenever something went wrong: a pool that could not be read (the
-      # scrape step is continue-on-error, hence the explicit check) or a failed
-      # build/deploy. Posts to Discord and exits non-zero on a scrape failure,
-      # so that the run shows red too.
+  # Last on purpose: the site has already shipped whatever could be built.
+  # Runs whenever something went wrong: a pool that could not be read (the
+  # scrape step is continue-on-error, hence the explicit check) or a failed
+  # build/deploy. Posts to Discord and exits non-zero on a scrape failure,
+  # so that the run shows red too.
+  report:
+    needs: [build, deploy]
+    if: >-
+      always() && (
+        needs.build.result != 'success' ||
+        needs.deploy.result != 'success' ||
+        needs.build.outputs.scrape_failed == 'true'
+      )
+    runs-on: ubuntu-latest
+    steps:
+      # notify.mjs reads the schedules this run wrote, which may sit in a
+      # commit pushed after the run started.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.build.outputs.sha || github.sha }}
+
       - name: Report failures
-        if: failure() || steps.scrape.outcome == 'failure'
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          SCRAPE_FAILED: ${{ steps.scrape.outcome == 'failure' }}
-          JOB_FAILED: ${{ job.status == 'failure' }}
+          SCRAPE_FAILED: ${{ needs.build.outputs.scrape_failed }}
+          JOB_FAILED: ${{ needs.build.result == 'failure' || needs.deploy.result == 'failure' }}
         run: node scripts/notify.mjs
