@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-11-27T13:26:40.264Z",
+  "generatedAt": "2026-11-28T12:40:08.132Z",
   "window": {
-    "start": "2026-11-20",
-    "end": "2026-12-04",
+    "start": "2026-11-21",
+    "end": "2026-12-05",
     "dates": [
-      "2026-11-20",
       "2026-11-21",
       "2026-11-22",
       "2026-11-23",
@@ -18,15 +17,16 @@
       "2026-12-01",
       "2026-12-02",
       "2026-12-03",
-      "2026-12-04"
+      "2026-12-04",
+      "2026-12-05"
     ]
   },
   "periodsInWindow": [
     {
       "period": "term",
       "label": null,
-      "start": "2026-11-20",
-      "end": "2026-12-04"
+      "start": "2026-11-21",
+      "end": "2026-12-05"
     }
   ],
   "pools": [
@@ -254,21 +254,6 @@
       "notes": "Horaires de l'établissement. Le bassin ludique a des horaires spécifiques : en période scolaire du lundi au vendredi 11h30-13h30 et 16h00-21h30, samedi 9h00-19h15, dimanche 9h00-13h15 et 15h00-19h15 ; en vacances scolaires du lundi au vendredi 9h00-21h30, samedi 9h00-19h15, dimanche 9h00-13h15 et 15h00-19h15. L'évacuation des bassins s'effectue 30 min avant la fermeture ; la vente des billets se termine à 20h30 du lundi au vendredi et 18h15 le samedi et dimanche. 2 bassins : bassin « Vénus » (50m) et bassin ludique. Piscine du réseau des 14 piscines de Montpellier Méditerranée Métropole.",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "21:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -487,6 +472,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "19:15",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Journée solidaire spéciale Téléthon : animations aquatiques, défis sportifs dans le bassin ludique et le bassin sportif. Entrée solidaire 3 €.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -763,26 +766,6 @@
       "notes": "Le bassin de 25 mètres est fermé au public jusqu'à nouvel ordre (information importante). La page donne des horaires distincts pour le bassin extérieur 50 m et pour les bassins intérieurs ; les horaires retenus dans le planning hebdomadaire correspondent à l'amplitude la plus large (bassin extérieur 50 m), les horaires des bassins intérieurs sont précisés dans les labels. Horaires valables à partir du lundi 31 août 2026. La page ne distingue pas période scolaire / vacances : mêmes horaires appliqués.",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:00",
-              "end": "14:30",
-              "label": "Bassin extérieur 50 m (intérieurs 12h-14h)"
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": "Bassins intérieurs"
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -1033,6 +1016,23 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": "Bassin extérieur 50 m et bassins intérieurs"
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -1243,26 +1243,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) et la vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est téléchargeable mais ne donne pas de dates précises.",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -1491,6 +1471,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Téléthon : opération solidaire, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon. Ouverture habituelle.",
+            "Samedi 5 décembre – Opération Téléthon : toutes les piscines du réseau se mobilisent, l'intégralité des recettes des entrées sera reversée à l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -1701,26 +1699,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Prévoir une pièce de 1€ pour le vestiaire. Le dispositif de mise à l'eau pour les personnes à mobilité réduite est momentanément indisponible.",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -1949,6 +1927,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Samedi 5 décembre – Opération Téléthon : venez nager pour une belle cause, l'intégralité des recettes des entrées sera reversée à l'AFM-Téléthon.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -2159,26 +2155,6 @@
       "notes": "Bassin de 25 mètres avec 4 couloirs, piscine de type « tournesol ». Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en téléchargement (dates non précisées).",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -2407,6 +2383,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Samedi 5 décembre – Opération Téléthon : venez nager comme à votre habitude, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -2570,26 +2564,6 @@
       "networkClaims": [],
       "notes": "Fermée durant les grandes vacances scolaires (aucun horaire d'été). L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. 5 couloirs de 25 m. Réseau de 15 piscines.",
       "resolved": [
-        {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-21",
           "day": "saturday",
@@ -2820,6 +2794,23 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -3030,21 +3021,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Jeudi (période scolaire) : petit bassin jusqu'à 18h.",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -3273,6 +3249,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Téléthon : chaque entrée est reversée au profit de l'AFM-Téléthon. Ouverture habituelle.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -3483,26 +3477,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation des bassins.",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -3731,6 +3705,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Samedi 5 décembre – Opération Téléthon : venez nager pour soutenir l'AFM-Téléthon. L'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -3941,21 +3933,6 @@
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Piscine de type \\\"tournesol\\\" avec ouverture de la coupole sur espace pelousé en été. Un programme des vacances de la Toussaint est disponible en PDF (dates non précisées sur la page).",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -4184,6 +4161,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Téléthon : opération solidaire, l'intégralité des recettes des entrées est reversée à l'AFM-Téléthon. Ouverture habituelle.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -4192,7 +4187,7 @@
       "name": "Piscine Jean Taris",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-jean-taris",
       "status": "ok",
-      "scrapedAt": "2026-11-21T12:00:32.391Z",
+      "scrapedAt": "2026-11-28T12:39:46.157Z",
       "sourceHash": "dd001155cff39e8a1502c3173709b1a3",
       "periods": {
         "term": {
@@ -4363,7 +4358,7 @@
         {
           "start": "2026-12-05",
           "end": null,
-          "description": "Samedi 5 décembre – Opération solidaire Téléthon : venez nager comme à votre habitude, chaque entrée est reversée au profit de l'AFM-Téléthon.",
+          "description": "Téléthon — opération solidaire : venez nager comme à votre habitude, l'intégralité des recettes des entrées sera reversée à l'AFM-Téléthon.",
           "closed": false,
           "slots": null
         },
@@ -4388,31 +4383,11 @@
           "scope": "all_other_pools",
           "pools": [],
           "closed": false,
-          "description": "Samedi 5 décembre – Opération solidaire Téléthon : toutes les piscines du réseau se mobilisent, chaque entrée est reversée au profit de l'AFM-Téléthon."
+          "description": "Samedi 5 décembre : toutes les piscines du réseau se mobilisent pour le Téléthon. Chaque entrée est reversée au profit de l'AFM-Téléthon."
         }
       ],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Un programme des vacances de la Toussaint est téléchargeable (dates non précisées sur la page).",
+      "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation) ; la vente des billets se termine 15 min avant l'évacuation. Bassin de 25 m avec 4 couloirs, piscine de type tournesol.",
       "resolved": [
-        {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "09:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-21",
           "day": "saturday",
@@ -4642,6 +4617,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Téléthon — opération solidaire : venez nager comme à votre habitude, l'intégralité des recettes des entrées sera reversée à l'AFM-Téléthon.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -4818,21 +4811,6 @@
       "notes": "À compter du lundi 31 août 2026, passage aux horaires d'hiver (11h30-14h30 du lundi au vendredi, fermé samedi et dimanche). Bassin extérieur de 25m chauffé à 27° minimum. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation.",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:30",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -5017,6 +4995,18 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Samedi 5 décembre – Opération Téléthon : venez nager pour une bonne cause, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -5240,21 +5230,6 @@
       ],
       "notes": "L'évacuation des bassins s'effectue 20 min avant la fermeture en période scolaire, 30 min en période estivale. La vente des billets se termine 15 min avant l'évacuation en période scolaire, 30 min en période estivale.",
       "resolved": [
-        {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-21",
           "day": "saturday",
@@ -5480,6 +5455,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Téléthon — venez nager comme à votre habitude, chaque entrée est reversée au profit de l'AFM-Téléthon",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -5695,21 +5688,6 @@
       "notes": "Bassin sportif de 25m, 5 couloirs, profondeur constante 2m. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation), vente des billets jusqu'à 15 min avant l'évacuation. Un programme des vacances de la Toussaint est disponible en PDF (dates non précisées sur la page).",
       "resolved": [
         {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "11:30",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
-        {
           "date": "2026-11-21",
           "day": "saturday",
           "period": "term",
@@ -5948,6 +5926,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "14:00",
+              "end": "18:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Téléthon : chaque entrée compte, l'intégralité des recettes des entrées sera reversée au profit de l'AFM-Téléthon. Ouverture habituelle.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -5956,8 +5952,8 @@
       "name": "Piscine Alex Jany",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-alex-jany",
       "status": "ok",
-      "scrapedAt": "2026-11-22T12:14:40.254Z",
-      "sourceHash": "1c7ea8891d8c6152882e6b214a59207b",
+      "scrapedAt": "2026-11-28T12:39:58.464Z",
+      "sourceHash": "44406339e6c3805dde37148f6f8e23f0",
       "periods": {
         "term": {
           "monday": [
@@ -6125,9 +6121,16 @@
       },
       "events": [
         {
+          "start": "2026-11-29",
+          "end": null,
+          "description": "La piscine sera exceptionnellement fermée de 14h00 à 18h00.",
+          "closed": true,
+          "slots": null
+        },
+        {
           "start": "2026-12-05",
           "end": null,
-          "description": "Journée solidaire Téléthon : matinée sportive avec baptêmes de plongée (9h30-12h30), Aquabike Boost (10h) et Aquabike Power (11h). Entrée solidaire 3 €. Inscription en ligne obligatoire pour l'aquabike.",
+          "description": "Journée solidaire Téléthon : baptêmes de plongée (9h30-12h30) et cours d'aquabike (Aquabike Boost à 10h, Aquabike Power à 11h). Entrée solidaire 3 €. Inscription en ligne obligatoire pour les cours d'aquabike.",
           "closed": false,
           "slots": null
         },
@@ -6146,23 +6149,8 @@
       ],
       "periodOverrides": [],
       "networkClaims": [],
-      "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis ; partiellement inaccessible aux heures de cours. L'évacuation des bassins s'effectue 20 min avant la fermeture (30 min en cas de forte fréquentation), la vente des billets se termine 15 min avant. Prévoir une pièce de 1€ pour le vestiaire. Bonnet de bain obligatoire.",
+      "notes": "Bassin ludique accessible à partir de 17h les lundis et jeudis. Partiellement inaccessible aux heures de cours. Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation). Vente des billets terminée 15 min avant l'évacuation. Réseau de 14 piscines (Montpellier Méditerranée Métropole).",
       "resolved": [
-        {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-21",
           "day": "saturday",
@@ -6297,16 +6285,12 @@
           "date": "2026-11-29",
           "day": "sunday",
           "period": "term",
-          "slots": [
-            {
-              "start": "14:00",
-              "end": "18:00",
-              "label": null
-            }
-          ],
-          "closed": false,
+          "slots": [],
+          "closed": true,
           "exceptional": false,
-          "events": []
+          "events": [
+            "La piscine sera exceptionnellement fermée de 14h00 à 18h00."
+          ]
         },
         {
           "date": "2026-11-30",
@@ -6392,6 +6376,24 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Journée solidaire Téléthon : baptêmes de plongée (9h30-12h30) et cours d'aquabike (Aquabike Boost à 10h, Aquabike Power à 11h). Entrée solidaire 3 €. Inscription en ligne obligatoire pour les cours d'aquabike.",
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     },
@@ -6400,8 +6402,25 @@
       "name": "Piscine Françoise et Yves Jarrousse",
       "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-francoise-et-yves-jarrousse",
       "status": "ok",
-      "scrapedAt": "2026-11-21T12:00:42.714Z",
+      "scrapedAt": "2026-11-28T12:40:08.129Z",
       "sourceHash": "c8e4e986381615db215d396204cad995",
+      "events": [
+        {
+          "start": "2026-12-05",
+          "end": null,
+          "description": "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon.",
+          "closed": false,
+          "slots": null,
+          "inferredFrom": {
+            "poolId": "poseidon",
+            "poolName": "Piscine Poséidon",
+            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
+          }
+        }
+      ],
+      "periodOverrides": [],
+      "networkClaims": [],
+      "notes": "Évacuation des bassins 20 min avant la fermeture (30 min en cas de forte fréquentation). Vente des billets jusqu'à 15 min avant l'évacuation. Réseau de 15 piscines.",
       "periods": {
         "term": {
           "monday": [
@@ -6567,44 +6586,7 @@
           ]
         }
       },
-      "events": [
-        {
-          "start": "2026-12-05",
-          "end": null,
-          "description": "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon.",
-          "closed": false,
-          "slots": null,
-          "inferredFrom": {
-            "poolId": "poseidon",
-            "poolName": "Piscine Poséidon",
-            "url": "https://www.montpellier.fr/territoire/lieux-equipements/piscine-poseidon"
-          }
-        }
-      ],
-      "periodOverrides": [],
-      "networkClaims": [],
-      "notes": "L'évacuation des bassins s'effectue 20 min avant l'heure de fermeture (30 min en cas de forte fréquentation). La vente des billets se termine 15 min avant l'évacuation. Réouverture annoncée : la piscine est de nouveau accessible au public, aux horaires habituels.",
       "resolved": [
-        {
-          "date": "2026-11-20",
-          "day": "friday",
-          "period": "term",
-          "slots": [
-            {
-              "start": "12:00",
-              "end": "14:00",
-              "label": null
-            },
-            {
-              "start": "17:00",
-              "end": "20:00",
-              "label": null
-            }
-          ],
-          "closed": false,
-          "exceptional": false,
-          "events": []
-        },
         {
           "date": "2026-11-21",
           "day": "saturday",
@@ -6834,6 +6816,23 @@
           "closed": false,
           "exceptional": false,
           "events": []
+        },
+        {
+          "date": "2026-12-05",
+          "day": "saturday",
+          "period": "term",
+          "slots": [
+            {
+              "start": "09:00",
+              "end": "13:00",
+              "label": null
+            }
+          ],
+          "closed": false,
+          "exceptional": false,
+          "events": [
+            "Samedi 5 décembre : à l'occasion du Téléthon, toutes les piscines du réseau se mobilisent — chaque entrée est reversée au profit de l'AFM-Téléthon."
+          ]
         }
       ]
     }
